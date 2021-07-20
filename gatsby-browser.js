@@ -1,7 +1,9 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
-
-// You can delete this file if you're not using it
+import "./src/asset/css/bootstrap.min.css"
+import "./src/asset/css/flaticon.css"
+import "./src/asset/css/font-awesome.min.css"
+import "./src/asset/css/animate.css"
+import "./src/asset/css/slick.css"
+import "./src/asset/css/magnific-popup.css"
+import "./src/asset/css/jquery.nice-number.min.css"
+import "./src/asset/css/default.css"
+import "./src/scss/style.scss"
