@@ -1,0 +1,8 @@
+- item:
+  name: Facebook
+  path: https://www.facebook.com/africtivistes
+  icon: flaticon-facebook
+- item:
+  name: Twitter
+  path: https://twitter.com/AFRICTIVISTES
+  icon: flaticon-twitter-logo-silhouette

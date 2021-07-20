@@ -2,8 +2,6 @@ import * as React from "react"
 
 const Search = () => (
   <>
-    {/* --====== SEARCH BOX PART START ======-- */}
-
     <div className="search-box">
       <div className="closebtn">
         <span></span>
@@ -16,8 +14,6 @@ const Search = () => (
             </form>
         </div>
       </div>
-
-      {/* ====== SEARCH BOX PART ENDS ====== */}
   </>
 )
 

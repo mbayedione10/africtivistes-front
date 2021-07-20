@@ -13,11 +13,9 @@ const IndexPage = ({data}) => (
       <h4>Posts</h4>
       {data.allWpPost.nodes.map(node => (
         <div key={node.slug}>
-          {/* highlight-start */}
           <Link to={node.slug}>
             <p>{node.title}</p>
           </Link>
-          {/* highlight-end */}
           <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
         </div>
       ))}
@@ -25,7 +23,7 @@ const IndexPage = ({data}) => (
     </section>
   </Layout>
 )
-//highlight-start
+
 export const pageQuery = graphql`
   query {
     allWpPost(sort: {fields: [date], order: DESC}) {
@@ -37,5 +35,4 @@ export const pageQuery = graphql`
     }
   }
 `
-//highlight-end
 export default IndexPage

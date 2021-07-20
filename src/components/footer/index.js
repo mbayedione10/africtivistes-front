@@ -1,9 +1,9 @@
 import * as React from "react"
 
+import Social from '../social'
+
 const Footer = () => (
   <>
-    {/* --====== FOOTER PART START ======-- */}
-
     <section id="footer-part" className="footer-part pt-70 pb-120">
       <div className="container">
         <div className="row">
@@ -11,18 +11,12 @@ const Footer = () => (
             <div className="footer-description pt-50">
               <div className="logo mb-20">
                 <a href="/">
-                  <img src="images/logo-2.png" alt="Logo"/>
+                  <img src="/images/logo-2.png" alt="Logo"/>
                 </a>
               </div>
                 <p className="mb-15">ur clients range from FTSE comp anies, to large organisations and some small local businesses who are striving to expand.</p>
-                <ul>
-                  <li><a href="/"><i className="flaticon-facebook" aria-label="facebook"/></a></li>
-                <li><a href="/"><i className="flaticon-twitter-logo-silhouette" aria-label="twitter"/></a></li>
-                <li><a href="/"><i className="flaticon-google-plus" aria-label="google"/></a></li>
-                <li><a href="/"><i className="flaticon-linkedin-logo" aria-label="linkedin"/></a></li>
-                <li><a href="/"><i className="flaticon-instagram-social-network-logo-of-photo-camera" aria-label="instagram"/></a></li>
-                </ul>
-              </div> {/*-- footer description --*/}
+                <Social/>
+              </div>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-6">
               <div className="footer-link pt-45 pl-50">
@@ -36,7 +30,7 @@ const Footer = () => (
                 <li><a href="/"><i className="fa fa-angle-right" aria-label="link"/> About Career</a></li>
                 <li><a href="/"><i className="fa fa-angle-right" aria-label="link"/> Clients</a></li>
                 </ul>
-              </div> {/*-- footer link --*/}
+              </div>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-6">
               <div className="footer-contact pt-45">
@@ -56,7 +50,7 @@ const Footer = () => (
                     <p>721/A Central Street, New York. South East Addril, CEO 12309</p>
                   </li>
                 </ul>
-              </div> {/*-- footer contact --*/}
+              </div>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-12">
               <div className="footer-subscribe pt-45">
@@ -70,15 +64,11 @@ const Footer = () => (
                   <button type="button"><i className="flaticon-send" aria-label="send"/></button>
                   </form>
                 </div>
-                </div>  {/*-- footer subscribe --*/}
+                </div>
               </div>
-            </div> {/*-- row --*/}
-          </div> {/*-- container --*/}
+            </div>
+          </div>
     </section>
-
-    {/* --====== FOOTER PART ENDS ======-- */}
-
-    {/* --====== COPYRIGHT PART START ======-- */}
 
     <section id="copyright-part" className="copyright-part pt-15 pb-25">
       <div className="container">
@@ -97,19 +87,13 @@ const Footer = () => (
               </ul>
             </div>
           </div>
-        </div> {/*-- row --*/}
-      </div> {/*-- container -- */}
+        </div>
+      </div>
     </section>
-
-    {/* --====== COPYRIGHT PART ENDS ======-- */}
-
-    {/* --====== BACK TO TOP PART START ======-- */}
 
     <a href="#header-part" className="back-to-top">
       <i className="flaticon-chevron-up"></i>
     </a>
-
-    {/* --====== BACK TO TOP PART ENDS ======-- */}
   </>
 )
 

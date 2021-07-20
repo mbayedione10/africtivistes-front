@@ -9,10 +9,6 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        /*
-         * The full URL of the WordPress site's GraphQL API.
-         * Example : 'https://www.example-site.com/graphql'
-         */
         url: `https://update.africtivistes.org/graphql`,
       },
     },
