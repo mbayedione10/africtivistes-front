@@ -25,7 +25,7 @@ const Error = () => (
             <div className="row justify-content-center">
                 <div className="col-lg-6">
                     <div className="error-content text-center">
-                        <img src="images/error.png" alt="error"/>
+                        <img src="/images/error.png" alt="error"/>
                         <p className="mt-40">Sorry, This Page Does Not Exist</p>
                         <a href="index-2.html" className="main-btn mt-35">Back homepage</a>
                     </div>

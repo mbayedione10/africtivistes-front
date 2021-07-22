@@ -3,12 +3,13 @@ import { graphql } from "gatsby"
 
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
+import PageBanner from "../../components/pageBanner/inndex"
 
 const AfrictivistesPage = ({data}) => {
-    const post = data.allWpPage.nodes[0]
+    const page = data.allWpPage.nodes[0]
     return (<Layout>
       <Seo title="À propos de nous" />
-        <h1>{post.title}</h1>
+      <PageBanner title={page.title} />
     </Layout>)
 }
 export default AfrictivistesPage

@@ -5,65 +5,65 @@ export const onRenderBody = ({ setPostBodyComponents }) => {
         // jquery js
         <script
             key="js-01"
-            src="js/vendor/modernizr-3.6.0.min.js"
+            src="/js/vendor/modernizr-3.6.0.min.js"
         />,
         <script
             key="js-02"
-            src="js/vendor/jquery-1.12.4.min.js"
+            src="/js/vendor/jquery-1.12.4.min.js"
         />,
         // Bootstrap js
         <script
             key="js-03"
-            src="js/bootstrap.min.js"
+            src="/js/bootstrap.min.js"
         />,
         // Slick js
         <script
             key="js-04"
-            src="js/slick.min.js"
+            src="/js/slick.min.js"
         />,
         // Magnific Popup js
         <script
             key="js-05"
-            src="js/jquery.magnific-popup.min.js"
+            src="/js/jquery.magnific-popup.min.js"
         />,
         // Isotope js
         <script
             key="js-06"
-            src="js/isotope.pkgd.min.js"
+            src="/js/isotope.pkgd.min.js"
         />,
         // Images Loaded js
         <script
             key="js-07"
-            src="js/imagesloaded.pkgd.min.js"
+            src="/js/imagesloaded.pkgd.min.js"
         />,
         // Counter Up js
         <script
             key="js-08"
-            src="js/waypoints.min.js"
+            src="/js/waypoints.min.js"
         />,
         <script
             key="js-09"
-            src="js/jquery.counterup.min.js"
+            src="/js/jquery.counterup.min.js"
         />,
         // Nice Number js
         <script
             key="js-10"
-            src="js/jquery.nice-number.min.js"
+            src="/js/jquery.nice-number.min.js"
         />,
         // Validator js
         <script
             key="js-11"
-            src="js/validator.min.js"
+            src="/js/validator.min.js"
         />,
         // Ajax Contact js
         <script
             key="js-12"
-            src="js/ajax-contact.js"
+            src="/js/ajax-contact.js"
         />,
         // Main js
         <script
             key="js-13"
-            src="js/main.js"
+            src="/js/main.js"
         />,
         // Map js
         <script
@@ -72,7 +72,7 @@ export const onRenderBody = ({ setPostBodyComponents }) => {
         />,
         <script
             key="js-15"
-            src="js/map-script.js"
+            src="/js/map-script.js"
         />
     ])
 }

@@ -1,6 +1,7 @@
 import * as React from "react"
-import {graphql, StaticQuery, Link} from 'gatsby'
-import {flatListToHierarchical} from '../../../services'
+
+import Francais from './francais'
+import English from './English'
 
 const Menu = () => (
   <>
@@ -20,49 +21,8 @@ const Menu = () => (
 
               <div className="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto">
-                  <StaticQuery query={graphql`
-                    {
-                      wpMenu(locations: { eq: GATSBY_HEADER_MENU }) {
-                        id
-                        name
-                        menuItems {
-                          nodes {
-                            id
-                            label
-                            title
-                            path
-                            parentId
-                          }
-                        }
-                      }
-                    }
-                  `}
-                  render={(data) => {
-                    const menu = flatListToHierarchical(data.wpMenu.menuItems.nodes)
-                    return (
-                      <ul className="navbar-nav">
-                        {menu.map((item, index) => (
-                            <li className="nav-item" key={index}>
-                              <Link activeClassName={'active'} to={item.path}>
-                                {item.label}
-                              </Link>
-                              { item.children && item.children.length > 0 && (
-                                <ul className="sub-menu">
-                                  {item.children.map((item, index) => (
-                                    <li key={index}>
-                                      <Link to={item.path}>
-                                        {item.label}
-                                      </Link>
-                                    </li>
-                                  ))}
-                                </ul>)
-                              }
-                            </li>
-                          )
-                        )}
-                      </ul>)}
-                  }
-                  />
+                  <Francais/>
+                  <English/>
                 </ul>
               </div>
             </nav>
