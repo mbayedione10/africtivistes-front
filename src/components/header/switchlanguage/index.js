@@ -6,7 +6,7 @@ const languageName = {
   en: "English",
 }
 
-const Switchlanguage = () => {
+const Switchlanguage = ({translation}) => {
   return (
       <IntlContextConsumer>
         {({ languages, language: currentLocale }) =>
@@ -14,11 +14,11 @@ const Switchlanguage = () => {
             <a
               role="button"
               index={0}
-              href="/"
+              href={translation !== '' ? translation : `/`}
               key={language}
               onClick={() => changeLocale(language)}
               style={{
-                color: currentLocale === language ? `#333` : ``,
+                color: currentLocale === language ? `` : `#a63117`,
                 margin: 10,
                 textDecoration: `underline`,
                 cursor: `pointer`,

@@ -1,7 +1,12 @@
 import * as React from "react"
 
-const Search = () => (
-  <>
+import { ImportScript } from '../../services'
+
+const Search = () =>{
+
+  ImportScript("/js/load/search.js")
+
+  return(<>
     <div className="search-box">
       <div className="closebtn">
         <span></span>
@@ -14,7 +19,7 @@ const Search = () => (
             </form>
         </div>
       </div>
-  </>
-)
+  </>)
+}
 
 export default Search

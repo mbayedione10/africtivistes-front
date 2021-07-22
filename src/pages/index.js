@@ -5,6 +5,7 @@ import { IntlContextConsumer, FormattedMessage, injectIntl} from "gatsby-plugin-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Slider from "../components/slider"
+import Partner from '../components/partner'
 
 const IndexPage = ({data, intl}) => (
   <Layout>
@@ -28,6 +29,7 @@ const IndexPage = ({data, intl}) => (
         </IntlContextConsumer>
       </div>
     </section>
+    <Partner/>
   </Layout>
 )
 

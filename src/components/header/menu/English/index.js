@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, StaticQuery, Link } from 'gatsby'
-import { IntlContextConsumer } from "gatsby-plugin-react-intl"
+import { IntlContextConsumer} from "gatsby-plugin-react-intl"
 
 import { flatListToHierarchical } from '../../../../services'
 

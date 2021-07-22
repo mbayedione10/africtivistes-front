@@ -4,19 +4,19 @@ import PropTypes from "prop-types"
 import Top from './top'
 import Menu from './menu'
 
-const Header = ({ siteTitle }) => (
+const Header = ({ translation }) => (
   <header id="header-part">
-    <Top/>
+    <Top translation={translation}/>
     <Menu/>
   </header>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  translation: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  translation: ``,
 }
 
 export default Header

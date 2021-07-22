@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "gatsby-plugin-react-intl"
 
 import Francais from './francais'
 import English from './English'
@@ -10,9 +11,9 @@ const Menu = () => (
         <div className="row no-gutters">
           <div className="col-lg-11 order-last order-lg-first">
             <nav className="navbar navbar-expand-lg">
-              <a className="navbar-brand" href="/">
+              <Link className="navbar-brand" to="/">
                 <img src="/images/logo.svg" alt="Logo" />
-              </a>
+              </Link>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
@@ -29,7 +30,7 @@ const Menu = () => (
           </div>
           <div className="col-lg-1 order-first order-lg-last">
             <div className="search-icon text-right">
-              <a id="search" href="/"><i className="fa fa-search" aria-label="search"/></a>
+              <a id="search" href="# "><i className="fa fa-search" aria-label="search"/></a>
             </div>
           </div>
         </div>

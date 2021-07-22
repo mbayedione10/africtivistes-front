@@ -126,7 +126,7 @@
 }
 
 .copyright-part{
-    background-color: #221d41;
+    background-color: $theme-color-3;
     
     & .copyright-content{
         & p{
@@ -172,7 +172,7 @@
     display: none;
     
     &:hover{
-        background-color: #221d41;
+        background-color: $theme-color-3;
         color: $white;
     }
 }

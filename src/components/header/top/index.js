@@ -3,7 +3,7 @@ import * as React from "react"
 import Social from '../../social'
 import Switchlanguage from '../switchlanguage'
 
-const Top = () => {
+const Top = ({translation}) => {
 
   return(<>
     <div className="header-top pb-15">
@@ -15,7 +15,7 @@ const Top = () => {
                 <li><i className="fa fa-envelope"></i> support@contact.com</li>
                 <li><i className="fa fa-phone"></i> +880 17162 48413</li>
                 <li><i className="fa fa-clock-o"></i> Sun - Fri : 9.00 am to 18.pm (Sat Weekend)</li>
-                <li><Switchlanguage /></li>
+                <li><Switchlanguage translation={translation}/></li>
               </ul>
             </div>
           </div>
