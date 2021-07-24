@@ -10,7 +10,7 @@ const PageBanner = ({ title}) => (
                         <h2>{title}</h2>
                         <nav aria-label="breadcrumb">
                             <ol className="breadcrumb justify-content-center">
-                                <li className="breadcrumb-item"><a href="/" ><FormattedMessage id="home" /></a></li>
+                                <li className="breadcrumb-item"><a href="/" aria-label="button"><FormattedMessage id="home" /></a></li>
                                 <li className="breadcrumb-item active" aria-current="page">{title}</li>
                             </ol>
                         </nav>
