@@ -1,4 +1,12 @@
 {
-    "home": "Home",
-    "actualites": "News"
+  "description": "African League of Bloggers and Web Activists for Democracy",
+  "copyright": "Africtivistes, All Rights Reserved.",
+  "home": "Home",
+  "actualites": "News",
+  "contact": "Contact Us",
+  "subscribe": "Subscribe Us",
+  "newsletter": "Receive our newsletter",
+  "enterEmail": "Enter your Email",
+  "terms": "Terms & Condition",
+  "privacy": "Privacy Policy"
 }

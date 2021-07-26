@@ -1,8 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `Africtivistes`,
-    description: `AfricTivistes - Ligue Africaine des Blogueurs et Web activistes pour la Démocratie`,
+    description: `Ligue Africaine des Blogueurs et Web activistes pour la Démocratie`,
     author: `@africtivistes`,
+    email: [`info@africtivistes.org`],
+    tels: ['(+221) 33 837 51 24'],
+    adresse: 'BP 19968 Dakar , Cite Sofraco , VDN 3 prolongee',
     siteUrl: `https://www.africtivistes.org/`,
   },
   plugins: [

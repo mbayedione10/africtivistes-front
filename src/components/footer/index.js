@@ -1,6 +1,11 @@
 import * as React from "react"
+import {FormattedMessage, injectIntl} from 'gatsby-plugin-react-intl'
 
 import Social from '../social'
+import Menu from "./menu"
+import Newsletter from './newsletter'
+import Contact from "./contact"
+import Copyright from './copyright'
 
 const Footer = () => (
   <>
@@ -11,85 +16,27 @@ const Footer = () => (
             <div className="footer-description pt-50">
               <div className="logo mb-20">
                 <a href="/">
-                  <img src="/images/logo-2.png" alt="Logo"/>
+                  <img src="/images/logo-white.svg" alt="Logo"/>
                 </a>
               </div>
-                <p className="mb-15">ur clients range from FTSE comp anies, to large organisations and some small local businesses who are striving to expand.</p>
+              <p className="mb-15"><FormattedMessage id="description" /></p>
                 <Social/>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="footer-link pt-45 pl-50">
-                <div className="title mb-30">
-                  <h4>Usefull Links</h4>
-                </div>
-                <ul>
-                <li><a href="/"><i className="fa fa-angle-right" aria-label="link"/> About Us</a></li>
-                <li><a href="/"><i className="fa fa-angle-right" aria-label="link"/> Company News</a></li>
-                <li><a href="/"><i className="fa fa-angle-right" aria-label="link"/> Our Blog</a></li>
-                <li><a href="/"><i className="fa fa-angle-right" aria-label="link"/> About Career</a></li>
-                <li><a href="/"><i className="fa fa-angle-right" aria-label="link"/> Clients</a></li>
-                </ul>
-              </div>
+              <Menu/>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="footer-contact pt-45">
-                <div className="title mb-35">
-                  <h4>Contact Us</h4>
-                </div>
-                <ul>
-                  <li>
-                    <p>+12 345 678 9008 </p>
-                    <p>+12 987 654 7566</p>
-                  </li>
-                  <li>
-                    <p>contactus@buildetic.com</p>
-                    <p>info@support.com</p>
-                  </li>
-                  <li>
-                    <p>721/A Central Street, New York. South East Addril, CEO 12309</p>
-                  </li>
-                </ul>
-              </div>
+              <Contact/>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-12">
-              <div className="footer-subscribe pt-45">
-                <div className="title mb-35">
-                  <h4>Subscribe Us</h4>
-                </div>
-                <p>Join 90,000+ awesome subscribers and update yourself with our exclusive offers.</p>
-                <div className="subscribe-form mt-25">
-                  <form action="#">
-                    <input type="text" placeholder="Enter your Email"/>
-                  <button type="button"><i className="flaticon-send" aria-label="send"/></button>
-                  </form>
-                </div>
-                </div>
-              </div>
+              <Newsletter/>
+            </div>
             </div>
           </div>
     </section>
 
-    <section id="copyright-part" className="copyright-part pt-15 pb-25">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-6">
-            <div className="copyright-content text-center text-lg-left pt-10">
-              <p>&copy; 2019 All Rights Reserved. Designed By NIKNA</p>
-            </div> {/*-- copyright content --*/}
-          </div>
-          <div className="col-lg-6">
-            <div className="copyright-policy text-center text-lg-right pt-10">
-              <ul>
-                <li><a href="/">Terms & Condition</a></li>
-                <li><a href="/">Privacy Policy</a></li>
-                <li><a href="/">Contact Us</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Copyright/>
 
     <a href="#header-part" className="back-to-top">
       <i className="flaticon-chevron-up"></i>
@@ -97,4 +44,4 @@ const Footer = () => (
   </>
 )
 
-export default Footer
+export default injectIntl(Footer)
