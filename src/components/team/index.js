@@ -1,4 +1,5 @@
 import React from 'react'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 
 const Team = ({teams}) => (
@@ -18,10 +19,12 @@ const Team = ({teams}) => (
         <div className="row justify-content-center">
         {teams.map(team => {
           const { facebook, twitter, linkedin, instagram} = team.social
+          const image = getImage(team.featuredImage.node.localFile)
         return (<div className="col-lg-3 col-md-6 col-sm-8">
           <div className="single-team text-center mt-80">
             <div className="author-thumb pb-25">
-              <img src="/images/team/t-1.jpg" alt="Author" />
+              {/* <img src="/images/team/t-1.jpg" alt="Author" /> */}
+              <GatsbyImage image={image} alt={team.title} />
             </div>
             <div className="author-content">
               <a href="team-details.html"><h6>{team.title}</h6></a>

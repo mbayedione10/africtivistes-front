@@ -55,6 +55,19 @@ export const query = graphql`
     nodes {
       title
       excerpt
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 89,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
+      }
       social {
         facebook
         instagram

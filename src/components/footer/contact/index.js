@@ -21,7 +21,7 @@ const Contact = () => {
     </div>
     <ul>
       <li>
-        {tels.map(tel=><p>{tel}</p>)}
+        {tels.map(tel=><p key={tel}>{tel}</p>)}
       </li>
       <li>
         <p>{email}</p>
