@@ -2,19 +2,19 @@ import React from 'react'
 import { graphql } from "gatsby"
 import { IntlContextConsumer } from "gatsby-plugin-react-intl"
 
-import AfrictivistesPage from '../africtivistes'
+import HistoryPage from '../africtivistes/histoire'
 
-const Africtivistes = ({ data }) => (
+const History = ({ data }) => (
   <IntlContextConsumer>
-    {({ language: currentLocale }) =>
-      currentLocale === 'en' && <AfrictivistesPage data={data} />
+    {({ language: currentLocale }) => 
+        currentLocale === 'en' && <HistoryPage data={data} />
     }
   </IntlContextConsumer>
 )
 
 export const query = graphql`
   query {
-  allWpPage(filter: {slug: {eq: "africtivistes-en"}}) {
+  allWpPage(filter: {slug: {eq: "history"}}) {
     nodes {
       title
       content
@@ -36,19 +36,7 @@ export const query = graphql`
       }
     }
   }
-  allWpTeam {
-    nodes {
-      title
-      excerpt
-      social {
-        facebook
-        instagram
-        linkedin
-        twitter
-      }
-    }
-  }
 }
 `
 
-export default Africtivistes
+export default History

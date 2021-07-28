@@ -5,19 +5,21 @@ import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import PageBanner from "../../components/pageBanner/inndex"
 import About3 from "../../components/about/about3"
+import Intervention from '../../components/intervention'
 import Team from '../../components/team'
 import Counter2 from '../../components/counter/counter2'
 import Testimonial2 from '../../components/testimonial/testimonial2'
 import CallAction2 from '../../components/callAction/callactions2'
 
 const AfrictivistesPage = ({data}) => {
-  const page = data.allWpPage.nodes[0]
-  const link = page.translations ? page.translations[0].link : ''
+  const { title, content, translations, featuredImage} = data.allWpPage.nodes[0]
+  const link = translations ? translations[0].link : ''
   return (<Layout translation={link}>
       <Seo title="À propos de nous" />
-      <PageBanner title={page.title} />
-      <About3/>
-      <Team/>
+      <PageBanner title={title} />
+      <About3 content={content} picture={featuredImage.node.localFile}/>
+      <Intervention/>
+      <Team teams={data.allWpTeam.nodes}/>
       <Counter2/>
       <Testimonial2/>
       <CallAction2/>
@@ -30,8 +32,34 @@ export const query = graphql`
   allWpPage(filter: {slug: {eq: "africtivistes"}}) {
     nodes {
       title
+      content
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 555,
+                placeholder: TRACED_SVG
+              )
+            }
+          }
+        }
+      }
       translations {
         link
+      }
+    }
+  }
+  allWpTeam {
+    nodes {
+      title
+      excerpt
+      social {
+        facebook
+        instagram
+        linkedin
+        twitter
       }
     }
   }
