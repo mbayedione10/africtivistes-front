@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
-import PageBanner from "../../components/pageBanner/inndex"
+import PageBanner from "../../components/pageBanner"
 import History from "../../components/history"
 
 const HistoirePage = ({data}) => {

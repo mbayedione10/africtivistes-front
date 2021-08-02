@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
-import PageBanner from "../../components/pageBanner/inndex"
+import PageBanner from "../../components/pageBanner"
 import About3 from "../../components/about/about3"
 import Intervention from '../../components/intervention'
 import Team from '../../components/team'
