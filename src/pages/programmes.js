@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { injectIntl } from "gatsby-plugin-react-intl"
+import { IntlContextConsumer, injectIntl } from "gatsby-plugin-react-intl"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -14,13 +14,18 @@ import CallAction2 from '../components/callAction/callactions2'
 const ProgrammesPage = ({ data, intl }) => {
   const { title, translations } = data.allWpPage.nodes[0]
   const link = translations ? translations[0].link : ''
-  return (<Layout translation={link}>
-    <Seo lang={intl.locale} title={title} />
-    <PageBanner title={title} />
-    <ProjectsPage programmes={data.allWpProgrammeType.nodes} projects={data.allWpProgramme.nodes} />
-    <Counter2/>
-    <CallAction2/>
+  return (
+    <IntlContextConsumer>
+    {({ language: currentLocale }) =>
+      currentLocale === 'fr' && <Layout translation={link}>
+      <Seo lang={intl.locale} title={title} />
+      <PageBanner title={title} />
+      <ProjectsPage programmes={data.allWpProgrammeType.nodes} projects={data.allWpProgramme.nodes} />
+      <Counter2/>
+      <CallAction2/>
     </Layout>
+    }
+    </IntlContextConsumer>
   )}
 
 export const pageQuery = graphql`
@@ -58,7 +63,7 @@ export const pageQuery = graphql`
               gatsbyImageData(
                 width: 360,
                 height: 250,
-                placeholder: TRACED_SVG
+                placeholder: DOMINANT_COLOR
               )
             }
           }

@@ -1,8 +1,9 @@
 const path = require(`path`)
 
-exports.createPages = ({ graphql, actions }) => {
-    const { createPage } = actions
-    return graphql(`
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  
+  const posts = await graphql(`
     {
       allWpPost(sort: { fields: [date] }) {
         nodes {
@@ -13,19 +14,42 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then(result => {
-        //highlight-start
-        result.data.allWpPost.nodes.forEach(node => {
-            createPage({
-                path: node.slug,
-                component: path.resolve(`./src/templates/blog-post.js`),
-                context: {
-                    // This is the $slug variable
-                    // passed to blog-post.js
-                    slug: node.slug,
-                },
-            })
-        })
-        //highlight-end
+  `).then(res => res.data)
+
+  posts.allWpPost.nodes.forEach(node => {
+    createPage({
+      path: node.slug,
+      component: path.resolve(`./src/templates/blog-post.js`),
+      context: {
+        slug: node.slug,
+      },
     })
+  })
+
+  const programmes = await graphql(`
+    {
+      allWpProgramme(sort: {fields: date}) {
+      nodes {
+        link
+        slug
+        language {
+          slug
+        }
+      }
+    }
+  }
+  `).then(res => res.data)
+
+  programmes.allWpProgramme.nodes.forEach(node => {
+    createPage({
+      path: `/programme/${node.slug}`,
+      component: path.resolve(`./src/templates/programme-detail.js`),
+      context: {
+        slug: node.slug,
+        lang: node.language.slug
+      },
+    })
+  })
+
+
 }

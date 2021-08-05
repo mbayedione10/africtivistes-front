@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "gatsby"
 import { FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -32,11 +33,11 @@ const ProjectsPage = ({programmes, projects}) => {
               </div>
               <div className="project-content">
                 <div className="name">
-                  <a href={project.link}><h4>{project.title}</h4></a>
+                  <Link to={project.link}><h4>{project.title}</h4></Link>
                   <span>25 June, 2018</span>
                 </div>
                 <div className="view">
-                  <a href={project.link}><FormattedMessage id="detail"/> <i className="flaticon-right-arrow"></i></a>
+                  <Link to={project.link}><FormattedMessage id="detail" /> <i className="flaticon-right-arrow"></i></Link>
                 </div>
               </div>
             </div>
