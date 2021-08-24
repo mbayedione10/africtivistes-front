@@ -66,10 +66,10 @@ export const onRenderBody = ({ setPostBodyComponents }) => {
         //     src="/js/main.js"
         // />,
         // Map js
-        // <script
-        //     key="js-14"
-        //     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"
-        // />,
+        <script
+            key="js-14"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"
+        />,
         <script
             key="js-15"
             src="/js/map-script.js"
