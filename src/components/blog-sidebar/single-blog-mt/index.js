@@ -1,23 +1,27 @@
 import React from 'react'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 
-const SingleBogMt = () => {
+const SingleBogMt = ({post}) => {
+    const{title, date, link,excerpt, featuredImage}=post.node
+    const image = featuredImage && getImage(featuredImage.node.localFile)
+
     return (
         <div class="single-blog mt-50">
             <div class="blog-image">
-                <img src="/images/blog/blog-grid/b-1.jpg" alt="Blog"/>
+                <GatsbyImage image={image} alt={title} />
             </div>
             <div class="blog-content">
             <   div class="date">
                     <ul>
-                        <li><a href="#"><i class="flaticon-calendar"></i> 25 June, 2018</a></li>
+                        <li><a href="#"><i class="flaticon-calendar"></i>{date}</a></li>
                         <li><a href="#"><i class="flaticon-folder"></i> Finance</a></li>
                     </ul>
                 </div>
                 <div class="content">
-                    <a href="blog-details-right-sidebar.html" class="mb-15"><h4>Ui design is not same with ux</h4></a>
-                    <p class="mb-15">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="blog-details-right-sidebar.html"><FormattedMessage id ="readMore"/> <i class="fa fa-angle-right"></i></a>
+                    <a href={link} class="mb-15"><h4>{title.substring(0, 48)}...</h4></a>
+                    <p class="mb-15" dangerouslySetInnerHTML={{ __html: excerpt }} />
+                    <a href={link}><FormattedMessage id ="readMore"/> <i class="fa fa-angle-right"></i></a>
                 </div>
             </div>
         </div> 

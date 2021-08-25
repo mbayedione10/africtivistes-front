@@ -13,7 +13,7 @@ const ActualitesPage = ({data}) => {
   return (<Layout translation={link}>
       <Seo title="À propos de nous" />
       <PageBanner title={title} />
-      <BlogSidebar/>
+      <BlogSidebar posts={data.allWpPost.edges} />
      
     
     </Layout>)
@@ -25,22 +25,37 @@ export const query = graphql`
   allWpPage(filter: {slug: {eq: "actualites"}}) {
     nodes {
       title
-      content
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 555,
-                placeholder: TRACED_SVG
-              )
+      translations {
+        link
+      }
+    }
+  }
+  allWpPost(
+    limit: 6
+    sort: {fields: date, order: DESC}
+    filter: {language: {code: {eq: FR}}}
+  ) {
+    edges {
+      node {
+        id
+        title
+        date(formatString: "DD MMMM, YYYY", locale: "fr")
+        excerpt
+        link
+        featuredImage {
+          node {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 360,
+                  height: 200,
+                  placeholder: DOMINANT_COLOR
+                )
+              }
             }
           }
         }
-      }
-      translations {
-        link
       }
     }
   }
