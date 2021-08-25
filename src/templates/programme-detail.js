@@ -12,10 +12,11 @@ import Testimonial2 from '../components/testimonial/testimonial2'
 
 const ProgrammeDetail = ({ data, pageContext, intl }) =>{
     const {title, translations} = data.allWpProgramme.nodes[0]
+    const translation = translations.lenght && translations[0].link
     return (
       <IntlContextConsumer>
         {({ language: currentLocale }) =>
-          currentLocale === pageContext.lang && <Layout translation={translations[0].link}>
+          currentLocale === pageContext.lang && <Layout translation={translation}>
             <Seo lang={intl.locale} title={title} />
             <PageBanner title={'Recent Projects'} />
             <ProjectDetail project={data.allWpProgramme.nodes[0]} />
