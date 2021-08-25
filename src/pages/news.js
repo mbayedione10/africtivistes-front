@@ -15,22 +15,37 @@ export const query = graphql`
   allWpPage(filter: {slug: {eq: "news"}}) {
     nodes {
       title
-      content
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 555,
-                placeholder: TRACED_SVG
-              )
+      translations {
+        link
+      }
+    }
+  }
+  allWpPost(
+    limit: 6
+    sort: {fields: date, order: DESC}
+    filter: {language: {code: {eq: EN}}}
+  ) {
+    edges {
+      node {
+        id
+        title
+        date(formatString: "DD MMMM, YYYY", locale: "fr")
+        excerpt
+        link
+        featuredImage {
+          node {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 360,
+                  height: 200,
+                  placeholder: DOMINANT_COLOR
+                )
+              }
             }
           }
         }
-      }
-      translations {
-        link
       }
     }
   }
