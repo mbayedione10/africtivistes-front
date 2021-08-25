@@ -1,10 +1,12 @@
 import React from 'react'
+import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
+
 
 const RecentPost = () => {
     return (
         <div class="recent-post mt-50 rounded">
         <div class="title">
-            <h4>Recent Post</h4>
+            <h4><FormattedMessage id="recentPost"/></h4>
         </div> 
         <ul>
             <li>
@@ -52,4 +54,4 @@ const RecentPost = () => {
     )
 }
 
-export default RecentPost
+export default injectIntl(RecentPost)

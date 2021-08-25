@@ -19,5 +19,10 @@
   "privacy": "Politique de confidentialité",
   "all": "Tous",
   "more": "Voir plus",
-  "detail": "Détails"
+  "detail": "Détails",
+  "search":"Rechercher",
+  "recentPost":"Dernières actualités",
+  "category":"Catégories",
+  "readMore":"Lire plus",
+  "tags":"Mots-clés"
 }

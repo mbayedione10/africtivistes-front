@@ -1,11 +1,13 @@
 import React from 'react'
+import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
+
 
 const Category = () => {
     return (
         <div class="col-lg-12 col-md-8">
         <div class="blog-catagory mt-50 rounded">
             <div class="title mb-15">
-                <h4>Catagory</h4>
+                <h4><FormattedMessage id ="category"/></h4>
             </div> 
             <ul>
                 <li><a href="#">Technology <span>(32)</span></a></li>
@@ -19,4 +21,4 @@ const Category = () => {
     )
 }
 
-export default Category
+export default injectIntl(Category)

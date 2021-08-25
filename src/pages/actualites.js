@@ -7,7 +7,7 @@ import PageBanner from '../components/pageBanner'
 import BlogSidebar from '../components/blog-sidebar'
 
 
-const ContactPage = ({data}) => {
+const ActualitesPage = ({data}) => {
   const { title, translations} = data.allWpPage.nodes[0]
   const link = translations ? translations[0].link : ''
   return (<Layout translation={link}>
@@ -18,7 +18,7 @@ const ContactPage = ({data}) => {
     
     </Layout>)
 }
-export default ContactPage
+export default ActualitesPage
 
 export const query = graphql`
   query {
