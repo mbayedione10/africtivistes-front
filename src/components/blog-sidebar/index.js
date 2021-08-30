@@ -19,8 +19,8 @@ const BlogSidebar = ({posts}) => {
                     <div class="row justify-content-center">
                         <div class="col-lg-12 col-md-8">
                             <Search/>
-                            <RecentPost/>
-                            <Category/>
+                            <RecentPost posts={posts}/>
+                            <Category posts={posts}/>
                             <Tags/>
                             <Subscribe/>
                         </div> 
@@ -34,3 +34,4 @@ const BlogSidebar = ({posts}) => {
 }
 
 export default BlogSidebar
+

@@ -12,7 +12,7 @@ const SingleBogMt = ({post}) => {
                 <GatsbyImage image={image} alt={title} />
             </div>
             <div class="blog-content">
-            <   div class="date">
+                <div class="date">
                     <ul>
                         <li><a href="#"><i class="flaticon-calendar"></i>{date}</a></li>
                         <li><a href="#"><i class="flaticon-folder"></i> Finance</a></li>

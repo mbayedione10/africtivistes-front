@@ -14,8 +14,7 @@ const ActualitesPage = ({data}) => {
       <Seo title="À propos de nous" />
       <PageBanner title={title} />
       <BlogSidebar posts={data.allWpPost.edges} />
-     
-    
+       
     </Layout>)
 }
 export default ActualitesPage
@@ -54,6 +53,12 @@ export const query = graphql`
                 )
               }
             }
+          }
+        }
+        categories {
+          nodes {
+            name
+            count
           }
         }
       }
