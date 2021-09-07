@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import PageBanner from '../../components/pageBanner'
-import Adherer from '../../components/adherer'
+import Contact from '../../components/contact'
 
 const AdhererPage = ({data}) => {
     const { title, translations} = data.allWpPage.nodes[0]
@@ -12,8 +12,8 @@ const AdhererPage = ({data}) => {
     return (<Layout translation={link}>
         <Seo title="Comment adhérer AfricTivistes ?" />
         <PageBanner title={title} />
-        
-        <Adherer/>
+        <Contact/>
+        {/* <Adherer/> */}
          
       </Layout>
     )
@@ -23,23 +23,9 @@ export default AdhererPage
 
 export const query = graphql`
   query {
-  allWpPage(filter: {slug: {eq: "adherer-africtivistes"}}) {
+  allWpPage(filter: {slug: {eq: "adherer"}}) {
     nodes {
       title
-      content
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 555,
-                placeholder: TRACED_SVG
-              )
-            }
-          }
-        }
-      }
       translations {
         link
       }

@@ -4,7 +4,7 @@ import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 
 const SingleBogMt = ({post}) => {
     const{title, date, link,excerpt, featuredImage}=post.node
-    const image = featuredImage && getImage(featuredImage.node.localFile)
+    const image = featuredImage && getImage(featuredImage.node.big)
 
     return (
         <div class="single-blog mt-50">

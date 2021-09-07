@@ -1,6 +1,7 @@
 import React from 'react'
-import BlogCategoryMt from '../blog-category-mt'
+import { graphql, StaticQuery } from 'gatsby'
 import {FormattedMessage } from "gatsby-plugin-react-intl"
+import { node } from 'prop-types'
 
 
 const Category = ({posts}) => {
@@ -10,11 +11,27 @@ const Category = ({posts}) => {
             <div class="title mb-15">
                 <h4><FormattedMessage id ="category"/></h4>
             </div> 
-                {posts.map(post => {
-                    return(
-                        <BlogCategoryMt post = {post} key={post.id}/>
-                    )
-                })} 
+            <ul>
+                <StaticQuery query={graphql`
+                {
+                  allWpCategory(sort: {fields: count, order: DESC}) {
+                    edges {
+                      node {
+                        name
+                        count
+                      }
+                    }
+                  }
+                }
+                `}
+
+                render ={({allWpCategory}) => allWpCategory.edges.map(({node}) =>             
+                node.count && <li><a href="#"> {node.name}<span>{(node.count)}</span></a></li>
+                )}
+                
+
+                />
+            </ul>
 
         </div> 
     </div>

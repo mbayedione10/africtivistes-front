@@ -4,14 +4,14 @@ import {injectIntl } from "gatsby-plugin-react-intl"
 
 const SingleBlogMt30 = ({post}) => {
     const{title, date, featuredImage}=post.node
-    const image = featuredImage && getImage(featuredImage.node.localFile)
+    const image = featuredImage && getImage(featuredImage.node.small)
     return (
         <ul>
             <li>
                 <a href="blog-details-right-sidebar.html">
                     <span class="single-post mt-30">
                         <span class="image">
-                        <img src="/images/blog/blog-list-sidebar/post/p-1.jpg" alt="post"/>
+                        <GatsbyImage image={image} alt={title} />
                         </span>
                         <span class="content pl-85">
                             <h6>{title.substring(0, 40)}...</h6>
