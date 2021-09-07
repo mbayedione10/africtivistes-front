@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import { IntlContextConsumer, FormattedMessage, injectIntl} from "gatsby-plugin-react-intl"
+import { IntlContextConsumer, FormattedMessage} from "gatsby-plugin-react-intl"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -18,13 +18,13 @@ import Testimonial from '../components/testimonial'
 
 const IndexPage = ({data, intl}) => (
   <Layout>
-    <Seo lang={intl.locale} title={intl.formatMessage({ id: "home" })} />
-    <Slider/>
+      <Seo title="À propos de nous" />
+    <Slider posts={data.allWpPost.edges }/>
     <Features/>
     <About2/>
     <Services/>
     <About/>
-    <LatestNews/>
+    <LatestNews posts={data.allWpPost.edges}/>
     <Counter/>
     <Projects/>
     <section id="blog-list" className="pt-80 pb-130">
@@ -53,16 +53,53 @@ const IndexPage = ({data, intl}) => (
 
 export const pageQuery = graphql`
   query {
-    allWpPost(sort: {fields: [date], order: DESC}, limit: 10) {
+    allWpPost(
+      sort: {fields: [date], order: DESC},
+       limit: 3
+       filter: {language: {code: {eq: FR}}}
+
+       ) {
+        edges {
+          node {
+            id
+            title
+            date(formatString: "DD MMMM, YYYY", locale: "fr")
+            excerpt
+            slug
+            language {
+              slug
+            }
+            link
+            featuredImage {
+              node {
+                altText
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(
+                      width: 360,
+                      height: 200,
+                      placeholder: DOMINANT_COLOR
+                    )
+                  }
+                }
+              }
+            }
+            categories {
+              nodes {
+                name
+                count
+              }
+            }
+          }
+        }
     nodes {
-      title
-      excerpt
+
       slug
       language {
         slug
       }
     }
    }
-  }
+}
 `
-export default injectIntl(IndexPage)
+export default IndexPage
