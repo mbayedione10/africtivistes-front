@@ -1,4 +1,5 @@
 import React from 'react'
+import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 
 const Services = () => (
     <section id="services-part" className="pt-120 pb-130">
@@ -6,7 +7,7 @@ const Services = () => (
             <div className="row justify-content-center">
                 <div className="col-lg-4">
                     <div className="section-title text-center pb-15">
-                        <h3>Our Services</h3>
+                        <h3><FormattedMessage id="plaStrategique"/></h3>
                         <div className="underline">
                             <span></span>
                             <span></span>
