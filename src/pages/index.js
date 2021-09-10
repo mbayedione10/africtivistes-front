@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import { IntlContextConsumer, FormattedMessage} from "gatsby-plugin-react-intl"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -26,8 +25,7 @@ const IndexPage = ({data, intl}) => (
     <About/>
     <LatestNews posts={data.allWpPost.edges}/>
     <Counter/>
-    <Projects/>
-    <section id="blog-list" className="pt-80 pb-130">
+    {/* <section id="blog-list" className="pt-80 pb-130">
       <div className="container">
         <h1><FormattedMessage id="actualites" /></h1>
         <IntlContextConsumer>
@@ -44,15 +42,29 @@ const IndexPage = ({data, intl}) => (
           )}
         </IntlContextConsumer>
       </div>
-    </section>
+    </section> */}
     <Testimonial/>
+    
+    <Projects posts={data.allWpPost.edges} />
+
     <Partner/>
     <CallAction/>
+
   </Layout>
 )
 
 export const pageQuery = graphql`
   query {
+    allWpCategory(sort: {fields: count, order: DESC}, limit: 35) {
+      edges {
+        node {
+          id
+          name
+          count
+          slug
+        }
+      }
+  }
     allWpPost(
       sort: {fields: [date], order: DESC},
        limit: 3

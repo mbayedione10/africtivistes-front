@@ -1,17 +1,22 @@
 import React from 'react'
-
+import { FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { ImportScript } from '../../services'
+import { graphql, StaticQuery } from 'gatsby'
+import Container from './container'
 
-const Projects = () => {
+
+const Projects = ({posts}) => {
 
   ImportScript("/js/load/project.js");
 
-  return (<section id="project-part" className="pt-120 pb-130">
+  return (
+  <section id="project-part" className="pt-120 pb-130">
     <div className="container">
       <div className="row justify-content-center">
           <div className="col-lg-4">
               <div className="section-title text-center pb-15">
-                  <h3>Our Projects</h3>
+                  <h3><FormattedMessage id="allArticles"/></h3>
                   <div className="underline">
                       <span></span>
                       <span></span>
@@ -23,110 +28,36 @@ const Projects = () => {
           <div className="col-lg-12">
               <div className="project-menu text-center pt-25">
                   <ul>
-                      <li data-filter="*" className="active">All</li>
-                      <li data-filter=".business">Business</li>
-                      <li data-filter=".finance">Finance</li>
-                      <li data-filter=".corporate">Corporate</li>
+                  <li data-filter="*" className="active"><FormattedMessage id="all"/></li>
+                  <StaticQuery query={graphql`
+                        {
+                            allWpCategory(sort: {fields: count, order: DESC}) {
+                                edges {
+                                  node {
+                                    name
+                                    count
+                                  }
+                                }
+                            }
+                        }
+                        `}
+
+                        render ={({allWpCategory}) => allWpCategory.edges.map(({node}) =>             
+                            <li>{node.name}</li>
+                        )}
+                    />
+
                   </ul>
               </div>
           </div>
       </div>
       <div className="row grid">
-          <div className="col-lg-4 col-md-6 business finance">
-              <div className="singel-project mt-50 text-center">
-                  <div className="image">
-                      <img src="/images/project/pj-1.jpg" alt="Project"/>
-                  </div>
-                  <div className="content">
-                      <ul className="mb-25">
-                        <li><a className="project-popup" href="/images/project/pj-1.jpg" aria-label="button" ><i className="flaticon-full-screen"></i></a></li>
-                        <li><a href="project-details.html" aria-label="button"><i className="flaticon-link"></i></a></li>
-                      </ul>
-                      <a href="/"><h4>Rural Tower</h4></a>
-                      <span>25 June, 2018</span>
-                  </div>
-              </div>
-          </div>
-          <div className="col-lg-4 col-md-6 corporate">
-              <div className="singel-project mt-50 text-center">
-                  <div className="image">
-                      <img src="/images/project/pj-2.jpg" alt="Project"/>
-                  </div>
-                  <div className="content">
-                      <ul className="mb-25">
-                <li><a className="project-popup" href="/images/project/pj-2.jpg" aria-label="button"><i className="flaticon-full-screen"></i></a></li>
-                <li><a href="project-details.html" aria-label="button"><i className="flaticon-link"></i></a></li>
-                      </ul>
-                      <a href="/"><h4>Rural Tower</h4></a>
-                      <span>25 June, 2018</span>
-                  </div>
-              </div>
-          </div>
-          <div className="col-lg-4 col-md-6 finance">
-              <div className="singel-project mt-50 text-center">
-                  <div className="image">
-                      <img src="/images/project/pj-3.jpg" alt="Project"/>
-                  </div>
-                  <div className="content">
-                      <ul className="mb-25">
-                <li><a className="project-popup" href="/images/project/pj-3.jpg" aria-label="button"><i className="flaticon-full-screen"></i></a></li>
-                <li><a href="project-details.html"><i className="flaticon-link" aria-label="button"></i></a></li>
-                      </ul>
-                      <a href="/"><h4>Rural Tower</h4></a>
-                      <span>25 June, 2018</span>
-                  </div>
-              </div>
-          </div>
-          <div className="col-lg-4 col-md-6 business">
-              <div className="singel-project mt-50 text-center">
-                  <div className="image">
-                      <img src="/images/project/pj-4.jpg" alt="Project"/>
-                  </div>
-                  <div className="content">
-                      <ul className="mb-25">
-                <li><a className="project-popup" href="/images/project/pj-4.jpg" aria-label="button"><i className="flaticon-full-screen"></i></a></li>
-                <li><a href="project-details.html" aria-label="button"><i className="flaticon-link"></i></a></li>
-                      </ul>
-                      <a href="/"><h4>Rural Tower</h4></a>
-                      <span>25 June, 2018</span>
-                  </div>
-              </div>
-          </div>
-          <div className="col-lg-4 col-md-6 corporate">
-              <div className="singel-project mt-50 text-center">
-                  <div className="image">
-                      <img src="/images/project/pj-5.jpg" alt="Project"/>
-                  </div>
-                  <div className="content">
-                      <ul className="mb-25">
-                <li><a className="project-popup" href="/images/project/pj-5.jpg" aria-label="button"><i className="flaticon-full-screen"></i></a></li>
-                <li><a href="project-details.html" aria-label="button"><i className="flaticon-link"></i></a></li>
-                      </ul>
-                      <a href="/"><h4>Rural Tower</h4></a>
-                      <span>25 June, 2018</span>
-                  </div>
-              </div>
-          </div>
-          <div className="col-lg-4 col-md-6 business">
-              <div className="singel-project mt-50 text-center">
-                  <div className="image">
-                      <img src="/images/project/pj-1.jpg" alt="Project"/>
-                  </div>
-                  <div className="content">
-                      <ul className="mb-25">
-                <li><a className="project-popup" href="/images/project/pj-1.jpg" aria-label="button"><i className="flaticon-full-screen"></i></a></li>
-                <li><a href="project-details.html" aria-label="button"><i className="flaticon-link"></i></a></li>
-                      </ul>
-                      <a href="/"><h4>Rural Tower</h4></a>
-                      <span>25 June, 2018</span>
-                  </div>
-              </div>
-          </div>
+          <Container posts = {posts}/>
       </div>
       <div className="row">
           <div className="col-lg-12">
               <div className="project-more text-center mt-50">
-                  <a className="main-btn" href="# ">View more</a>
+                  <a className="main-btn" href="# " ><FormattedMessage id="more"/></a>
               </div>
           </div>
       </div>
@@ -134,4 +65,4 @@ const Projects = () => {
   </section>
 )}
 
-export default Projects
+export default injectIntl (Projects)

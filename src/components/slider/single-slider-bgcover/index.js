@@ -13,8 +13,8 @@ const SingleSliderBgcover = ({post}) => {
             <div className="row">
                 <div className="col-lg-6 col-md-10">
                     <div className="slider-content">
-                        <h2 className="mb-25" data-animation="bounceInLeft" data-delay="1s">The Best Business <span>Consulting</span> Team</h2>
-                        <p className="mb-30" data-animation="fadeInLeft" data-delay="1.5s">Business Consulting offers a wide range of services to businesses either before or during tough financial times. What sets us apart from other firms in the industry is over three decades.</p>
+                        <h2 className="mb-25" data-animation="bounceInLeft" data-delay="1s"><span>AFRICTIVISTES,</span>La Ligue Africaine des Blogueurs et Cyber-activistes</h2>
+                        <p className="mb-30" data-animation="fadeInLeft" data-delay="1.5s">pour la Démocratie est une organisation panafricaine basée à Dakar où se trouve son siège. Africtivistes est l’union des blogueurs et web-activistes du continent pour promouvoir et défendre les valeurs démocratiques, les droits humains et la bonne gouvernance à travers le numérique.</p>
                         <a href="http://localhost:8000/fr/nous-contacter/" className="main-btn" data-animation="fadeInUp" data-delay="2s"><FormattedMessage id ="contactUs"/></a>
                     </div>
                 </div>
@@ -54,5 +54,3 @@ const SingleSliderBgcover = ({post}) => {
 }
 
 export default injectIntl (SingleSliderBgcover)
-
-
