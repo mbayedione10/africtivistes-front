@@ -21,7 +21,7 @@ const IndexPage = ({data, intl}) => (
     <Slider posts={data.allWpPost.edges }/>
     <Features/>
     <About2/>
-    <Services/>
+    <Services posts={data.plan.edges}/>
     <About/>
     <LatestNews posts={data.allWpPost.edges}/>
     <Counter/>
@@ -64,6 +64,33 @@ export const pageQuery = graphql`
           slug
         }
       }
+  }
+  plan: allWpPost(
+    sort: {fields: [date], order: DESC}
+    filter: {categories: {nodes: {elemMatch: {name: {eq: "Plan stratégique 2020-2021"}}}}}
+  ) {
+    edges {
+      node {
+        id
+        title
+        excerpt
+        slug
+        language {
+          slug
+        }
+        link
+        featuredImage {
+          node {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(width: 300, height: 150, placeholder: DOMINANT_COLOR)
+              }
+            }
+          }
+        }
+      }
+    }
   }
     allWpPost(
       sort: {fields: [date], order: DESC},
