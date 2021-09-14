@@ -1,7 +1,5 @@
 import React from 'react'
 import RowJustify from '../row-justify'
-import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
-
 
 const Container = ({posts}) => {
     return (

@@ -19,7 +19,7 @@ const IndexPage = ({data, intl}) => (
   <Layout>
       <Seo title="À propos de nous" />
     <Slider posts={data.allWpPost.edges }/>
-    <Features/>
+    <Features posts={data.projetencours.edges}/>
     <About2/>
     <Services posts={data.plan.edges}/>
     <About/>
@@ -64,6 +64,33 @@ export const pageQuery = graphql`
           slug
         }
       }
+  }
+  projetencours: allWpPost(
+    sort: {fields: [date], order: DESC}
+    filter: {categories: {nodes: {elemMatch: {name: {eq: "Les Projets en cours"}}}}}
+  ) {
+    edges {
+      node {
+        id
+        title
+        excerpt
+        slug
+        language {
+          slug
+        }
+        link
+        featuredImage {
+          node {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(width: 300, height: 150, placeholder: DOMINANT_COLOR)
+              }
+            }
+          }
+        }
+      }
+    }
   }
   plan: allWpPost(
     sort: {fields: [date], order: DESC}

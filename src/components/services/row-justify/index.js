@@ -15,10 +15,11 @@ const RowJustify = ({post}) => {
                         <div className="content">
                             <a href="services-details.html"><h4>{title}</h4></a>
                             <p className="mt-20" dangerouslySetInnerHTML={{ __html: excerpt.substring(0, 250)}}/>
+                        </div>
+                        <div className="date-details">
                 <span className="date"><a href="# " aria-label="button">{date}</a></span>
                 <span className="details"><a href={link} ><FormattedMessage id="readMore"/> <i className="flaticon-right-arrow"></i></a></span>
-                        </div>
-
+            </div>
                     </div>
                 </div>
     )
