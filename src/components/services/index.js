@@ -16,7 +16,7 @@ const Services = ({posts}) => (
                     </div>
                 </div>
             </div>
-            <Container posts={posts}/>
+            <Container posts = {posts}/>
         </div>
     </section>
 )

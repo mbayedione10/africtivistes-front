@@ -16,7 +16,7 @@ const ColLgMd = ({post}) => {
         </div>
         <div className="content pl-20">
           <h5 className="mb-20">{title}</h5>
-          <p className="mb-15" dangerouslySetInnerHTML={{ __html: excerpt.substring(0, 250)}}/>
+          <p className="mb-15" dangerouslySetInnerHTML={{ __html: excerpt.substring(0, 290)}}/>
           {/* <a href="/"><FormattedMessage id="readMore"/><i className="fa fa-angle-right"></i></a> */}
         </div>
         <div className="date-details">

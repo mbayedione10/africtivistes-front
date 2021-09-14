@@ -3,7 +3,7 @@ import { FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { ImportScript } from '../../services'
 import { graphql, StaticQuery } from 'gatsby'
-import Container from './container'
+import Container from './containerProjects'
 
 
 const Projects = ({posts}) => {
@@ -51,9 +51,7 @@ const Projects = ({posts}) => {
               </div>
           </div>
       </div>
-      <div className="row grid">
           <Container posts = {posts}/>
-      </div>
       <div className="row">
           <div className="col-lg-12">
               <div className="project-more text-center mt-50">

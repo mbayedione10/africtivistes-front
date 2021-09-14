@@ -7,12 +7,13 @@ const SingleProjectMt = ({post}) => {
     const image = featuredImage && getImage(featuredImage.node)
 
     return (
-        
+        <div className="col-lg-4 col-md-6 business finance">
+
         <div className="singel-project mt-50 text-center">
             <div className="image">
-            <GatsbyImage image={image} alt={title} />
+            {/* <GatsbyImage image={image} alt={title} /> */}
 
-                {/* <img src="/images/project/pj-1.jpg" alt="Project"/> */}
+                <img src="/images/project/pj-1.jpg" alt="Project"/>
             </div>
             <div className="content">
                 <ul className="mb-25">
@@ -23,6 +24,8 @@ const SingleProjectMt = ({post}) => {
                 <span>{date}</span>
             </div>
         </div>
+        </div>
+
     )
 }
 

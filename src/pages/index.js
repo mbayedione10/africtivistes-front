@@ -45,7 +45,7 @@ const IndexPage = ({data, intl}) => (
     </section> */}
     <Testimonial/>
     
-    <Projects posts={data.allWpPost.edges} />
+    <Projects posts={data.latestnews.edges} />
 
     <Partner/>
     <CallAction/>
@@ -119,6 +119,53 @@ export const pageQuery = graphql`
       }
     }
   }
+  latestnews: allWpPost(
+    limit: 9
+    sort: {fields: [date], order: DESC},
+     filter: {language: {code: {eq: FR}}}
+
+     ) {
+      edges {
+        node {
+          id
+          title
+          date(formatString: "DD MMMM, YYYY", locale: "fr")
+          excerpt
+          slug
+          language {
+            slug
+          }
+          link
+          featuredImage {
+            node {
+              altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 360,
+                    height: 200,
+                    placeholder: DOMINANT_COLOR
+                  )
+                }
+              }
+            }
+          }
+          categories {
+            nodes {
+              name
+              count
+            }
+          }
+        }
+      }
+  nodes {
+
+    slug
+    language {
+      slug
+    }
+  }
+ }
     allWpPost(
       sort: {fields: [date], order: DESC},
        limit: 3

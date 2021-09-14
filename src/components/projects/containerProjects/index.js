@@ -5,15 +5,16 @@ import SingleProjectMt from '../single-project-mt'
 const Container = ({posts}) => {
     
     return (
+        <div className="row grid">
+
         
-        
-    <div className="col-lg-4 col-md-6 business finance">
         {posts.map(post => {
                     return(
                             <SingleProjectMt post = {post} key={post.id}/>
                     )
                 })} 
     </div>
+
 
     )
 }
