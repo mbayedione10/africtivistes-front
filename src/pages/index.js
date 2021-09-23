@@ -14,15 +14,17 @@ import CallAction from '../components/callAction'
 import Counter from '../components/counter'
 import Features from '../components/features'
 import Testimonial from '../components/testimonial'
+import ProjectsPage from '../components/projects/page'
 
 const IndexPage = ({data, intl}) => (
   <Layout>
       <Seo title="À propos de nous" />
-    <Slider posts={data.allWpPost.edges }/>
-    <Features posts={data.projetencours.edges}/>
-    <About2/>
-    <Services posts={data.plan.edges}/>
+    <Slider posts={data.slider.edges}/>
+    <Features projects={data.programmeencours.nodes}/>
     <About/>
+    <About2/>
+    {/* <Services posts={data.plan.edges}/> */}
+    <ProjectsPage programmes={data.allWpProgrammeType.nodes} projects={data.allWpProgramme.nodes} />
     <LatestNews posts={data.allWpPost.edges}/>
     <Counter/>
     {/* <section id="blog-list" className="pt-80 pb-130">
@@ -44,8 +46,7 @@ const IndexPage = ({data, intl}) => (
       </div>
     </section> */}
     <Testimonial/>
-    
-    <Projects posts={data.latestnews.edges} />
+    <Projects posts={data.latestnews.edges}  categorys={data.allWpCategory.edges}/>
 
     <Partner/>
     <CallAction/>
@@ -55,7 +56,8 @@ const IndexPage = ({data, intl}) => (
 
 export const pageQuery = graphql`
   query {
-    allWpCategory(sort: {fields: count, order: DESC}, limit: 35) {
+    allWpCategory(sort: {fields: count, order: DESC}, limit: 35
+      filter: {language: {code: {eq: FR}}}) {
       edges {
         node {
           id
@@ -64,64 +66,77 @@ export const pageQuery = graphql`
           slug
         }
       }
-  }
-  projetencours: allWpPost(
-    sort: {fields: [date], order: DESC}
-    filter: {categories: {nodes: {elemMatch: {name: {eq: "Les Projets en cours"}}}}}
-  ) {
-    edges {
-      node {
+    }
+    allWpProgrammeType {
+      nodes {
+        id
+        name
+        slug
+      }
+    }
+    allWpProgramme(
+      filter: {language: {code: {eq: FR}}}
+      sort: {fields: date, order: DESC}
+      ) {
+      nodes {
         id
         title
-        excerpt
-        slug
-        language {
-          slug
-        }
         link
+        date(formatString: "DD MMMM, YYYY", locale: "fr")
+        programmeTypes {
+          nodes {
+            slug
+            name
+          }
+        }
         featuredImage {
           node {
             altText
             localFile {
               childImageSharp {
-                gatsbyImageData(width: 300, height: 150, placeholder: DOMINANT_COLOR)
+                gatsbyImageData(width: 360, height: 250, placeholder: DOMINANT_COLOR)
               }
             }
           }
         }
-      }
-    }
-  }
-  plan: allWpPost(
-    sort: {fields: [date], order: DESC}
-    filter: {categories: {nodes: {elemMatch: {name: {eq: "Plan stratégique 2020-2021"}}}}}
-  ) {
-    edges {
-      node {
-        id
-        title
-        excerpt
         slug
-        language {
+        content
+      }
+    }
+  programmeencours: allWpProgramme(
+    filter: {language: {code: {eq: FR}}}
+    limit: 3
+    sort: {fields: date, order: DESC}
+    ) {
+    nodes {
+      id
+      title
+      link
+      date(formatString: "DD MMMM, YYYY", locale: "fr")
+      programmeTypes {
+        nodes {
           slug
+          name
         }
-        link
-        featuredImage {
-          node {
-            altText
-            localFile {
-              childImageSharp {
-                gatsbyImageData(width: 300, height: 150, placeholder: DOMINANT_COLOR)
-              }
+      }
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(width: 360, height: 250, placeholder: DOMINANT_COLOR)
             }
           }
         }
       }
+      slug
+      content
     }
   }
+
   latestnews: allWpPost(
-    limit: 9
-    sort: {fields: [date], order: DESC},
+    limit: 15
+    sort: {fields: [date], order: DESC}
      filter: {language: {code: {eq: FR}}}
 
      ) {
@@ -166,7 +181,54 @@ export const pageQuery = graphql`
     }
   }
  }
-    allWpPost(
+ allWpPost(
+  sort: {fields: [date], order: DESC},
+   limit: 3
+   filter: {language: {code: {eq: FR}}}
+
+   ) {
+    edges {
+      node {
+        id
+        title
+        date(formatString: "DD MMMM, YYYY", locale: "fr")
+        excerpt
+        slug
+        language {
+          slug
+        }
+        link
+        featuredImage {
+          node {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 1920,
+                  height: 860,
+                  placeholder: DOMINANT_COLOR
+                )
+              }
+            }
+          }
+        }
+        categories {
+          nodes {
+            name
+            count
+          }
+        }
+      }
+    }
+nodes {
+
+  slug
+  language {
+    slug
+  }
+}
+}
+  slider: allWpPost(
       sort: {fields: [date], order: DESC},
        limit: 3
        filter: {language: {code: {eq: FR}}}
@@ -189,8 +251,8 @@ export const pageQuery = graphql`
                 localFile {
                   childImageSharp {
                     gatsbyImageData(
-                      width: 360,
-                      height: 200,
+                      width: 1920,
+                      height: 750,
                       placeholder: DOMINANT_COLOR
                     )
                   }
@@ -214,5 +276,6 @@ export const pageQuery = graphql`
     }
    }
 }
+
 `
 export default IndexPage

@@ -14,6 +14,7 @@ const Container = ({posts}) => {
                     )
                 })} 
     </div>
+    
 
 
     )

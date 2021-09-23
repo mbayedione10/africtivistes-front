@@ -24,7 +24,7 @@ const Projects = ({posts}) => {
               </div>
           </div>
         </div>
-      <div className="row">
+      {/* <div className="row">
           <div className="col-lg-12">
               <div className="project-menu text-center pt-25">
                   <ul>
@@ -50,8 +50,9 @@ const Projects = ({posts}) => {
                   </ul>
               </div>
           </div>
-      </div>
-          <Container posts = {posts}/>
+      </div> */}
+      
+      <Container posts = {posts}/>
       <div className="row">
           <div className="col-lg-12">
               <div className="project-more text-center mt-50">

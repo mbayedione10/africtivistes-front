@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 import {ImportScript} from '../../services'
 
 const Partner = () => {
@@ -8,6 +8,17 @@ const Partner = () => {
 
   return (<section id="partner-part" className="pt-55 pb-55">
     <div className="container">
+    <div className="row justify-content-center">
+        <div className="col-lg-6">
+          <div className="section-title text-center pb-20">
+            <h3><FormattedMessage id="partner"/> </h3>
+              <div className="underline">
+                <span></span>
+                <span></span>
+              </div>
+          </div>
+        </div>
+      </div>
         <div className="row partner-active">
             <div className="col-lg-2">
                 <div className="single-partner">

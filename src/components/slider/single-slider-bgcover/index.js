@@ -7,49 +7,19 @@ const SingleSliderBgcover = ({post}) => {
     const image = featuredImage && getImage(featuredImage.node.localFile)
 
     return (
-        <>
-    <div className="single-slider bg_cover d-flex align-items-center" style={{ backgroundImage: `url(/images/slider/ss.jpeg)`}}>
+    <div className="single-slider bg_cover d-flex align-items-center" style={{backgroundImage:`url(/images/bg-1.jpg`}}>
         <div className="container">
             <div className="row">
                 <div className="col-lg-6 col-md-10">
                     <div className="slider-content">
-                        <h2 className="mb-25" data-animation="bounceInLeft" data-delay="1s"><span>AFRICTIVISTES,</span>La Ligue Africaine des Blogueurs et Cyber-activistes</h2>
-                        <p className="mb-30" data-animation="fadeInLeft" data-delay="1.5s">pour la Démocratie est une organisation panafricaine basée à Dakar où se trouve son siège. Africtivistes est l’union des blogueurs et web-activistes du continent pour promouvoir et défendre les valeurs démocratiques, les droits humains et la bonne gouvernance à travers le numérique.</p>
-                        <a href="http://localhost:8000/fr/nous-contacter/" className="main-btn" data-animation="fadeInUp" data-delay="2s"><FormattedMessage id ="contactUs"/></a>
+                        <h2 className="mb-25" data-animation="bounceInLeft" data-delay="1s"><span>{title.substring(0, 48)}...</span></h2>
+                        <p className="mb-30" data-animation="fadeInLeft" data-delay="1.5s" dangerouslySetInnerHTML={{ __html: excerpt }}></p>
+                        <a href="/" className="main-btn" data-animation="fadeInUp" data-delay="2s"><FormattedMessage id ="contactUs"/></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div className="single-slider bg_cover d-flex align-items-center" style={{ backgroundImage: `url(/images/slider/acap.png)`}}>
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-6 col-md-10">
-                    <div className="slider-content">
-                        <h2 className="mb-25" data-animation="bounceInLeft" data-delay="1s">The Best Business <span>Consulting</span> Team</h2>
-                        <p className="mb-30" data-animation="fadeInLeft" data-delay="1.5s">Business Consulting offers a wide range of services to businesses either before or during tough financial times. What sets us apart from other firms in the industry is over three decades.</p>
-                        <a href="contact.html" className="main-btn" data-animation="fadeInUp" data-delay="2s"><FormattedMessage id ="contactUs"/></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div className="single-slider bg_cover d-flex align-items-center" style={{ backgroundImage: `url(/images/slider/log.jpg)`}}>
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-6 col-md-10">
-                    <div className="slider-content">
-                        <h2 className="mb-25" data-animation="bounceInLeft" data-delay="1s">The Best Business <span>Consulting</span> Team</h2>
-                        <p className="mb-30" data-animation="fadeInLeft" data-delay="1.5s">Business Consulting offers a wide range of services to businesses either before or during tough financial times. What sets us apart from other firms in the industry is over three decades.</p>
-                        <a href="contact.html" className="main-btn" data-animation="fadeInUp" data-delay="2s"><FormattedMessage id ="contactUs"/></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </>
     )
 }
 

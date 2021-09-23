@@ -1,13 +1,13 @@
 import React from 'react'
 import ColLgMd from './col-lg-md'
 
-const ContainerPEC = ({posts}) => {
+const ContainerPEC = ({projects}) => {
     return (
         <div className="row justify-content-center">
 
-            {posts.map(post => {
+            {projects.map(project => {
                         return(
-                            <ColLgMd post = {post} key={post.id} />
+                            <ColLgMd project = {project} key={project.id} />
                             )
                     })}
         </div>

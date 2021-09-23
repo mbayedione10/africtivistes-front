@@ -35,11 +35,20 @@ export const query = graphql`
         featuredImage {
           node {
             altText
-            localFile {
+            big: localFile {
               childImageSharp {
                 gatsbyImageData(
                   width: 360,
                   height: 200,
+                  placeholder: DOMINANT_COLOR
+                )
+              }
+            }
+            small: localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 70,
+                  height: 68,
                   placeholder: DOMINANT_COLOR
                 )
               }
