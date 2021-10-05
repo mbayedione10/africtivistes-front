@@ -94,7 +94,10 @@ export const pageQuery = graphql`
             altText
             localFile {
               childImageSharp {
-                gatsbyImageData(width: 360, height: 250, placeholder: DOMINANT_COLOR)
+                gatsbyImageData(
+                  width: 360, 
+                  height: 250, 
+                  placeholder: DOMINANT_COLOR)
               }
             }
           }
@@ -124,7 +127,10 @@ export const pageQuery = graphql`
           altText
           localFile {
             childImageSharp {
-              gatsbyImageData(width: 360, height: 250, placeholder: DOMINANT_COLOR)
+              gatsbyImageData(
+                width: 360, 
+                height: 250, 
+                placeholder: DOMINANT_COLOR)
             }
           }
         }
@@ -228,7 +234,7 @@ nodes {
   }
 }
 }
-  slider: allWpPost(
+slider: allWpPost(
       sort: {fields: [date], order: DESC},
        limit: 3
        filter: {language: {code: {eq: FR}}}
@@ -252,7 +258,7 @@ nodes {
                   childImageSharp {
                     gatsbyImageData(
                       width: 1920,
-                      height: 750,
+                      height: 800,
                       placeholder: DOMINANT_COLOR
                     )
                   }

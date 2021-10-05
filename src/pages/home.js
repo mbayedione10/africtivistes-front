@@ -9,23 +9,11 @@ const Home = ({data}) => (
 
 export const pageQuery = graphql`
 query {
-  allWpPage(filter: {slug: {eq: "home"}}) {
+  allWpPage(filter: {slug: {eq: "/"}}) {
     nodes {
       title
       translations {
         link
-      }
-    }
-  }
-  
-  allWpCategory(sort: {fields: count, order: DESC}, limit: 35
-    filter: {language: {code: {eq: EN}}}) {
-    edges {
-      node {
-        id
-        name
-        count
-        slug
       }
     }
   }
@@ -38,13 +26,13 @@ query {
   }
   allWpProgramme(
     filter: {language: {code: {eq: EN}}}
-    limit: 3
     sort: {fields: date, order: DESC}
     ) {
     nodes {
       id
       title
       link
+      date(formatString: "DD MMMM, YYYY", locale: "en")
       programmeTypes {
         nodes {
           slug
@@ -56,7 +44,10 @@ query {
           altText
           localFile {
             childImageSharp {
-              gatsbyImageData(width: 360, height: 250, placeholder: DOMINANT_COLOR)
+              gatsbyImageData(
+                width: 360, 
+                height: 250, 
+                placeholder: DOMINANT_COLOR)
             }
           }
         }
@@ -65,39 +56,43 @@ query {
       content
     }
   }
-  programmeencours: allWpProgramme(
-    filter: {language: {code: {eq: EN}}}
-    limit: 3
-    sort: {fields: date, order: DESC}
-    ) {
-    nodes {
-      id
-      title
-      link
-      programmeTypes {
-        nodes {
-          slug
-          name
-        }
+programmeencours: allWpProgramme(
+  filter: {language: {code: {eq: EN}}}
+  limit: 3
+  sort: {fields: date, order: DESC}
+  ) {
+  nodes {
+    id
+    title
+    link
+    date(formatString: "DD MMMM, YYYY", locale: "en")
+    programmeTypes {
+      nodes {
+        slug
+        name
       }
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(width: 360, height: 250, placeholder: DOMINANT_COLOR)
-            }
+    }
+    featuredImage {
+      node {
+        altText
+        localFile {
+          childImageSharp {
+            gatsbyImageData(
+              width: 360, 
+              height: 250, 
+              placeholder: DOMINANT_COLOR)
           }
         }
       }
-      slug
-      content
     }
+    slug
+    content
   }
+}
 
 latestnews: allWpPost(
-  limit: 9
-  sort: {fields: [date], order: DESC},
+  limit: 15
+  sort: {fields: [date], order: DESC}
    filter: {language: {code: {eq: EN}}}
 
    ) {
@@ -105,7 +100,7 @@ latestnews: allWpPost(
       node {
         id
         title
-        date(formatString: "DD MMMM, YYYY", locale: "fr")
+        date(formatString: "DD MMMM, YYYY", locale: "en")
         excerpt
         slug
         language {
@@ -142,7 +137,54 @@ nodes {
   }
 }
 }
-  allWpPost(
+allWpPost(
+sort: {fields: [date], order: DESC},
+ limit: 3
+ filter: {language: {code: {eq: EN}}}
+
+ ) {
+  edges {
+    node {
+      id
+      title
+      date(formatString: "DD MMMM, YYYY", locale: "en")
+      excerpt
+      slug
+      language {
+        slug
+      }
+      link
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 1920,
+                height: 860,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
+      }
+      categories {
+        nodes {
+          name
+          count
+        }
+      }
+    }
+  }
+nodes {
+
+slug
+language {
+  slug
+}
+}
+}
+slider: allWpPost(
     sort: {fields: [date], order: DESC},
      limit: 3
      filter: {language: {code: {eq: EN}}}
@@ -152,7 +194,7 @@ nodes {
         node {
           id
           title
-          date(formatString: "DD MMMM, YYYY", locale: "fr")
+          date(formatString: "DD MMMM, YYYY", locale: "en")
           excerpt
           slug
           language {
@@ -165,8 +207,8 @@ nodes {
               localFile {
                 childImageSharp {
                   gatsbyImageData(
-                    width: 360,
-                    height: 200,
+                    width: 1920,
+                    height: 800,
                     placeholder: DOMINANT_COLOR
                   )
                 }
@@ -189,7 +231,7 @@ nodes {
     }
   }
  }
-}
+}    
 `
 
 export default Home
