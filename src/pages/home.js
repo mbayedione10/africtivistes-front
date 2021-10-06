@@ -231,6 +231,30 @@ slider: allWpPost(
     }
   }
  }
+ contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
+  nodes {
+    title
+    content
+    slug
+    link
+    featuredImage {
+      node {
+        altText
+        localFile {
+          childImageSharp {
+            gatsbyImageData(
+              width: 555,
+              placeholder: TRACED_SVG
+            )
+          }
+        }
+      }
+    }
+    translations {
+      link
+    }
+  }
+}
 }    
 `
 

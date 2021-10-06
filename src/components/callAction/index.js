@@ -1,7 +1,7 @@
 import React from 'react'
 import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 
-const CallAction = () => (
+const CallAction = ({contacts}) => (
   <section id="call-to-action" className="pt-20 pb-50 gray-bg">
     <div className="container">
       <div className="row align-items-center justify-content-center">
@@ -12,8 +12,9 @@ const CallAction = () => (
         </div>
         <div className="col-xl-3 col-lg-3 col-md-4 col-sm-5">
           <div className="call-action-btn pt-30 text-center">
-            <a href="/" className="main-btn"><FormattedMessage id="contact"/></a>
-          </div>
+          {contacts.map(contact=>(
+           <a  className="main-btn" data-animation="fadeInUp" data-delay="2s" key={contact.id} data-filter={`.${contact.slug}`} href={contact.link}><FormattedMessage id ="contactUs"/></a>))}
+           </div>
         </div>
       </div>
     </div>

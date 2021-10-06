@@ -1,14 +1,14 @@
 import React from 'react'
 import SingleSliderBgcover from '../single-slider-bgcover'
 
-const SingleSlider = ({posts}) => {
+const SingleSlider = ({posts, contacts}) => {
     return (
 
         <section id="slider-part" className="slider-active">
 
         {posts.map(post => {
             return(
-                <SingleSliderBgcover post = {post} key={post.id} />
+                <SingleSliderBgcover post = {post} key={post.id} contacts={contacts}/>
                 )
         })} 
     </section>

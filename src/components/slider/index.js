@@ -4,12 +4,12 @@ import {ImportScript} from '../../services'
 import SingleSlider from './single-slider'
 
 
-const Slider = ({posts}) => {
+const Slider = ({posts, contacts}) => {
   
   ImportScript("/js/load/slider.js")
 
   return (
-        <SingleSlider posts={posts}/>
+        <SingleSlider posts={posts} contacts={contacts}/>
     )
 }
 

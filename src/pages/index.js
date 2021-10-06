@@ -19,7 +19,7 @@ import ProjectsPage from '../components/projects/page'
 const IndexPage = ({data, intl}) => (
   <Layout>
       <Seo title="À propos de nous" />
-    <Slider posts={data.slider.edges}/>
+    <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>
     <Features projects={data.programmeencours.nodes}/>
     <About/>
     <About2/>
@@ -49,7 +49,7 @@ const IndexPage = ({data, intl}) => (
     <Projects posts={data.latestnews.edges}  categorys={data.allWpCategory.edges}/>
 
     <Partner/>
-    <CallAction/>
+    <CallAction contacts={data.contact.nodes}/>
 
   </Layout>
 )
@@ -281,7 +281,30 @@ slider: allWpPost(
       }
     }
    }
+   contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
+    nodes {
+      title
+      content
+      slug
+      link
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 555,
+                placeholder: TRACED_SVG
+              )
+            }
+          }
+        }
+      }
+      translations {
+        link
+      }
+    }
+  }
 }
-
 `
 export default IndexPage

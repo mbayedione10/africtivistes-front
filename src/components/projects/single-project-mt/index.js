@@ -8,19 +8,19 @@ const SingleProjectMt = ({post}) => {
 
     return (
         
-        <div className="col-lg-4 col-md-6">
+        <div className="col-lg-4 col-md-6" >
 
-        <div className="singel-project mt-50 text-center">
+        <div className="singel-project mt-50 text-center" >
             <div className="image" >
             <GatsbyImage image={image} alt={title} />
             </div>
-            <div className="content">
-                <ul className="mb-25">
+            <div className="content"  style={{height: '100px'} , {width: '300px'}} >
+                <ul className="mb-15" >
                     <li><a className="project-popup" href="/images/project/pj-1.jpg" aria-label="button" ><i className="flaticon-full-screen"></i></a></li>
-                    <li><a href="project-details.html" aria-label="button"><i className="flaticon-link"></i></a></li>
+                    <li className="details"><a href="project-details.html" aria-label="button"><i className="flaticon-right-arrow"></i></a></li>
                 </ul>
-                <a href="/" ><h5>{title.substring(0, 40)}...</h5></a>
-                <span>{date}</span>
+                <span><a href={link} style={{backgroundColor:`#FEFEFE`}}><h6>{title.substring(0, 70)}...<br/>
+                <br/>{date}</h6></a></span><br/>
             </div>
         </div>
         </div>
