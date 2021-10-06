@@ -1,6 +1,10 @@
 import React from 'react'
+import { injectIntl } from "gatsby-plugin-react-intl"
+import {FormattedMessage, formatMessage} from "gatsby-plugin-react-intl"
 
-const Contact = () => (
+
+const Contact = ({intl}) => {
+  return(
   <section id="contact-page" className="pt-80 pb-130">
     <div className="container">
       <div className="row justify-content-center">
@@ -10,38 +14,38 @@ const Contact = () => (
               <div className="row">
                 <div className="col-md-6">
                   <div className="single-form form-group">
-                    <input name="name" type="text" placeholder="Name" data-error="Name is required." required="required"/>
+                    <input name="name"  type="text" placeholder= {intl.formatMessage({id:"name"})} data-error="Name is required." required="required"/>
                       <div className="help-block with-errors"></div>
                                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="email" type="email" placeholder="Email" data-error="Valid email is required." required="required"/>
+                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"email"})} data-error="Valid email is required." required="required"/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                       <div className="single-form form-group">
-                        <input name="subject" type="text" placeholder="Subject" data-error="Subject is required." required="required"/>
+                        <input name="subject" type="text" placeholder= {intl.formatMessage({id:"subject"})} data-error="Subject is required." required="required"/>
                           <div className="help-block with-errors"></div>
                                     </div>
                       </div>
                       <div className="col-md-6">
                         <div className="single-form form-group">
-                          <input name="phone" type="text" placeholder="Phone" data-error="Phone is required." required="required"/>
+                          <input name="phone" type="text" placeholder= {intl.formatMessage({id:"phone"})} data-error="Phone is required." required="required"/>
                             <div className="help-block with-errors"></div>
                                     </div>
                         </div>
                         <div className="col-md-12">
                           <div className="single-form form-group">
-                            <textarea name="message" placeholder="Message" data-error="Please,leave us a message." required="required"></textarea>
+                            <textarea name="message" placeholder= {intl.formatMessage({id:"message"})} data-error="Please,leave us a message." required="required"></textarea>
                             <div className="help-block with-errors"></div>
                           </div>
                         </div>
                         <p className="form-message"></p>
                         <div className="col-md-12">
                           <div className="single-form">
-                            <button type="submit" className="main-btn">Submit</button>
+                            <button type="submit" className="main-btn"><FormattedMessage id="submit"/></button>
                           </div>
                         </div>
                       </div>
@@ -57,7 +61,7 @@ const Contact = () => (
                             <i className="flaticon-placeholder"></i>
                           </div>
                           <div className="content pl-15">
-                            <p>155 Mark Street, Dixon Avenue New York, NY-45845</p>
+                            <p>BP 19968 Dakar , Cite Sofraco , VDN 3 prolongee</p>
                           </div>
                         </div>
                       </li>
@@ -67,8 +71,7 @@ const Contact = () => (
                             <i className="flaticon-phone-call"></i>
                           </div>
                           <div className="content pl-15">
-                            <p>+1 (254) 587-2548</p>
-                            <p>+1(548) 215-3658</p>
+                            <p>(+221) 33 837 51 24</p>
                           </div>
                         </div>
                       </li>
@@ -78,17 +81,15 @@ const Contact = () => (
                             <i className="flaticon-envelope"></i>
                           </div>
                           <div className="content pl-15">
-                            <p>info@website.com</p>
-                            <p>query@website.com</p>
+                            <p>info@africtivistes.org</p>
                           </div>
                         </div>
                       </li>
                     </ul>
                     <ul className="social mt-25">
-                      <li><a href="#"><i className="fa fa-facebook-f"></i></a></li>
-                      <li><a href="#"><i className="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i className="fa fa-google-plus"></i></a></li>
-                      <li><a href="#"><i className="fa fa-linkedin"></i></a></li>
+                      <li><a href="https://web.facebook.com/africtivistes/"><i className="fa fa-facebook-f"></i></a></li>
+                      <li><a href="https://twitter.com/AFRICTIVISTES"><i className="fa fa-twitter"></i></a></li>
+                      <li><a href="https://sn.linkedin.com/in/africtivistes"><i className="fa fa-linkedin"></i></a></li>
                     </ul>
                   </div>
                 </div>
@@ -96,5 +97,6 @@ const Contact = () => (
         </div>
     </section>
 )
+  }
 
-export default Contact
+export default injectIntl(Contact)

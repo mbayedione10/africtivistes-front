@@ -38,6 +38,11 @@
   "projetEnCours":"Programs in progress...",
   "callAction":"Tomorrow's Africa by us, for us !",
   "partner":"Our partners",
-  "ouaga2018":"Second Africtivist Summit, return on Ouaga 2018"
-
+  "ouaga2018":"Second Africtivist Summit, return on Ouaga 2018",
+  "email":"E-mail",
+  "name":"Name",
+  "subject":"Subject",
+  "phone":"Phone",
+  "message":"Message",
+  "submit":"Submit"
 }

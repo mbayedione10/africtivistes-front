@@ -38,5 +38,15 @@
   "projetEnCours":"Programmes en cours...",
   "callAction":"L'Afrique de demain, par nous pour nous !",
   "partner":"Nos partenaires",
-  "ouaga2018":"Deuxième Sommet des Africtivistes, retour sur Ouaga 2018"
+  "ouaga2018":"Deuxième Sommet des Africtivistes, retour sur Ouaga 2018",
+  "email":"E-mail",
+  "name":"Nom",
+  "subject":"Sujet",
+  "phone":"Téléphonne",
+  "message":"Message",
+  "submit":"Soumettre"
+
+
+
+
 }
