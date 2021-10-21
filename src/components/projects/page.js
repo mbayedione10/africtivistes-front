@@ -40,13 +40,12 @@ const ProjectsPage = ({programmes, projects}) => {
           <div key={project.id} className={`col-lg-4 col-md-6 ${project.programmeTypes.nodes.map(type => type.slug).join(' ')}`}>
             <div className="single-testimonial mt-30">
               <div className="project-image">
-                <GatsbyImage image={getImage(project.featuredImage.node.localFile)} alt={project.featuredImage.node.altText} />
+                <GatsbyImage image = {project.featuredImage && getImage(project.featuredImage.node.localFile)} alt={project.title} />
               </div>
               <div className="testimonial-author">
                 <div className="author-name">
                 <span>
-                  <Link to={project.link}><h6>{project.title}</h6></Link><br/>
-                  {project.date}</span>
+                  <Link to={project.link}><h6>{project.title}</h6></Link><br/></span>
                   <br/>
                 </div>
               </div>
