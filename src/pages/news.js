@@ -35,11 +35,7 @@ export const query = graphql`
         featuredImage {
           node {
             altText
-<<<<<<< HEAD
             big: localFile {
-=======
-            localFile {
->>>>>>> 72df9ae... ✨ feat(afficher les articles) : News
               childImageSharp {
                 gatsbyImageData(
                   width: 360,
@@ -47,7 +43,6 @@ export const query = graphql`
                   placeholder: DOMINANT_COLOR
                 )
               }
-<<<<<<< HEAD
             }
             small: localFile {
               childImageSharp {
@@ -66,11 +61,6 @@ export const query = graphql`
             count
           }
         }
-=======
-            }
-          }
-        }
->>>>>>> 72df9ae... ✨ feat(afficher les articles) : News
       }
     }
   }
