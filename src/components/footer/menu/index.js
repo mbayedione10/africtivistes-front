@@ -1,18 +1,23 @@
 import React from 'react'
+import { Link } from "gatsby-plugin-react-intl"
+import Francais from './francais'
+import English from './English'
 
 const Menu = () => (
   <div className="footer-link pt-45 pl-50">
     <div className="title mb-30">
-      <h4>Usefull Links</h4>
+      <h4>Menu</h4>
     </div>
-    <ul>
-      <li><a href="/"><i className="fa fa-angle-right" aria-label="link" /> About Us</a></li>
-      <li><a href="/"><i className="fa fa-angle-right" aria-label="link" /> Company News</a></li>
-      <li><a href="/"><i className="fa fa-angle-right" aria-label="link" /> Our Blog</a></li>
-      <li><a href="/"><i className="fa fa-angle-right" aria-label="link" /> About Career</a></li>
-      <li><a href="/"><i className="fa fa-angle-right" aria-label="link" /> Clients</a></li>
-    </ul>
-  </div>
+          <div className="col-lg-11 order-last order-lg-first">
+            <nav className="navbar navbar-expand-lg">
+
+              <div className="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                  <Francais/>
+                  <English/>
+              </div>
+            </nav>
+          </div>
+        </div>
 )
 
 export default Menu
