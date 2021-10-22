@@ -44,7 +44,11 @@
   "subject":"Sujet",
   "phone":"Téléphonne",
   "message":"Message",
-  "submit":"Soumettre"
+  "submit":"Soumettre",
+  "n_africtivistes":"AfricTivistes",
+  "n_pays":"Pays",
+  "n_date_creation":"Date de création officielle",
+  "n_fin_programme_quadriennal":"Fin du programme quadriennal"
 
 
 

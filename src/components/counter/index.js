@@ -24,26 +24,26 @@ const Counter = () => {
         <div className="row align-items-center">
           <div className="col-lg-3 col-sm-6">
             <div className="singel-counter text-center mt-40">
-              <span className="counter">1750</span>
-              <p>Project Completed</p>
+              <span className="counter">200</span>
+              <p><FormattedMessage id="n_africtivistes"/> </p>
             </div>
           </div>
           <div className="col-lg-3 col-sm-6">
             <div className="singel-counter text-center mt-40">
-              <span className="counter">750</span>
-              <p>Happy Clients</p>
+              <span className="counter">40</span>
+              <p><FormattedMessage id="n_pays"/></p>
             </div>
           </div>
           <div className="col-lg-3 col-sm-6">
             <div className="singel-counter text-center mt-40">
-              <span className="counter">17</span>
-              <p>Awards Won</p>
+              <span className="counter">2015</span>
+              <p><FormattedMessage id="n_date_creation"/></p>
             </div>
           </div>
           <div className="col-lg-3 col-sm-6">
             <div className="singel-counter text-center mt-40">
-              <span><span className="counter">7</span>M+</span>
-              <p>Social Follower</p>
+              <span>2022</span>
+              <p><FormattedMessage id="n_date_creation"/></p>
             </div>
           </div>
         </div>
