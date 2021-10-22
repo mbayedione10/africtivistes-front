@@ -46,7 +46,7 @@ const IndexPage = ({data, intl}) => (
       </div>
     </section> */}
     <Testimonial/>
-    <Projects posts={data.latestnews.edges}  categorys={data.allWpCategory.edges}/>
+    <Projects posts={data.latestnews.edges}/>
 
     <Partner/>
     <CallAction contacts={data.contact.nodes}/>

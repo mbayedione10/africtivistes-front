@@ -1,7 +1,7 @@
 import React from 'react'
 
 const About = () => (
-  <section id="about-part" className="about-part bg_cover pt-175" style={{backgroundImage:`url(/images/bg-1.jpg`}}>
+  <section id="about-part" className="about-part bg_cover pt-175" style={{backgroundImage:`url(/images/pdg.png`}}>
     <div className="container">
       <div className="row">
         <div className="col-xl-6 offset-xl-6 col-lg-7 offset-lg-5">
