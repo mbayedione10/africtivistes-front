@@ -39,7 +39,10 @@ export const pageQuery = graphql`
       }
     }
   }
-  allWpProgrammeType {
+  allWpProgrammeType(
+    filter: {language: {code: {eq: EN}}}
+
+  ) {
     nodes {
       id
       name
