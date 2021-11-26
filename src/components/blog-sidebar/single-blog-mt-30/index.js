@@ -1,14 +1,14 @@
 import React from 'react'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import {injectIntl } from "gatsby-plugin-react-intl"
+import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 
 const SingleBlogMt30 = ({post}) => {
-    const{title, date, featuredImage}=post.node
+    const{title, date,link, featuredImage}=post.node
     const image = featuredImage && getImage(featuredImage.node.small)
     return (
         <ul>
             <li>
-                <a href="blog-details-right-sidebar.html">
+                <a href={link}>
                     <span class="single-post mt-30">
                         <span class="image">
                         <GatsbyImage image={image} alt={title} />

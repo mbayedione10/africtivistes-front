@@ -13,7 +13,7 @@ const ContactPage = ({data}) => {
       <Seo title="À propos de nous" />
       <PageBanner title={title} />
       <Contact />
-      <Map />
+      {/* <Map /> */}
     </Layout>)
 }
 export default ContactPage

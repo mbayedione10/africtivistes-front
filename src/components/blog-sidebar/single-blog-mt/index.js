@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 
 const SingleBogMt = ({post}) => {
-    const{title, date, link,excerpt, featuredImage}=post.node
+    const{title, date, link,excerpt,name, featuredImage}=post.node
     const image = featuredImage && getImage(featuredImage.node.big)
 
     return (
@@ -15,7 +15,7 @@ const SingleBogMt = ({post}) => {
                 <div class="date">
                     <ul>
                         <li><a href="#"><i class="flaticon-calendar"></i>{date}</a></li>
-                        <li><a href="#"><i class="flaticon-folder"></i> Finance</a></li>
+                        <li><a href="#"><i class="flaticon-folder"></i>{name}</a></li>
                     </ul>
                 </div>
                 <div class="content">

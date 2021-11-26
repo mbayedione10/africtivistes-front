@@ -16,8 +16,8 @@ const SingleProjectMt = ({post}) => {
             </div>
             <div className="content"  style={{height: '100px'} , {width: '300px'}} >
                 <ul className="mb-15" >
-                    <li><a className="project-popup" href="/images/project/pj-1.jpg" aria-label="button" ><i className="flaticon-full-screen"></i></a></li>
-                    <li className="details"><a href="project-details.html" aria-label="button"><i className="flaticon-right-arrow"></i></a></li>
+                    {/* <li><a className="project-popup" href={link}  aria-label="button" ><i className="flaticon-full-screen"></i></a></li> */}
+                    <li className="details"><a href={link}  aria-label="button"><i className="flaticon-right-arrow"></i></a></li>
                 </ul>
                 <span><a href={link} style={{backgroundColor:`#FEFEFE`}}><h6>{title.substring(0, 70)}...<br/>
                 <br/>{date}</h6></a></span><br/>
