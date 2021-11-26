@@ -296,7 +296,7 @@ slider: allWpPost(
             childImageSharp {
               gatsbyImageData(
                 width: 555,
-                placeholder: TRACED_SVG
+                placeholder: DOMINANT_COLOR
               )
             }
           }

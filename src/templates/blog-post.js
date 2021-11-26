@@ -74,7 +74,7 @@ export const query = graphql`
               gatsbyImageData(
                 width: 750,
                 height: 360,
-                placeholder: TRACED_SVG
+                placeholder: DOMINANT_COLOR
               )
             }
           }
