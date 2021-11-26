@@ -20,14 +20,15 @@ const Partner = () => {
         </div>
       </div>
         <div className="row partner-active">
+
             <div className="col-lg-2">
                 <div className="single-partner">
-                    <img src="/images/partner-logo/AFDB.png" alt="Partner"/>
+                    <img src="/images/partner-logo/wacsi.png" alt="Partner"/>
                 </div>
             </div> 
             <div className="col-lg-2">
                 <div className="single-partner">
-                    <img src="/images/partner-logo/wacsi.png" alt="Partner"/>
+                    <img src="/images/partner-logo/AFDB.png" alt="Partner"/>
                 </div>
             </div> 
             <div className="col-lg-2">
