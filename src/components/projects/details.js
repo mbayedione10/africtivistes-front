@@ -17,7 +17,7 @@ const ProjectDetail = ({project}) => {
             <div className="project-details-content pt-45">
               <h4 className="mb-15">{title}</h4>
               {content && <div dangerouslySetInnerHTML={{ __html: content }} />}
-                  <ul className="mt-10">
+                  {/* <ul className="mt-10">
                     <li><b>Client</b> <span>Jhon Deo</span></li>
                     <li><b>Date</b> <span>25 July, 2018</span></li>
                     <li><b>Location</b> <span>Newyork, USA</span></li>
@@ -32,7 +32,7 @@ const ProjectDetail = ({project}) => {
                         <li><a href="# " aria-label="link"><i className="flaticon-instagram-social-network-logo-of-photo-camera"></i></a></li>
                       </ul>
                     </li>
-                  </ul>
+                  </ul> */}
                     </div>
                 </div>
             </div>
