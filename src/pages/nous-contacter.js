@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PageBanner from '../components/pageBanner'
 import Contact from '../components/contact'
-import Map from '../components/map'
 
 const ContactPage = ({data}) => {
   const { title, translations} = data.allWpPage.nodes[0]
@@ -13,7 +12,6 @@ const ContactPage = ({data}) => {
       <Seo title="À propos de nous" />
       <PageBanner title={title} />
       <Contact />
-      {/* <Map /> */}
     </Layout>)
 }
 export default ContactPage

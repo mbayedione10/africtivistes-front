@@ -1,11 +1,10 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import {graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Slider from "../components/slider"
 import Partner from '../components/partner'
-import Services from "../components/services"
 import About from "../components/about"
 import About2 from '../components/about/about2'
 import Projects from "../components/projects"
@@ -16,7 +15,7 @@ import Features from '../components/features'
 import Testimonial from '../components/testimonial'
 import ProjectsPage from '../components/projects/page'
 
-const IndexPage = ({data, intl}) => (
+const IndexPage = ({data}) => (
   <Layout>
       <Seo title="À propos de nous" />
     <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>

@@ -1,6 +1,6 @@
 import React from 'react'
 import SingleNews from './single-news'
-import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
+import {FormattedMessage} from "gatsby-plugin-react-intl"
 
 const LatestNews = ({posts}) => {
 return(

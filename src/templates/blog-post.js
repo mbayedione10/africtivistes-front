@@ -2,21 +2,19 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { node } from "prop-types"
-import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 import Seo from "../components/seo"
 import PageBanner from '../components/pageBanner'
 import Search from '../components/blog-sidebar/search'   
 import RecentPost from '../components/blog-sidebar/recent-post'
 
-export default function BlogPost({ data,intl,posts }) {
+export default function BlogPost({ data}) {
   const { title,date, content, featuredImage} = data.allWpPost.nodes[0]
   const image = featuredImage && getImage(featuredImage.node.localFile)
     return (
         <Layout>
         <Seo title="À propos de nous" />
         <PageBanner title="Actualités" />
-    <section id="blog-sidebar" class="pt-80 pb-130">
+    <section id="blog-sidebar"  class="pt-80 pb-130">
         <div class="container">
             <div class="row">
                 <div className="col-lg-8">
