@@ -1,6 +1,6 @@
 import React from 'react'
 import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 
 const SingleSliderBgcover = ({post,contacts}) => {
