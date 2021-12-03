@@ -44,7 +44,7 @@ const IndexPage = ({data}) => (
         </IntlContextConsumer>
       </div>
     </section> */}
-    <Testimonial/>
+    {/* <Testimonial/> */}
     <Projects posts={data.latestnews.edges}/>
 
     <Partner/>
