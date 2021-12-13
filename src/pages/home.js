@@ -58,39 +58,39 @@ query {
       content
     }
   }
-programmeencours: allWpProgramme(
-  filter: {language: {code: {eq: EN}}}
-  limit: 3
-  sort: {fields: date, order: DESC}
-  ) {
-  nodes {
-    id
-    title
-    link
-    date(formatString: "DD MMMM, YYYY", locale: "en")
-    programmeTypes {
-      nodes {
-        slug
-        name
+  programmeencours: allWpProgramme(
+    filter: {language: {code: {eq: EN}}}
+    limit: 3
+    sort: {fields: date, order: DESC}
+    ) {
+    nodes {
+      id
+      title
+      link
+      date(formatString: "DD MMMM, YYYY", locale: "en")
+      programmeTypes {
+        nodes {
+          slug
+          name
+        }
       }
-    }
-    featuredImage {
-      node {
-        altText
-        localFile {
-          childImageSharp {
-            gatsbyImageData(
-              width: 360, 
-              height: 250, 
-              placeholder: DOMINANT_COLOR)
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 360, 
+                height: 250, 
+                placeholder: DOMINANT_COLOR)
+            }
           }
         }
       }
+      slug
+      content
     }
-    slug
-    content
   }
-}
 
 latestnews: allWpPost(
   limit: 15
