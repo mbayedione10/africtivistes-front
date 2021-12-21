@@ -23,8 +23,8 @@ const Counter = () => {
     <div className="counter-part-2 pt-80  bg_cover d-flex align-items-center" style={{backgroundImage:`url(/images/elephants.png)`}}>
       <div className="container" >
 
-        <div className="row align-items-center">
-        <div className="col-lg-3 col-sm-8">
+        <div className="row align-items">
+        <div className="col-lg-3 col-sm-6">
             <div className="singel-counter text-center mt-40">
               <span className="counter">22</span>
               <p><FormattedMessage id="n_pays"/></p>
@@ -48,12 +48,12 @@ const Counter = () => {
               <p><FormattedMessage id="n_part_panel"/></p>
             </div>
           </div>
-          <div className="col-lg-3 col-sm-6">
+          {/* <div className="col-lg-3 col-sm-6">
             <div className="singel-counter text-center mt-40">
               <span>30</span>
               <p><FormattedMessage id="n_expert"/></p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
