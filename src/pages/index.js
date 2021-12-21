@@ -21,12 +21,12 @@ const IndexPage = ({data}) => (
     <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>
     <Features projects={data.programmeencours.nodes}/>
     <About/>
+    <Counter/>
     <About2/>
+    <LatestNews posts={data.allWpPost.edges}/>
     {/* <Services posts={data.plan.edges}/> */}
     <ProjectsPage programmes={data.allWpProgrammeType.nodes} projects={data.allWpProgramme.nodes} />
-    <LatestNews posts={data.allWpPost.edges}/>
-    <Counter/>
-    {/* <section id="blog-list" className="pt-80 pb-130">
+     {/* <section id="blog-list" className="pt-80 pb-130">
       <div className="container">
         <h1><FormattedMessage id="actualites" /></h1>
         <IntlContextConsumer>
