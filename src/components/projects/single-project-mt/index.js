@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 
 const SingleProjectMt = ({post}) => {
-    const{title, date, link,excerpt, featuredImage}=post.node
+    const{title, date, link, featuredImage}=post.node
     const image = featuredImage && getImage(featuredImage.node.localFile)
 
     return (
