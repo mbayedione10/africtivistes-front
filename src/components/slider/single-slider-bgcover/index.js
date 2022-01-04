@@ -5,10 +5,12 @@ import { Link } from "gatsby"
 
 const SingleSliderBgcover = ({post,contacts}) => {
     const{title, date, link,excerpt, featuredImage}=post.node
-    const image = featuredImage && getImage(featuredImage.node.localFile)
+    const image = featuredImage && featuredImage.node.localFile.childImageSharp.gatsbyImageData.images.fallback.src
 
     return (
-    <div className="single-slider bg_cover d-flex align-items-center" style={{backgroundImage:`url(/images/slider/ss.jpeg)`}}>
+    <div className="single-slider bg_cover d-flex align-items-center" 
+    style={{backgroundImage:`url(${image})`}}>
+    
         <div className="container">
             <div className="row">
                 <div className="col-lg-6 col-md-10">
