@@ -6,7 +6,7 @@ import { graphql, StaticQuery } from 'gatsby'
 import Container from './containerProjects'
 
 
-const Projects = ({posts}) => {
+const Projects = ({posts, pages}) => {
 
   ImportScript("/js/load/project.js");
 
@@ -56,7 +56,9 @@ const Projects = ({posts}) => {
       <div className="row">
           <div className="col-lg-12">
               <div className="project-more text-center mt-50">
-                  <a className="main-btn" href="# " ><FormattedMessage id="more"/></a>
+              {pages.map(page=>(
+                  <a className="main-btn" key={page.id} href={page.link} ><FormattedMessage id="more"/></a>
+                  ))}
               </div>
           </div>
       </div>

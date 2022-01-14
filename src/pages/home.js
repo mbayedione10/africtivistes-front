@@ -9,12 +9,13 @@ const Home = ({data}) => (
 
 export const pageQuery = graphql`
 query {
-  allWpPage(filter: {slug: {eq: "/"}}) {
+  allWpPage(filter: {slug: {eq: "news"}, language: {code: {eq: EN}}}) {
     nodes {
       title
       translations {
         link
       }
+      link
     }
   }
   allWpProgrammeType (
@@ -257,7 +258,8 @@ slider: allWpPost(
     }
   }
 }
-}    
+
+}   
 `
 
 export default Home

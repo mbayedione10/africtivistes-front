@@ -12,7 +12,6 @@ import LatestNews from '../components/latestNews'
 import CallAction from '../components/callAction'
 import Counter from '../components/counter'
 import Features from '../components/features'
-import Testimonial from '../components/testimonial'
 import ProjectsPage from '../components/projects/page'
 
 const IndexPage = ({data}) => (
@@ -45,7 +44,7 @@ const IndexPage = ({data}) => (
       </div>
     </section> */}
     {/* <Testimonial/> */}
-    <Projects posts={data.latestnews.edges}/>
+    <Projects posts={data.latestnews.edges} pages={data.allWpPage.nodes} />
 
     <Partner/>
     <CallAction contacts={data.contact.nodes}/>
@@ -304,6 +303,15 @@ slider: allWpPost(
       translations {
         link
       }
+    }
+  }
+  allWpPage(filter: {slug: {eq: "actualites"}, language: {code: {eq: FR}}}) {
+    nodes {
+      title
+      translations {
+        link
+      }
+      link
     }
   }
 }
