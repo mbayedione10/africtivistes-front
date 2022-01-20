@@ -19,15 +19,15 @@ const Copyright = () => {
               {({ language: currentLocale }) => {
                 if(currentLocale === 'en') {
                   return (<ul>
-                  <li><a href="/" aria-label="link"><FormattedMessage id="terms" /></a></li>
-                  <li><a href="/" aria-label="link"><FormattedMessage id="privacy" /></a></li>
-                  <li><a href="/" aria-label="link"><FormattedMessage id="contact" /></a></li>
+                  <li><a href="/en/terms-condition" aria-label="link"><FormattedMessage id="terms" /></a></li>
+                  <li><a href="/en/privacy-policy" aria-label="link"><FormattedMessage id="privacy" /></a></li>
+                  <li><a href="/en/contact-us" aria-label="link"><FormattedMessage id="contact" /></a></li>
                 </ul>)}
                 if(currentLocale === 'fr') {
                   return (<ul>
-                  <li><a href="/" aria-label="link"><FormattedMessage id="terms" /></a></li>
-                  <li><a href="/" aria-label="link"><FormattedMessage id="privacy" /></a></li>
-                  <li><a href="/" aria-label="link"><FormattedMessage id="contact" /></a></li>
+                  <li><a href="/termes-conditions" aria-label="link"><FormattedMessage id="terms" /></a></li>
+                  <li><a href="/politique-confidentialite" aria-label="link"><FormattedMessage id="privacy" /></a></li>
+                  <li><a href="/nous-contacter" aria-label="link"><FormattedMessage id="contact" /></a></li>
                 </ul>)}
               }}
             </IntlContextConsumer>
