@@ -3,7 +3,7 @@ import SingleValues from './single-values'
 import {FormattedMessage } from "gatsby-plugin-react-intl"
 
 const Values = ({posts}) => (
-  <section id="company-history" class="pt-80 pb-80">
+  <section id="company-history">
         <div class="container">
             <div class="our-history pt-150">
                 <div class="row justify-content-center">

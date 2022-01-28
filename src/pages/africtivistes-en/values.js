@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from "gatsby"
 import ValeursPage from '../africtivistes/valeurs'
 import { IntlContextConsumer } from "gatsby-plugin-react-intl"
+import { FormattedMessage } from 'gatsby-plugin-react-intl'
 
 const Values = ({ data }) => (
   <IntlContextConsumer>

@@ -29,7 +29,7 @@ const Team = ({teams}) => (
             <div className="author-content">
               <a href="team-details.html"><h6>{team.title}</h6></a>
               <span dangerouslySetInnerHTML={{ __html: team.excerpt }}/>
-              <p className="mt-20">Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum.</p>
+              {/* <p className="mt-20">Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum.</p> */}
               <ul className="mt-15">
                 {facebook && <li><a href={facebook} aria-label="button"><i className="flaticon-facebook"></i></a></li>}
                 {twitter && <li><a href={twitter} aria-label="button"><i className="flaticon-twitter-logo-silhouette"></i></a></li>}
