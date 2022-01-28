@@ -6,7 +6,7 @@ import PageBanner from '../components/pageBanner'
 import Copyright from "../components/footer/copyright"
 
 const PolitiquePage = ({data}) => {
-  const link = data.allWpPage.nodes[0] ? data.allWpPage.nodes[0][0].link : ''
+  const link = data.allWpPage.nodes[0] ? data.allWpPage.nodes[0].link : ''
   return (<Layout translation={link}>
       <Seo title="À propos de nous" />
       <PageBanner title={data.allWpPage.nodes.title} />
