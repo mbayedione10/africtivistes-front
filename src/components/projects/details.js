@@ -8,12 +8,13 @@ const ProjectDetail = ({project}) => {
   return (<section id="project-details" className="pt-80 pb-130">
     <div className="container">
       <div className="row">
-        <div className="col-xl-6 col-lg-6">
+        {/* <div className="col-xl-6 col-lg-6">
           <div className="project-details-image pt-50">
             <GatsbyImage image={getImage(localFile)} alt={altText} />
           </div>
-          </div>
-          <div className="col-xl-5 offset-xl-1 col-lg-6">
+          </div> */}
+          {/* <div className="col-xl-5 offset-xl-1 col-lg-6"> */}
+          <div className="col-xl offset-xl col-lg">
             <div className="project-details-content pt-45">
               <h4 className="mb-15">{title}</h4>
               {content && <div dangerouslySetInnerHTML={{ __html: content }} />}
