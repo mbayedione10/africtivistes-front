@@ -2,7 +2,7 @@ import React from 'react'
 import SingleBogMt from '../single-blog-mt'
 import Pagination from '../pagination'
 
-const SingleBlog = ({posts}) => {
+const SingleBlog = ({ posts, numPages, currentPage}) => {
     return (
         <>
             <div class="row justify-content-center">
@@ -15,7 +15,7 @@ const SingleBlog = ({posts}) => {
                 })} 
             </div> 
             <div class="row">
-                <Pagination/>
+                <Pagination numPages={numPages} currentPage={currentPage} />
             </div> 
         </>
                 

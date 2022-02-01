@@ -6,13 +6,13 @@ import Tags from './tags'
 import Subscribe from './subscribe'
 import SingleBlog from './single-blog'
 
-const BlogSidebar = ({posts}) => {
+const BlogSidebar = ({ posts, numPages, currentPage}) => {
     return (
        <section id="blog-sidebar" className="pt-80 pb-130">
         <div className="container">
             <div className="row">
                 <div className="col-lg-8">
-                    <SingleBlog posts={posts} />
+                  <SingleBlog posts={posts} numPages={numPages} currentPage={currentPage} />
                 </div>
                 <div className="col-lg-4">
                 <div class="blog-sidebar ">

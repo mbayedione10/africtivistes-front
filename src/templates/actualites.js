@@ -7,20 +7,22 @@ import PageBanner from '../components/pageBanner'
 import BlogSidebar from '../components/blog-sidebar'
 
 
-const ActualitesPage = ({data}) => {
+const ActualitesPage = ({ data, pageContext}) => {
   const { title, translations} = data.allWpPage.nodes[0]
+  const { numPages, currentPage } = pageContext
   const link = translations ? translations[0].link : ''
+
   return (<Layout translation={link}>
       <Seo title="À propos de nous" />
       <PageBanner title={title} />
-      <BlogSidebar posts={data.allWpPost.edges} />
+    <BlogSidebar posts={data.allWpPost.edges} numPages={numPages} currentPage={currentPage} />
        
     </Layout>)
 }
 export default ActualitesPage
 
 export const query = graphql`
-  query {
+  query($limit: Int!, $skip: Int!) {
     
   allWpPage(filter: {slug: {eq: "actualites"}}) {
     nodes {
@@ -31,7 +33,8 @@ export const query = graphql`
     }
   }
   allWpPost(
-    limit: 6
+    limit: $limit
+    skip: $skip
     sort: {fields: date, order: DESC}
     filter: {language: {code: {eq: FR}}}
   ) {
