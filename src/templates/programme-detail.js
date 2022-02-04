@@ -1,8 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { IntlContextConsumer, injectIntl } from "gatsby-plugin-react-intl"
-
-
+import { FormattedMessage } from 'gatsby-plugin-react-intl'
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PageBanner from '../components/pageBanner'
@@ -21,15 +20,16 @@ const ProgrammeDetail = ({ data, pageContext, intl }) =>{
           currentLocale === pageContext.lang && <Layout translation={translation}>
             <Seo lang={intl.locale} title={title} />
             {/* <PageBanner title={'Recent Projects'} /> */}
-            <section id="page-banner" className="bg_cover pt-200 pb-200"  style={{backgroundImage:`url(${image})`}} data-overlay="6">
+            <section id="page-banner" className="bg_cover pt-150 pb-150" style={{ backgroundImage: `url(${image})`}} data-overlay="6">
         <div className="container">
             <div className="row">
                 <div className="col-lg-12">
                     <div className="page-banner-content text-center">
-                      <h1 className="bg_cover pt-100 pb-100">{}</h1>
+                        <h2>{title}</h2>
                         <nav aria-label="breadcrumb">
                             <ol className="breadcrumb justify-content-center">
-                                <li className="breadcrumb-item"><a href="/" aria-label="button"></a></li>
+                                <li className="breadcrumb-item"><a href="/" aria-label="button"><FormattedMessage id="home" /></a></li>
+                                <li className="breadcrumb-item active" aria-current="page">{title}</li>
                             </ol>
                         </nav>
                     </div>
