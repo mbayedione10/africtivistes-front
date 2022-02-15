@@ -14,7 +14,7 @@ const Category = ({posts}) => {
                 <ul>
                     <StaticQuery query={graphql`
                         {
-                            allWpCategory(sort: {fields: count, order: DESC}, limit: 35) {
+                            allWpCategory(sort: {fields: count, order: DESC}) {
                                 edges {
                                   node {
                                     name

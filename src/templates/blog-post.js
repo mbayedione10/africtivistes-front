@@ -27,9 +27,9 @@ export default function BlogPost({ data}) {
                             <div className="date mt-10">
                                 <ul>
                                     <li><a href="#"><i className="flaticon-calendar"></i>{date}</a></li>
-                                    <li><a href="#"><i className="flaticon-heart"></i> 50 Likes</a></li>
-                                    <li><a href="#"><i className="flaticon-comment"></i> 25 Comments</a></li>
-                                    <li><a href="#"><i className="flaticon-folder"></i> Finance</a></li>
+                                    {/* <li><a href="#"><i className="flaticon-heart"></i> 50 Likes</a></li> */}
+                                    {/* <li><a href="#"><i className="flaticon-comment"></i> 25 Comments</a></li> */}
+                                    {/* <li><a href="#"><i className="flaticon-folder"></i> Finance</a></li> */}
                                 </ul>
                             </div>
                             <br></br>
