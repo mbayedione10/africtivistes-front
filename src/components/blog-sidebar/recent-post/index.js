@@ -2,7 +2,7 @@ import React from 'react'
 import SingleBlogMt30 from '../single-blog-mt-30'
 import {FormattedMessage } from "gatsby-plugin-react-intl"
 
-const RecentPost = ({posts}) => {
+const RecentPost = ({posts,numPages,currentPage}) => {
     return (
         <div class="recent-post mt-50 rounded">
             <div class="title">
@@ -10,7 +10,7 @@ const RecentPost = ({posts}) => {
             </div>                 
             {posts.map(post => {
                     return(
-                            <SingleBlogMt30 post = {post} key={post.id}/>
+                            <SingleBlogMt30 post = {post} key={post.id} numPages={numPages} currentPage={currentPage}/>
                     )
                 })}
         </div>
