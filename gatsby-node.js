@@ -62,7 +62,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `).then(res => res.data)
 
   const total = actualites.allWpPost.totalCount
-  const perPage = 6
+  const perPage = 8
   const numPages = Math.ceil(total / perPage)
 
   Array.from({ length: numPages }).forEach((_, i) => {
