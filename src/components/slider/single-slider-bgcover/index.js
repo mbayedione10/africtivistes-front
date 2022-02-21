@@ -1,10 +1,9 @@
 import React from 'react'
 import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
-import { getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 
 const SingleSliderBgcover = ({post,contacts}) => {
-    const{title, date, link,excerpt, featuredImage}=post.node
+    const{title, link,excerpt, featuredImage}=post.node
     const image = featuredImage && featuredImage.node.localFile.childImageSharp.gatsbyImageData.images.fallback.src
 
     return (

@@ -1,6 +1,4 @@
 import React from 'react'
-import {FormattedMessage } from "gatsby-plugin-react-intl"
-
 
 const About2 = () => (
   <>

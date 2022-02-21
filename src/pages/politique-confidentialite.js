@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PageBanner from '../components/pageBanner'
-import Copyright from "../components/footer/copyright"
 
 const PolitiquePage = ({data}) => {
   const link = data.allWpPage.nodes[0] ? data.allWpPage.nodes[0].link : ''

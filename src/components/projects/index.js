@@ -1,15 +1,10 @@
 import React from 'react'
 import { FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { ImportScript } from '../../services'
-import { graphql, StaticQuery } from 'gatsby'
 import Container from './containerProjects'
 
-
 const Projects = ({posts, pages}) => {
-
   ImportScript("/js/load/project.js");
-
   return (
   <section id="project-part" className="pt-120 pb-130">
     <div className="container">

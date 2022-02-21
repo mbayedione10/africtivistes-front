@@ -1,10 +1,8 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import {FormattedMessage } from "gatsby-plugin-react-intl"
-import { node } from 'prop-types'
 
-
-const Category = ({posts}) => {
+const Category = () => {
     return (
         <div class="col-lg-12 col-md-8">
             <div class="blog-catagory mt-50 rounded">

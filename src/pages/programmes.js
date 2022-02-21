@@ -1,12 +1,9 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { IntlContextConsumer, injectIntl } from "gatsby-plugin-react-intl"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { FormattedMessage } from 'gatsby-plugin-react-intl'
-
-import PageBanner from '../components/pageBanner'
 import ProjectsPage from '../components/projects/page'
 import Counter2 from '../components/counter/counter2'
 import CallAction2 from '../components/callAction/callactions2'

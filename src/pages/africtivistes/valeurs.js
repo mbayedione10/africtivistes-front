@@ -2,12 +2,10 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
-import PageBanner from "../../components/pageBanner"
 import Values from "../../components/values"
-import { FormattedMessage } from 'gatsby-plugin-react-intl'
 
 const ValeursPage = ({data}) => {
-  const { title, translations} = data.allWpPage.nodes[0]
+  const {translations} = data.allWpPage.nodes[0]
   const link = translations ? translations[0].link : ''
   return (<Layout translation={link}>
       <Seo title="À propos de nous" />

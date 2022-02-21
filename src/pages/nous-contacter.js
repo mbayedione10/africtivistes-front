@@ -2,7 +2,6 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import PageBanner from '../components/pageBanner'
 import Contact from '../components/contact'
 import { FormattedMessage } from 'gatsby-plugin-react-intl'
 

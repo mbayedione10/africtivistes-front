@@ -4,7 +4,6 @@ import { IntlContextConsumer, injectIntl } from "gatsby-plugin-react-intl"
 import { FormattedMessage } from 'gatsby-plugin-react-intl'
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import PageBanner from '../components/pageBanner'
 import ProjectDetail from '../components/projects/details'
 import ProjectPart from '../components/projects/part'
 import Testimonial2 from '../components/testimonial/testimonial2'

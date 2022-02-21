@@ -7,7 +7,7 @@ import Team from '../../components/team'
 import CallAction2 from '../../components/callAction/callactions2'
 
 const EquipePage = ({data}) => {
-const {post, title, translations} = data.allWpPage.nodes[0]
+const {title, translations} = data.allWpPage.nodes[0]
 const link = translations ? translations[0].link : ''
 return(<Layout translation={link}>
     <Seo title="L'équipe" />

@@ -5,7 +5,7 @@ import Seo from "../components/seo"
 import { FormattedMessage } from 'gatsby-plugin-react-intl'
 
 const DiscoursPage = ({data}) => {
-    const { title,date,content, featuredImage,translations,link} = data.allWpPage.nodes[0]
+    const { title,content,link} = data.allWpPage.nodes[0]
     // const link = translations ? translations[0].link : ''
 
   return (<Layout translation={link}>
@@ -40,8 +40,7 @@ const DiscoursPage = ({data}) => {
                 <div className="col-lg-6">
                     <div className="blog-details mt-50">
                         <div className="content">
-  
-                        <iframe width="800" height="800" src="https://www.youtube.com/embed/xzyRXi0sRSk?list=PLalgaepOVrI_wxO5BLGwkkknIpWvezZNj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        
+                        <iframe width="700" height="800" src="https://www.youtube.com/embed/xzyRXi0sRSk?list=PLalgaepOVrI_wxO5BLGwkkknIpWvezZNj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <a><FormattedMessage id="abidjan2021"/></a>
   
                     </div> 

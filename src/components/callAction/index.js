@@ -1,5 +1,5 @@
 import React from 'react'
-import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
+import {FormattedMessage } from "gatsby-plugin-react-intl"
 
 const CallAction = ({contacts}) => (
   <section id="call-to-action" className="pt-20 pb-50 gray-bg">
