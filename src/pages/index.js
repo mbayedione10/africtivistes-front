@@ -1,6 +1,5 @@
 import * as React from "react"
 import {graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Slider from "../components/slider"
@@ -19,8 +18,8 @@ const IndexPage = ({data}) => (
       <Seo title="À propos de nous" />
     <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>
     <Features projects={data.programmeencours.nodes}/>
-    <About/>
-    <Counter/>
+    <About posts={data.abidjan.nodes} actu={data.latestnews.edges}/>
+    <Counter posts={data.abidjan.nodes}/>
     <About2/>
     <LatestNews posts={data.allWpPost.edges}/>
     {/* <Services posts={data.plan.edges}/> */}
@@ -312,6 +311,16 @@ slider: allWpPost(
         link
       }
       link
+    }
+  }
+  abidjan: allWpPage(filter: {slug: {eq: "discours-de-cheikh-fall-abidjan2021"}, language: {code: {eq: FR}}}) {
+    nodes {
+      title
+      translations {
+        link
+      }
+      link
+      content
     }
   }
 }

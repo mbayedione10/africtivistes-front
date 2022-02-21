@@ -258,6 +258,16 @@ slider: allWpPost(
     }
   }
 }
+abidjan: allWpPage(filter: {slug: {eq: "speech-by-cheikh-fall-abidjan2021"}, language: {code: {eq: EN}}}) {
+  nodes {
+    title
+    translations {
+      link
+    }
+    link
+    content
+  }
+}
 
 }   
 `

@@ -2,7 +2,7 @@ import React from 'react'
 import {FormattedMessage } from "gatsby-plugin-react-intl"
 import { ImportScript } from '../../services'
 
-const Counter = () => {
+const Counter = ({posts}) => {
 
   ImportScript("/js/load/counter.js");
 
@@ -64,8 +64,10 @@ const Counter = () => {
             <div className="video-2">
               <img src="/images/abidjan2021pf.jpg" alt="Video"/>
                 <div className="content">
-                <a className="video-popup" href="https://www.youtube.com/playlist?list=PLalgaepOVrI_wxO5BLGwkkknIpWvezZNj" aria-label="button"><i className="flaticon-music-player-play"></i></a>
-                </div>
+                {posts.map(post=>(
+                  <a  key={post.id} className="video-popup" href={post.link} aria-label="button"><i className="flaticon-music-player-play"></i></a>
+
+              ))}</div>
                         </div>
             </div>
           </div>
