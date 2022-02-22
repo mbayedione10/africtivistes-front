@@ -21,10 +21,14 @@ const About = ({posts}) => {
 <h3 className="mb-25"><FormattedMessage id="discours"/></h3>
 <p><FormattedMessage id="chershotes"/>
 <br/><FormattedMessage id="chersafrictivistes"/></p>
-<p className="mb-25"><FormattedMessage id="discourstexte"/><a href="https://abidjan2021.africtivistes.org/blog/discours-du-president-sur-abidjan2021"><FormattedMessage id="readMore"/></a>
+{posts.map(post=>(
+<p key={post.id} className="mb-25"><FormattedMessage id="discourstexte"/><a 
+href={post.link} ><FormattedMessage id="readMore"/></a>
 <br/>
 <br/>
 </p>
+              ))}
+            
 </div>
 <div className="signature">
 {/* <img src="/images/signature.png" alt="Signature"/> */}

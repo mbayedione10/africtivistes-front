@@ -6,7 +6,7 @@ import Container from './containerProjects'
 const Projects = ({posts, pages}) => {
   ImportScript("/js/load/project.js");
   return (
-  <section id="project-part" className="pt-120 pb-130">
+  <section id="project-part" >
     <div className="container">
       <div className="row justify-content-center">
           <div className="col-lg-4">
