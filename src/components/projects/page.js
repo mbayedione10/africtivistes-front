@@ -10,7 +10,7 @@ const ProjectsPage = ({programmes, projects}) => {
   ImportScript("/js/load/project2.js");
 
   return (
-  <section id="project-page" className="pt-90 pb-130">
+  <section id="project-page" className="pt-50 pb-50">
     <div className="container">
     <div className="row justify-content-center">
                 <div className="col-lg-4">
