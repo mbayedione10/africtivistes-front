@@ -15,8 +15,8 @@ const DiscoursPage = ({data}) => {
             <div className="row">
                 <div className="col-lg-12">
                     <div className="page-banner-content text-center">
-                        <h2>{title}</h2>
-                        <nav aria-label="breadcrumb">
+                    <h2>{title}</h2>                      
+                      <nav aria-label="breadcrumb">
                             <ol className="breadcrumb justify-content-center">
                                 <li className="breadcrumb-item"><a href="/" aria-label="button"><FormattedMessage id="home" /></a></li>
                                 <li className="breadcrumb-item active" aria-current="page">{title}</li>
@@ -27,29 +27,22 @@ const DiscoursPage = ({data}) => {
             </div>
         </div>
     </section>
-    <section id="blog-sidebar" style={{backgroundColor: '#f5f5f5'}}>
-        <div class="container">
-            <div class="row">
-                <div className="col-lg-6">
-                    <div className="blog-details mt-50">
-                        <div className="content" width="800" height="500">
-                            <p   dangerouslySetInnerHTML={{ __html: content }} ></p>
-                        </div> 
-                    </div> 
-                </div>
-                <div className="col-lg-6">
-                    <div className="blog-details mt-50">
-                        <div className="content">
-                        <iframe width="700" height="800" src="https://www.youtube.com/embed/xzyRXi0sRSk?list=PLalgaepOVrI_wxO5BLGwkkknIpWvezZNj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <a><FormattedMessage id="abidjan2021"/></a>
-  
-                    </div> 
-                </div>
-                </div>
-                </div>
-                </div>
-                </section>
-       
+    <section id="company-about" className="pt-50 pb-50">
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-6">
+          <div className="company-about-cont pt-45" dangerouslySetInnerHTML={{ __html: content }} />
+          </div>
+          <div className="col-lg-6 pt-50">
+            <div className="company-about-image">
+           <iframe width="700" height="500" src="https://www.youtube.com/embed/0SIEc3CWrh4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="years-experience mt-45">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
     </Layout>)
 }
 export default DiscoursPage
