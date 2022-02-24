@@ -268,7 +268,16 @@ abidjan: allWpPage(filter: {slug: {eq: "speech-by-cheikh-fall-abidjan2021"}, lan
     content
   }
 }
-
+sommet: allWpPage(filter: {slug: {eq: "sommit-africtivistes"}, language: {code: {eq: EN}}}) {
+  nodes {
+    title
+    content
+    link
+    translations {
+      link
+    }
+  }
+}
 }   
 `
 

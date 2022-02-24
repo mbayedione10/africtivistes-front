@@ -19,7 +19,7 @@ const IndexPage = ({data}) => (
     <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>
     <Features projects={data.programmeencours.nodes}/>
     <About posts={data.abidjan.nodes} actu={data.latestnews.edges}/>
-    <Counter posts={data.abidjan.nodes}/>
+    <Counter posts={data.sommet.nodes}/>
     <About2/>
     <LatestNews posts={data.allWpPost.edges}/>
     {/* <Services posts={data.plan.edges}/> */}
@@ -321,6 +321,16 @@ slider: allWpPost(
       }
       link
       content
+    }
+  }
+  sommet: allWpPage(filter: {slug: {eq: "sommet-africtivistes"}, language: {code: {eq: FR}}}) {
+    nodes {
+      title
+      content
+      link
+      translations {
+        link
+      }
     }
   }
 }
