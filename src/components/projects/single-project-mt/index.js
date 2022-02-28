@@ -1,6 +1,6 @@
 import React from 'react'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import {injectIntl } from "gatsby-plugin-react-intl"
+import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 
 const SingleProjectMt = ({post}) => {
     const{title, date, link, featuredImage}=post.node
@@ -13,13 +13,13 @@ const SingleProjectMt = ({post}) => {
             <div className="blog-image">
                 <GatsbyImage image={image} alt={title} />
             </div>
-            <div className="blog-content">
+            <div className="blog-content" >
                 <div className="date">
                     <ul>
                         <li><a href="#"><i className="flaticon-calendar"></i>{date}</a></li>
                     </ul>
                 </div>
-                <div className="content"  >
+                <div className="content" style={{backgroundColor: '#F8F9F9'}}>
                     <a href={link} className="mb-15"><h4>{title}</h4></a>
                 </div> 
             </div>

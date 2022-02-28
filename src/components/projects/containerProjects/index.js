@@ -4,7 +4,7 @@ import SingleProjectMt from '../single-project-mt'
 const Container = ({posts}) => {
     
     return (
-        <div className="row grid">
+        <div class="row justify-content-center">
 
         
         {posts.map(post => {

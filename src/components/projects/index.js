@@ -3,7 +3,7 @@ import { FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 import { ImportScript } from '../../services'
 import Container from './containerProjects'
 
-const Projects = ({posts, pages}) => {
+const Projects = ({posts}) => {
   ImportScript("/js/load/project.js");
   return (
   <section id="project-part" >
@@ -51,9 +51,7 @@ const Projects = ({posts, pages}) => {
       <div className="row">
           <div className="col-lg-12">
               <div className="project-more text-center mt-50">
-              {pages.map(page=>(
-                  <a className="main-btn" key={page.id} href={page.link} ><FormattedMessage id="more"/></a>
-                  ))}
+                <a className="main-btn"  href="fr/actualites" ><FormattedMessage id="more"/></a>
               </div>
           </div>
       </div>

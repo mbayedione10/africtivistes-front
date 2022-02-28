@@ -1,8 +1,11 @@
 import React from 'react'
+import {FormattedMessage } from "gatsby-plugin-react-intl"
 
-const About2 = () => (
-  <>
-  <div className="row justify-content-center" style={{backgroundColor: '#f5f5f5'}} >
+
+const About2 = () => {
+  return(
+    <div style={{backgroundColor: '#f5f5f5'}}>
+      <div className="row justify-content-center">
   <div className="col-lg-6" >
       <div className="section-title text-center pb-15" >
       <br></br>
@@ -14,33 +17,89 @@ const About2 = () => (
       </div>
   </div>
 </div>
-  <section id="about-part-2" className="about-part-2 gray-bg ">
-    <div className="about-2-bg bg_cover d-none d-lg-block" style={{backgroundImage: `url(/images/prize.png`}}></div>
-    <div className="container">
-      <div className="row justify-content-end">
-        <div className="col-lg-6">
-          <div className="about-2-content">
-            <br></br>
-            <h6>Retrouvez toute l'actualité sur le Prix AfricTivistes pour l'Action Civique : </h6>
-            <p>AfricTivistes veut récompenser les jeunes modèles et acteurs de changement pour favoriser une émulation chez l’ensemble de la jeunesse africaine ...<a href="https://prize.africtivistes.org/fr/newsroom/africtivistes-civic-action-prize/">Lire la suite</a></p>
-            <br></br>
-            <h6 className="mb-20">Finalistes du Prix AfricTivistes pour l’Action Civique 2021 connus : </h6>
-            <p>Le Prix AfricTivistes pour l'Action Civique 2021 entre dans sa dernière phase qui va mener à la désignation du champion africain de l'action civique...<a href="https://prize.africtivistes.org/fr/newsroom/africtivistes-civic-action-prize-2021-d%C3%A9couvrez-les-noms-des-pr%C3%A9finalistes/">Lire la suite</a></p>
-            <br></br>
-            <h6 className="mb-20">AfricTivistes Civic Action Prize 2021: Découvrez les noms des préfinalistes :</h6>
-            <p>Le processus de sélection des 10 préfinalistes du prix AfricTivistes pour l’Action Civique a été lancé le 16 juillet 2021, date de clôture des nominations...<a href="https://prize.africtivistes.org/fr/newsroom/africtivistes-civic-action-prize-2021-d%C3%A9couvrez-les-noms-des-pr%C3%A9finalistes/">Lire la suite</a></p>
-            <br></br>
-            <h6 className="mb-20">Fin des nominations : </h6>
-            <p>43 jours ont suffi pour enregistrer 337 nominations venant de 21 pays du continent africain. Au bout, dix (10) personnes vont se disputer cinq (5) places pour Abidjan...<a href="https://prize.africtivistes.org/fr/newsroom/fin-des-nominations/">Lire plus</a></p>
-            <br></br>
-            <span><a className="mb-20">En savoir plus: </a></span>
-                      <a href="https://prize.africtivistes.org/fr/">https://prize.africtivistes.org/fr/ </a> <br/>
-                    </div>
-                </div>
+
+    <div className="container" >
+      <div className="single-blog-list">
+        <div className="row">
+          <div className="col-xl-5 col-lg-6">
+            <div className="blog-image">
+              <img src="/images/prize5.png" alt="Blog"/>
+            </div>
           </div>
+          <div className="col-xl-7 col-lg-6">
+            <div className="blog-content">
+              <a href="blog-details-right-sidebar.html" className="mt-25"><h4>Retrouvez toute l'actualité sur le Prix AfricTivistes pour l'Action Civique :</h4></a>
+                <p className="mt-15 mb-15">AfricTivistes veut récompenser les jeunes modèles et acteurs de changement pour favoriser une émulation chez l’ensemble de la jeunesse africaine ...</p>
+                <a href="https://prize.africtivistes.org/fr/newsroom/africtivistes-civic-action-prize/">En savoir plus<i className="fa fa-angle-right"></i></a>
+              </div>
+
+            </div>
+
+            </div> 
+            
+        </div> 
+        
         </div>
-    </section>
-  </>
+
+    <div className="container">
+      <div className="single-blog-list">
+        <div className="row">
+          <div className="col-xl-5 col-lg-6">
+            <div className="blog-image">
+              <img src="/images/prize1.png" alt="Blog"/>
+            </div>
+          </div>
+          <div className="col-xl-7 col-lg-6">
+            <div className="blog-content">
+              <a href="blog-details-right-sidebar.html" className="mt-25"><h4>Finalistes du Prix AfricTivistes pour l’Action Civique 2021 connus : </h4></a>
+                <p className="mt-15 mb-15">Le Prix AfricTivistes pour l'Action Civique 2021 entre dans sa dernière phase qui va mener à la désignation du champion africain de l'action civique...</p>
+                <a href="https://prize.africtivistes.org/fr/newsroom/africtivistes-civic-action-prize-2021-d%C3%A9couvrez-les-noms-des-pr%C3%A9finalistes/">En savoir plus<i className="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+            </div> 
+        </div> 
+        </div>
+
+    <div className="container">
+      <div className="single-blog-list">
+        <div className="row">
+          <div className="col-xl-5 col-lg-6">
+            <div className="blog-image">
+              <img src="/images/prize2.png" alt="Blog"/>
+            </div>
+          </div>
+          <div className="col-xl-7 col-lg-6">
+            <div className="blog-content">
+              <a href="blog-details-right-sidebar.html" className="mt-25"><h4>AfricTivistes Civic Action Prize 2021: Découvrez les noms des préfinalistes :</h4></a>
+                <p className="mt-15 mb-15">Le processus de sélection des 10 préfinalistes du prix AfricTivistes pour l’Action Civique a été lancé le 16 juillet 2021, date de clôture des nominations...</p>
+                <a href="https://prize.africtivistes.org/fr/newsroom/africtivistes-civic-action-prize-2021-d%C3%A9couvrez-les-noms-des-pr%C3%A9finalistes/">En savoir plus<i className="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+            </div> 
+        </div> 
+        </div>
+
+    <div className="container">
+      <div className="single-blog-list">
+        <div className="row">
+          <div className="col-xl-5 col-lg-6">
+            <div className="blog-image">
+              <img src="/images/prize4.png" alt="Blog"/>
+            </div>
+          </div>
+          <div className="col-xl-7 col-lg-6">
+            <div className="blog-content">
+              <a href="blog-details-right-sidebar.html" className="mt-25"><h4>Fin des nominations :</h4></a>
+                <p className="mt-15 mb-15">43 jours ont suffi pour enregistrer 337 nominations venant de 21 pays du continent africain. Au bout, dix (10) personnes vont se disputer cinq (5) places pour Abidjan...</p>
+                <a href="https://prize.africtivistes.org/fr/newsroom/fin-des-nominations/">En savoir plus <i className="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+            </div> 
+        </div> 
+        </div>
+</div>
 )
+}
+
 
 export default About2
