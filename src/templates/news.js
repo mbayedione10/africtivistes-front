@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from "gatsby"
-import ActualitesPage from './actualites'
-
+import ActualitesPage from '../templates/actualites'
 const News = ({data}) => {
     return (
         <ActualitesPage data = {data}/>
