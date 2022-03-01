@@ -37,7 +37,7 @@ const ProgrammeDetail = ({ data, pageContext, intl }) =>{
         </div>
     </section>
             <ProjectDetail project={data.allWpProgramme.nodes[0]} />
-            <ProjectPart/>
+            <ProjectPart projects={data.prog.nodes} />
             <Testimonial2/>
         </Layout>
         }
@@ -60,6 +60,8 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData(
                 placeholder: DOMINANT_COLOR
+                height: 300
+                width: 200
               )
             }
           }
@@ -68,6 +70,38 @@ export const query = graphql`
       translations {
         link
       }
+      }
+    }
+    prog: allWpProgramme(
+      filter: {language: {code: {eq: FR}}}
+      sort: {fields: date, order: DESC}
+      ) {
+      nodes {
+        id
+        title
+        link
+        date(formatString: "DD MMMM, YYYY", locale: "fr")
+        programmeTypes {
+          nodes {
+            slug
+            name
+          }
+        }
+        featuredImage {
+          node {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 360, 
+                  height: 250, 
+                  placeholder: DOMINANT_COLOR)
+              }
+            }
+          }
+        }
+        slug
+        content
       }
     }
   }
