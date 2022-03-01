@@ -64,5 +64,29 @@ export const query = graphql`
       }
     }
   }
+  contact: allWpPage(filter: {slug: {eq: "contact-us"}}) {
+    nodes {
+      title
+      content
+      slug
+      link
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 555,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
+      }
+      translations {
+        link
+      }
+    }
+  }
 }
 `

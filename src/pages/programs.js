@@ -37,8 +37,9 @@ const ProgrammesPage = ({ data, intl }) => {
         </div>
     </section>
           <ProjectsPage programmes={data.allWpProgrammeType.nodes} projects={data.allWpProgramme.nodes} />
-          <Counter2 />
-          <CallAction2 />
+          <CallAction contacts={data.contact.nodes}/>
+          {/* <Counter2 />
+          <CallAction2 /> */}
         </Layout>
     }
   </IntlContextConsumer>
@@ -87,6 +88,30 @@ export const pageQuery = graphql`
             }
           }
         }
+      }
+    }
+  }
+  contact: allWpPage(filter: {slug: {eq: "contact-us"}}) {
+    nodes {
+      title
+      content
+      slug
+      link
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 555,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
+      }
+      translations {
+        link
       }
     }
   }
