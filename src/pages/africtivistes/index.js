@@ -36,9 +36,9 @@ const AfrictivistesPage = ({data}) => {
       <About3 content={content} picture={featuredImage.node.localFile}/>
       <Intervention/>
       <Team teams={data.allWpTeam.nodes}/>
-      <Counter2/>
-      <Testimonial2/>
-      <CallAction2/>
+      {/* <Counter2/> */}
+      {/* <Testimonial2/> */}
+      {/* <CallAction2/> */}
     </Layout>)
 }
 export default AfrictivistesPage
