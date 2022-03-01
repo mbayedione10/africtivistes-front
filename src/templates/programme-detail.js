@@ -38,7 +38,7 @@ const ProgrammeDetail = ({ data, pageContext, intl }) =>{
     </section>
             <ProjectDetail project={data.allWpProgramme.nodes[0]} />
             <ProjectPart projects={data.prog.nodes} />
-            <Testimonial2/>
+            {/* <Testimonial2/> */}
         </Layout>
         }
       </IntlContextConsumer>

@@ -7,7 +7,7 @@ import { FormattedMessage } from 'gatsby-plugin-react-intl'
 import ProjectsPage from '../components/projects/page'
 import Counter2 from '../components/counter/counter2'
 import CallAction2 from '../components/callAction/callactions2'
-
+import CallAction from '../components/callAction'
 
 const ProgrammesPage = ({ data, intl }) => {
   const { title, translations } = data.allWpPage.nodes[0]
@@ -36,8 +36,9 @@ const ProgrammesPage = ({ data, intl }) => {
         </div>
     </section>
       <ProjectsPage programmes={data.allWpProgrammeType.nodes} projects={data.allWpProgramme.nodes} />
-      <Counter2/>
-      <CallAction2/>
+      <CallAction contacts={data.contact.nodes}/>
+      {/* <Counter2/>
+      <CallAction2/> */}
     </Layout>
     }
     </IntlContextConsumer>
@@ -86,6 +87,30 @@ export const pageQuery = graphql`
             }
           }
         }
+      }
+    }
+  }
+  contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
+    nodes {
+      title
+      content
+      slug
+      link
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 555,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
+      }
+      translations {
+        link
       }
     }
   }

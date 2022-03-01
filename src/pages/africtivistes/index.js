@@ -6,9 +6,7 @@ import Seo from "../../components/seo"
 import About3 from "../../components/about/about3"
 import Intervention from '../../components/intervention'
 import Team from '../../components/team'
-import Counter2 from '../../components/counter/counter2'
-import Testimonial2 from '../../components/testimonial/testimonial2'
-import CallAction2 from '../../components/callAction/callactions2'
+import CallAction from "../../components/callAction"
 
 const AfrictivistesPage = ({data}) => {
   const { title, content, translations, featuredImage} = data.allWpPage.nodes[0]
@@ -36,6 +34,7 @@ const AfrictivistesPage = ({data}) => {
       <About3 content={content} picture={featuredImage.node.localFile}/>
       <Intervention/>
       <Team teams={data.allWpTeam.nodes}/>
+      <CallAction contacts={data.contact.nodes}/>
       {/* <Counter2/> */}
       {/* <Testimonial2/> */}
       {/* <CallAction2/> */}
@@ -89,6 +88,30 @@ export const query = graphql`
         instagram
         linkedin
         twitter
+      }
+    }
+  }
+  contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
+    nodes {
+      title
+      content
+      slug
+      link
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 555,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
+      }
+      translations {
+        link
       }
     }
   }

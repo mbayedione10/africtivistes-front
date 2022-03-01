@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Contact from '../components/contact'
 import { FormattedMessage } from 'gatsby-plugin-react-intl'
+import CallAction from '../components/callAction'
 
 const ContactPage = ({data}) => {
   const { title, translations} = data.allWpPage.nodes[0]
@@ -29,6 +30,15 @@ const ContactPage = ({data}) => {
         </div>
     </section>
       <Contact />
+      <div className="container mb-50">
+      <div className="row align-items-center justify-content-center">
+        <div className="col-xl-10 col-lg-6 col-md-12 col-sm-12">
+          <div className="call-action-cont pt-30 text-center text-lg-left">
+            <h2><FormattedMessage id ="callAction"/></h2>
+          </div>
+        </div>
+      </div>
+    </div>    
     </Layout>)
 }
 export default ContactPage
