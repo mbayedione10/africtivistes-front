@@ -3,7 +3,8 @@ import {FormattedMessage } from "gatsby-plugin-react-intl"
 import ContainerPEC from './container-projet-en-cours'
 
 const Features = ({projects}) => (
-  <section id="features-part-2" className="featuera-2 pt-100 pb-125">
+  <section id="features-part-2" className="featuera-2 pt-100 pb-125" text-align="center">
+
     <div className="container">
       <div className="row justify-content-center">
                 <div className="col-lg-6">

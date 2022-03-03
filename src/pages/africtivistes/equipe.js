@@ -4,7 +4,7 @@ import PageBanner from "../../components/pageBanner"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import Team from '../../components/team'
-import CallAction2 from '../../components/callAction/callactions2'
+import CallAction from "../../components/callAction"
 
 const EquipePage = ({data}) => {
 const {title, translations} = data.allWpPage.nodes[0]
@@ -13,7 +13,8 @@ return(<Layout translation={link}>
     <Seo title="L'équipe" />
     <PageBanner title={title} />
     <Team teams={data.allWpTeam.nodes}/>
-    <CallAction2/>
+    {/* <CallAction2/> */}
+    <CallAction contacts={data.contact.nodes}/>
   </Layout>
 )}
 export default EquipePage
@@ -49,6 +50,30 @@ export const query = graphql`
         instagram
         linkedin
         twitter
+      }
+    }
+  }
+  contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
+    nodes {
+      title
+      content
+      slug
+      link
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 555,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
+      }
+      translations {
+        link
       }
     }
   }

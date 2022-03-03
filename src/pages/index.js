@@ -279,8 +279,8 @@ slider: allWpPost(
         slug
       }
     }
-   }
-   contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
+  }
+  contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
     nodes {
       title
       content
