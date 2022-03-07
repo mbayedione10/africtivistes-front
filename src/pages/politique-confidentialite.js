@@ -5,10 +5,11 @@ import Seo from "../components/seo"
 import PageBanner from '../components/pageBanner'
 
 const PolitiquePage = ({data}) => {
+  const {title, translations} = data.allWpPage.nodes[0]
   const link = data.allWpPage.nodes[0] ? data.allWpPage.nodes[0].link : ''
   return (<Layout translation={link}>
       <Seo title="À propos de nous" />
-      <PageBanner title={data.allWpPage.nodes.title} />
+      <PageBanner title={title} />
     </Layout>)
 }
 export default PolitiquePage
