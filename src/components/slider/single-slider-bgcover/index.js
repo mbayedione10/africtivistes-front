@@ -14,11 +14,11 @@ const SingleSliderBgcover = ({post,contacts}) => {
             <div className="row">
                 <div className="col-lg-5 col-md-10">
                     <div className="slider-content">
-                        <Link to={link}><h2 className="mb-25" data-animation="bounceInLeft" data-delay="1s"><span>{title.substring(0, 50)}...</span></h2></Link>
-                        <h4 className="mb-30" data-animation="fadeInLeft" data-delay="1.5s" dangerouslySetInnerHTML={{ __html: excerpt }}></h4>
+                        <Link to={link}><h3 className="mb-5" style={{color:'#943126'}} data-animation="bounceInLeft" data-delay="1s"><span>{title}</span></h3></Link>
+                        <p className="mb-5" style={{color:'black'}}  data-delay="1.5s" dangerouslySetInnerHTML={{ __html: excerpt }}/>
                         {contacts.map(contact=>(
                         <a  className="main-btn" data-animation="fadeInUp" data-delay="2s" key={contact.id} data-filter={`.${contact.slug}`} href={contact.link}><FormattedMessage id ="contactUs"/></a>
-                          ))}
+                        ))}
                     </div>
                 </div>
             </div>

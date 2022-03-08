@@ -6,7 +6,7 @@ const ColLgMd = ({project}) => {
 
     return (
       <div className="col-lg-4 col-md-6 col-sm-10">
-        <div className="singel-features-2 text-center mt-30">
+        <div className="singel-features-2 text-justify mt-30">
           <div className="icon pb-20 singel-news ">
             {/* <i className="flaticon-global"></i> */}
             <GatsbyImage image={getImage(project.featuredImage.node.localFile)} alt={project.featuredImage.node.altText} />
