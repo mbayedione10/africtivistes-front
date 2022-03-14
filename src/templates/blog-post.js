@@ -6,6 +6,7 @@ import Seo from "../components/seo"
 import PageBanner from '../components/pageBanner'
 import Search from '../components/blog-sidebar/search'   
 import RecentPost from '../components/blog-sidebar/recent-post'
+import RelatedPost from '../components/blog-sidebar/related'
 
 export default function BlogPost({ data}) {
   const { title,date, content, featuredImage} = data.allWpPost.nodes[0]
@@ -42,8 +43,8 @@ export default function BlogPost({ data}) {
                     <div class="blog-sidebar ">
                         <div class="row justify-content-center">
                             <div class="col-lg-12 col-md-8">
-                            <Search/>
                             <RecentPost posts={data.recent.edges}/>
+                            <RelatedPost posts={data.related.edges}/>
                             </div> 
                         </div> 
                     </div> 
@@ -56,9 +57,8 @@ export default function BlogPost({ data}) {
 }
 
 export const query = graphql`
-  query($slug: String!)
-  {
-    allWpPost(filter: { slug: { eq: $slug } }) {
+  query($slug: String!) {
+    allWpPost(filter: {language: {code: {eq: FR}}, slug: {eq: $slug}}) {
       nodes {
         title
         content
@@ -86,8 +86,7 @@ export const query = graphql`
     recent: allWpPost(
         limit: 10
         sort: {fields: date, order: DESC}
-        filter: {language: {code: {eq: FR}}}
-      ) {
+        filter: {language: {code: {eq: FR}} }) {
         edges {
           node {
             id
@@ -114,6 +113,35 @@ export const query = graphql`
                       height: 68,
                       placeholder: DOMINANT_COLOR
                     )
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      related:  allWpPost(
+        sort: {fields: date, order: DESC}
+        filter: {language: {code: {eq: FR}}, tags: {nodes: {elemMatch: {name: {eq: "Sahel Insight"}}}}}
+      ) {
+        edges {
+          node {
+            id
+            title
+            date(formatString: "DD MMMM, YYYY", locale: "fr")
+            excerpt
+            link
+            featuredImage {
+              node {
+                altText
+                big: localFile {
+                  childImageSharp {
+                    gatsbyImageData(width: 360, height: 200, placeholder: DOMINANT_COLOR)
+                  }
+                }
+                small: localFile {
+                  childImageSharp {
+                    gatsbyImageData(width: 70, height: 68, placeholder: DOMINANT_COLOR)
                   }
                 }
               }
