@@ -12,7 +12,7 @@ const Search = () =>{
         <span></span>
         <span></span>
       </div>
-      <div className="searchform">
+      <div className="searchform" id="seach">
         <form action="#">
           <input type="text" placeholder="Search"/>
             <button type="button"><i className="fa fa-search" aria-label="search" /></button>

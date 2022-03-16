@@ -1,4 +1,5 @@
 const path = require(`path`)
+const createPaginatedPages = require('gatsby-paginate')
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -73,7 +74,6 @@ exports.createPages = async ({ graphql, actions }) => {
         limit: perPage,
         skip: i * perPage,
         numPages,
-        currentPage: i + 1,
       },
     })
   }
