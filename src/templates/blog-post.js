@@ -58,7 +58,7 @@ export default function BlogPost({ data}) {
 
 export const query = graphql`
   query($slug: String!) {
-    allWpPost(filter: {language: {code: {eq: FR}}, slug: {eq: $slug}}) {
+    allWpPost(filter: { slug: { eq: $slug } }) {
       nodes {
         title
         content
@@ -86,7 +86,8 @@ export const query = graphql`
     recent: allWpPost(
         limit: 10
         sort: {fields: date, order: DESC}
-        filter: {language: {code: {eq: FR}} }) {
+        filter: {language: {code: {eq: FR}}}
+      ) {
         edges {
           node {
             id
@@ -122,8 +123,13 @@ export const query = graphql`
       }
       related:  allWpPost(
         sort: {fields: date, order: DESC}
-        filter: {language: {code: {eq: FR}}, tags: {nodes: {elemMatch: {name: {eq: "Sahel Insight"}}}}}
-      ) {
+        filter: {          tags: {
+          nodes: {
+          elemMatch: {
+            name: {eq: "Sahel Insight"}
+          }
+        }
+        }, language: {code: {eq: FR}}}) {
         edges {
           node {
             id
