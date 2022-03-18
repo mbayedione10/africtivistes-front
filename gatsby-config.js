@@ -8,16 +8,6 @@ module.exports = {
     adresse: 'BP 19968 Dakar , Cite Sofraco , VDN 3 prolongee',
     siteUrl: `https://www.africtivistes.org/`,
   },
-  script: [ 
-    {
-      src: `"https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"`,
-    },
-  ],
-  link: {
-    rel: 'stylesheet',
-    href: 'https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css',
-  }
-  ,
   plugins: [
     {
       resolve: `gatsby-source-wordpress`,

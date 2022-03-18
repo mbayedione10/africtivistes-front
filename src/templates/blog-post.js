@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
 import PageBanner from '../components/pageBanner'
-import Search from '../components/blog-sidebar/search'   
 import RecentPost from '../components/blog-sidebar/recent-post'
 import RelatedPost from '../components/blog-sidebar/related'
 
