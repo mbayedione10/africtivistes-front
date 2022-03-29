@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-
+import Adherer from '../../components/Adherer'
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import PageBanner from '../../components/pageBanner'
@@ -12,9 +12,7 @@ const AdhererPage = ({data}) => {
     return (<Layout translation={link}>
         <Seo title="Comment adhérer AfricTivistes ?" />
         <PageBanner title={title} />
-        <Contact/>
-        {/* <Adherer/> */}
-         
+        <Adherer/>
       </Layout>
     )
 }
