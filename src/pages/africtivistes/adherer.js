@@ -1,10 +1,9 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import Adherer from '../../components/Adherer'
+import Adherer from '../../components/adherer'
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import PageBanner from '../../components/pageBanner'
-import Contact from '../../components/contact'
 
 const AdhererPage = ({data}) => {
     const { title, translations} = data.allWpPage.nodes[0]
@@ -16,9 +15,7 @@ const AdhererPage = ({data}) => {
       </Layout>
     )
 }
-
 export default AdhererPage
-
 export const query = graphql`
   query {
   allWpPage(filter: {slug: {eq: "adherer"}}) {
