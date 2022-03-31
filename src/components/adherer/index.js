@@ -32,43 +32,43 @@ const Adherer = ({intl}) => {
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"pays"})} data-error="Valid email is required." required="required"/>
+                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"pays"})} data-error="Pays is required." required="required"/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"villederesidence"})} data-error="Valid email is required." required="required"/>
+                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"villederesidence"})} data-error="Ville is required." required="required"/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"profession"})} data-error="Valid email is required." required="required"/>
+                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"profession"})} data-error="Profession is required." required="required"/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"biographie"})} data-error="Valid email is required." required="required"/>
+                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"biographie"})} data-error="Biographie is required." required="required"/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"comptetwitter"})} data-error="Valid email is required." required="required"/>
+                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"comptetwitter"})} data-error="Compte twitter is required." required="required"/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"comptefacebook"})} data-error="Valid email is required." required="required"/>
+                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"comptefacebook"})} data-error="Compte facebook is required." required="required"/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"liendeblog"})} data-error="Valid email is required." required="required"/>
+                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"liendeblog"})} data-error="Blog is required." required="required"/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
