@@ -69,7 +69,7 @@ exports.createPages = async ({ graphql, actions }) => {
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/actualites` : `/actualites/${i + 1}`,
-      component: path.resolve(`./src/pages/actualites.js`),
+      component: path.resolve(`./src/templates/actualites.js`),
       context: {
         limit: perPage,
         skip: i * perPage,
@@ -78,10 +78,20 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   }
   )
+  const news = await graphql(`
+  {
+    allWpPost(
+      filter: {language: {code: {eq: EN}}}
+    ){
+      totalCount
+    }
+  }
+`).then(res => res.data)
+
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/news` : `/news/${i + 1}`,
-      component: path.resolve(`./src/pages/actualites.js`),
+      component: path.resolve(`./src/templates/news.js`),
       context: {
         limit: perPage,
         skip: i * perPage,

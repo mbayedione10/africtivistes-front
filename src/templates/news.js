@@ -13,8 +13,8 @@ const News = ({ data, pageContext}) => {
   const link = translations ? translations[0].link : ''
 
   return (<Layout translation={link}>
-      <Seo title="À propos de nous" />
-      <PageBanner title={title} />
+    <Seo title="À propos de nous" />
+    <PageBanner title={title} />
     <BlogSidebar posts={data.allWpPost.edges} numPages={numPages} currentPage={currentPage} />
     <CallAction contacts={data.contact.nodes}/>
     </Layout>)
