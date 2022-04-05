@@ -68,8 +68,20 @@ exports.createPages = async ({ graphql, actions }) => {
 
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? `/fr/actualites` : `/fr/actualites/${i + 1}`,
-      component: path.resolve(`./src/templates/actualites.js`),
+      path: i === 0 ? `/actualites` : `/actualites/${i + 1}`,
+      component: path.resolve(`./src/pages/actualites.js`),
+      context: {
+        limit: perPage,
+        skip: i * perPage,
+        numPages,
+      },
+    })
+  }
+  )
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/news` : `/news/${i + 1}`,
+      component: path.resolve(`./src/pages/actualites.js`),
       context: {
         limit: perPage,
         skip: i * perPage,
