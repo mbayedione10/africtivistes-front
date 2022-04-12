@@ -13,7 +13,7 @@ export default function BlogPost({ data}) {
     return (
         <Layout>
         <Seo title="À propos de nous" />
-        <PageBanner title="Actualités" />
+        <PageBanner title= {title} date={date}/>
     <section id="blog-sidebar"  class="pt-80 pb-130">
         <div class="container">
             <div class="row">
