@@ -8,7 +8,7 @@ const TermesPage = ({data}) => {
   const { title, translations} = data.allWpPage.nodes[0]
   const link = data.allWpPage.nodes[0] ? data.allWpPage.nodes[0].link : ''
   return (<Layout translation={link}>
-      <Seo title="À propos de nous" />
+      <Seo title={data.allWpPage.nodes.title} />
       <PageBanner title={title} />
     </Layout>)
 }

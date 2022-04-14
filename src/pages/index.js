@@ -15,7 +15,7 @@ import ProjectsPage from '../components/projects/page'
 
 const IndexPage = ({data}) => (
   <Layout>
-      <Seo title="À propos de nous" />
+      <Seo title={data.allWpPage.nodes.title} />
     <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>
     <Features projects={data.programmeencours.nodes}/>
     <About posts={data.abidjan.nodes} actu={data.latestnews.edges}/>

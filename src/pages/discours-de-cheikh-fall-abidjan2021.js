@@ -9,7 +9,7 @@ const DiscoursPage = ({data}) => {
     // const link = translations ? translations[0].link : ''
 
   return (<Layout translation={link}>
-       <Seo title="À propos de nous" />
+      <Seo title={data.allWpPage.nodes.title} />
        <section id="page-banner" className="bg_cover pt-150 pb-150" style={{ backgroundImage: `url(/images/cheikh.png`}} data-overlay="6">
         <div className="container">
             <div className="row">
