@@ -6,11 +6,11 @@ const Counter = ({posts}) => {
 
   ImportScript("/js/load/counter.js");
 
-  return (<section id="counter-part-2" >
+  return (<section id="counter-part-2" pt-30 pb-30 >
     {/* style={{backgroundImage:`url(/images/slider/ss.jpeg)`}} */}
           <div className="row justify-content-center" style={{backgroundColor: '#f5f5f5'}} >
                 <div className="col-lg-6" >
-                    <div className="section-title text-center pb-15" >
+                    <div className="section-title text-center ppt-30 pb-30" >
                     <br></br>
                         <h2><FormattedMessage id="abidjan2021"/></h2>
                         <div className="underline">

@@ -10,7 +10,7 @@ const SommetAfrictivistesPage = ({data}) => {
   const link = translations ? translations.link : ''
   return (<Layout translation={link}>
       <Seo title={data.allWpPage.nodes.title} />
-      <section id="page-banner" className="bg_cover pt-200 pb-200" style={{ backgroundImage: `url(/images/sommet.png`}} data-overlay="6">
+      <section id="page-banner" className="bg_cover pt-30 pb-30" style={{ backgroundImage: `url(/images/sommet.png`}} data-overlay="6">
         <div className="container">
             <div className="row">
                 <div className="col-lg-12">

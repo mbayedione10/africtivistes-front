@@ -2,7 +2,7 @@ import React from 'react'
 import {FormattedMessage } from "gatsby-plugin-react-intl"
 
 const CallAction = ({contacts}) => (
-  <section id="call-to-action" className="pt-20 pb-50 gray-bg">
+  <section id="call-to-action" className="pt-30 pb-30 gray-bg">
     <div className="container">
       <div className="row align-items-center justify-content-center">
         <div className="col-xl-10 col-lg-6 col-md-12 col-sm-12">

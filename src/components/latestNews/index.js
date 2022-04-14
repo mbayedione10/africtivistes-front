@@ -4,7 +4,7 @@ import {FormattedMessage} from "gatsby-plugin-react-intl"
 
 const LatestNews = ({posts}) => {
 return(
-  <section id="latest-news" className="pt-120 pb-130">
+  <section id="latest-news" className="pt-30 pb-30">
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-lg-6">

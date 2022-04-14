@@ -15,7 +15,7 @@ import ProjectsPage from '../components/projects/page'
 
 const IndexPage = ({data}) => (
   <Layout>
-      <Seo title={data.allWpPage.nodes.title} />
+    <Seo title={data.allWpPage.nodes.title} />
     <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>
     <Features projects={data.programmeencours.nodes}/>
     <About posts={data.abidjan.nodes} actu={data.latestnews.edges}/>
@@ -24,7 +24,7 @@ const IndexPage = ({data}) => (
     <LatestNews posts={data.allWpPost.edges}/>
     {/* <Services posts={data.plan.edges}/> */}
     <ProjectsPage programmes={data.allWpProgrammeType.nodes} projects={data.allWpProgramme.nodes} />
-     {/* <section id="blog-list" className="pt-80 pb-130">
+    {/* <section id="blog-list" className="pt-80 pb-130">
       <div className="container">
         <h1><FormattedMessage id="actualites" /></h1>
         <IntlContextConsumer>

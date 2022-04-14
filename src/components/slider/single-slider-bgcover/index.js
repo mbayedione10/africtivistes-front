@@ -12,7 +12,7 @@ const SingleSliderBgcover = ({post,contacts}) => {
     
         <div className="container">
             <div className="row">
-                <div className="col-lg-5 col-md-10">
+                <div className="col-lg-5">
                     <div className="slider-content">
                         <Link to={link}><h3 className="mb-5" style={{color:'#943126'}} data-animation="bounceInLeft" data-delay="1s"><span>{title}</span></h3></Link>
                         <p className="mb-5" style={{color:'black'}}  data-delay="1.5s" dangerouslySetInnerHTML={{ __html: excerpt }}/>

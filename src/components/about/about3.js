@@ -5,7 +5,7 @@ const About3 = ({ content, picture}) => {
   
   const image = getImage(picture)
 
-  return(<section id="company-about" className="pt-80 pb-130">
+  return(<section id="company-about" className="pt-30 pb-30">
     <div className="container">
       <div className="row">
         <div className="col-lg-6">

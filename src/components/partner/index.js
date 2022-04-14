@@ -6,7 +6,7 @@ const Partner = () => {
 
   ImportScript("/js/load/partner.js");
 
-  return (<section id="partner-part" className="pt-55 pb-55">
+  return (<section id="partner-part" className="pt-30 pb-30">
     <div className="container">
     <div className="row justify-content-center">
         <div className="col-lg-6">

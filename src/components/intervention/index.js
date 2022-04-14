@@ -2,7 +2,7 @@ import React from 'react'
 import { injectIntl, FormattedMessage} from 'gatsby-plugin-react-intl'
 
 const Intervention = () => (
-    <section id="services-part" className="pt-120 pb-130">
+    <section id="services-part" className="pt-30 pb-30">
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-lg-4">

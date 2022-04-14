@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 
 const Team = ({teams}) => (
-  <section id="team-part" className="pt-50 pb-100 gray-bg">
+  <section id="team-part" className="pt-30 pb-30 gray-bg">
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-lg-6">
