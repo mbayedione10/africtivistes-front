@@ -19,11 +19,11 @@ const Top = ({translation}) => {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-10">
-            <div className="meta pt-15 text-center text-lg-left">
+            <div className="meta pt-15 text-center text-lg-right">
               <ul>
                 <li><i className="fa fa-envelope"></i>{email[0]}</li>
                 <li><i className="fa fa-phone"></i>{tels[0]}</li>
-                <li><i className="fa fa-clock-o"></i> Sun - Fri : 9.00 am to 18.pm (Sat Weekend)</li>
+                {/* <li><i className="fa fa-clock-o"></i></li> */}
                 <li><Switchlanguage translation={translation}/></li>
               </ul>
             </div>
