@@ -13,6 +13,26 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         url: `https://update.africtivistes.org/graphql`,
+        presets: [
+          {
+            presetName: `DEVELOP`,
+            useIf: () => process.env.NODE_ENV === `development`,
+            options: {
+              develop: {
+                nodeUpdateInterval: 60000, // Update nodes every 60 seconds 
+                hardCacheMediaFiles: true,
+                hardCacheData: false,
+              },
+              type: {
+                MediaItem: {
+                  localFile: {
+                    requestConcurrency: 10, // Amount of images to download concurrently. Try lowering this if wordpress server crashes on import.
+                  },
+                },
+              },
+            },
+          },
+        ],
       },
     },
     `gatsby-plugin-react-helmet`,

@@ -72,3 +72,6 @@ package-lock.json
 
 # Local Netlify folder
 .netlify
+
+# gatsby-source-wordpress
+.wordpress-cache
