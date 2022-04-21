@@ -80,6 +80,6 @@ module.exports = {
         ignoredPaths: ["/js/"],
       },
     },
-    // `gatsby-plugin-netlify`
+    `gatsby-plugin-netlify`
   ],
 }

@@ -2,3 +2,11 @@
 package = "@algolia/netlify-plugin-crawler"
   [plugins.inputs]
   branches = ['main', 'netlify-algolia-plugin']
+
+[[redirects]]
+  from = "/en"
+  to = "/en/home"
+  status = 301
+  force = false
+  query = {path = ":path"}
+  conditions = {Language = ["en"]}
