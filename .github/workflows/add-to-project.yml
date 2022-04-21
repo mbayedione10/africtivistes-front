@@ -1,0 +1,22 @@
+name: Add bugs to bugs project
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  add-to-project:
+    name: Add issue to project
+    runs-on: ubuntu-latest
+    steps:
+      - name: "🔑 Github Repository Metadata"
+        uses: varunsridharan/action-repository-meta@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "🔖 Github Repository Metadata"
+        uses: actions/add-to-project@main
+        with:
+          project-url: https://github.com/orgs/AfricTivistes/projects/2
+          github-token: ${{ secrets.GITHUB_TOKEN }}
