@@ -15,7 +15,7 @@ const ActualitesPage = ({ data, pageContext}) => {
   return (<Layout translation={link}>
     <Seo title="À propos de nous" />
     <PageBanner title={title} />
-    <BlogSidebar posts={data.allWpPost.edges} numPages={numPages} currentPage={currentPage} />
+    <BlogSidebar posts={data.allWpPost.edges} postsrelated={data.related.edges} numPages={numPages} currentPage={currentPage} />
     <CallAction contacts={data.contact.nodes}/>
     </Layout>)
 }
@@ -36,7 +36,7 @@ export const query = graphql`
     limit: $limit
     skip: $skip
     sort: {fields: date, order: DESC}
-    filter: {language: {code: {eq: FR}}}
+    filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "actualites"}}}}}
   ) {
     edges {
       node {
@@ -101,5 +101,39 @@ export const query = graphql`
       }
     }
   } 
+  related:  allWpPost(
+    sort: {fields: date, order: DESC}
+    filter: {          tags: {
+      nodes: {
+      elemMatch: {
+        name: {eq: "Sahel Insight"}
+      }
+    }
+    }, language: {code: {eq: FR}}}) {
+    edges {
+      node {
+        id
+        title
+        date(formatString: "DD MMMM, YYYY", locale: "fr")
+        excerpt
+        link
+        featuredImage {
+          node {
+            altText
+            big: localFile {
+              childImageSharp {
+                gatsbyImageData(width: 360, height: 200, placeholder: DOMINANT_COLOR)
+              }
+            }
+            small: localFile {
+              childImageSharp {
+                gatsbyImageData(width: 70, height: 68, placeholder: DOMINANT_COLOR)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 `

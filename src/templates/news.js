@@ -36,7 +36,7 @@ export const query = graphql`
     limit: $limit
     skip: $skip
     sort: {fields: date, order: DESC}
-    filter: {language: {code: {eq: EN}}}
+    filter: {language: {code: {eq: EN}}, categories: {nodes: {elemMatch: {slug: {eq: "news"}}}}}
   ) {
     edges {
       node {
