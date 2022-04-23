@@ -13,13 +13,19 @@ export default function BlogPost({ data}) {
     return (
         <Layout>
         <Seo title="À propos de nous" />
-        <PageBanner title= {title} date={date}/>
-    <section id="blog-sidebar"  class="pt-80 pb-130">
+        {/* <PageBanner title= {title} date={date}/> */}
+    <section id="blog-sidebar"  class="pt-10 pb-10">
         <div class="container">
             <div class="row">
-                <div className="col-lg-8">
-                    <div className="blog-details mt-50">
-                        <div className="image">
+                <div className="col-lg-12">
+                    <div className="blog-details mt-10">
+                        <div className="image" 
+                        style={{ 
+                          backgroundPosition: 'center',
+                          backgroundSize: 'cover',
+                          backgroundImage: `url(${image})`,
+                        }}>
+                      
                             <GatsbyImage image={image} alt={title} />
                         </div>
                         <div className="content">
@@ -38,7 +44,7 @@ export default function BlogPost({ data}) {
                         
                     </div> 
                 </div>
-                <div class="col-lg-4">
+                {/* <div class="col-lg-4">
                     <div class="blog-sidebar ">
                         <div class="row justify-content-center">
                             <div class="col-lg-12 col-md-8">
@@ -47,7 +53,7 @@ export default function BlogPost({ data}) {
                             </div> 
                         </div> 
                     </div> 
-                </div>
+                </div> */}
                 </div>
                 </div>
                 </section>
@@ -69,8 +75,8 @@ export const query = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(
-                width: 750,
-                height: 360,
+                width: 1150,
+                height: 700,
                 placeholder: DOMINANT_COLOR
               )
             }
