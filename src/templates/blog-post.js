@@ -19,14 +19,8 @@ export default function BlogPost({ data}) {
             <div class="row">
                 <div className="col-lg-12">
                     <div className="blog-details mt-10">
-                        <div className="image" 
-                        style={{ 
-                          backgroundPosition: 'center',
-                          backgroundSize: 'cover',
-                          backgroundImage: `url(${image})`,
-                        }}>
-                      
-                            <GatsbyImage image={image} alt={title} />
+                        <div className="image">
+                            <GatsbyImage image={image} alt={title}/>
                         </div>
                         <div className="content">
                             <h3 className="mt-25">{title}</h3>
@@ -76,7 +70,7 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData(
                 width: 1150,
-                height: 700,
+                height: 550,
                 placeholder: DOMINANT_COLOR
               )
             }
