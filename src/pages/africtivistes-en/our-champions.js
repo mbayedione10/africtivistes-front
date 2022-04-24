@@ -42,8 +42,8 @@ query {
             big: localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 360,
-                  height: 200,
+                  width: 550,
+                  height: 300,
                   placeholder: DOMINANT_COLOR
                 )
               }

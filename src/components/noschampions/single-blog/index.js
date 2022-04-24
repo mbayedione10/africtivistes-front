@@ -6,7 +6,7 @@ const SingleBlog = ({ posts}) => {
             <div class="row justify-content-center">
                 {posts.map(post => {
                     return(
-                        <div class="col-md-6 col-sm-9">
+                    <div class="col-xl-6 col-lg-7">
                             <SingleBogMt post = {post} key={post.id}/>
                         </div>
                     )
