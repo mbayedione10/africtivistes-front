@@ -7,24 +7,26 @@ const SingleBogMt = ({post}) => {
     const image = featuredImage && getImage(featuredImage.node.big)
 
     return (
-        <div class="single-blog mt-50">
-            <div class="blog-image">
-                <GatsbyImage image={image} alt={title} />
+        <div className="row">
+        <div className="col-xl-5 col-lg-6">
+            <div className="blog-image">
+            <a href={link}> <GatsbyImage image={image} alt={title}/></a>
+
+           
+                <a></a>
             </div>
-            <div class="blog-content">
-                <div class="date">
-                    <ul>
-                        <li><a href="#"><i class="flaticon-calendar"></i>{date}</a></li>
-                        <li><a href="#"><i class="flaticon-folder"></i>{name}</a></li>
-                    </ul>
-                </div>
-                <div class="content">
-                    <a href={link} class="mb-15"><h4>{title}</h4></a>
-                    <p class="mb-15" dangerouslySetInnerHTML={{ __html: excerpt }} />
-                    <a href={link}><FormattedMessage id ="readMore"/> <i class="fa fa-angle-right"></i></a>
-                </div>
+        </div>
+        <div className="col-xl-7 col-lg-8">
+            <div className="blog-content">
+                <a href={link} className="mt-25"><h4>{title}</h4></a>
+
+                <p className="mt-15 mb-15" dangerouslySetInnerHTML={{ __html: excerpt }} />
+                <a href={link}><FormattedMessage id ="readMore"/> <i class="fa fa-angle-right"></i></a>
+                <br></br>
             </div>
-        </div> 
+        </div>
+    </div> 
+      
     )
 }
 

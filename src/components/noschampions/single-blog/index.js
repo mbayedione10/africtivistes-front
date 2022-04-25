@@ -3,10 +3,12 @@ import SingleBogMt from '../single-blog-mt'
 
 const SingleBlog = ({ posts}) => {
     return (
-            <div class="row justify-content-center">
-                {posts.map(post => {
+        <div className="container">
+        
+
+                                {posts.map(post => {
                     return(
-                    <div class="col-xl-6 col-lg-7">
+                        <div className="single-blog-list mt-20">
                             <SingleBogMt post = {post} key={post.id}/>
                         </div>
                     )
