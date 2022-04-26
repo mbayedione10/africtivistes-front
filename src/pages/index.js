@@ -142,7 +142,7 @@ export const pageQuery = graphql`
   latestnews: allWpPost(
     limit: 15
     sort: {fields: [date], order: DESC}
-     filter: {language: {code: {eq: FR}}}
+    filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "actualites"}}}}}
 
      ) {
       edges {
@@ -189,7 +189,7 @@ export const pageQuery = graphql`
  allWpPost(
   sort: {fields: [date], order: DESC},
    limit: 3
-   filter: {language: {code: {eq: FR}}}
+   filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "actualites"}}}}}
 
    ) {
     edges {
