@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { IntlContextConsumer } from "gatsby-plugin-react-intl"
 import BoitePage from '../ressources/boite-a-outils'
 
-const OurRapport = ({ data }) => (
+const OurToolBox = ({ data }) => (
 
 <IntlContextConsumer>
     {({ language: currentLocale }) => 
@@ -12,7 +12,7 @@ const OurRapport = ({ data }) => (
 </IntlContextConsumer>
 )
 
-export default OurRapport
+export default OurToolBox
 
 export const query = graphql`
 query {
