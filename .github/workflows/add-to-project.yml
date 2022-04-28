@@ -1,4 +1,4 @@
-name: Add bugs to bugs project
+name: Add to project
 
 on:
   issues:
@@ -10,12 +10,7 @@ jobs:
     name: Add issue to project
     runs-on: ubuntu-latest
     steps:
-      - name: "🔑 Github Repository Metadata"
-        uses: varunsridharan/action-repository-meta@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: "🔖 Github Repository Metadata"
+      - name: "🔖 Issue add"
         uses: actions/add-to-project@main
         with:
           project-url: https://github.com/orgs/AfricTivistes/projects/2
