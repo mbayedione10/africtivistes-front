@@ -8,6 +8,8 @@ on:
 jobs:
   add-to-project:
     name: Add issue to project
+    permissions:
+      repository-projects: write
     runs-on: ubuntu-latest
     steps:
       - name: "🔖 Issue add"
