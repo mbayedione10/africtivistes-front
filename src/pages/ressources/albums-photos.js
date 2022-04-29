@@ -1,11 +1,9 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import NosChampions from '../../components/noschampions'
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import PageBanner from '../../components/pageBanner'
 import CallAction from "../../components/callAction"
-
 
 const PhotoPage = ({data}) => {
     const {title, translations} = data.allWpPage.nodes[0]
@@ -19,10 +17,8 @@ const PhotoPage = ({data}) => {
     )
 }
 export default PhotoPage
-
 export const query = graphql`
 query {
-
   allWpPage(filter: {slug: {eq: "albums-photos"}}) {
     nodes {
       title

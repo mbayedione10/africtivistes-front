@@ -1,10 +1,9 @@
 import React from 'react'
 import { graphql } from "gatsby"
-import { IntlContextConsumer } from "gatsby-plugin-react-intl"
 import PhotoPage from '../ressources/albums-photos'
+import { IntlContextConsumer } from "gatsby-plugin-react-intl"
 
 const PhotoAlbum = ({ data }) => (
-
 <IntlContextConsumer>
     {({ language: currentLocale }) => 
         currentLocale === 'en' && <PhotoPage data={data} />
@@ -12,10 +11,8 @@ const PhotoAlbum = ({ data }) => (
 </IntlContextConsumer>
 )
 export default PhotoAlbum
-
 export const query = graphql`
 query {
-
   allWpPage(filter: {slug: {eq: "photos-albums"}}) {
     nodes {
       title
