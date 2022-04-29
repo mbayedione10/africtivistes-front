@@ -11,7 +11,6 @@ const PhotoAlbum = ({ data }) => (
     }
 </IntlContextConsumer>
 )
-
 export default PhotoAlbum
 
 export const query = graphql`

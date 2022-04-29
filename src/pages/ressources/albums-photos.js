@@ -8,7 +8,7 @@ import CallAction from "../../components/callAction"
 
 
 const PhotoPage = ({data}) => {
-    const { title, translations} = data.allWpPage.nodes[0]
+    const {title, translations} = data.allWpPage.nodes[0]
     const link = translations ? translations[0].link : ''
     return (<Layout translation={link}>
         <Seo title={title} />
