@@ -18,7 +18,7 @@ const RapportPage = ({data}) => {
     <div className="col-lg-10" >
         <div className="section-title text-center pt-10 pb-10" >
         <br></br>
-            <h3><FormattedMessage id="rapportText"/></h3>
+            <h3 className="text-justify"><FormattedMessage id="rapportText"/></h3>
             <div className="underline">
                 <span></span>
                 <span></span>

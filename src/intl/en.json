@@ -64,5 +64,12 @@
   "comptetwitter":"Compte Twitter",
   "comptefacebook":"Compte Facebook",
   "liendeblog":"Lien de blog ou site web",
-  "messages": "Pourquoi voulez-vous rejoindre AfricTivistes ?"
+  "messages": "Pourquoi voulez-vous rejoindre AfricTivistes ?",
+  "rapports": "Africtivist Activity Report",
+  "champions": "Champions of Africa",
+  "championsText": "This section is dedicated to young African change agents who make the continent shine through their actions through initiatives based on common values of co-construction and for a positive impact.",
+  "rapportText": "Each year, AfricTivistes produces an annual activity report which retraces all the activities implemented during the past year: projects, programs, events, training, advocacy, etc. This document also presents our digital solutions and innovative technical tools.",
+  "boiteText": "Helping civil society information actors (bloggers, digital influencers, citizen journalists,..), activists, computer scientists, journalists, open data experts, digital technology training experts, lawyers, citizen networks and movements, etc., to face multiform threats.",
+  "learnText": "Sharing with you, definitions, key words of the activist web language and other inspiring quotes. It will also be about going deeper into specific issues on good governance and transparency, democracy and rule of law, cyberdemocracy, E-governance, cybersecurity, ..."
+
 }

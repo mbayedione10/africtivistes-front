@@ -55,7 +55,7 @@
   "chersafrictivistes":"Chers AfricTivistes,",
   "president":"Président, AfricTivistes",
   "discours":"Discours de Cheikh Fall, Abidjan2021",
-  "discourstexte": "En novembre 2015, nous nous sommes réunis à Dakar, dans la capitale sénégalaise, pour porter ensemble des idéaux de changement reposant sur des valeurs communes d’innovation, d'entraide, de partage, de soutien mutuel et de don de soi. Nous venions de commencer et il fallait trouver des réponses à la restriction de l’espace civique ainsi que sur les menaces qui pèsent sur les activistes pro-démocratie. En juin 2018, nous nous sommes réunis à Ouagadougou dans la capitale Burkinabé, pays du très inspirant Thomas Sankara. Ce fut une occasion pour nous de tendre la main aux autorités politiques. Nous avions eu l’honneur de recevoir le Président du Faso, Monsieur Roch Marc Christian Kaboré à qui nous avions fait passer un message à l’encontre de ses homologues africains pour qu’ils cessent de considérer les activistes pro-démocratie comme des opposants politiques.",
+  "discourstexte": "En novembre 2015, nous nous sommes réunis à Dakar, dans la capitale sénégalaise, pour porter ensemble des idéaux de changement reposant sur des valeurs communes d’innovation, d'entraide, de partage, de soutien mutuel et de don de soi. Nous venions de commencer et il fallait trouver des réponses à la restriction de l’espace civique ainsi que sur les menaces qui pèsent sur les activistes pro-démocratie. En juin 2018, nous nous sommes réunis à Ouagadougou dans la capitale Burkinabé, pays du très inspirant Thomas Sankara.",
   "relatedPost":"Related Posts",
   "pays":"Pays",
   "villederesidence":"Ville de résidence",
@@ -64,5 +64,11 @@
   "comptetwitter":"Compte Twitter",
   "comptefacebook":"Compte Facebook",
   "liendeblog":"Lien de blog ou site web",
-  "messages": "Pourquoi voulez-vous rejoindre AfricTivistes ?"
+  "messages": "Pourquoi voulez-vous rejoindre AfricTivistes ?",
+  "rapports": "Rapport d'activités Africtivistes",
+  "champions": "Champions d'Afrique",
+  "championsText": "Cette rubrique est dédiée aux jeunes acteurs de changement africains qui font briller le continent par leurs actions à travers des initiatives fondées sur des valeurs communes de co-construction et pour un impact positif.",
+  "rapportText": "Chaque année, AfricTivistes produit un rapport d’activités annuel qui retrace l’ensemble des activités mises en œuvre durant l'année écoulée: projets, programmes, événements, formations, plaidoyer, etc. Ce document présente également nos solutions numériques et outils techniques innovants.",
+  "boiteText": "Aider les acteurs de l’information de la société civile (blogueurs, influenceurs digitaux, journalistes citoyens,..), les activistes, les informaticiens, les journalistes, les experts en données ouvertes, les experts formateurs aux technologies numériques, les juristes, les réseaux et mouvements citoyens, etc., à faire face à des menaces multiformes.",
+  "learnText": "En partage avec vous, des définitions, mots clés du langage web activiste et autres quotes inspirantes. Il sera également question d’approfondir des problématiques spécifiques sur la bonne gouvernance et la transparence, la démocratie et l’Etat de droit, la cyberdémocratie, le E-gouvernance, la cybersécurité,  …"
 }
