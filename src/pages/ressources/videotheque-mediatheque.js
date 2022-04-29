@@ -5,7 +5,7 @@ import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import PageBanner from '../../components/pageBanner'
 import CallAction from "../../components/callAction"
-
+import {FormattedMessage } from 'react-intl'
 
 const VideoPage = ({data}) => {
     const { title, translations} = data.allWpPage.nodes[0]
@@ -13,6 +13,18 @@ const VideoPage = ({data}) => {
     return (<Layout translation={link}>
         <Seo title={title} />
         <PageBanner title={title} />
+        <div className="row justify-content-center" >
+    <div className="col-lg-10" >
+        <div className="section-title text-center pt-10 pb-10" >
+        <br></br>
+            <h3 className="text-justify" ><FormattedMessage id="videotheques"/></h3>
+            <div className="underline">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</div>
         {/* <NosChampions posts={data.allWpPost.edges} /> */}
         <CallAction contacts={data.contact.nodes}/>
       </Layout>
