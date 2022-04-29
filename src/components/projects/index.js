@@ -51,7 +51,7 @@ const Projects = ({posts}) => {
       <div className="row">
           <div className="col-lg-12">
               <div className="project-more text-center mt-50">
-                <a className="main-btn"  href="fr/actualites" ><FormattedMessage id="more"/></a>
+                <a className="main-btn"  href="actualites" ><FormattedMessage id="more"/></a>
               </div>
           </div>
       </div>

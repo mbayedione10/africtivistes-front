@@ -3,6 +3,19 @@ import {FormattedMessage} from "gatsby-plugin-react-intl"
 
 const About = ({posts}) => {
   return(
+    <>
+    <div className="row justify-content-center" >
+    <div className="col-lg-6" >
+        <div className="section-title text-center ppt-30 pb-30" >
+        <br></br>
+            <h2><FormattedMessage id="abidjan2021"/></h2>
+            <div className="underline">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</div>
   <section id="about-part" className="about-part bg_cover pt-30 pb-30" style={{backgroundImage:`url(/images/pdg.png`}}>
     
     <div className="container">
@@ -41,6 +54,7 @@ href={post.link} ><FormattedMessage id="readMore"/></a>
       </div>
     </div>
   </section>
+  </>
   )
 }
 

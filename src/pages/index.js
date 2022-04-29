@@ -12,18 +12,46 @@ import CallAction from '../components/callAction'
 import Counter from '../components/counter'
 import Features from '../components/features'
 import ProjectsPage from '../components/projects/page'
+import NosChampions from "../components/noschampions"
+import{FormattedMessage} from 'react-intl'
 
 const IndexPage = ({data}) => (
   <Layout>
     <Seo title={data.allWpPage.nodes.title} />
     <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>
     <Features projects={data.programmeencours.nodes}/>
+    <div className="row justify-content-center" >
+    <div className="col-lg-6" >
+        <div className="section-title text-center pt-10 pb-10" >
+        <br></br>
+            <a href='ressources/nos-rapports-dactivites/'><h2><FormattedMessage id="rapports"/></h2></a>
+            <div className="underline">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</div>
+    <NosChampions posts={data.rapports.edges} />
+    <LatestNews posts={data.allWpPost.edges}/>
+
     <About posts={data.abidjan.nodes} actu={data.latestnews.edges}/>
     <Counter posts={data.sommet.nodes}/>
-    <About2/>
-    <LatestNews posts={data.allWpPost.edges}/>
+    <div className="row justify-content-center" >
+    <div className="col-lg-6" >
+        <div className="section-title text-center pt-10 pb-10" >
+        <br></br>
+            <a href='ressources/nos-champions/'><h2><FormattedMessage id="champions"/></h2></a>
+            <div className="underline">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</div>
+    <NosChampions posts={data.champions.edges} />
+    {/* <About2/> */}
     {/* <Services posts={data.plan.edges}/> */}
-    <ProjectsPage programmes={data.allWpProgrammeType.nodes} projects={data.allWpProgramme.nodes} />
     {/* <section id="blog-list" className="pt-80 pb-130">
       <div className="container">
         <h1><FormattedMessage id="actualites" /></h1>
@@ -44,6 +72,7 @@ const IndexPage = ({data}) => (
     </section> */}
     {/* <Testimonial/> */}
     <Projects posts={data.latestnews.edges} pages={data.allWpPage.nodes} />
+    <ProjectsPage programmes={data.allWpProgrammeType.nodes} projects={data.allWpProgramme.nodes} />
 
     <Partner/>
     <CallAction contacts={data.contact.nodes}/>
@@ -74,7 +103,8 @@ export const pageQuery = graphql`
       }
     }
     allWpProgramme(
-      filter: {language: {code: {eq: FR}}}
+      filter: {language: {code: {eq: FR}}},
+      limit: 6
       sort: {fields: date, order: DESC}
       ) {
       nodes {
@@ -140,7 +170,7 @@ export const pageQuery = graphql`
   }
 
   latestnews: allWpPost(
-    limit: 15
+    limit: 9
     sort: {fields: [date], order: DESC}
     filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "actualites"}}}}}
 
@@ -330,6 +360,95 @@ slider: allWpPost(
       link
       translations {
         link
+      }
+    }
+  }
+
+  rapports: allWpPost(
+    sort: {fields: date, order: DESC},
+    limit: 3
+    filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "nos-rapports-dactivites"}}}}}
+  ) {
+    edges {
+      node {
+        id
+        title
+        date(formatString: "DD MMMM, YYYY", locale: "fr")
+        excerpt
+        link
+        featuredImage {
+          node {
+            altText
+            big: localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 550,
+                  height: 300,
+                  placeholder: DOMINANT_COLOR
+                )
+              }
+            }
+            small: localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 70,
+                  height: 68,
+                  placeholder: DOMINANT_COLOR
+                )
+              }
+            }
+          }
+        }
+        categories {
+          nodes {
+            name
+            count
+          }
+        }
+      }
+    }
+  }
+
+  champions:  allWpPost(
+    sort: {fields: date, order: DESC}
+    filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "nos-championnes"}}}}}
+  ) {
+    edges {
+      node {
+        id
+        title
+        date(formatString: "DD MMMM, YYYY", locale: "fr")
+        excerpt
+        link
+        featuredImage {
+          node {
+            altText
+            big: localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 550,
+                  height: 300,
+                  placeholder: DOMINANT_COLOR
+                )
+              }
+            }
+            small: localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 70,
+                  height: 68,
+                  placeholder: DOMINANT_COLOR
+                )
+              }
+            }
+          }
+        }
+        categories {
+          nodes {
+            name
+            count
+          }
+        }
       }
     }
   }

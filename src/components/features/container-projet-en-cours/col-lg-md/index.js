@@ -13,7 +13,7 @@ const ColLgMd = ({project}) => {
           </div>
           <div className="content pl-20">
             <h4 className="mb-20">{project.title}</h4>
-            <p className="mb-15" dangerouslySetInnerHTML={{ __html: project.content.substring(0, 600)}}/>
+            <p className="mb-15" dangerouslySetInnerHTML={{ __html: project.content.substring(0, 500)}}/>
             <span className="details"><a href={project.link} ><FormattedMessage id="readMore"/> <i className="flaticon-right-arrow"></i></a></span>
         </div>
       </div>

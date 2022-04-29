@@ -278,6 +278,95 @@ sommet: allWpPage(filter: {slug: {eq: "sommit-africtivistes"}, language: {code: 
     }
   }
 }
+rapports: allWpPost(
+  sort: {fields: date, order: DESC},
+  limit: 3
+  filter: {language: {code: {eq: EN}}, categories: {nodes: {elemMatch: {slug: {eq: "our-reports-of-activities"}}}}}
+) {
+  edges {
+    node {
+      id
+      title
+      date(formatString: "DD MMMM, YYYY", locale: "en")
+      excerpt
+      link
+      featuredImage {
+        node {
+          altText
+          big: localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 550,
+                height: 300,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+          small: localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 70,
+                height: 68,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
+      }
+      categories {
+        nodes {
+          name
+          count
+        }
+      }
+    }
+  }
+}
+
+champions: allWpPost(
+  sort: {fields: date, order: DESC},
+  limit: 3
+  filter: {language: {code: {eq: EN}}, categories: {nodes: {elemMatch: {slug: {eq: "our-champions"}}}}}
+) {
+  edges {
+    node {
+      id
+      title
+      date(formatString: "DD MMMM, YYYY", locale: "en")
+      excerpt
+      link
+      featuredImage {
+        node {
+          altText
+          big: localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 550,
+                height: 300,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+          small: localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 70,
+                height: 68,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
+      }
+      categories {
+        nodes {
+          name
+          count
+        }
+      }
+    }
+  }
+}
 }   
 `
 

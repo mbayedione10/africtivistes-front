@@ -8,19 +8,8 @@ const Counter = ({posts}) => {
 
   return (<section id="counter-part-2" pt-30 pb-30 >
     {/* style={{backgroundImage:`url(/images/slider/ss.jpeg)`}} */}
-          <div className="row justify-content-center" style={{backgroundColor: '#f5f5f5'}} >
-                <div className="col-lg-6" >
-                    <div className="section-title text-center ppt-30 pb-30" >
-                    <br></br>
-                        <h2><FormattedMessage id="abidjan2021"/></h2>
-                        <div className="underline">
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-        </div>
-    <div className="counter-part-2 pt-80  bg_cover d-flex align-items-center" style={{backgroundImage:`url(/images/elephants.png)`}}>
+
+    <div className="counter-part-2  bg_cover d-flex align-items-center" style={{backgroundImage:`url(/images/elephants.png)`}}>
       <div className="container" >
 
         <div className="row align-items">
