@@ -6,7 +6,7 @@ import Seo from "../../components/seo"
 import PageBanner from '../../components/pageBanner'
 import CallAction from "../../components/callAction"
 import {FormattedMessage } from 'react-intl'
-
+import Testimonial2 from '../../components/testimonial/testimonial2'
 
 const LearnPage = ({data}) => {
     const { title, translations} = data.allWpPage.nodes[0]
@@ -15,17 +15,18 @@ const LearnPage = ({data}) => {
         <Seo title={title} />
         <PageBanner title={title} />
         <div className="row justify-content-center" >
-    <div className="col-lg-10" >
-        <div className="section-title text-center pt-10 pb-10" >
-        <br></br>
+        <div className="col-lg-10" >
+          <div className="section-title text-center pt-10 pb-10" >
+            <br></br>
             <h3 className="text-justify"><FormattedMessage id="learnText"/></h3>
             <div className="underline">
                 <span></span>
                 <span></span>
             </div>
+          </div>
         </div>
-    </div>
-</div>
+        </div>
+        <Testimonial2 posts={data.allWpPost.edges}/>
         {/* <NosChampions posts={data.allWpPost.edges} /> */}
         <CallAction contacts={data.contact.nodes}/>
       </Layout>
@@ -61,8 +62,8 @@ query {
             big: localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 550,
-                  height: 300,
+                  width: 89,
+                  height: 89,
                   placeholder: DOMINANT_COLOR
                 )
               }
