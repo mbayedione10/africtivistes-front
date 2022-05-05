@@ -17,7 +17,7 @@ const VideoPage = ({data}) => {
     <div className="col-lg-10" >
         <div className="section-title text-center pt-10 pb-10" >
         <br></br>
-            <h3 className="text-justify" ><FormattedMessage id="videotheques"/></h3>
+            <h4 className="text-center" ><FormattedMessage id="videotheques"/></h4>
             <div className="underline">
                 <span></span>
                 <span></span>

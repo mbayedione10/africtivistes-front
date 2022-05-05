@@ -52,13 +52,6 @@ const ProjectsPage = ({programmes, projects}) => {
             </div>
           </div>
         ))}
-              <div className="row">
-          <div className="col-lg-12">
-              <div className="project-more text-center mt-50">
-                <a className="main-btn"  href="programmes" ><FormattedMessage id="more"/></a>
-              </div>
-          </div>
-      </div>
     
       </div>
       
