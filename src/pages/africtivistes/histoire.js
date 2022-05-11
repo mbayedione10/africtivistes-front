@@ -9,7 +9,7 @@ const HistoirePage = ({data}) => {
   const { title, translations} = data.allWpPage.nodes[0]
   const link = translations ? translations[0].link : ''
   return (<Layout translation={link}>
-      <Seo title="À propos de nous" />
+      <Seo title={title}/>
       <section id="page-banner" className="bg_cover pt-150 pb-150" style={{ backgroundImage: `url(/images/histoiire.jpeg`}} data-overlay="6">
         <div className="container">
             <div className="row">

@@ -12,7 +12,7 @@ export default function BlogPost({ data}) {
   const image = featuredImage && getImage(featuredImage.node.localFile)
     return (
         <Layout>
-        <Seo title="À propos de nous" />
+        <Seo title={title}/>
         {/* <PageBanner title= {title} date={date}/> */}
     <section id="blog-sidebar"  class="pt-10 pb-10">
         <div class="container">
