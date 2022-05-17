@@ -26,6 +26,56 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  const actualite = await graphql(`
+  {
+    allWpPost(sort: {fields: date}) {
+    nodes {
+      link
+      slug
+      language {
+        slug
+      }
+    }
+  }
+}
+`).then(res => res.data)
+
+actualite.allWpPost.nodes.forEach(node => {
+  createPage({
+    path: `/actualites/${node.slug}`,
+    component: path.resolve(`./src/templates/detail-post.js`),
+    context: {
+      slug: node.slug,
+      lang: node.language.slug
+    },
+  })
+})
+
+const newss = await graphql(`
+{
+  allWpPost(sort: {fields: date}) {
+  nodes {
+    link
+    slug
+    language {
+      slug
+    }
+  }
+}
+}
+`).then(res => res.data)
+
+newss.allWpPost.nodes.forEach(node => {
+createPage({
+  path: `/news/${node.slug}`,
+  component: path.resolve(`./src/templates/detail-post.js`),
+  context: {
+    slug: node.slug,
+    lang: node.language.slug
+  },
+})
+})
+
   const programmes = await graphql(`
     {
       allWpProgramme(sort: {fields: date}) {
