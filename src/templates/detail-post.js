@@ -1,59 +1,50 @@
 import React from "react"
-import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { IntlContextConsumer, injectIntl } from "gatsby-plugin-react-intl"
+import { FormattedMessage } from 'gatsby-plugin-react-intl'
+import Layout from "../components/layout"
 import Seo from "../components/seo"
-import PageBanner from '../components/pageBanner'
-import RecentPost from '../components/blog-sidebar/recent-post'
-import RelatedPost from '../components/blog-sidebar/related'
+import ProjectDetail from '../components/projects/details'
+import ProjectPart from '../components/projects/part'
+import Testimonial2 from '../components/testimonial/testimonial2'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-export default function DetailPost({ data}) {
-  const { title,date, content, featuredImage} = data.allWpPost.nodes[0]
-  const image = featuredImage && getImage(featuredImage.node.localFile)
+const DetailPost = ({ data, pageContext, intl }) =>{
+    const {title, translations,featuredImage} = data.allWpPost.nodes[0]
+    const translation = translations.lenght && translations[0].link
+  const { localFile, altText  } = featuredImage.node
+    const image = featuredImage && featuredImage.node.localFile.childImageSharp.gatsbyImageData.images.fallback.src
+
     return (
-        <Layout>
-        <Seo title={title}/>
-        {/* <PageBanner title= {title} date={date}/> */}
-    <section id="blog-sidebar"  class="pt-10 pb-10">
+      <IntlContextConsumer>
+        {({ language: currentLocale }) =>
+          currentLocale === pageContext.lang && <Layout translation={translation}>
+            <Seo lang={intl.locale} title={title} />
+            {/* <PageBanner title={'Recent Projects'} /> */}
+            <section id="blog-sidebar"  class="pt-10 pb-10">
         <div class="container">
             <div class="row">
                 <div className="col-lg-12">
                     <div className="blog-details mt-10">
                         <div className="image">
-                            <GatsbyImage image={image} alt={title}/>
+                        <GatsbyImage image={getImage(localFile)} alt={altText} />
                         </div>
-                        <div className="content">
-                            <h3 className="mt-25">{title}</h3>
-                            <div className="date mt-10">
-                                <ul>
-                                    <li><a href="#"><i className="flaticon-calendar"></i>{date}</a></li>
-                                    {/* <li><a href="#"><i className="flaticon-heart"></i> 50 Likes</a></li> */}
-                                    {/* <li><a href="#"><i className="flaticon-comment"></i> 25 Comments</a></li> */}
-                                    {/* <li><a href="#"><i className="flaticon-folder"></i> Finance</a></li> */}
-                                </ul>
-                            </div>
-                            <br></br>
-                            <p class="mb-15" dangerouslySetInnerHTML={{ __html: content }} ></p>
-                        </div> 
-                        
                     </div> 
                 </div>
-                {/* <div class="col-lg-4">
-                    <div class="blog-sidebar ">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-12 col-md-8">
-                            <RecentPost posts={data.recent.edges}/>
-                            <RelatedPost posts={data.related.edges}/>
-                            </div> 
-                        </div> 
-                    </div> 
-                </div> */}
+ 
                 </div>
                 </div>
                 </section>
+            <ProjectDetail project={data.allWpPost.nodes[0]} />
+            {/* <ProjectPart projects={data.allWpPost.nodes} /> */}
+            {/* <Testimonial2/> */}
         </Layout>
+        }
+      </IntlContextConsumer>
     )
 }
+
+export default injectIntl(DetailPost)
 
 export const query = graphql`
   query($slug: String!) {
