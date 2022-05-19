@@ -4,7 +4,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 const ProjectDetail = ({project}) => {
 
   const { title, content, featuredImage} = project
-  const { localFile, altText  } = featuredImage.node
+  const image = featuredImage && getImage(featuredImage.node.localFile)
+  const altText = featuredImage && getImage(featuredImage.node.localFile)
+
   return (<section id="project-details" className="pt-50 pb-50">
     <div className="container">
       <div className="row">
@@ -18,7 +20,7 @@ const ProjectDetail = ({project}) => {
                 </div>
                 <div className="col-xl-4 col-lg-6">
           <div className="project-details-image pt-50">
-            <GatsbyImage image={getImage(localFile)} alt={altText} />
+            <GatsbyImage image={getImage(image)} alt={altText} />
             <div className="col-xl offset-xl col-lg">
             <div className="project-details-content pt-45">
             <ul className="mt-10">

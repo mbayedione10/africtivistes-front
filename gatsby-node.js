@@ -11,6 +11,9 @@ exports.createPages = async ({ graphql, actions }) => {
           excerpt
           content
           slug
+          language {
+            slug
+          }
         }
       }
     }
@@ -22,59 +25,10 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/blog-post.js`),
       context: {
         slug: node.slug,
+        lang: node.language.slug
       },
     })
   })
-
-  const actualite = await graphql(`
-  {
-    allWpPost(sort: {fields: date}) {
-    nodes {
-      link
-      slug
-      language {
-        slug
-      }
-    }
-  }
-}
-`).then(res => res.data)
-
-actualite.allWpPost.nodes.forEach(node => {
-  createPage({
-    path: `/actualites/${node.slug}`,
-    component: path.resolve(`./src/templates/detail-post.js`),
-    context: {
-      slug: node.slug,
-      lang: node.language.slug
-    },
-  })
-})
-
-const newss = await graphql(`
-{
-  allWpPost(sort: {fields: date}) {
-  nodes {
-    link
-    slug
-    language {
-      slug
-    }
-  }
-}
-}
-`).then(res => res.data)
-
-newss.allWpPost.nodes.forEach(node => {
-createPage({
-  path: `/news/${node.slug}`,
-  component: path.resolve(`./src/templates/detail-post.js`),
-  context: {
-    slug: node.slug,
-    lang: node.language.slug
-  },
-})
-})
 
   const programmes = await graphql(`
     {
@@ -107,6 +61,13 @@ createPage({
         filter: {language: {code: {eq: FR}}}
       ){
         totalCount
+        nodes {
+          link
+          slug
+          language {
+            slug
+          }
+        }
       }
     }
   `).then(res => res.data)
@@ -125,6 +86,16 @@ createPage({
         numPages,
       },
     })
+    actualites.allWpPost.nodes.forEach(node => {
+      createPage({
+        path: `/actualites/${node.slug}`,
+        component: path.resolve(`./src/templates/detail-post.js`),
+        context: {
+          slug: node.slug,
+          lang: node.language.slug
+        },
+      })
+    })
   }
   )
   const news = await graphql(`
@@ -133,6 +104,13 @@ createPage({
       filter: {language: {code: {eq: EN}}}
     ){
       totalCount
+      nodes {
+        link
+        slug
+        language {
+          slug
+        }
+      }
     }
   }
 `).then(res => res.data)
@@ -146,6 +124,16 @@ createPage({
         skip: i * perPage,
         numPages,
       },
+    })
+    news.allWpPost.nodes.forEach(node => {
+      createPage({
+        path: `/news/${node.slug}`,
+        component: path.resolve(`./src/templates/detail-post.js`),
+        context: {
+          slug: node.slug,
+          lang: node.language.slug
+        },
+      })
     })
   }
   )

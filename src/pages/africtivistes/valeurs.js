@@ -8,7 +8,7 @@ const ValeursPage = ({data}) => {
   const {translations} = data.allWpPage.nodes[0]
   const link = translations ? translations[0].link : ''
   return (<Layout translation={link}>
-      <Seo title="À propos de nous" />
+      <Seo title={data.allWpPage.nodes.title}/>
       {/* <PageBanner title={title} /> */}
       <section id="page-banner" className="bg_cover pt-200 pb-200" style={{ backgroundImage: `url(/images/nosvaleurs.png`}} data-overlay="6">
         <div className="container">

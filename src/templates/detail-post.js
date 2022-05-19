@@ -1,50 +1,21 @@
 import React from "react"
-import { graphql } from "gatsby"
-import { IntlContextConsumer, injectIntl } from "gatsby-plugin-react-intl"
-import { FormattedMessage } from 'gatsby-plugin-react-intl'
 import Layout from "../components/layout"
-import Seo from "../components/seo"
-import ProjectDetail from '../components/projects/details'
-import ProjectPart from '../components/projects/part'
-import Testimonial2 from '../components/testimonial/testimonial2'
+import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import Seo from "../components/seo"
+import ProjectDetail from "../components/projects/details"
 
-const DetailPost = ({ data, pageContext, intl }) =>{
-    const {title, translations,featuredImage} = data.allWpPost.nodes[0]
-    const translation = translations.lenght && translations[0].link
-  const { localFile, altText  } = featuredImage.node
-    const image = featuredImage && featuredImage.node.localFile.childImageSharp.gatsbyImageData.images.fallback.src
-
+export default function DetailPost({ data}) {
+  const { title,date, content, featuredImage} = data.allWpPost.nodes[0]
+  const image = featuredImage && getImage(featuredImage.node.localFile)
     return (
-      <IntlContextConsumer>
-        {({ language: currentLocale }) =>
-          currentLocale === pageContext.lang && <Layout translation={translation}>
-            <Seo lang={intl.locale} title={title} />
-            {/* <PageBanner title={'Recent Projects'} /> */}
-            <section id="blog-sidebar"  class="pt-10 pb-10">
-        <div class="container">
-            <div class="row">
-                <div className="col-lg-12">
-                    <div className="blog-details mt-10">
-                        <div className="image">
-                        <GatsbyImage image={getImage(localFile)} alt={altText} />
-                        </div>
-                    </div> 
-                </div>
- 
-                </div>
-                </div>
-                </section>
-            <ProjectDetail project={data.allWpPost.nodes[0]} />
-            {/* <ProjectPart projects={data.allWpPost.nodes} /> */}
-            {/* <Testimonial2/> */}
+        <Layout>
+        <Seo title={title}/>
+        {/* <PageBanner title= {title} date={date}/> */}
+        <ProjectDetail project={data.allWpPost.nodes[0]} />
         </Layout>
-        }
-      </IntlContextConsumer>
     )
 }
-
-export default injectIntl(DetailPost)
 
 export const query = graphql`
   query($slug: String!) {
@@ -60,9 +31,9 @@ export const query = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(
-                width: 1150,
-                height: 550,
                 placeholder: DOMINANT_COLOR
+                height: 500
+                width: 500
               )
             }
           }
