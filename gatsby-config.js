@@ -1,3 +1,4 @@
+// require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: `Africtivistes`,
@@ -9,6 +10,19 @@ module.exports = {
     siteUrl: `https://www.africtivistes.org/`,
   },
   plugins: [
+    // {
+    //   resolve: `gatsby-source-cloudinary`,
+    //   options: {
+    //     cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+    //     apiKey: process.env.CLOUDINARY_API_KEY,
+    //     apiSecret: process.env.CLOUDINARY_API_SECRET,
+    //     resourceType: `image`,
+    //     prefix: `artists/` ,
+    //     context: true,
+    //     tags: true,
+    //     maxResults: 50
+    //   }
+    // },
     {
       resolve: `gatsby-source-wordpress`,
       options: {
@@ -56,6 +70,18 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/asset/images/favicon.png`, // This path is relative to the root of the site.
+      },
+    },
+    'gatsby-plugin-netlify',
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: 'G-VMEZ0B1RZ7', // leave empty if you want to disable the tracker
+          anonymize: true, // default
+        },
+        // defines the environments where the tracking should be available  - default is ["production"]
+        environments: ['production', 'development']
       },
     },
     `gatsby-plugin-gatsby-cloud`,
