@@ -46,6 +46,17 @@ module.exports = {
               },
             },
           },
+          {
+            presetName: `PRODUCTION`,
+            useIf: () => process.env.NODE_ENV === `production`,
+            options: {
+              production: {
+                hardCacheMediaFiles: true,
+                allow404Images: true,
+                allow401Images: true,
+              },
+            },
+          },
         ],
       },
     },
@@ -77,7 +88,7 @@ module.exports = {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
-          trackingId: 'G-3EWZ54HKXQ', // leave empty if you want to disable the tracker
+          trackingId: 'G-K7JRF1CNQM', // leave empty if you want to disable the tracker
           anonymize: true, // default
         },
         // defines the environments where the tracking should be available  - default is ["production"]
