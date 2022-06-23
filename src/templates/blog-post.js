@@ -6,6 +6,7 @@ import Seo from "../components/seo"
 import PageBanner from '../components/pageBanner'
 import RecentPost from '../components/blog-sidebar/recent-post'
 import RelatedPost from '../components/blog-sidebar/related'
+import CallAction from "../components/callAction"
 
 export default function BlogPost({ data}) {
   const { title,date, content, featuredImage} = data.allWpPost.nodes[0]
@@ -14,11 +15,11 @@ export default function BlogPost({ data}) {
         <Layout>
         <Seo title={title}/>
         {/* <PageBanner title= {title} date={date}/> */}
-    <section id="blog-sidebar"  class="pt-10 pb-10">
+    <section id="blog-sidebar"  class="pt-80 pb-130">
         <div class="container">
             <div class="row">
-                <div className="col-lg-12">
-                    <div className="blog-details mt-10">
+                <div className="col-lg-8">
+                    <div className="blog-details mt-50">
                         <div className="image">
                             <GatsbyImage image={image} alt={title}/>
                         </div>
@@ -38,7 +39,7 @@ export default function BlogPost({ data}) {
                         
                     </div> 
                 </div>
-                {/* <div class="col-lg-4">
+                <div class="col-lg-4">
                     <div class="blog-sidebar ">
                         <div class="row justify-content-center">
                             <div class="col-lg-12 col-md-8">
@@ -47,10 +48,12 @@ export default function BlogPost({ data}) {
                             </div> 
                         </div> 
                     </div> 
-                </div> */}
+                </div>
                 </div>
                 </div>
                 </section>
+                <CallAction contacts={data.contact.nodes}/>
+
         </Layout>
     )
 }
@@ -100,8 +103,8 @@ export const query = graphql`
                 big: localFile {
                   childImageSharp {
                     gatsbyImageData(
-                      width: 360,
-                      height: 200,
+                      width: 750,
+                      height: 360,
                       placeholder: DOMINANT_COLOR
                     )
                   }
@@ -154,5 +157,29 @@ export const query = graphql`
           }
         }
       }
+      contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
+    nodes {
+      title
+      content
+      slug
+      link
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 555,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
+      }
+      translations {
+        link
+      }
+    }
+  } 
   }
 `

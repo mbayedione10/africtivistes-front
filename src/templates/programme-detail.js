@@ -7,6 +7,7 @@ import Seo from "../components/seo"
 import ProjectDetail from '../components/projects/details'
 import ProjectPart from '../components/projects/part'
 import Testimonial2 from '../components/testimonial/testimonial2'
+import CallAction from "../components/callAction"
 
 const ProgrammeDetail = ({ data, pageContext, intl }) =>{
     const {title, translations,featuredImage} = data.allWpProgramme.nodes[0]
@@ -39,6 +40,7 @@ const ProgrammeDetail = ({ data, pageContext, intl }) =>{
             <ProjectDetail project={data.allWpProgramme.nodes[0]} />
             <ProjectPart projects={data.prog.nodes} />
             {/* <Testimonial2/> */}
+            <CallAction contacts={data.contact.nodes}/>
         </Layout>
         }
       </IntlContextConsumer>
@@ -104,5 +106,29 @@ export const query = graphql`
         content
       }
     }
+    contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
+    nodes {
+      title
+      content
+      slug
+      link
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 555,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
+      }
+      translations {
+        link
+      }
+    }
+  } 
   }
 `

@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
 import ProjectDetail from "../components/projects/details"
+import CallAction from "../components/callAction"
 
 export default function DetailPost({ data}) {
   const { title,date, content, featuredImage} = data.allWpPost.nodes[0]
@@ -13,6 +14,7 @@ export default function DetailPost({ data}) {
         <Seo title={title}/>
         {/* <PageBanner title= {title} date={date}/> */}
         <ProjectDetail project={data.allWpPost.nodes[0]} />
+        <CallAction contacts={data.contact.nodes}/>
         </Layout>
     )
 }
@@ -116,5 +118,29 @@ export const query = graphql`
           }
         }
       }
+    contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
+    nodes {
+      title
+      content
+      slug
+      link
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 555,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
+      }
+      translations {
+        link
+      }
+    }
+  } 
   }
 `
