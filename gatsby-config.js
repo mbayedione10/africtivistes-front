@@ -85,15 +85,13 @@ module.exports = {
     },
     'gatsby-plugin-netlify',
     {
-      resolve: `gatsby-plugin-gdpr-cookies`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        googleAnalytics: {
-          trackingId: 'G-K7JRF1CNQM', // leave empty if you want to disable the tracker
+           trackingId: 'UA-228721643-1', // G-TTYKL1PX7V leave empty if you want to disable the tracker
           anonymize: true, // default
         },
         // defines the environments where the tracking should be available  - default is ["production"]
         environments: ['production', 'development']
-      },
     },
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
