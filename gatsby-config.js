@@ -87,11 +87,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-           trackingId: 'G-D2XFLCJNG9', // G-TTYKL1PX7V leave empty if you want to disable the tracker
+          trackingId: 'UA-228721643-1', // leave empty if you want to disable the tracker
           anonymize: true, // default
-        },
+          head: true,
+
         // defines the environments where the tracking should be available  - default is ["production"]
         environments: ['production', 'development']
+      },
     },
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
