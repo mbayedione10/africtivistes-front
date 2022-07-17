@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import Values from "../../components/values"
+import CallAction from "../../components/callAction"
 
 const ValeursPage = ({data}) => {
   const {translations} = data.allWpPage.nodes[0]
@@ -24,6 +25,8 @@ const ValeursPage = ({data}) => {
         </div>
     </section>
       <Values posts={data.allWpPage.edges}/>
+      <CallAction contacts={data.contact.nodes}/>
+
     </Layout>)
 }
 export default ValeursPage
@@ -61,5 +64,29 @@ export const query = graphql`
         }
         }
     }
+    contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
+    nodes {
+      title
+      content
+      slug
+      link
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 555,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
+      }
+      translations {
+        link
+      }
+    }
+  } 
 }
 `

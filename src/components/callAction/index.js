@@ -13,8 +13,8 @@ const CallAction = ({contacts}) => (
         <div className="col-xl-3 col-lg-3 col-md-4 col-sm-5">
           <div className="call-action-btn pt-30 text-center">
           {contacts.map(contact=>(
-           <a  className="main-btn" data-animation="fadeInUp" data-delay="2s" key={contact.id} data-filter={`.${contact.slug}`} href={contact.link}><FormattedMessage id ="contactUs"/></a>))}
-           </div>
+          <a  className="main-btn" data-animation="fadeInUp" data-delay="2s" key={contact.id} data-filter={`.${contact.slug}`} href={contact.link}><FormattedMessage id ="contactUs"/></a>))}
+        </div>
         </div>
       </div>
     </div>

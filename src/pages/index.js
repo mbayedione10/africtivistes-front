@@ -85,7 +85,7 @@ const IndexPage = ({data}) => (
     </div>
 </div>
     <Testimonial2 posts={data.learn.edges}/>
-    <Projects posts={data.latestnews.edges} pages={data.allWpPage.nodes} />
+    <Projects posts={data.latestnews.edges} pages={data.allWpPage.nodes}/>
     <ProjectsPage programmes={data.allWpProgrammeType.nodes} projects={data.allWpProgramme.nodes} />
     <Partner/>
     <CallAction contacts={data.contact.nodes}/>
@@ -95,6 +95,14 @@ const IndexPage = ({data}) => (
 
 export const pageQuery = graphql`
   query {
+    allWpPage(filter: {slug: {eq: "accueil"}, language: {slug: {eq: "FR"}}}) {
+    nodes {
+      title
+      translations {
+        link
+      }
+    }
+  }
     allWpCategory(sort: {fields: count, order: DESC}, limit: 35
       filter: {language: {code: {eq: FR}}}) {
       edges {
@@ -346,7 +354,7 @@ slider: allWpPost(
       }
     }
   }
-  allWpPage(filter: {slug: {eq: "actualites"}, language: {code: {eq: FR}}}) {
+  actu: allWpPage(filter: {slug: {eq: "actualites"}, language: {code: {eq: FR}}}) {
     nodes {
       title
       translations {

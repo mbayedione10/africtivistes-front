@@ -4,6 +4,7 @@ import {FormattedMessage } from "gatsby-plugin-react-intl"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import History from "../../components/history"
+import CallAction from "../../components/callAction"
 
 const HistoirePage = ({data}) => {
   const { title, translations} = data.allWpPage.nodes[0]
@@ -29,6 +30,8 @@ const HistoirePage = ({data}) => {
     </section>
       {/* <PageBanner title={title} /> */}
       <History/>
+      <CallAction contacts={data.contact.nodes}/>
+
     </Layout>)
 }
 export default HistoirePage
@@ -57,5 +60,29 @@ export const query = graphql`
       }
     }
   }
+  contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
+    nodes {
+      title
+      content
+      slug
+      link
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 555,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
+      }
+      translations {
+        link
+      }
+    }
+  } 
 }
 `

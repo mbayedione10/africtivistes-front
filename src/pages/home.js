@@ -9,7 +9,7 @@ const Home = ({data}) => (
 
 export const pageQuery = graphql`
 query {
-  allWpPage(filter: {slug: {eq: "news"}, language: {code: {eq: EN}}}) {
+  allWpPage(filter: {slug: {eq: "home"}, language: {code: {eq: EN}}}) {
     nodes {
       title
       translations {
