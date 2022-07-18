@@ -7,23 +7,36 @@ const SingleSliderBgcover = ({post,contacts}) => {
     const image = featuredImage && featuredImage.node.localFile.childImageSharp.gatsbyImageData.images.fallback.src
 
     return (
-    <div className="single-slider bg_cover d-flex align-items-center" 
-    style={{backgroundImage:`url(${image})`}}>
-    
+        <section id="page-banner" className="single-slider bg_cover d-flex align-items-center" style={{backgroundImage:`url(${image})`}} data-overlay="8">
         <div className="container">
             <div className="row">
                 <div className="col-lg-5">
-                    <div className="slider-content">
-                        <Link to={link}><h3 className="mb-5" style={{color:'#943126'}} data-animation="bounceInLeft" data-delay="1s"><span>{title}</span></h3></Link>
-                        <p className="mb-5" style={{color:'black'}}  data-delay="1.5s" dangerouslySetInnerHTML={{ __html: excerpt }}/>
-                        {contacts.map(contact=>(
-                        <a  className="main-btn" data-animation="fadeInUp" data-delay="2s" key={contact.id} data-filter={`.${contact.slug}`} href={contact.link}><FormattedMessage id ="contactUs"/></a>
-                        ))}
+                    <div className="page-banner-content">
+                         <Link to={link}><h3 className="mb-5" style={{color:'#943126'}} data-animation="bounceInLeft" data-delay="1s"><span>{title}</span></h3></Link>
+                        <p className="mb-5" style={{color:'white'}} data-delay="1.5s" dangerouslySetInnerHTML={{ __html: excerpt }}/>
+                        <a  className="main-btn" data-animation="fadeInUp" data-delay="1.5s" href={link}><FormattedMessage id ="suite"/></a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    // <div className="single-slider bg_cover d-flex align-items-center" 
+    // style={{backgroundImage:`url(${image})`}} data-overlay="6">
+    
+    //     <div className="container">
+    //         <div className="row">
+    //             <div className="col-lg-4">
+    //                 <div className="slider-content">
+    //                     <Link to={link}><h3 className="mb-5" style={{color:'#943126'}} data-animation="bounceInLeft" data-delay="1s"><span>{title}</span></h3></Link>
+    //                     <p className="mb-5" style={{color:'black'}}  data-delay="1.5s" dangerouslySetInnerHTML={{ __html: excerpt }}/>
+    //                     {contacts.map(contact=>(
+    //                     <a  className="main-btn" data-animation="fadeInUp" data-delay="2s" key={contact.id} data-filter={`.${contact.slug}`} href={contact.link}><FormattedMessage id ="contactUs"/></a>
+    //                     ))}
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     </div>
+    // </div>
     )
 }
 
