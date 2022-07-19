@@ -387,7 +387,7 @@ slider: allWpPost(
   rapports: allWpPost(
     sort: {fields: date, order: DESC},
     limit: 3
-    filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "nos-rapports-dactivites"}}}}}
+    filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "nos-publications"}}}}}
   ) {
     edges {
       node {

@@ -19,7 +19,7 @@ const Footer = () => (
                   <img src="/images/logo-white.svg" alt="Logo"/>
                 </a>
               </div>
-              <p className="mb-15"><FormattedMessage id="description" /></p>
+              {/* <p className="mb-15"><FormattedMessage id="description" /></p> */}
                 <Social/>
               </div>
             </div>

@@ -36,7 +36,7 @@ export default RapportPage
 export const query = graphql`
 query {
 
-  allWpPage(filter: {slug: {eq: "nos-rapports-dactivites"}}) {
+  allWpPage(filter: {slug: {eq: "nos-publications"}}) {
     nodes {
       title
       translations {
@@ -46,7 +46,7 @@ query {
   }
   allWpPost(
     sort: {fields: date, order: DESC}
-    filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "nos-rapports-dactivites"}}}}}
+    filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "nos-publications"}}}}}
   ) {
     edges {
       node {

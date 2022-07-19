@@ -281,7 +281,7 @@ sommet: allWpPage(filter: {slug: {eq: "sommit-africtivistes"}, language: {code: 
 rapports: allWpPost(
   sort: {fields: date, order: DESC},
   limit: 3
-  filter: {language: {code: {eq: EN}}, categories: {nodes: {elemMatch: {slug: {eq: "our-reports-of-activities"}}}}}
+  filter: {language: {code: {eq: EN}}, categories: {nodes: {elemMatch: {slug: {eq: "our-publications"}}}}}
 ) {
   edges {
     node {

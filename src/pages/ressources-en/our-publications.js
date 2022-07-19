@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from "gatsby"
 import { IntlContextConsumer } from "gatsby-plugin-react-intl"
-import RapportPage from '../ressources/nos-rapports-dactivites'
+import RapportPage from '../ressources/nos-publications'
 
 const OurRapport = ({ data }) => (
 
@@ -17,7 +17,7 @@ export default OurRapport
 export const query = graphql`
 query {
 
-  allWpPage(filter: {slug: {eq: "our-reports-of-activities"}}) {
+  allWpPage(filter: {slug: {eq: "our-publications"}}) {
     nodes {
       title
       translations {
@@ -27,7 +27,7 @@ query {
   }
   allWpPost(
     sort: {fields: date, order: DESC}
-    filter: {language: {code: {eq: EN}}, categories: {nodes: {elemMatch: {slug: {eq: "our-reports-of-activities"}}}}}
+    filter: {language: {code: {eq: EN}}, categories: {nodes: {elemMatch: {slug: {eq: "our-publications"}}}}}
   ) {
     edges {
       node {
