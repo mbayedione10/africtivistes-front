@@ -28,7 +28,7 @@ const History = () => (
                 </div>
                 <div class="col-lg-6">
                     <div class="history-image mt-50">
-                        <img src="/images/logo2.png" alt="company history"/>
+                        <img src="/images/logoo.png" alt="company history"/>
                     </div>
                 </div>
             </div>
@@ -47,21 +47,12 @@ const History = () => (
                 <div class="our-single-history pb-30">
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="history-image mt-50">
-                                <img src="/images/histoire.png" alt="company history"/>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
                             <div class="our-history-content mt-50">
                                 {/* <span class="mb-10">25 July, 2018</span> */}
                                 <h4 class="mb-15">Le numérique comme outil de transformation civique, sociale et politique</h4>
                                 <p>AfricTivistes, en tant qu’organisation dynamique élargie à l’ensemble des pays africains, se focalise sur la Consolidation de la démocratie, non seulement à l'échelle de chaque pays mais aussi et surtout à l’échelle continentale. Nous entendons par consolidation de la démocratie, toute action tendant vers une démocratie réelle, une démocratie participative, une cyberdémocratie, une E-gouvernance et l’ancrage effective de la culture démocratique dans nos pays respectifs.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="our-single-history pb-30">
-                    <div class="row">
                         <div class="col-lg-6 order-last order-lg-first">
                             <div class="our-history-content mt-50">
                                 {/* <span class="mb-10">25 July, 2018</span> */}
@@ -69,24 +60,11 @@ const History = () => (
                                 <p>AfricTivistes est résolue à intervenir directement ou indirectement dans les différents processus de changement politique et social. Elle mène et pilote des projets de développement et d'implication citoyenne dans les dispositifs démocratiques. Elle développe des stratégies visant à veiller et à faire surveiller les dirigeants politiques dans leurs actions et dans la réalisation de leurs promesses pour inciter à la transparence et à la bonne gouvernance. Elle est une vitrine de la citoyenneté augmentée en Afrique.<br/></p>
                             </div>
                         </div>
-                        <div class="col-lg-6 order-lg-last order-first">
-                            <div class="history-image mt-50">
-                                <img src="/images/logo2.png" alt="company history"/>
-                                {/* <div class="history-video">
-                                    <a class="video-popup" href="# " aria-label="link"><i class="flaticon-music-player-play"></i></a>
-                                </div> */}
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="our-single-history pb-30">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <div class="history-image mt-50">
-                                <img src="/images/histoire.png" alt="company history"/>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <div class="years-experience mt-45">
                                 {/* <span class="mb-10">25 July, 2018</span> */}
                                 <h4 class="mb-15">Réseau d’influence, de plaidoyer, de capacitation et d’actions à fort impact social et politique</h4>
