@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, StaticQuery, Link } from 'gatsby'
-import { IntlContextConsumer} from "gatsby-plugin-react-intl"
+import { IntlContextConsumer } from "gatsby-plugin-react-intl"
 
 import { flatListToHierarchical } from '../../../../services'
 
@@ -36,7 +36,7 @@ const English = () => {
             {({ language: currentLocale }) => (
                 currentLocale === 'en' && <StaticQuery query={graphql`
                     {
-                      wpMenu(locations: { eq: GATSBY_HEADER_MENU___EN }) {
+                      wpMenu(locations: { eq: GATSBY_FOOTER_MENU___EN }) {
                         menuItems {
                           nodes {
                             id

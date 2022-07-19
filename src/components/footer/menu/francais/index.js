@@ -33,10 +33,10 @@ const renderMenu = (data) => {
 const Francais = () => {
   return (
     <IntlContextConsumer>
-        {({ language: currentLocale }) => (
-            currentLocale === 'fr' && <StaticQuery query={graphql`
+      {({ language: currentLocale }) => (
+        currentLocale === 'fr' && <StaticQuery query={graphql`
                     {
-                      wpMenu(locations: { eq: GATSBY_HEADER_MENU }) {
+                      wpMenu(locations: { eq: GATSBY_FOOTER_MENU }) {
                         menuItems {
                           nodes {
                             id
@@ -47,10 +47,10 @@ const Francais = () => {
                         }
                       }
                     }`
-            }
-                render={(data) => renderMenu(data.wpMenu.menuItems.nodes)}
-            />
-        )}
+        }
+          render={(data) => renderMenu(data.wpMenu.menuItems.nodes)}
+        />
+      )}
     </IntlContextConsumer>
   )
 }
