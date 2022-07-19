@@ -26,8 +26,8 @@ const History = () => (
                         </ul> */}
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="history-image mt-50">
+                <div class="col-lg-6 pt-45">
+                <div className="company-about-image">
                         <img src="/images/logoo.png" alt="company history"/>
                     </div>
                 </div>

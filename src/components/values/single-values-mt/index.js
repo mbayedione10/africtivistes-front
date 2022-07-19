@@ -9,10 +9,13 @@ const SingleValuesMt = ({post}) => {
     return (
         <div class="row">
         <div class="col-lg-6">
-            <div class="history-image mt-50">
+            {/* <div class="history-image mt-50"> */}
+            <div className="company-about-image mt-50">
+
                 {/* <img src="/images/company-history/ch-2.jpg" alt="company history"/> */}
                 <GatsbyImage image={image} alt={title} />
             </div>
+
         </div>
         <div class="col-lg-6">
             <div class="our-history-content mt-50">
