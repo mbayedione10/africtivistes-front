@@ -15,7 +15,7 @@ export default function BlogPost({ data}) {
         <Layout>
         <Seo title={title}/>
         {/* <PageBanner title= {title} date={date}/> */}
-    <section id="blog-sidebar"  class="pt-80 pb-130">
+    <section id="blog-sidebar"  class="pt-10 pb-10">
         <div class="container">
             <div class="row">
                 <div className="col-lg-8">
