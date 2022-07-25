@@ -13,10 +13,14 @@ const SingleTestimonial = ({post}) => {
             </div>
             <div className="testimonial-author">
             <div className="author-image">
-                <a href={link}> <GatsbyImage image={image} alt={title}/></a>
+                <a 
+                // href={link}
+                > <GatsbyImage image={image} alt={title}/></a>
                     </div>
-                <div className="author-name pl-100">
-                <a href={link} className="mt-25"><h6>{title}</h6></a>
+                <div className="author-name">
+                <a
+                // href={link} 
+                className="mt-40"><h6>{title}</h6></a>
                 </div>
             </div>
             </div>
