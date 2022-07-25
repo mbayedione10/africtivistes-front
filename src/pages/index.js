@@ -201,6 +201,7 @@ export const pageQuery = graphql`
           title
           date(formatString: "DD MMMM, YYYY", locale: "fr")
           excerpt
+          content
           slug
           language {
             slug
