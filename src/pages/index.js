@@ -157,7 +157,7 @@ export const pageQuery = graphql`
     }
   programmeencours: allWpProgramme(
     filter: {language: {code: {eq: FR}}}
-    limit: 3
+    limit: 4
     sort: {fields: date, order: DESC}
     ) {
     nodes {
@@ -178,7 +178,7 @@ export const pageQuery = graphql`
             childImageSharp {
               gatsbyImageData(
                 width: 360, 
-                height: 250, 
+                height: 260,
                 placeholder: DOMINANT_COLOR)
             }
           }

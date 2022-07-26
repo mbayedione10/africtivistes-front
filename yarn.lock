@@ -5590,10 +5590,17 @@ gatsby-core-utils@^2.14.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
+<<<<<<< Updated upstream
 gatsby-core-utils@^3.19.0, gatsby-core-utils@^3.5.2:
   version "3.19.0"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.19.0.tgz#9de637574af1d1d283ffa9b38f058aa2dc6e3d12"
   integrity sha512-cjXs9DsXkPZt+UdiLHxtq+rGMGVrcnM0KwkawlruvPchI7lqGNv9CScqlvYPxx1dBhu3zSZS26EBALMlFhyOJA==
+=======
+gatsby-core-utils@^3.18.1, gatsby-core-utils@^3.5.2:
+  version "3.18.1"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.18.1.tgz#7a9451ad1802a6489d24d5b52176720345e1b967"
+  integrity sha512-sJTxRqizLxYy/tSFk0ydfqEZ3ek1So9HDVUa39F6Oi8XuPCBTFzaAooUvowKGneI5YUbdk5y4VO4ybwVUynntw==
+>>>>>>> Stashed changes
   dependencies:
     "@babel/runtime" "^7.15.4"
     ci-info "2.0.0"
@@ -5694,18 +5701,30 @@ gatsby-plugin-gdpr-cookies@^2.0.9:
     "@babel/runtime" "^7.11.2"
 
 gatsby-plugin-google-analytics@^4.17.0:
+<<<<<<< Updated upstream
   version "4.19.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-4.19.0.tgz#6d2def5f242100da7fcf4a31b944598c2e3153e4"
   integrity sha512-bHpi/rN9v8h0IqYs57btJItXlE1ns+TUhltkunXoPp6aDC92JaPA/f3RdDmx50IwAdwRftJRlgtnc6OoDA9uCg==
+=======
+  version "4.18.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-4.18.0.tgz#eeb14241f86b0ae936dd2861a1fb22947d69d747"
+  integrity sha512-MOEdusG+3JpqS/Xnb7ektteXLisdcZHg+IRVOeNdMkYwgWpDTAG5ut0awgr0C6ClQzlyA5z8HczxK+aL6zZ07w==
+>>>>>>> Stashed changes
   dependencies:
     "@babel/runtime" "^7.15.4"
     minimatch "3.0.4"
     web-vitals "^1.1.2"
 
 gatsby-plugin-google-gtag@^4.17.0:
+<<<<<<< Updated upstream
   version "4.19.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-4.19.0.tgz#6ab77f529106bd61620053156a0d29bae625009b"
   integrity sha512-pqSMy9AHVV+lZwxkEuZPsZKrNELyTCP4VDfpYZLEBQwiCzuOrPtFG0VrThblJxS7FDUju4LYStIuwypeOnazTQ==
+=======
+  version "4.18.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-4.18.0.tgz#b06adf0a57661694c41e3b748936a1a6f521f7bc"
+  integrity sha512-oLIFmndlvmPyMlDR2z0NkTyTg05VLIi6vYlCUiqOaf1AOQKkmV9UxX0pwCDGuKxQPGIY3n8UkhkSqERIvQL2Dw==
+>>>>>>> Stashed changes
   dependencies:
     "@babel/runtime" "^7.15.4"
     minimatch "^3.1.2"
@@ -5952,15 +5971,25 @@ gatsby-source-filesystem@^3.14.0:
     xstate "^4.14.0"
 
 gatsby-source-filesystem@^4.13.0:
+<<<<<<< Updated upstream
   version "4.19.0"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-4.19.0.tgz#cd3b01d7b0b54143c5f1854933031e2f0f490db3"
   integrity sha512-UUBEqRCKpq/rWX5K8Kizmoi2Cls9oOTEtZRUrhdtMqpz5Y6VAmd7Pwina03r0fej+AoebZWOEzPTOh+WhpIDFw==
+=======
+  version "4.18.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-4.18.1.tgz#f3cd4b458f2c469d2cb9eb12ce37beb8c55c99c4"
+  integrity sha512-b1sZB0ziLJEGZOi2+ieUKWJXn3X1hK+F3nN5joaI3A+ptz75GpNuv04tFoq9oICzOHyuNuSGN5YgO8kMpmoaGQ==
+>>>>>>> Stashed changes
   dependencies:
     "@babel/runtime" "^7.15.4"
     chokidar "^3.5.3"
     file-type "^16.5.3"
     fs-extra "^10.1.0"
+<<<<<<< Updated upstream
     gatsby-core-utils "^3.19.0"
+=======
+    gatsby-core-utils "^3.18.1"
+>>>>>>> Stashed changes
     got "^9.6.0"
     md5-file "^5.0.0"
     mime "^2.5.2"
