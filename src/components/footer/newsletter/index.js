@@ -26,7 +26,7 @@ const Newsletter = ({intl}) => (
                 }}
               />
               <div className="inf-main_6e361e90ca5f9bee5b36f3d413c51842">
-                <span>Recevez notre newsletter</span>
+                <span><FormattedMessage id="newsletter"/></span>
                 <div className="inf-success" style={{ display: "none" }}>
                   <h4>Votre inscription a été enregistrée avec succès !</h4>
                   <p>
