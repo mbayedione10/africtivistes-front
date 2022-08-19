@@ -20,48 +20,8 @@ const ProjectDetail = ({ project }) => {
         <div className="col-xl-4 col-lg-6">
           <div className="project-details-image pt-50">
             <GatsbyImage image={getImage(image)} alt={altText} />
-            <div className="col-xl offset-xl col-lg">
-              <div className="project-details-content pt-45">
-<<<<<<< Updated upstream
-{/* 
-                <ul className="mt-10">
-                  <li><b>Partenaire</b> <span>partenaire</span></li>
-                  <li><b>Date</b> <span>jj/mm/aa</span></li>
-                  <li><b>Location</b> <span>localisation</span></li>
-                  <li><b>CATEGORY</b> <span>category</span></li>
-                  <li>
-                    <b>Share</b>
-                    <ul className="share">
-                      <li><a href="# " aria-label="link"><i className="flaticon-facebook"></i></a></li>
-                      <li><a href="# " aria-label="link"><i className="flaticon-twitter-logo-silhouette"></i></a></li>
-                      <li><a href="# " aria-label="link"><i className="flaticon-linkedin-logo"></i></a></li>
-                      <li><a href="# " aria-label="link"><i className="flaticon-instagram-social-network-logo-of-photo-camera"></i></a></li>
-                    </ul>
-                  </li>
-                </ul>
-                 */}
-=======
-                {/* <ul className="mt-10">
-                    <li><b>Partenaire</b> <span>partenaire</span></li>
-                    <li><b>Date</b> <span>jj/mm/aa</span></li>
-                    <li><b>Location</b> <span>localisation</span></li>
-                    <li><b>CATEGORY</b> <span>category</span></li>
-                    <li>
-                      <b>Sahre</b>
-                      <ul className="share">
-                        <li><a href="# " aria-label="link"><i className="flaticon-facebook"></i></a></li>
-                        <li><a href="# " aria-label="link"><i className="flaticon-twitter-logo-silhouette"></i></a></li>
-                        <li><a href="# " aria-label="link"><i className="flaticon-linkedin-logo"></i></a></li>
-                        <li><a href="# " aria-label="link"><i className="flaticon-instagram-social-network-logo-of-photo-camera"></i></a></li>
-                      </ul>
-                    </li>
-                  </ul> */}
->>>>>>> Stashed changes
-              </div>
-            </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
