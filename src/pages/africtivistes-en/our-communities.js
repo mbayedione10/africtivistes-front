@@ -1,26 +1,20 @@
-import * as React from "react"
+import React from 'react'
 import { graphql } from "gatsby"
-import PageBanner from "../../components/pageBanner"
-import Layout from "../../components/layout"
-import Seo from "../../components/seo"
-import Team from '../../components/team'
-import CallAction from "../../components/callAction"
+import { IntlContextConsumer } from "gatsby-plugin-react-intl"
 
-const EquipePage = ({data}) => {
-const {title, translations} = data.allWpPage.nodes[0]
-const link = translations ? translations[0].link : ''
-return(<Layout translation={link}>
-    <Seo title={title} />
-    <PageBanner title={title} />
-    <Team teams={data.allWpTeam.nodes}/>
-    {/* <CallAction2/> */}
-    <CallAction contacts={data.contact.nodes}/>
-  </Layout>
-)}
-export default EquipePage
+import CommunautesPage from '../africtivistes/nos-communautes'
+
+const Communities = ({ data }) => (
+  <IntlContextConsumer>
+    {({ language: currentLocale }) => 
+      currentLocale === 'en' && <CommunautesPage data={data} />
+    }
+  </IntlContextConsumer>
+)
+
 export const query = graphql`
   query {
-  allWpPage(filter: {slug: {eq: "equipe"}}) {
+  allWpPage(filter: {slug: {eq: "our-communities"}}) {
     nodes {
       title
       translations {
@@ -53,7 +47,7 @@ export const query = graphql`
       }
     }
   }
-  contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
+  contact: allWpPage(filter: {slug: {eq: "contact-us"}}) {
     nodes {
       title
       content
@@ -79,3 +73,5 @@ export const query = graphql`
   }
 }
 `
+
+export default Communities
