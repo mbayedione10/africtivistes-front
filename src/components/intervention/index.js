@@ -22,8 +22,8 @@ const Intervention = () => (
                             <i className="flaticon-work"></i>
                         </div>
                         <div className="content">
-                            <a href="services-details.html" aria-label="link"><h4><FormattedMessage id="democracy" /></h4></a>
-                            <p className="mt-20">Lorem ipsum dolor sit amet, consectetur adipLorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+                            <a aria-label="link"><h4><FormattedMessage id="democracy" /></h4></a>
+                            {/* <p className="mt-20">Lorem ipsum dolor sit amet, consectetur adipLorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p> */}
                         </div>
                     </div>
                 </div>
@@ -33,8 +33,8 @@ const Intervention = () => (
                             <i className="flaticon-diagram"></i>
                         </div>
                         <div className="content">
-                            <a href="services-details.html" aria-label="link"><h4><FormattedMessage id="governance" /></h4></a>
-                            <p className="mt-20">Lorem ipsum dolor sit amet, consectetur adipLorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+                            <a aria-label="link"><h4><FormattedMessage id="governance" /></h4></a>
+                            {/* <p className="mt-20">Lorem ipsum dolor sit amet, consectetur adipLorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p> */}
                         </div>
                     </div>
                 </div>
@@ -44,8 +44,8 @@ const Intervention = () => (
                             <i className="flaticon-analysis"></i>
                         </div>
                         <div className="content">
-                            <a href="services-details.html" aria-label="link"><h4><FormattedMessage id="transparency" /></h4></a>
-                            <p className="mt-20">Lorem ipsum dolor sit amet, consectetur adipLorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+                            <a aria-label="link"><h4><FormattedMessage id="transparency" /></h4></a>
+                            {/* <p className="mt-20">Lorem ipsum dolor sit amet, consectetur adipLorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p> */}
                         </div>
                     </div>
                 </div>
@@ -55,8 +55,8 @@ const Intervention = () => (
                             <i className="flaticon-branding"></i>
                         </div>
                         <div className="content">
-                            <a href="services-details.html" aria-label="link"><h4><FormattedMessage id="corruption" /></h4></a>
-                            <p className="mt-20">Lorem ipsum dolor sit amet, consectetur adipLorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+                            <a aria-label="link"><h4><FormattedMessage id="corruption" /></h4></a>
+                            {/* <p className="mt-20">Lorem ipsum dolor sit amet, consectetur adipLorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p> */}
                         </div>
                     </div>
                 </div>
@@ -66,8 +66,8 @@ const Intervention = () => (
                             <i className="flaticon-worldwide"></i>
                         </div>
                         <div className="content">
-                            <a href="services-details.html" aria-label="link"><h4><FormattedMessage id="peace" /></h4></a>
-                            <p className="mt-20">Lorem ipsum dolor sit amet, consectetur adipLorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+                            <a aria-label="link"><h4><FormattedMessage id="peace" /></h4></a>
+                            {/* <p className="mt-20">Lorem ipsum dolor sit amet, consectetur adipLorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p> */}
                         </div>
                     </div>
                 </div>
@@ -77,8 +77,8 @@ const Intervention = () => (
                             <i className="flaticon-risk"></i>
                         </div>
                         <div className="content">
-                            <a href="services-details.html" aria-label="link"><h4><FormattedMessage id="cybersecurity" /></h4></a>
-                            <p className="mt-20">Lorem ipsum dolor sit amet, consectetur adipLorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+                            <a aria-label="link"><h4><FormattedMessage id="cybersecurity" /></h4></a>
+                            {/* <p className="mt-20">Lorem ipsum dolor sit amet, consectetur adipLorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p> */}
                         </div>
                     </div>
                 </div>
