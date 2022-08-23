@@ -11,15 +11,60 @@ const PrivacyPolicy = ({data}) => {
 export default PrivacyPolicy
 export const query = graphql`
   query {
-    allWpPage(filter: {slug: {eq: "policy"}, language: {code: {eq: EN}}}) {
-        nodes {
+    allWpPage(filter: {slug: {eq: "privacy"}, language: {code: {eq: EN}}}) {
+      nodes {
           title
-          content
-          link
           translations {
             link
           }
         }
+        edges {
+          node {
+            id
+            date(locale: "")
+            content
+            link
+            title
+            featuredImage {
+                node {
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(
+                        width: 550,
+                        height: 300,
+                        placeholder: DOMINANT_COLOR
+                      )
+                    }
+                  }
+                }
+          }
+        }
+        }
+    }
+    contact: allWpPage(filter: {slug: {eq: "contact-us"}}) {
+    nodes {
+      title
+      content
+      slug
+      link
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 555,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
       }
+      translations {
+        link
+      }
+    }
+  }  
 }
 `
