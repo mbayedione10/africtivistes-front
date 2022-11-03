@@ -21,6 +21,7 @@ export const query = graphql`
   allWpPage(filter: {slug: {eq: "join"}}) {
     nodes {
       title
+      content
       translations {
         link
       }
