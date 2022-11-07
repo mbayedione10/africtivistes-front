@@ -10,7 +10,14 @@ const Adherer = ({intl}) => {
       <div className="row justify-content-center">
         <div className="col-lg-6">
           <div className="contact-form mt-20">
-            <form id="contact-form" action="assets/contact.php" method="post" data-toggle="validator">
+            <form 
+              method="POST"
+              data-netlify-recaptcha="true"
+              data-netlify="true"
+              name="adherer"
+              id="contact-form" 
+              action="assets/contact.php" 
+              data-toggle="validator">
               <div className="row">
                 <div className="col-md-6">
                   <div className="single-form form-group">
