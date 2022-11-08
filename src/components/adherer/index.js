@@ -12,8 +12,7 @@ const Adherer = ({intl}) => {
           <div className="contact-form mt-20">
             <form 
               onSubmit="submit"
-              method="POST"
-              data-netlify-recaptcha="true"
+              method="post"
               data-netlify="true"
               name="adherer"
               id="contact-form" 
@@ -28,7 +27,7 @@ const Adherer = ({intl}) => {
                   </div>
                   <div className="col-md-6">
                         <div className="single-form form-group">
-                          <input name="phone" type="number" placeholder= {intl.formatMessage({id:"phone"})} data-error="Phone is required." required="required"/>
+                          <input name="phone" type="text" placeholder= {intl.formatMessage({id:"phone"})} data-error="Phone is required." required="required"/>
                             <div className="help-block with-errors"></div>
                                     </div>
                         </div>
