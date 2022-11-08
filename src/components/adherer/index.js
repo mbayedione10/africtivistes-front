@@ -11,13 +11,14 @@ const Adherer = ({intl}) => {
         <div className="col-lg-6">
           <div className="contact-form mt-20">
             <form 
+              onSubmit="submit"
               method="POST"
               data-netlify-recaptcha="true"
               data-netlify="true"
               name="adherer"
               id="contact-form" 
-              action="assets/contact.php" 
               data-toggle="validator">
+                <input type="hidden" name="form-name" value="adherer"/>
               <div className="row">
                 <div className="col-md-6">
                   <div className="single-form form-group">
@@ -27,7 +28,7 @@ const Adherer = ({intl}) => {
                   </div>
                   <div className="col-md-6">
                         <div className="single-form form-group">
-                          <input name="phone" type="text" placeholder= {intl.formatMessage({id:"phone"})} data-error="Phone is required." required="required"/>
+                          <input name="phone" type="number" placeholder= {intl.formatMessage({id:"phone"})} data-error="Phone is required." required="required"/>
                             <div className="help-block with-errors"></div>
                                     </div>
                         </div>
@@ -39,43 +40,43 @@ const Adherer = ({intl}) => {
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"pays"})} data-error="Pays is required." required="required"/>
+                      <input name="email" type="text" placeholder= {intl.formatMessage({id:"pays"})} data-error="Pays is required." required="required"/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"villederesidence"})} data-error="Ville is required." required="required"/>
+                      <input name="email" type="text" placeholder= {intl.formatMessage({id:"villederesidence"})} data-error="Ville is required." required="required"/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"profession"})} data-error="Profession is required." required="required"/>
+                      <input name="email" type="text" placeholder= {intl.formatMessage({id:"profession"})} data-error="Profession is required." required="required"/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"biographie"})} data-error="Biographie is required." required="required"/>
+                      <input name="email" type="text" placeholder= {intl.formatMessage({id:"biographie"})} data-error="Biographie is required." required="required"/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"comptetwitter"})} data-error="Compte twitter is required." required="required"/>
+                      <input name="email" type="text" placeholder= {intl.formatMessage({id:"comptetwitter"})} data-error="Compte twitter is required." required="required"/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"comptefacebook"})} data-error="Compte facebook is required." required="required"/>
+                      <input name="email" type="text" placeholder= {intl.formatMessage({id:"comptefacebook"})} data-error="Compte facebook is required." required="required"/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="email" type="email" placeholder= {intl.formatMessage({id:"liendeblog"})} data-error="Blog is required." required="required"/>
+                      <input name="email" type="text" placeholder= {intl.formatMessage({id:"liendeblog"})} data-error="Blog is required." required="required"/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
