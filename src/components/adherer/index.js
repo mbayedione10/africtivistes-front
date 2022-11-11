@@ -14,10 +14,14 @@ const Adherer = ({intl}) => {
               onSubmit="submit"
               method="post"
               data-netlify="true"
+              data-netlify-honeypot="bot-field"
               name="adherer"
               id="contact-form" 
               data-toggle="validator">
                 <input type="hidden" name="form-name" value="adherer"/>
+                <div hidden>
+                  <input name="bot-field"/>
+                </div>
               <div className="row">
                 <div className="col-md-6">
                   <div className="single-form form-group">
@@ -63,19 +67,19 @@ const Adherer = ({intl}) => {
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="comptetwitter" type="text" placeholder= {intl.formatMessage({id:"comptetwitter"})} data-error="Compte twitter is required." required="required"/>
+                      <input name="comptetwitter" type="text" placeholder= {intl.formatMessage({id:"comptetwitter"})} data-error="Compte twitter is required."/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="comptefacebook" type="text" placeholder= {intl.formatMessage({id:"comptefacebook"})} data-error="Compte facebook is required." required="required"/>
+                      <input name="comptefacebook" type="text" placeholder= {intl.formatMessage({id:"comptefacebook"})} data-error="Compte facebook is required."/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="lien" type="text" placeholder= {intl.formatMessage({id:"liendeblog"})} data-error="Blog is required." required="required"/>
+                      <input name="lien" type="text" placeholder= {intl.formatMessage({id:"liendeblog"})} data-error="Blog is required." />
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
@@ -84,6 +88,21 @@ const Adherer = ({intl}) => {
                         <input name="subject" type="text" placeholder= {intl.formatMessage({id:"subject"})} data-error="Subject is required." required="required"/>
                           <div className="help-block with-errors"></div>
                                     </div>
+                      </div>
+                    <div className="col-md-6">
+                    <div className="form-group" required="required">
+                    <br></br>
+                          <label for="contactChoice1">Personne</label> <label> </label>
+                          <input type="radio" id="personne" placeholder= {intl.formatMessage({id:"personne"})} name="sujet" value="personne" />
+                            <br></br>
+                            <label for="contactChoice3">Mouvement</label> <label> </label>
+                          <input type="radio" id="mouvement" placeholder= {intl.formatMessage({id:"mouvement"})} name="sujet" value="mouvement"/>
+                            <br></br>
+                          <label for="contactChoice2">Organisation</label> <label> </label>
+                          <input type="radio" id="organisation" placeholder= {intl.formatMessage({id:"organisation"})} name="sujet" value="organisation"/>
+                            <br></br>
+                    <div className="help-block with-errors"></div>
+                      </div>
                       </div>
                         <div className="col-md-12">
                           <div className="single-form form-group">
