@@ -67,26 +67,25 @@ const Adherer = ({intl}) => {
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="comptetwitter" type="text" placeholder= {intl.formatMessage({id:"comptetwitter"})} data-error="Compte twitter is required."/>
+                      <input name="compte-twitter" type="text" placeholder= {intl.formatMessage({id:"comptetwitter"})} data-error="Compte twitter is required."/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="comptefacebook" type="text" placeholder= {intl.formatMessage({id:"comptefacebook"})} data-error="Compte facebook is required."/>
+                      <input name="compte-facebook" type="text" placeholder= {intl.formatMessage({id:"comptefacebook"})} data-error="Compte facebook is required."/>
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
                     <div className="col-md-6">
                     <div className="single-form form-group">
-                      <input name="lien" type="text" placeholder= {intl.formatMessage({id:"liendeblog"})} data-error="Blog is required." />
+                      <input name="lien-de-blog-ou-site-web" type="text" placeholder= {intl.formatMessage({id:"liendeblog"})} data-error="Blog is required." />
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
-                    <div className="col-md-12">
+                    <div className="col-md-2">
                       <div className="single-form form-group">
-                        <input name="objet" type="text" placeholder= {intl.formatMessage({id:"objet"})} data-error="Subject is required." required="required"/>
-                          <div className="help-block with-errors"></div>
+                        <h6 name="sujet" type="text" placeholder= {intl.formatMessage({id:"objet"})} data-error="Subject is required."><FormattedMessage id="subject"/> :</h6>
                                     </div>
                       </div>
                     <div className="col-md-6">
@@ -94,13 +93,13 @@ const Adherer = ({intl}) => {
                       <label required="required">
                     <br></br>
                           <label for="contactChoice1"><FormattedMessage id="personne"/> : </label> <label> </label>
-                          <input type="radio" id="personne" placeholder= {intl.formatMessage({id:"personne"})} name="sujet" value="personne" />
+                          <input type="radio" id="personne" placeholder= {intl.formatMessage({id:"personne"})} name="objet" value="personne" required="required"/>
                             <br></br>
                             <label for="contactChoice3" ><FormattedMessage id="mouvement"/> : </label> <label> </label>
-                          <input type="radio" id="mouvement" placeholder= {intl.formatMessage({id:"mouvement"})} name="sujet" value="mouvement"/>
+                          <input type="radio" id="mouvement" placeholder= {intl.formatMessage({id:"mouvement"})} name="objet" value="mouvement" required="required"/>
                             <br></br>
                           <label for="contactChoice2"><FormattedMessage id="organisation"/> : </label> <label> </label>
-                          <input type="radio" id="organisation" placeholder= {intl.formatMessage({id:"organisation"})} name="sujet" value="organisation"/>
+                          <input type="radio" id="organisation" placeholder= {intl.formatMessage({id:"organisation"})} name="objet" value="organisation" required="required"/>
                             <br></br>
                             </label>
                     <div className="help-block with-errors"></div>
