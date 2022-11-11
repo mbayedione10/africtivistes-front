@@ -83,24 +83,26 @@ const Adherer = ({intl}) => {
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12">
                       <div className="single-form form-group">
-                        <input name="subject" type="text" placeholder= {intl.formatMessage({id:"subject"})} data-error="Subject is required." required="required"/>
+                        <input name="objet" type="text" placeholder= {intl.formatMessage({id:"objet"})} data-error="Subject is required." required="required"/>
                           <div className="help-block with-errors"></div>
                                     </div>
                       </div>
                     <div className="col-md-6">
-                    <div className="form-group" required="required">
+                    <div className="form-group" >
+                      <label required="required">
                     <br></br>
-                          <label for="contactChoice1">Personne</label> <label> </label>
+                          <label for="contactChoice1"><FormattedMessage id="personne"/> : </label> <label> </label>
                           <input type="radio" id="personne" placeholder= {intl.formatMessage({id:"personne"})} name="sujet" value="personne" />
                             <br></br>
-                            <label for="contactChoice3">Mouvement</label> <label> </label>
+                            <label for="contactChoice3" ><FormattedMessage id="mouvement"/> : </label> <label> </label>
                           <input type="radio" id="mouvement" placeholder= {intl.formatMessage({id:"mouvement"})} name="sujet" value="mouvement"/>
                             <br></br>
-                          <label for="contactChoice2">Organisation</label> <label> </label>
+                          <label for="contactChoice2"><FormattedMessage id="organisation"/> : </label> <label> </label>
                           <input type="radio" id="organisation" placeholder= {intl.formatMessage({id:"organisation"})} name="sujet" value="organisation"/>
                             <br></br>
+                            </label>
                     <div className="help-block with-errors"></div>
                       </div>
                       </div>
