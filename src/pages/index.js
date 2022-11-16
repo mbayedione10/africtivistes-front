@@ -144,8 +144,8 @@ export const pageQuery = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 360, 
-                  height: 250, 
+                  width: 1500, 
+                  height: 1200, 
                   placeholder: DOMINANT_COLOR)
               }
             }
@@ -177,8 +177,8 @@ export const pageQuery = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(
-                width: 360, 
-                height: 260,
+                width: 1500, 
+                height: 1200,
                 placeholder: DOMINANT_COLOR)
             }
           }
@@ -213,8 +213,8 @@ export const pageQuery = graphql`
               localFile {
                 childImageSharp {
                   gatsbyImageData(
-                    width: 360,
-                    height: 200,
+                    width: 1500,
+                    height: 1200,
                     placeholder: DOMINANT_COLOR
                   )
                 }
@@ -260,8 +260,8 @@ export const pageQuery = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 1920,
-                  height: 860,
+                  width: 1500,
+                  height: 1200,
                   placeholder: DOMINANT_COLOR
                 )
               }
