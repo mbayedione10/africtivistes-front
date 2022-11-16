@@ -9,13 +9,10 @@ const SingleNewsMt = ({post}) => {
     return (
     <div className="col-lg-4 col-md-6 col-sm-10">
         <div className="singel-news mt-30">
-
-            <div className="news-content">
-            <div className="news-thumb">
+        <div className="news-thumb">
             <GatsbyImage image={image} alt={title} />
             </div>
-            <br></br>
-
+            <div className="news-content">
                 <a href={link} className="mb-15"><h4>{title.substring(0, 45)}...</h4></a>
                 <p className="mb-20" dangerouslySetInnerHTML={{ __html: excerpt.substring(0, 245)}}/>
             </div>
