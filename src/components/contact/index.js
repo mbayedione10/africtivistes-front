@@ -10,7 +10,15 @@ const Contact = ({intl}) => {
       <div className="row justify-content-center">
         <div className="col-lg-6">
           <div className="contact-form mt-20">
-            <form id="contact-form" action="assets/contact.php" method="post" data-toggle="validator">
+            <form              
+            onSubmit="submit"
+              method="post"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              name="contact"
+              id="contact-form" 
+              data-toggle="validator">
+              <input type="hidden" name="form-name" value="contact"/>
               <div className="row">
                 <div className="col-md-6">
                   <div className="single-form form-group">
