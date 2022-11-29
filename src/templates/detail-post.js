@@ -17,17 +17,17 @@ export default function DetailPost({ data}) {
         <Layout>
         <Seo title={title}/>
         {/* <PageBanner title= {title} date={date}/> */}
-    <section id="detail-post"  class="pt-10 pb-10">
+    <section id="project-details"  class="pt-10 pb-10">
         <div class="container">
             <div class="row">
                 <div className="col-lg-8">
-                    <div className="blog-details mt-50">
-                        <div className="image">
+                    <div className="project-details mt-50">
+                        <div className="project-details-image">
                             <GatsbyImage image={image} alt={title}/>
                         </div>
-                        <div className="content">
+                        <div className="project-details-content">
                             <h3 className="mt-25">{title}</h3>
-                            <div className="date mt-10">
+                            <div className="project-details-date mt-10">
                                 <ul>
                                     <li><a href="#"><i className="flaticon-calendar"></i>{date}</a></li>
                                     {/* <li><a href="#"><i className="flaticon-heart"></i> 50 Likes</a></li> */}
