@@ -9,6 +9,7 @@ import Projects from "../components/projects"
 import RecentPost from '../components/blog-sidebar/recent-post'
 import RelatedPost from '../components/blog-sidebar/related'
 import CallAction from "../components/callAction"
+import DetailsPost from "../components/projects/details-post"
 
 export default function DetailPost({ data}) {
   const { title,date, content, featuredImage} = data.allWpPost.nodes[0]
@@ -17,44 +18,8 @@ export default function DetailPost({ data}) {
         <Layout>
         <Seo title={title}/>
         {/* <PageBanner title= {title} date={date}/> */}
-    <section id="project-details"  class="pt-10 pb-10">
-        <div class="container">
-            <div class="row">
-                <div className="col-lg-8">
-                    <div className="project-details mt-50">
-                        <div className="project-details-image">
-                            <GatsbyImage image={image} alt={title}/>
-                        </div>
-                        <div className="project-details-content">
-                            <h3 className="mt-25">{title}</h3>
-                            <div className="project-details-date mt-10">
-                                <ul>
-                                    <li><a href="#"><i className="flaticon-calendar"></i>{date}</a></li>
-                                    {/* <li><a href="#"><i className="flaticon-heart"></i> 50 Likes</a></li> */}
-                                    {/* <li><a href="#"><i className="flaticon-comment"></i> 25 Comments</a></li> */}
-                                    {/* <li><a href="#"><i className="flaticon-folder"></i> Finance</a></li> */}
-                                </ul>
-                            </div>
-                            <br></br>
-                            <p class="mb-15" dangerouslySetInnerHTML={{ __html: content }} ></p>
-                        </div> 
-                        
-                    </div> 
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-sidebar ">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-12 col-md-8">
-                            <RecentPost posts={data.recent.edges}/>
-                            <RelatedPost posts={data.related.edges}/>
-                            </div> 
-                        </div> 
-                    </div> 
-                </div>
-                </div>
-                </div>
-                </section>
-                <CallAction contacts={data.contact.nodes}/>
+        <DetailsPost project={data.allWpPost.nodes[0]} recents={data.recent.edges} relateds={data.related.edges}/>
+        <CallAction contacts={data.contact.nodes}/>
 
         </Layout>
     )
