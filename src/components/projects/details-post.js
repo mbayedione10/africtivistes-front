@@ -10,17 +10,17 @@ const DetailsPost = ({ project,relateds, recents}) => {
   const altText = featuredImage && getImage(featuredImage.node.localFile)
 
   return (
-    <section id="project-details"  class="pt-10 pb-10">
-        <div class="container">
-            <div class="row">
+    <section className="pt-10 pb-10">
+        <div className="container">
+            <div className="row">
                 <div className="col-lg-8">
-                    <div className="project-details mt-50">
-                        <div className="project-details-image">
+                    <div className="mt-50">
+                        <div className="image">
                             <GatsbyImage image={image} alt={title}/>
                         </div>
-                        <div className="project-details-content">
+                        <div className="content">
                             <h3 className="mt-25">{title}</h3>
-                            <div className="project-details-date mt-10">
+                            <div className="date mt-10">
                                 <ul>
                                     <li><a href="#"><i className="flaticon-calendar"></i>{date}</a></li>
                                     {/* <li><a href="#"><i className="flaticon-heart"></i> 50 Likes</a></li> */}
@@ -29,15 +29,15 @@ const DetailsPost = ({ project,relateds, recents}) => {
                                 </ul>
                             </div>
                             <br></br>
-                            <p class="mb-15" dangerouslySetInnerHTML={{ __html: content }} ></p>
+                            <p className="mb-15" dangerouslySetInnerHTML={{ __html: content }} ></p>
                         </div> 
                         
                     </div> 
                 </div>
-                <div class="col-lg-4">
-                    <div class="blog-sidebar ">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-12 col-md-8">
+                <div className="col-lg-4">
+                    <div className="blog-sidebar ">
+                        <div className="row justify-content-center">
+                            <div className="col-lg-12 col-md-8">
                             <RecentPost posts={recents}/>
                             <RelatedPost posts={relateds}/>
                             </div> 
