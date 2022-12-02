@@ -1,13 +1,16 @@
 import React from 'react'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import RecentPost from '../../components/blog-sidebar/recent-post'
+import RelatedPost from '../../components/blog-sidebar/related'
 
-const ProjectDetail = ({ project }) => {
+const ProjectDetail = ({ project}) => {
 
-  const { title, content, featuredImage } = project
+  const { title, content,date, featuredImage } = project
   const image = featuredImage && getImage(featuredImage.node.localFile)
   const altText = featuredImage && getImage(featuredImage.node.localFile)
 
-  return (<section id="project-details" className="pt-50 pb-50">
+  return (
+  <section id="project-details" className="pt-50 pb-50">
     <div className="container">
       <div className="row">
         <div className="col-xl offset-xl col-lg">
@@ -25,7 +28,6 @@ const ProjectDetail = ({ project }) => {
       </div>
     </div>
   </section>
-
   )
 }
 

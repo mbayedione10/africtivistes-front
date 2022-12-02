@@ -4,6 +4,12 @@ import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
 import ProjectDetail from "../components/projects/details"
+import ProjectPart from '../components/projects/part'
+import Projects from "../components/projects"
+import RecentPost from '../components/blog-sidebar/recent-post'
+import RelatedPost from '../components/blog-sidebar/related'
+import CallAction from "../components/callAction"
+import DetailsPost from "../components/projects/details-post"
 
 export default function DetailPost({ data}) {
   const { title,date, content, featuredImage} = data.allWpPost.nodes[0]
@@ -12,7 +18,9 @@ export default function DetailPost({ data}) {
         <Layout>
         <Seo title={title}/>
         {/* <PageBanner title= {title} date={date}/> */}
-        <ProjectDetail project={data.allWpPost.nodes[0]} />
+        <DetailsPost project={data.allWpPost.nodes[0]} recents={data.recent.edges} relateds={data.related.edges}/>
+        <CallAction contacts={data.contact.nodes}/>
+
         </Layout>
     )
 }
@@ -31,9 +39,9 @@ export const query = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(
+                width: 750,
+                height: 750,
                 placeholder: DOMINANT_COLOR
-                height: 500
-                width: 500
               )
             }
           }
@@ -45,7 +53,7 @@ export const query = graphql`
       }
     }
     recent: allWpPost(
-        limit: 10
+        limit: 15
         sort: {fields: date, order: DESC}
         filter: {language: {code: {eq: FR}}}
       ) {
@@ -62,8 +70,8 @@ export const query = graphql`
                 big: localFile {
                   childImageSharp {
                     gatsbyImageData(
-                      width: 360,
-                      height: 200,
+                      width: 750,
+                      height: 360,
                       placeholder: DOMINANT_COLOR
                     )
                   }
@@ -116,5 +124,29 @@ export const query = graphql`
           }
         }
       }
+      contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
+    nodes {
+      title
+      content
+      slug
+      link
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 555,
+                placeholder: DOMINANT_COLOR
+              )
+            }
+          }
+        }
+      }
+      translations {
+        link
+      }
+    }
+  } 
   }
 `
