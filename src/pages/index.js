@@ -319,6 +319,7 @@ slider: allWpPost(
               nodes {
                 name
                 count
+                slug
               }
             }
           }

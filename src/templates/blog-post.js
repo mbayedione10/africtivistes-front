@@ -34,7 +34,7 @@ export default function BlogPost({ data}) {
                                 </ul>
                             </div>
                             <br></br>
-                            <p class="mb-15" dangerouslySetInnerHTML={{ __html: content }} ></p>
+                            <div class="mb-15" dangerouslySetInnerHTML={{ __html: content }} ></div>
                         </div> 
                         
                     </div> 
