@@ -9,25 +9,37 @@ const DetailsPost = ({ project,relateds, recents}) => {
   const image = featuredImage && getImage(featuredImage.node.localFile)
   const altText = featuredImage && getImage(featuredImage.node.localFile)
 
-  return (
+return (
     <section id="project-details" className="pt-50 pb-50">
     <div className="container">
-      <div className="row">
+    <div className="row">
         <div className="col-xl offset-xl col-lg">
-          <div className="project-details-content pt-45">
+        <div className="image">
+            <GatsbyImage image={image} alt={title}/>
+        </div>
+        <div className="project-details-content pt-45">
+
             <h4 className="mb-15">{title}</h4>
             {content && <div dangerouslySetInnerHTML={{ __html: content }} />}
 
-          </div>
         </div>
-        <div className="col-xl-4 col-lg-6">
-          <div className="project-details-image pt-50">
-            <GatsbyImage image={getImage(image)} alt={altText} />
-          </div>
         </div>
-      </div>
+        <div class="col-lg-4">
+                    <div class="blog-sidebar ">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12 col-md-8">
+                            <RecentPost posts={recents}/>
+                            <RelatedPost posts={relateds}/>
+                            </div> 
+                        </div> 
+                    </div> 
+                </div>
+
+
     </div>
-  </section>
+    </div>
+</section>
+
     // <section className="pt-10 pb-10">
     //     <div className="container">
     //         <div className="row">
