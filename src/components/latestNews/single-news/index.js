@@ -3,7 +3,7 @@ import SingleNewsMt from '../single-news-mt'
 
 const SingleNews = ({posts}) => {
     return (
-            <div className="row justify-content-center"> 
+            <div className="card-group"> 
                     {posts.map(post => {
                         return(
                             <SingleNewsMt post = {post} key={post.id} />

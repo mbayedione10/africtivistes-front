@@ -7,21 +7,19 @@ const SingleNewsMt = ({post}) => {
     const image = featuredImage && getImage(featuredImage.node.localFile)
 
     return (
-    <div className="col-lg-4 col-md-6 col-sm-10">
-        <div className="singel-news mt-30">
-        <div className="news-thumb">
+    <div className="card">
+        <div className="card-img-top" >
             <GatsbyImage image={image} alt={title} />
-            </div>
-            <div className="news-content">
-                <a href={link} className="mb-15"><h4>{title.substring(0, 45)}...</h4></a>
-                <p className="mb-20" dangerouslySetInnerHTML={{ __html: excerpt.substring(0, 245)}}/>
-            </div>
-            <div className="date-details">
-                <span className="date"><a href="# " aria-label="button">{date}</a></span>
-                <span className="details"><a href={link} ><FormattedMessage id="readMore"/> <i className="flaticon-right-arrow"></i></a></span>
-            </div>
         </div>
-    </div>
+        <div class="card-body">
+            <h5 class="card-title" href={link}>{title}</h5>
+            <div class="card-text" dangerouslySetInnerHTML={{ __html: excerpt}}></div>
+        </div>
+        <div class="card-footer">
+                    <span class="text-muted"><a>{date}</a></span>
+                    <span class="text-muted float-right"><a href={link} ><FormattedMessage id="readMore"/> <i className="flaticon-right-arrow"></i></a></span>
+        </div>
+        </div>
     )
 }
 
