@@ -13,7 +13,7 @@ const SingleProjectMt = ({post}) => {
             <GatsbyImage image={image} alt={title} />
             </div>
             <div className="news-content">
-                <a href={link} className="mb-15"><h4>{title.substring(0, 40)}...</h4></a>
+                <a href={link} className="mb-15"><h4>{title}</h4></a>
                 <p className="mb-20" dangerouslySetInnerHTML={{ __html: excerpt.substring(0, 245)}}/>
             </div>
             <div className="date-details">

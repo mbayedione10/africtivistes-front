@@ -20,6 +20,7 @@ const IndexPage = ({data}) => (
   <Layout>
     <Seo title={data.allWpPage.nodes.title} />
     <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>
+    <LatestNews posts={data.allWpPost.edges}/>
     <Features projects={data.programmeencours.nodes}/>
     <div className="row justify-content-center" >
     <div className="col-lg-6" >
@@ -34,7 +35,14 @@ const IndexPage = ({data}) => (
     </div>
 </div>
     <NosChampions posts={data.rapports.edges} />
-    <LatestNews posts={data.allWpPost.edges}/>
+    <div className="row">
+          <div className="col-lg-12">
+              <div className="project-more text-center">
+                <a className="main-btn"  href="ressources/nos-publications" ><FormattedMessage id="more"/></a>
+              </div>
+          </div>
+      </div>
+      <br></br>
     <About posts={data.abidjan.nodes} actu={data.latestnews.edges}/>
     <Counter posts={data.sommet.nodes}/>
     <div className="row justify-content-center" >
@@ -144,8 +152,8 @@ export const pageQuery = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 1500, 
-                  height: 1200, 
+                  width: 300, 
+                  height: 280, 
                   placeholder: DOMINANT_COLOR)
               }
             }
@@ -190,7 +198,7 @@ export const pageQuery = graphql`
   }
 
   latestnews: allWpPost(
-    limit: 9
+    limit: 6
     sort: {fields: [date], order: DESC}
     filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "actualites"}}}}}
 
