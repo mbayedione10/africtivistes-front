@@ -190,7 +190,7 @@ language {
 slider: allWpPost(
     sort: {fields: [date], order: DESC},
      limit: 3
-     filter: {language: {code: {eq: EN}}, categories: {nodes: {elemMatch: {slug: {eq: "news"}}}}}
+     filter: {language: {code: {eq: EN}}, categories: {nodes: {elemMatch: {slug: {eq: "in-the-news"}}}}}
 
      ) {
       edges {

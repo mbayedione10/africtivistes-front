@@ -295,7 +295,7 @@ nodes {
 slider: allWpPost(
       sort: {fields: [date], order: DESC},
        limit: 3
-       filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "actualites"}}}}}
+       filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "a-la-une"}}}}}
 
        ) {
         edges {
