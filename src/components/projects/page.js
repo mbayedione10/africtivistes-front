@@ -37,7 +37,7 @@ const ProjectsPage = ({programmes, projects}) => {
       </div>
       <div className="row grid">
         {projects.map(project=>(
-          <div key={project.id} className={`col-lg-4 col-md-6 ${project.programmeTypes.nodes.map(type => type.slug).join(' ')}`}>
+          <div key={project.id} className={`col-lg-3 col-md-6 ${project.programmeTypes.nodes.map(type => type.slug).join(' ')}`}>
             <div className="single-testimonial mt-30">
               <div className="project-image">
                 <GatsbyImage image = {project.featuredImage && getImage(project.featuredImage.node.localFile)} alt={project.title} />

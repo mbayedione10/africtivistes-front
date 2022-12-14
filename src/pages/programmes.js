@@ -80,8 +80,8 @@ export const pageQuery = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(
-                width: 360,
-                height: 250,
+                width: 300,
+                height: 280,
                 placeholder: DOMINANT_COLOR
               )
             }
