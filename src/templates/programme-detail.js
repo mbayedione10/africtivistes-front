@@ -62,8 +62,8 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData(
                 placeholder: DOMINANT_COLOR
-                height: 500
-                width: 500
+                height: 280
+                width: 300
               )
             }
           }
