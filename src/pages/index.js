@@ -26,7 +26,7 @@ const IndexPage = ({data}) => (
     <div className="col-lg-6" >
         <div className="section-title text-center pt-10 pb-10" >
         <br></br>
-            <a href='ressources/nos-rapports-dactivites/'><h2><FormattedMessage id="rapports"/></h2></a>
+            <a href='ressources/nos-publications/'><h2><FormattedMessage id="publication"/></h2></a>
             <div className="underline">
                 <span></span>
                 <span></span>
