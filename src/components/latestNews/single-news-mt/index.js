@@ -9,15 +9,19 @@ const SingleNewsMt = ({post}) => {
     return (
     <div className="card">
         <div className="card-img-top" >
-            <GatsbyImage image={image} alt={title} />
+            <a href={link}>
+                <GatsbyImage href={link} image={image} alt={title} />
+            </a>
         </div>
         <div class="card-body">
-            <h5 class="card-title" href={link}>{title}</h5>
+            <h5 class="card-title">
+                <a  style={{ color: '#000000' }} href={link}>{title}</a>
+            </h5>
             <div class="card-text" dangerouslySetInnerHTML={{ __html: excerpt}}></div>
         </div>
         <div class="card-footer">
                     <span class="text-muted"><a>{date}</a></span>
-                    <span class="text-muted float-right"><a href={link} ><FormattedMessage id="readMore"/> <i className="flaticon-right-arrow"></i></a></span>
+                    <span class="text-muted float-right"><a style={{ color: '#a63117'}} href={link} ><FormattedMessage id="readMore"/> <i className="flaticon-right-arrow"></i></a></span>
         </div>
         </div>
     )
