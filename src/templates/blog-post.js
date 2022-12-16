@@ -7,6 +7,8 @@ import PageBanner from '../components/pageBanner'
 import RecentPost from '../components/blog-sidebar/recent-post'
 import RelatedPost from '../components/blog-sidebar/related'
 import CallAction from "../components/callAction"
+import LatestNews from '../components/latestNews'
+import Projects from "../components/projects"
 
 export default function BlogPost({ data}) {
   const { title,date, content, featuredImage} = data.allWpPost.nodes[0]
@@ -44,14 +46,15 @@ export default function BlogPost({ data}) {
                         <div class="row justify-content-center">
                             <div class="col-lg-12 col-md-8">
                             <RecentPost posts={data.recent.edges}/>
-                            <RelatedPost posts={data.related.edges}/>
+                            {/* <RelatedPost posts={data.related.edges}/> */}
                             </div> 
                         </div> 
                     </div> 
-                </div>
+                </div>    
                 </div>
                 </div>
                 </section>
+                <Projects posts={data.related.edges}/>
                 <CallAction contacts={data.contact.nodes}/>
 
         </Layout>
@@ -86,7 +89,7 @@ export const query = graphql`
       }
     }
     recent: allWpPost(
-        limit: 10
+        limit: 15
         sort: {fields: date, order: DESC}
         filter: {language: {code: {eq: FR}}}
       ) {
@@ -125,13 +128,7 @@ export const query = graphql`
       }
       related:  allWpPost(
         sort: {fields: date, order: DESC}
-        filter: {          tags: {
-          nodes: {
-          elemMatch: {
-            name: {eq: "Sahel Insight"}
-          }
-        }
-        }, language: {code: {eq: FR}}}) {
+        filter: {language: {code: {eq: FR}}}) {
         edges {
           node {
             id
@@ -142,9 +139,9 @@ export const query = graphql`
             featuredImage {
               node {
                 altText
-                big: localFile {
+                localFile {
                   childImageSharp {
-                    gatsbyImageData(width: 360, height: 200, placeholder: DOMINANT_COLOR)
+                    gatsbyImageData(width: 1000, height: 800, placeholder: DOMINANT_COLOR)
                   }
                 }
                 small: localFile {
