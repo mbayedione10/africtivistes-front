@@ -202,7 +202,7 @@ export const pageQuery = graphql`
     sort: {fields: [date], order: DESC}
     filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "actualites"}}}}}
 
-     ) {
+    ) {
       edges {
         node {
           id
