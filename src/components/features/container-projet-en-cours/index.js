@@ -3,7 +3,7 @@ import ColLgMd from './col-lg-md'
 
 const ContainerPEC = ({projects}) => {
     return (
-        <div className="row justify-content-center">
+        <div className="card-deck">
 
             {projects.map(project => {
                         return(
