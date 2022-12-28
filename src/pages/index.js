@@ -59,27 +59,6 @@ const IndexPage = ({data}) => (
 </div>
 
     <NosChampions posts={data.champions.edges} />
-    {/* <About2/> */}
-    {/* <Services posts={data.plan.edges}/> */}
-    {/* <section id="blog-list" className="pt-80 pb-130">
-      <div className="container">
-        <h1><FormattedMessage id="actualites" /></h1>
-        <IntlContextConsumer>
-          {({ language: currentLocale }) => (
-            data.allWpPost.nodes.map(node => (
-              (node.language.slug === currentLocale) && 
-              <div key={node.slug}>
-                <Link to={node.slug}>
-                  <p>{node.title}</p>
-                </Link>
-                <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-              </div>
-            ))
-          )}
-        </IntlContextConsumer>
-      </div>
-    </section> */}
-    {/* <Testimonial/> */}
     <div className="row justify-content-center" >
     <div className="col-lg-6" >
         <div className="section-title text-center pt-10 pb-10" >
@@ -93,7 +72,28 @@ const IndexPage = ({data}) => (
     </div>
 </div>
     <Testimonial2 posts={data.learn.edges}/>
-    <Projects posts={data.latestnews.edges} pages={data.allWpPage.nodes}/>
+    <div>
+        <div className="row justify-content-center">
+          <div className="col-lg-4">
+              <div className="section-title text-center pb-15">
+                  <h3><FormattedMessage id="allArticles"/></h3>
+                  <div className="underline">
+                      <span></span>
+                      <span></span>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <Projects posts={data.latestnews.edges} pages={data.allWpPage.nodes}/>
+        <Projects posts={data.latestNewsExceptThree.edges} pages={data.allWpPage.nodes}/>
+        <div className="row">
+          <div className="col-lg-12">
+              <div className="project-more text-center mt-50">
+                <a className="main-btn"  href="actualites" ><FormattedMessage id="more"/></a>
+              </div>
+          </div>
+        </div>
+    </div>
     <ProjectsPage programmes={data.allWpProgrammeType.nodes} projects={data.allWpProgramme.nodes} />
     <Partner/>
     <CallAction contacts={data.contact.nodes}/>
@@ -198,7 +198,7 @@ export const pageQuery = graphql`
   }
 
   latestnews: allWpPost(
-    limit: 6
+    limit: 3
     sort: {fields: [date], order: DESC}
     filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "actualites"}}}}}
 
@@ -526,6 +526,55 @@ slider: allWpPost(
       }
     }
   }
+   latestNewsExceptThree: allWpPost(
+    limit: 3
+    skip: 3
+    sort: {fields: [date], order: DESC}
+    filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "actualites"}}}}}
+
+    ) {
+      edges {
+        node {
+          id
+          title
+          date(formatString: "DD MMMM, YYYY", locale: "fr")
+          excerpt
+          content
+          slug
+          language {
+            slug
+          }
+          link
+          featuredImage {
+            node {
+              altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 1500,
+                    height: 1200,
+                    placeholder: DOMINANT_COLOR
+                  )
+                }
+              }
+            }
+          }
+          categories {
+            nodes {
+              name
+              count
+            }
+          }
+        }
+      }
+  nodes {
+
+    slug
+    language {
+      slug
+    }
+  }
+ }
 }
 `
 export default IndexPage
