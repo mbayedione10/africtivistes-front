@@ -127,6 +127,7 @@ export const query = graphql`
         }
       }
       related:  allWpPost(
+        limit: 4
         sort: {fields: date, order: DESC}
         filter: {language: {code: {eq: FR}}}) {
         edges {
