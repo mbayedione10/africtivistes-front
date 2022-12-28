@@ -4,18 +4,13 @@ import SingleProjectMt from '../single-project-mt'
 const Container = ({posts}) => {
     
     return (
-        <div class="row justify-content-center">
-
-        
+        <div class="card-deck">
         {posts.map(post => {
                     return(
                             <SingleProjectMt post = {post} key={post.id}/>
                     )
                 })} 
     </div>
-    
-
-
     )
 }
 
