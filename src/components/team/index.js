@@ -26,7 +26,7 @@ const Team = ({ teams }) => (
                 <GatsbyImage image={image} alt={team.title} />
               </div>
               <div className="author-content">
-                <a><h6>{team.title}</h6></a>
+                <h6>{team.title}</h6>
                 <span dangerouslySetInnerHTML={{ __html: team.excerpt }} />
                 <ul className="mt-15">
                   {facebook && <li><a href={facebook} aria-label="button"><i className="flaticon-facebook"></i></a></li>}
