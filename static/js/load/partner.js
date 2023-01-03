@@ -7,9 +7,9 @@ $(function () {
         infinite: true,
         autoplay: true,
         arrows: false,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 1000,
         speed: 800,
-        slidesToShow: 6,
+        slidesToShow: 8,
         slidesToScroll: 1,
         responsive: [
         {

@@ -10,7 +10,7 @@ const Partner = () => {
     <div className="container">
     <div className="row justify-content-center">
         <div className="col-lg-6">
-          <div className="section-title text-center pb-20">
+          <div className="section-title text-center pb-50">
             <h3><FormattedMessage id="partner"/> </h3>
               <div className="underline">
                 <span></span>
@@ -118,11 +118,7 @@ const Partner = () => {
                     <img src="/images/partner-logo/internetsansfrontieres.png" alt="Partner"/>
                 </div>
             </div> 
-            <div className="col-lg-2">
-                <div className="single-partner">
-                    <img src="/images/partner-logo/guineevote.png" alt="Partner"/>
-                </div>
-            </div>
+
             <div className="col-lg-2">
                 <div className="single-partner">
                     <img src="/images/partner-logo/irex.png" alt="Partner"/>
@@ -180,6 +176,33 @@ const Partner = () => {
             <div className="col-lg-2">
                 <div className="single-partner">
                     <img src="/images/partner-logo/image.png" alt="Partner"/>
+                </div>
+            </div> 
+
+                        
+            <div classname="col-lg-2">
+                <div classname="single-partner">
+                    <img src="/images/partner-logo/ablogui.jpg" alt="partner"/>
+                </div>
+            </div> 
+            <div classname="col-lg-2">
+                <div classname="single-partner">
+                    <img src="/images/partner-logo/afd.png" alt="partner"/>
+                </div>
+            </div> 
+            <div classname="col-lg-2">
+                <div classname="single-partner">
+                    <img src="/images/partner-logo/cfa.png" alt="partner"/>
+                </div>
+            </div> 
+            <div classname="col-lg-2">
+                <div classname="single-partner">
+                    <img src="/images/partner-logo/gorin.png" alt="partner"/>
+                </div>
+            </div> 
+            <div classname="col-lg-2">
+                <div classname="single-partner">
+                    <img src="/images/partner-logo/ua.jpg" alt="partner"/>
                 </div>
             </div> 
         </div>
