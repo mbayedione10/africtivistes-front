@@ -8,6 +8,7 @@ import ProjectDetail from '../components/projects/details'
 import ProjectPart from '../components/projects/part'
 import Testimonial2 from '../components/testimonial/testimonial2'
 import CallAction from "../components/callAction"
+import Projects from "../components/projects"
 
 const ProgrammeDetail = ({ data, pageContext, intl }) =>{
     const {title, translations,featuredImage} = data.allWpProgramme.nodes[0]
@@ -38,6 +39,8 @@ const ProgrammeDetail = ({ data, pageContext, intl }) =>{
         </div>
     </section>
             <ProjectDetail project={data.allWpProgramme.nodes[0]} />
+            <Projects posts={data.related.edges}/>
+
             <ProjectPart projects={data.prog.nodes} />
             {/* <Testimonial2/> */}
             <CallAction contacts={data.contact.nodes}/>
@@ -74,6 +77,35 @@ export const query = graphql`
       }
       }
     }
+    related:  allWpPost(
+        limit: 4
+        sort: {fields: date, order: DESC}
+        filter: {language: {code: {eq: FR}}}) {
+        edges {
+          node {
+            id
+            title
+            date(formatString: "DD MMMM, YYYY", locale: "fr")
+            excerpt
+            link
+            featuredImage {
+              node {
+                altText
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(width: 1000, height: 800, placeholder: DOMINANT_COLOR)
+                  }
+                }
+                small: localFile {
+                  childImageSharp {
+                    gatsbyImageData(width: 70, height: 68, placeholder: DOMINANT_COLOR)
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     prog: allWpProgramme(
       filter: {language: {code: {eq: FR}}}
       sort: {fields: date, order: DESC}

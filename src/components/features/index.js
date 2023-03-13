@@ -6,17 +6,6 @@ const Features = ({projects}) => (
   <section id="features-part-2" className="featuera-2 pt-30 pb-30" text-align="center">
 
     <div className="container">
-      <div className="row justify-content-center">
-                <div className="col-lg-6">
-                    <div className="section-title text-center pb-15">
-                        <h3><FormattedMessage id="projetEnCours"/></h3>
-                        <div className="underline">
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-        </div>
         <ContainerPEC projects={projects}/>
     </div>
   </section>
