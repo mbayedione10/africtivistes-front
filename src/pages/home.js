@@ -61,7 +61,7 @@ query {
   }
   programmeencours: allWpProgramme(
     filter: {language: {code: {eq: EN}}}
-    limit: 3
+    limit: 4
     sort: {fields: date, order: DESC}
     ) {
     nodes {
@@ -83,6 +83,40 @@ query {
               gatsbyImageData(
                 width: 360, 
                 height: 250, 
+                placeholder: DOMINANT_COLOR)
+            }
+          }
+        }
+      }
+      slug
+      content
+    }
+  }
+  programmeencoursExceptThree: allWpProgramme(
+    filter: {language: {code: {eq: EN}}}
+    limit: 4
+    skip: 4
+    sort: {fields: date, order: DESC}
+    ) {
+    nodes {
+      id
+      title
+      link
+      date(formatString: "DD MMMM, YYYY", locale: "en")
+      programmeTypes {
+        nodes {
+          slug
+          name
+        }
+      }
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 300, 
+                height: 280,
                 placeholder: DOMINANT_COLOR)
             }
           }

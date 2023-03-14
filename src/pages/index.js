@@ -21,7 +21,19 @@ const IndexPage = ({data}) => (
     <Seo title={data.allWpPage.nodes.title} />
     <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>
     <LatestNews posts={data.allWpPost.edges}/>
+    <div className="row justify-content-center">
+                <div className="col-lg-6">
+                    <div className="section-title text-center pb-15">
+                        <h3><FormattedMessage id="projetEnCours"/></h3>
+                        <div className="underline">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+        </div>
     <Features projects={data.programmeencours.nodes}/>
+    <Features projects={data.programmeencoursExceptThree.nodes}/>
     <div className="row justify-content-center" >
     <div className="col-lg-6" >
         <div className="section-title text-center pt-10 pb-10" >
@@ -166,6 +178,40 @@ export const pageQuery = graphql`
   programmeencours: allWpProgramme(
     filter: {language: {code: {eq: FR}}}
     limit: 4
+    sort: {fields: date, order: DESC}
+    ) {
+    nodes {
+      id
+      title
+      link
+      date(formatString: "DD MMMM, YYYY", locale: "fr")
+      programmeTypes {
+        nodes {
+          slug
+          name
+        }
+      }
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 300, 
+                height: 280,
+                placeholder: DOMINANT_COLOR)
+            }
+          }
+        }
+      }
+      slug
+      content
+    }
+  }
+  programmeencoursExceptThree: allWpProgramme(
+    filter: {language: {code: {eq: FR}}}
+    limit: 4
+    skip: 4
     sort: {fields: date, order: DESC}
     ) {
     nodes {
