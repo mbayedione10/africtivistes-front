@@ -36,8 +36,7 @@ export default function BlogPost({ data}) {
                                 </ul>
                             </div>
                             <br></br>
-                            <div className="mb-15" ref={el => el && (el.textContent = content)}></div>
-                            {/* <div class="mb-15" dangerouslySetInnerHTML={{ __html: content }} ></div> */}
+                            <div class="mb-15" dangerouslySetInnerHTML={{ __html: content }} ></div>
                         </div> 
                         
                     </div> 
