@@ -10,6 +10,7 @@ import Projects from "../components/projects"
 import LatestNews from '../components/latestNews'
 import CallAction from '../components/callAction'
 import Counter from '../components/counter'
+import EnChiffres from '../components/chiffres'
 import Features from '../components/features'
 import ProjectsPage from '../components/projects/page'
 import NosChampions from "../components/noschampions"
@@ -21,11 +22,11 @@ const IndexPage = ({data}) => (
     <Seo title={data.allWpPage.nodes.title} />
     <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>
     <LatestNews posts={data.allWpPost.edges}/>
-    <div className="row justify-content-center">
-                <div className="col-lg-6">
-                    <div className="section-title text-center pb-15">
+    <div  className="row justify-content-center">
+                <div  className="col-lg-6">
+                    <div  className="section-title text-center pb-15">
                         <h3><FormattedMessage id="projetEnCours"/></h3>
-                        <div className="underline">
+                        <div  className="underline">
                             <span></span>
                             <span></span>
                         </div>
@@ -34,12 +35,27 @@ const IndexPage = ({data}) => (
         </div>
     <Features projects={data.programmeencours.nodes}/>
     <Features projects={data.programmeencoursExceptThree.nodes}/>
-    <div className="row justify-content-center" >
-    <div className="col-lg-6" >
-        <div className="section-title text-center pt-10 pb-10" >
+
+    <div  className="row justify-content-center" >
+    <div  className="col-lg-6" >
+        <div  className="section-title text-center pt-10 pb-10" >
+        <br></br>
+            <a href='#'><h2><FormattedMessage id="enchiffres"/></h2></a>
+            <div  className="underline">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <EnChiffres posts={data.sommet.nodes}/>
+
+    <div  className="row justify-content-center" >
+    <div  className="col-lg-6" >
+        <div  className="section-title text-center pt-10 pb-10" >
         <br></br>
             <a href='ressources/nos-publications/'><h2><FormattedMessage id="publication"/></h2></a>
-            <div className="underline">
+            <div  className="underline">
                 <span></span>
                 <span></span>
             </div>
@@ -47,21 +63,21 @@ const IndexPage = ({data}) => (
     </div>
 </div>
     <NosChampions posts={data.rapports.edges} />
-    <div className="row">
-          <div className="col-lg-12">
-              <div className="project-more text-center">
-                <a className="main-btn"  href="ressources/nos-publications" ><FormattedMessage id="more"/></a>
+    <div  className="row">
+          <div  className="col-lg-12">
+              <div  className="project-more text-center">
+                <a  className="main-btn"  href="ressources/nos-publications" ><FormattedMessage id="more"/></a>
               </div>
           </div>
       </div>
       <br></br>
  
-    <div className="row justify-content-center" >
-    <div className="col-lg-6" >
-        <div className="section-title text-center pt-10 pb-10" >
+    <div  className="row justify-content-center" >
+    <div  className="col-lg-6" >
+        <div  className="section-title text-center pt-10 pb-10" >
         <br></br>
             <a href='ressources/nos-champions/'><h2><FormattedMessage id="champions"/></h2></a>
-            <div className="underline">
+            <div  className="underline">
                 <span></span>
                 <span></span>
             </div>
@@ -70,12 +86,12 @@ const IndexPage = ({data}) => (
 </div>
 
     <NosChampions posts={data.champions.edges} />
-    <div className="row justify-content-center" >
-    <div className="col-lg-6" >
-        <div className="section-title text-center pt-10 pb-10" >
+    <div  className="row justify-content-center" >
+    <div  className="col-lg-6" >
+        <div  className="section-title text-center pt-10 pb-10" >
         <br></br>
             <a href='ressources/nos-champions/'><h2><FormattedMessage id="learn"/></h2></a>
-            <div className="underline">
+            <div  className="underline">
                 <span></span>
                 <span></span>
             </div>
@@ -84,11 +100,11 @@ const IndexPage = ({data}) => (
 </div>
     <Testimonial2 posts={data.learn.edges}/>
     <div>
-        <div className="row justify-content-center">
-          <div className="col-lg-4">
-              <div className="section-title text-center pb-15">
+        <div  className="row justify-content-center">
+          <div  className="col-lg-4">
+              <div  className="section-title text-center pb-15">
                   <h3><FormattedMessage id="allArticles"/></h3>
-                  <div className="underline">
+                  <div  className="underline">
                       <span></span>
                       <span></span>
                   </div>
@@ -97,10 +113,10 @@ const IndexPage = ({data}) => (
         </div>
         <Projects posts={data.latestnews.edges} pages={data.allWpPage.nodes}/>
         <Projects posts={data.latestNewsExceptThree.edges} pages={data.allWpPage.nodes}/>
-        <div className="row">
-          <div className="col-lg-12">
-              <div className="project-more text-center mt-50">
-                <a className="main-btn"  href="actualites" ><FormattedMessage id="more"/></a>
+        <div  className="row">
+          <div  className="col-lg-12">
+              <div  className="project-more text-center mt-50">
+                <a  className="main-btn"  href="actualites" ><FormattedMessage id="more"/></a>
               </div>
           </div>
         </div>
