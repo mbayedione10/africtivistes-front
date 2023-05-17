@@ -55,8 +55,7 @@ const IndexPage = ({data}) => (
           </div>
       </div>
       <br></br>
-    <About posts={data.abidjan.nodes} actu={data.latestnews.edges}/>
-    <Counter posts={data.sommet.nodes}/>
+ 
     <div className="row justify-content-center" >
     <div className="col-lg-6" >
         <div className="section-title text-center pt-10 pb-10" >
@@ -107,6 +106,9 @@ const IndexPage = ({data}) => (
         </div>
     </div>
     <ProjectsPage programmes={data.allWpProgrammeType.nodes} projects={data.allWpProgramme.nodes} />
+
+    <About posts={data.abidjan.nodes} actu={data.latestnews.edges}/>
+    <Counter posts={data.sommet.nodes}/>
     <Partner/>
     <CallAction contacts={data.contact.nodes}/>
 

@@ -16,7 +16,7 @@ const About = ({posts}) => {
         </div>
     </div>
 </div>
-  <section id="about-part" className="about-part bg_cover pt-30 pb-30" style={{backgroundImage:`url(/images/pdg.png`}}>
+  <section id="about-part" className="about-part bg_cover pt-30 " style={{backgroundImage:`url(/images/pdg.png`}}>
     
     <div className="container">
       <div className="row">
