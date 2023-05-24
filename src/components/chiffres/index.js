@@ -14,7 +14,7 @@ const EnChiffres = ({posts}) => {
             <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-3 text-center pt-40">
                     <div className="icon mb-25">
-                        <i className="flaticon-emoji"></i>
+                        <img src="/images/PARTICIPANTS À NOS SOMMETS.png" alt="Icône qualité" style={{ width: '75px', height: '75px' }} />
                     </div>
                     <div className="content">
                         <span className="counter">550+ </span>
@@ -25,7 +25,7 @@ const EnChiffres = ({posts}) => {
             <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-3 text-center pt-40">
                     <div className="icon mb-25">
-                        <i className="flaticon-experiment-results"></i>
+                        <img src="/images/PROJETS EN COURS.png" alt="Icône qualité" style={{ width: '75px', height: '75px' }} />
                     </div>
                     <div className="content">
                         <span className="counter">12 </span>
@@ -36,7 +36,7 @@ const EnChiffres = ({posts}) => {
             <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-3 text-center pt-40">
                     <div className="icon mb-25">
-                        <i className="flaticon-briefing"></i>
+                        <img src="/images/MEMBRES À TRAVERS 45 PAYS.png" alt="Icône qualité" style={{ width: '75px', height: '75px' }} />
                     </div>
                     <div className="content">
                         <span className="counter">400+ </span>
@@ -47,7 +47,7 @@ const EnChiffres = ({posts}) => {
             <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-3 text-center pt-40">
                     <div className="icon mb-25">
-                        <i className="flaticon-quality"></i>
+                        <img src="/images/BÉNÉFICIAIRES DE NOS FORMATIONS EN PRÉSENTIEL.png" alt="Icône qualité" style={{ width: '75px', height: '75px' }} />
                     </div>
                     <div className="content">
                         <span className="counter">1350+ </span>
@@ -61,7 +61,7 @@ const EnChiffres = ({posts}) => {
             <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-3 text-center pt-40">
                     <div className="icon mb-25">
-                        <i className="flaticon-emoji"></i>
+                        <img src="/images/APPRENANTS INSCRITS AU MOOC.png" alt="Icône qualité" style={{ width: '75px', height: '75px' }} />
                     </div>
                     <div className="content">
                         <span className="counter">2000+ </span>
@@ -72,7 +72,7 @@ const EnChiffres = ({posts}) => {
             <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-3 text-center pt-40">
                     <div className="icon mb-25">
-                        <i className="flaticon-experiment-results"></i>
+                        <img src="/images/APPUIS TECHNIQUES AUX ÉLECTIONS PRÉSIDENTIELLES.png" alt="Icône qualité" style={{ width: '75px', height: '75px' }} />
                     </div>
                     <div className="content">
                         <span className="counter">10</span>
@@ -83,7 +83,7 @@ const EnChiffres = ({posts}) => {
             <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-3 text-center pt-40">
                     <div className="icon mb-25">
-                        <i className="flaticon-briefing"></i>
+                        <img src="/images/ACTIVISTES PRO-DÉMOCRATIE ET JOURNALISTES EN DANGER APPUYÉS.png" alt="Icône qualité" style={{ width: '75px', height: '75px' }} />
                     </div>
                     <div className="content">
                         <span className="counter">07</span>
@@ -94,7 +94,7 @@ const EnChiffres = ({posts}) => {
             <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-3 text-center pt-40">
                     <div className="icon mb-25">
-                        <i className="flaticon-quality"></i>
+                    <img src="/images/COMMUNAUTÉS D’ACTEUR DE CHANGEMENT PROPULSÉES.png" alt="Icône qualité" style={{ width: '75px', height: '75px' }} />
                     </div>
                     <div className="content">
                         <span className="counter">20</span>
