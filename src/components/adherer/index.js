@@ -1,13 +1,26 @@
 import React from 'react'
 import { injectIntl } from "gatsby-plugin-react-intl"
 import {FormattedMessage} from "gatsby-plugin-react-intl"
+import Newsletter from '../footer/newsletter'
 
 
-const Adherer = ({intl}) => {
+const Adherer = ({intl, content}) => {
   return(
   <section id="contact-page" className="pt-10 pb-10">
     <div className="container">
-      <div className="row justify-content-center">
+      <div className="row justify-content">
+
+          <div className="col-lg-6" >
+            <div className="section-title pt-10 pb-10" >
+              <br></br>
+              <h1 className="mt-15 mb-15" dangerouslySetInnerHTML={{ __html: content }}></h1>
+            {/* <div className="underline">
+                <span></span>
+                <span></span>
+            </div> */}
+            </div>
+          </div>
+
         <div className="col-lg-6">
           <div className="contact-form mt-20">
             <form 
@@ -29,7 +42,7 @@ const Adherer = ({intl}) => {
                       <div className="help-block with-errors"></div>
                                     </div>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-5">
                         <div className="single-form form-group">
                           <input name="phone" type="text" placeholder= {intl.formatMessage({id:"phone"})} data-error="Phone is required." required="required"/>
                             <div className="help-block with-errors"></div>
@@ -83,7 +96,7 @@ const Adherer = ({intl}) => {
                         <div className="help-block with-errors"></div>
                                     </div>
                     </div>
-                    <div className="col-md-2">
+                    <div className="col-md-3">
                       <div className="single-form form-group">
                         <h6 name="subject" type="text" placeholder= {intl.formatMessage({id:"objet"})} data-error="Subject is required."><FormattedMessage id="subject"/> :</h6>
                                     </div>
@@ -121,7 +134,12 @@ const Adherer = ({intl}) => {
                         </form>
                   </div>
                 </div>
-                <div className="col-lg-4 offset-lg-1 col-md-5 col-sm-8">
+              </div>
+        </div>
+
+        <div className="container">
+      <div className="row justify-content">
+                <div className="col-lg-6 ">
                   <div className="contact-info mt-50">
                     <ul>
                       <li>
@@ -161,6 +179,9 @@ const Adherer = ({intl}) => {
                       <li><a href="https://sn.linkedin.com/in/africtivistes"><i className="fa fa-linkedin"></i></a></li>
                     </ul>
                   </div>
+                </div>
+                <div className="col-lg-6 ">
+                  <Newsletter />
                 </div>
               </div>
         </div>
