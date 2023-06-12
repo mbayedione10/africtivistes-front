@@ -41,9 +41,9 @@
   "abidjan2021":"3ème Sommet AfricTivistes, retour sur Abidjan 2021",
   "email":"E-mail",
   "name":"Prénom et Nom",
-  "subject":"Sujet",
+  "subject":"Vous êtes ",
   "objet":"Objet",
-  "phone":"Téléphonne",
+  "phone":"Téléphone",
   "message":"Message",
   "submit":"Soumettre",
   "n_africtivistes":"Participants",
@@ -95,7 +95,7 @@
   "capacitation":"Capacitation en gestion de projets numériques, sécurité informatique, open data, solution médias, citoyenneté augmentée,…",
   "promotion":"Promotion et développement de contenus numériques",
   "developpement":"Développement et déploiement de solutions informatiques pour renforcer la liberté d’expression et l’accès à l’information (VPN, réseau social privé, radio pirate Cloud, serveur, …)",
-  "enchiffres": "AfricTivistes en Chiffres",
+  "enchiffres": "8 ans d'existence d'AfricTivistes en chiffres",
   "participants": "Participants à nos Sommets", 
   "membres": "Membres à travers 45 pays",  
   "projets": "Projets en cours",  
@@ -104,4 +104,5 @@
   "appuis": "Appuis techniques aux élections présidentielles",  
   "activistes": "Activistes pro-démocratie et journalistes en danger appuyés",  
   "communautés": "Communautés d’acteur de changement propulsées"
+  
 }

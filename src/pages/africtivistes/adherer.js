@@ -12,18 +12,6 @@ const AdhererPage = ({data}) => {
     return (<Layout translation={link}>
         <Seo title="Comment adhérer AfricTivistes ?" />
         <PageBanner title={title} />
-        <div className="row justify-content-center" >
-          <div className="col-lg-6" >
-            <div className="section-title text-center pt-10 pb-10" >
-              <br></br>
-              <h1 className="mt-15 mb-15" dangerouslySetInnerHTML={{ __html: content }}></h1>
-            {/* <div className="underline">
-                <span></span>
-                <span></span>
-            </div> */}
-        </div>
-    </div>
-</div>
         <Adherer content={content}/>
         <CallAction contacts={data.contact.nodes}/>
       </Layout>

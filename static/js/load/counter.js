@@ -1,4 +1,4 @@
-$('.counter').counterUp({
-    delay: 10,
-    time: 3000
-});
+// $('.counter').counterUp({
+//     delay: 10,
+//     time: 3000
+// });
