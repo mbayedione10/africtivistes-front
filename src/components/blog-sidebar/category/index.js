@@ -1,39 +1,21 @@
-import React from 'react'
-import { graphql, StaticQuery } from 'gatsby'
-import {FormattedMessage } from "gatsby-plugin-react-intl"
+import React from 'react';
+import { SourceMapConsumer } from 'source-map';
+import { FormattedMessage } from "gatsby-plugin-react-intl"
+import CategoryMt from '../category-mt';
 
-const Category = () => {
-    return (
-        <div class="col-lg-12 col-md-8">
-            <div class="blog-catagory mt-50 rounded">
-                <div class="title mb-15">
-                    <h4><FormattedMessage id ="category"/></h4>
-                </div> 
-                <ul>
-                    <StaticQuery query={graphql`
-                        {
-                            allWpCategory(sort: {fields: count, order: DESC}) {
-                                edges {
-                                  node {
-                                    name
-                                    count
-                                  }
-                                }
-                            }
-                        }
-                        `}
-
-                        render ={({allWpCategory}) => allWpCategory.edges.map(({node}) =>             
-                            node.count && <li><a href="#"> {node.name}<span>({(node.count)})</span></a></li>
-                        )}
-                    />
-                </ul>
-
-            </div> 
+const Category = ({ categs }) => {
+  return (
+    <div className="col-lg-12 col-md-8">
+      <div className="blog-catagory mt-50 rounded">
+        <div className="title mb-15">
+          <h4><FormattedMessage id="category" /></h4>
         </div>
-    )
-}
+        {categs && categs.map(categ => (
+          <CategoryMt categ={categ} key={categ.id} />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default Category
-
-
+export default Category;
