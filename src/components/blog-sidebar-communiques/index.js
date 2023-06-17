@@ -8,10 +8,10 @@ import SingleBlog from './single-blog'
 
 const BlogSidebar = ({ posts,categs,tagues, numPages, currentPage}) => {
     return (
-    <section id="blog-sidebar" className="pt-25 pb-25">
+    <section id="project-page" className="pt-25 pb-25">
         <div className="container">
-            <div className="row">
-                <div className="col-lg-6">
+        <div className="row justify-content-center">
+                <div className="col-lg-6 col-md-6 col-sm-9">
                     <SingleBlog posts={posts} numPages={numPages} currentPage={currentPage} />
                 </div>
             </div> 
