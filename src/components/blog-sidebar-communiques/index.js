@@ -11,7 +11,7 @@ const BlogSidebar = ({ posts,categs,tagues, numPages, currentPage}) => {
     <section id="project-page" className="pt-25 pb-25">
         <div className="container">
         <div className="row justify-content-center">
-                <div className="col-lg-6 col-md-6 col-sm-9">
+                <div className="col-lg-6">
                     <SingleBlog posts={posts} numPages={numPages} currentPage={currentPage} />
                 </div>
             </div> 
