@@ -19,7 +19,7 @@ const SingleBogMt = ({post}) => {
                     </ul>
                 </div>
                 <div class="content">
-                    <a href={link} class="mb-15"><h4>{title.substring(0, 48)}...</h4></a>
+                    <a href={link} class="mb-15"><h4>{title}</h4></a>
                     <p class="mb-15" dangerouslySetInnerHTML={{ __html: excerpt.substring(0, 150) }} />
                     <a href={link}><FormattedMessage id ="readMore"/> <i class="fa fa-angle-right"></i></a>
                 </div>
