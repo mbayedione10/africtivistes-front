@@ -1,13 +1,12 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import CallAction from "../components/callAction"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import PageBanner from '../components/pageBanner'
-import BlogSidebar from '../components/blog-sidebar'
+import CallAction from "../../components/callAction"
+import Layout from "../../components/layout"
+import Seo from "../../components/seo"
+import PageBanner from "../../components/pageBanner"
+import BlogSidebar from "../../components/blog-sidebar-communiques"
 
-
-const ActualitesPage = ({ data, pageContext}) => {
+const CommuniquesPage = ({ data, pageContext}) => {
   const { title, translations} = data.allWpPage.nodes[0]
   const { numPages, currentPage } = pageContext
   const link = translations ? translations[0].link : ''
@@ -16,19 +15,21 @@ const ActualitesPage = ({ data, pageContext}) => {
     <Seo title={title}/>
     <PageBanner title={title} />
     <BlogSidebar posts={data.allWpPost.edges} 
-                categs={data.allWpCategory.edges} 
-                tagues={data.allWpTag.edges} 
-                postsrelated={data.related.edges} 
+                // categs={data.allWpCategory.edges} 
+                // tagues={data.allWpTag.edges} 
+                // postsrelated={data.related.edges} 
                 numPages={numPages} currentPage={currentPage} />
     <CallAction contacts={data.contact.nodes}/>
     </Layout>)
 }
-export default ActualitesPage
+export default CommuniquesPage
 
 export const query = graphql`
-  query($limit: Int!, $skip: Int!) {
+  query
+  # ($limit: Int!, $skip: Int!)
+  {
     
-  allWpPage(filter: {slug: {eq: "actualites"}}) {
+  allWpPage(filter: {slug: {eq: "nos-communiques"}}) {
     nodes {
       title
       translations {
@@ -37,10 +38,10 @@ export const query = graphql`
     }
   }
   allWpPost(
-    limit: $limit
-    skip: $skip
+    # limit: $limit
+    # skip: $skip
     sort: {fields: date, order: DESC}
-    filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "actualites"}}}}}
+    filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "communiques"}}}}}
   ) {
     edges {
       node {

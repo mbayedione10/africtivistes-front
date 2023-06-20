@@ -15,7 +15,12 @@ const News = ({ data, pageContext}) => {
   return (<Layout translation={link}>
       <Seo title={title}/>
     <PageBanner title={title} />
-    <BlogSidebar posts={data.allWpPost.edges} numPages={numPages} currentPage={currentPage} />
+    <BlogSidebar posts={data.allWpPost.edges} 
+                categs={data.allWpCategory.edges} 
+                tagues={data.allWpTag.edges} 
+                // postsrelated={data.related.edges} 
+                numPages={numPages} 
+                currentPage={currentPage} />
     <CallAction contacts={data.contact.nodes}/>
     </Layout>)
 }
@@ -74,6 +79,21 @@ export const query = graphql`
             count
           }
         }
+      }
+    }
+  }
+  allWpCategory(filter: {language: {code: {eq: EN}}}) {
+    edges {
+      node {
+        name
+        count
+      }
+    }
+  }
+  allWpTag(filter: {language: {code: {eq: EN}}}) {
+    edges {
+      node {
+        name
       }
     }
   }
