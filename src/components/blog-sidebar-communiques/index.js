@@ -11,7 +11,6 @@ const BlogSidebar = ({ posts,categs,tagues, numPages, currentPage}) => {
         <section id="blog-grid" className="">
         <div className="container">
                     <SingleBlog posts={posts} numPages={numPages} currentPage={currentPage} />
-   
         </div>
         </section>
     )
