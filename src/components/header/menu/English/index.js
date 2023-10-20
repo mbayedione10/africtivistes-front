@@ -10,23 +10,34 @@ const renderMenu = (data) => {
         <ul className="navbar-nav">
             {menu.map((item, index) => (
                 <li className="nav-item" key={index}>
-                    <Link activeClassName={'active'} to={item.path}>
-                        {item.label}
-                    </Link>
+                    {item.path.startsWith("http") ? (
+                        <a href={item.path} target="_blank" rel="noopener noreferrer">
+                            {item.label}
+                        </a>
+                    ) : (
+                        <Link activeClassName={'active'} to={item.path}>
+                            {item.label}
+                        </Link>
+                    )}
                     {item.children && item.children.length > 0 && (
                         <ul className="sub-menu">
                             {item.children.map((item, index) => (
                                 <li key={index}>
-                                    <Link to={item.path}>
-                                        {item.label}
-                                    </Link>
+                                    {item.path.startsWith("http") ? (
+                                        <a href={item.path} target="_blank" rel="noopener noreferrer">
+                                            {item.label}
+                                        </a>
+                                    ) : (
+                                        <Link to={item.path}>
+                                            {item.label}
+                                        </Link>
+                                    )}
                                 </li>
                             ))}
-                        </ul>)
-                    }
+                        </ul>
+                    )}
                 </li>
-            )
-            )}
+            ))}
         </ul>)
 }
 
