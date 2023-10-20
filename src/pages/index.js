@@ -21,8 +21,19 @@ const IndexPage = ({data}) => (
   <Layout>
     <Seo title={data.allWpPage.nodes.title} />
     <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>
+    <div className="row justify-content-center pt-30">
+        <div className="col-lg-6">
+          <div className="section-title text-center pb-20">
+            <h3><FormattedMessage id="latestnews"/> </h3>
+              <div className="underline">
+                <span></span>
+                <span></span>
+              </div>
+          </div>
+        </div>
+      </div>
     <LatestNews posts={data.allWpPost.edges}/>
-    <div  className="row justify-content-center">
+    <div  className="row justify-content-center pt-30">
                 <div  className="col-lg-6">
                     <div  className="section-title text-center pb-15">
                         <h3><FormattedMessage id="projetEnCours"/></h3>
@@ -35,6 +46,19 @@ const IndexPage = ({data}) => (
         </div>
     <Features projects={data.programmeencours.nodes}/>
     <Features projects={data.programmeencoursExceptThree.nodes}/>
+
+    <div  className="row justify-content-center pt-30">
+                <div  className="col-lg-6">
+                    <div  className="section-title text-center pb-15">
+                        <h3><FormattedMessage id="communiques"/></h3>
+                        <div  className="underline">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <LatestNews posts={data.communiques.edges}/>
 
     <div  className="row justify-content-center" >
     <div  className="col-lg-6" >
@@ -261,6 +285,53 @@ export const pageQuery = graphql`
     }
   }
 
+  communiques :  allWpPost(
+  sort: {fields: [date], order: DESC},
+  limit: 3
+  filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "communiques"}}}}}
+
+  ) {
+    edges {
+      node {
+        id
+        title
+        date(formatString: "DD MMMM, YYYY", locale: "fr")
+        excerpt
+        slug
+        language {
+          slug
+        }
+        link
+        featuredImage {
+          node {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 1500,
+                  height: 1200,
+                  placeholder: DOMINANT_COLOR
+                )
+              }
+            }
+          }
+        }
+        categories {
+          nodes {
+            name
+            count
+          }
+        }
+      }
+    }
+nodes {
+
+  slug
+  language {
+    slug
+  }
+}
+}
   latestnews: allWpPost(
     limit: 3
     sort: {fields: [date], order: DESC}
