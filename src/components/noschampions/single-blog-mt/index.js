@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 
 const SingleBogMt = ({post}) => {
-    const{title, date, link,excerpt,name, featuredImage}=post.node
+    const{title, link,excerpt, featuredImage}=post.node
     const image = featuredImage && getImage(featuredImage.node.big)
 
     return (

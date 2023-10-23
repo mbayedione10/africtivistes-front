@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Pagination = ({ numPages, currentPage}) => {
+const Pagination = ({ currentPage}) => {
     return (
         <div class="col-lg-12">
         <nav aria-label="Page navigation example">
@@ -10,7 +10,6 @@ const Pagination = ({ numPages, currentPage}) => {
                         <li className="page-item">
                             <a className={i+1 === currentPage ?'active': ''} href={`/fr/actualites/${i + 1}`}>{i + 1}</a>
                         </li>
-                        // <li class="page-item"><a class="active" href="#">01</a></li>
                     )
                 })}
                 <li class="page-item"><a href="#"><i class="fa fa-angle-right"></i></a></li>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from "gatsby-plugin-react-intl"
 import Francais from './francais'
 import English from './English'
 

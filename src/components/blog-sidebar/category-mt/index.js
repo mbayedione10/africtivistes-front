@@ -1,6 +1,5 @@
 import React from 'react'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
+import { injectIntl } from "gatsby-plugin-react-intl"
 
 const CategoryMt = ({categ}) => {
     const{count, name}=categ.node

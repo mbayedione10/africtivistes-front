@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
+import { injectIntl } from "gatsby-plugin-react-intl"
 import { ImportScript } from '../../services'
 import Container from './containerProjects'
 

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { IntlContextConsumer, injectIntl } from "gatsby-plugin-react-intl"
+import { IntlContextConsumer } from "gatsby-plugin-react-intl"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import { FormattedMessage } from 'gatsby-plugin-react-intl'
@@ -14,7 +14,6 @@ const CommunautesPage = ({data, intl }) => {
     {({ language: currentLocale }) =>
       currentLocale === 'fr' && <Layout translation={link}>
       <Seo title={title} />
-      {/* <PageBanner title={title} /> */}
       <section id="page-banner" className="bg_cover pt-200 pb-200" style={{ backgroundImage: `url(/images/communautess.jpeg`}} data-overlay="6">
         <div className="container">
             <div className="row">
@@ -33,8 +32,6 @@ const CommunautesPage = ({data, intl }) => {
         </div>
     </section>
       <PageCommunaute programmes={data.allWpCommunauteType.nodes} projects={data.allWpCommunautes.nodes} />
-      {/* <Counter2/>
-      <CallAction2/> */}
     </Layout>
     }
     </IntlContextConsumer>

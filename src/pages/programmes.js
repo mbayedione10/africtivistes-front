@@ -5,8 +5,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { FormattedMessage } from 'gatsby-plugin-react-intl'
 import ProjectsPage from '../components/projects/page'
-import Counter2 from '../components/counter/counter2'
-import CallAction2 from '../components/callAction/callactions2'
 import CallAction from '../components/callAction'
 
 const ProgrammesPage = ({ data, intl }) => {

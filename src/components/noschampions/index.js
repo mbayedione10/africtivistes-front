@@ -1,6 +1,5 @@
 import React from 'react'
 import SingleBlog from './single-blog'
-import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 
 const NosChampions = ({ posts}) => {
     return (

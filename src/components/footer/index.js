@@ -1,5 +1,5 @@
 import * as React from "react"
-import {FormattedMessage, injectIntl} from 'gatsby-plugin-react-intl'
+import {injectIntl} from 'gatsby-plugin-react-intl'
 
 import Social from '../social'
 import Menu from "./menu"

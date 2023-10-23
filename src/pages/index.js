@@ -5,7 +5,6 @@ import Seo from "../components/seo"
 import Slider from "../components/slider"
 import Partner from '../components/partner'
 import About from "../components/about"
-import About2 from '../components/about/about2'
 import Projects from "../components/projects"
 import LatestNews from '../components/latestNews'
 import CallAction from '../components/callAction'
@@ -70,7 +69,7 @@ const IndexPage = ({data}) => (
                 <span></span>
             </div>
         </div>
-    </div>
+    </div>S
     </div>
     <EnChiffres posts={data.sommet.nodes}/>
 

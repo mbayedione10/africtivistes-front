@@ -1,7 +1,4 @@
 import React from 'react'
-import { Link } from "gatsby"
-import { FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { ImportScript } from '../../services'
 import TestmonialSlide from './testimonial-slide'
 

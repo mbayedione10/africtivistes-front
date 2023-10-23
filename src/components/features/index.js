@@ -1,5 +1,4 @@
 import React from 'react'
-import {FormattedMessage } from "gatsby-plugin-react-intl"
 import ContainerPEC from './container-projet-en-cours'
 
 const Features = ({projects}) => (

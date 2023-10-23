@@ -3,17 +3,15 @@ import { graphql } from "gatsby"
 import { FormattedMessage } from 'gatsby-plugin-react-intl'
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
-import About3 from "../../components/about/about3"
 import Intervention from '../../components/intervention'
 import Team from '../../components/team'
 import CallAction from "../../components/callAction"
 
 const RessourcesPage = ({data}) => {
-  const { title, content, translations, featuredImage} = data.allWpPage.nodes[0]
+  const { title, translations} = data.allWpPage.nodes[0]
   const link = translations ? translations[0].link : ''
   return (<Layout translation={link}>
       <Seo title="Ressources" />
-      {/* <PageBanner title={title} /> */}
       <section id="page-banner" className="bg_cover pt-200 pb-200" style={{ backgroundImage: `url(/images/logo_africtivistes.png`}} data-overlay="6">
         <div className="container">
             <div className="row">
@@ -31,13 +29,9 @@ const RessourcesPage = ({data}) => {
             </div>
         </div>
     </section>
-      {/* <About3 content={content} picture={featuredImage.node.localFile}/> */}
       <Intervention/>
       <Team teams={data.allWpTeam.nodes}/>
       <CallAction contacts={data.contact.nodes}/>
-      {/* <Counter2/> */}
-      {/* <Testimonial2/> */}
-      {/* <CallAction2/> */}
     </Layout>)
 }
 export default RessourcesPage

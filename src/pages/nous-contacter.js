@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Contact from '../components/contact'
 import { FormattedMessage } from 'gatsby-plugin-react-intl'
-import CallAction from '../components/callAction'
 
 const ContactPage = ({data}) => {
   const { title, translations} = data.allWpPage.nodes[0]

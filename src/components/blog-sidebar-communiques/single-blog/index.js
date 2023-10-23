@@ -1,6 +1,5 @@
 import React from 'react'
 import SingleBogMt from '../single-blog-mt'
-import Pagination from '../pagination'
 
 const SingleBlog = ({ posts, numPages, currentPage}) => {
     return (

@@ -1,6 +1,5 @@
 import React from 'react'
 import SingleValues from './single-values'
-import {FormattedMessage } from "gatsby-plugin-react-intl"
 
 const Termes = ({posts}) => (
   <section id="company-history">

@@ -1,6 +1,6 @@
 import React from 'react'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
+import { injectIntl } from "gatsby-plugin-react-intl"
 
 const SingleBlogMt30 = ({post}) => {
     const{title, date,link, featuredImage}=post.node

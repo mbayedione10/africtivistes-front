@@ -1,5 +1,4 @@
 import React from 'react';
-import { SourceMapConsumer } from 'source-map';
 import { FormattedMessage } from "gatsby-plugin-react-intl"
 import CategoryMt from '../category-mt';
 
