@@ -1,23 +1,15 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
-import ProjectDetail from "../components/projects/details"
-import ProjectPart from '../components/projects/part'
-import Projects from "../components/projects"
-import RecentPost from '../components/blog-sidebar/recent-post'
-import RelatedPost from '../components/blog-sidebar/related'
 import CallAction from "../components/callAction"
 import DetailsPost from "../components/projects/details-post"
 
 export default function DetailPost({ data}) {
-  const { title,date, content, featuredImage} = data.allWpPost.nodes[0]
-  const image = featuredImage && getImage(featuredImage.node.localFile)
+  const { title} = data.allWpPost.nodes[0]
     return (
         <Layout>
         <Seo title={title}/>
-        {/* <PageBanner title= {title} date={date}/> */}
         <DetailsPost project={data.allWpPost.nodes[0]} recents={data.recent.edges} relateds={data.related.edges}/>
         <CallAction contacts={data.contact.nodes}/>
 

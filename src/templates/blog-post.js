@@ -3,11 +3,8 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
-import PageBanner from '../components/pageBanner'
 import RecentPost from '../components/blog-sidebar/recent-post'
-import RelatedPost from '../components/blog-sidebar/related'
 import CallAction from "../components/callAction"
-import LatestNews from '../components/latestNews'
 import Projects from "../components/projects"
 
 export default function BlogPost({ data}) {
@@ -16,7 +13,6 @@ export default function BlogPost({ data}) {
     return (
         <Layout>
         <Seo title={title}/>
-        {/* <PageBanner title= {title} date={date}/> */}
     <section id="blog-sidebar"  class="pt-10 pb-10">
         <div class="container">
             <div class="row">
@@ -30,9 +26,6 @@ export default function BlogPost({ data}) {
                             <div className="date mt-10">
                                 <ul>
                                     <li><a href="#"><i className="flaticon-calendar"></i>{date}</a></li>
-                                    {/* <li><a href="#"><i className="flaticon-heart"></i> 50 Likes</a></li> */}
-                                    {/* <li><a href="#"><i className="flaticon-comment"></i> 25 Comments</a></li> */}
-                                    {/* <li><a href="#"><i className="flaticon-folder"></i> Finance</a></li> */}
                                 </ul>
                             </div>
                             <br></br>
@@ -45,8 +38,7 @@ export default function BlogPost({ data}) {
                     <div class="blog-sidebar ">
                         <div class="row justify-content-center">
                             <div class="col-lg-12 col-md-8">
-                            <RecentPost posts={data.recent.edges}/>
-                            {/* <RelatedPost posts={data.related.edges}/> */}
+                              <RecentPost posts={data.recent.edges}/>
                             </div> 
                         </div> 
                     </div> 

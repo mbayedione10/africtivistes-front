@@ -7,7 +7,7 @@ import Termes from "../components/terme"
 import CallAction from "../components/callAction"
 
 const TermesPage = ({data}) => {
-  const { title, content, translations, featuredImage} = data.allWpPage.nodes[0]
+  const { title, translations} = data.allWpPage.nodes[0]
   const link = translations ? translations[0].link : ''
   return (<Layout translation={link}>
       <Seo title={data.allWpPage.nodes.title}/>

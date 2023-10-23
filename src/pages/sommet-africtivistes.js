@@ -2,11 +2,10 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { FormattedMessage } from 'gatsby-plugin-react-intl'
 import VideoAbidjan from "../components/abidjan2021"
 
 const SommetAfrictivistesPage = ({data}) => {
-  const { title, translations} = data.allWpPage.nodes[0]
+  const { translations } = data.allWpPage.nodes[0]
   const link = translations ? translations.link : ''
   return (<Layout translation={link}>
       <Seo title={data.allWpPage.nodes.title} />

@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ProjectDetail from '../components/projects/details'
 import ProjectPart from '../components/projects/part'
-import Testimonial2 from '../components/testimonial/testimonial2'
 import CallAction from "../components/callAction"
 import Projects from "../components/projects"
 
