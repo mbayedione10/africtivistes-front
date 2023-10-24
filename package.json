@@ -21,7 +21,7 @@
     "gatsby-plugin-sass": "5.23.0",
     "gatsby-plugin-sharp": "4.24.0",
     "gatsby-source-filesystem": "4.23.0",
-    "gatsby-source-wordpress": "6.24.0",
+    "gatsby-source-wordpress": "6.23.0",
     "gatsby-transformer-sharp": "4.23.0",
     "i": "^0.3.7",
     "install": "^0.13.0",
@@ -42,7 +42,7 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby clean && gatsby build --log-pages",
+    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby develop --log-pages",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
