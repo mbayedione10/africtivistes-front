@@ -90,9 +90,6 @@ module.exports = {
           trackingId: 'UA-228721643-1', // leave empty if you want to disable the tracker
           anonymize: true, // default
           head: true,
-
-        // defines the environments where the tracking should be available  - default is ["production"]
-        environments: ['production', 'development']
       },
     },
     `gatsby-plugin-gatsby-cloud`,
