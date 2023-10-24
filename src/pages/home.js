@@ -177,6 +177,7 @@ nodes {
 
 latestnews: allWpPost(
   limit: 3
+  skip: 3
   sort: {fields: [date], order: DESC}
   filter: {language: {code: {eq: EN}}, categories: {nodes: {elemMatch: {slug: {eq: "news"}}}}}
 
@@ -495,7 +496,7 @@ learn: allWpPost(
 }
    latestNewsExceptThree: allWpPost(
     limit: 3
-    skip: 3
+    skip: 6
     sort: {fields: [date], order: DESC}
     filter: {language: {code: {eq: EN}}, categories: {nodes: {elemMatch: {slug: {eq: "news"}}}}}
 
