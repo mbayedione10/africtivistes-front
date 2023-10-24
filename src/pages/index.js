@@ -333,6 +333,7 @@ nodes {
 }
   latestnews: allWpPost(
     limit: 3
+    skip: 3
     sort: {fields: [date], order: DESC}
     filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "actualites"}}}}}
 
@@ -662,7 +663,7 @@ slider: allWpPost(
   }
    latestNewsExceptThree: allWpPost(
     limit: 3
-    skip: 3
+    skip: 6
     sort: {fields: [date], order: DESC}
     filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "actualites"}}}}}
 
