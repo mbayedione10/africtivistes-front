@@ -33,16 +33,16 @@
     "sass": "^1.35.2"
   },
   "devDependencies": {
-    "gatsby-plugin-netlify": "^4.3.0",
     "prettier": "2.3.2",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.4",
+    "gatsby-plugin-netlify": "^5.1.1"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true rm -r .cache && gatsby build --log-pages",
+    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
