@@ -7,7 +7,7 @@
   "dependencies": {
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.0",
-    "gatsby": "^4.0.0",
+    "gatsby": "^4.23.0",
     "gatsby-paginate": "^1.1.1",
     "gatsby-plugin-gatsby-cloud": "4.23.0",
     "gatsby-plugin-gdpr-cookies": "^2.0.9",
