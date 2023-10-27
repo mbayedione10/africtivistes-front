@@ -16,11 +16,11 @@ const ActualitesPage = ({ data, pageContext}) => {
     <Seo title={title}/>
     <PageBanner title={title} />
     <BlogSidebar posts={data.allWpPost.edges} 
-                categs={data.allWpCategory.edges} 
-                tagues={data.allWpTag.edges} 
-                postsrelated={data.related.edges} 
+                // categs={data.allWpCategory.edges} 
+                // tagues={data.allWpTag.edges} 
+                postsrelated={data.related.edges}
                 numPages={numPages} currentPage={currentPage} />
-    <CallAction/>
+    {/* <CallAction/> */}
     </Layout>)
 }
 export default ActualitesPage
@@ -75,18 +75,37 @@ export const query = graphql`
       }
     }
   }
-  allWpCategory(filter: {language: {code: {eq: FR}}}) {
-    edges {
-      node {
-        name
-        count
+  related:  allWpPost(
+    sort: {fields: date, order: DESC}
+    filter: {          tags: {
+      nodes: {
+      elemMatch: {
+        name: {eq: "Sahel Insight"}
       }
     }
-  }
-  allWpTag(filter: {language: {code: {eq: FR}}}) {
+    }, language: {code: {eq: FR}}}) {
     edges {
       node {
-        name
+        id
+        title
+        date(formatString: "DD MMMM, YYYY", locale: "fr")
+        excerpt
+        link
+        featuredImage {
+          node {
+            altText
+            big: localFile {
+              childImageSharp {
+                gatsbyImageData(width: 360, height: 200, placeholder: DOMINANT_COLOR)
+              }
+            }
+            small: localFile {
+              childImageSharp {
+                gatsbyImageData(width: 70, height: 68, placeholder: DOMINANT_COLOR)
+              }
+            }
+          }
+        }
       }
     }
   }
