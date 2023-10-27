@@ -34,7 +34,7 @@ export default function BlogPost({ data}) {
                         
                     </div> 
                 </div>
-                <div class="col-lg-4">
+                {/* <div class="col-lg-4">
                     <div class="blog-sidebar ">
                         <div class="row justify-content-center">
                             <div class="col-lg-12 col-md-8">
@@ -42,7 +42,7 @@ export default function BlogPost({ data}) {
                             </div> 
                         </div> 
                     </div> 
-                </div>    
+                </div>     */}
                 </div>
                 </div>
                 </section>
@@ -80,44 +80,6 @@ export const query = graphql`
       }
       }
     }
-    recent: allWpPost(
-        limit: 15
-        sort: {fields: date, order: DESC}
-        filter: {language: {code: {eq: FR}}}
-      ) {
-        edges {
-          node {
-            id
-            title
-            date(formatString: "DD MMMM, YYYY", locale: "fr")
-            excerpt
-            link
-            featuredImage {
-              node {
-                altText
-                big: localFile {
-                  childImageSharp {
-                    gatsbyImageData(
-                      width: 750,
-                      height: 360,
-                      placeholder: DOMINANT_COLOR
-                    )
-                  }
-                }
-                small: localFile {
-                  childImageSharp {
-                    gatsbyImageData(
-                      width: 70,
-                      height: 68,
-                      placeholder: DOMINANT_COLOR
-                    )
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
       related:  allWpPost(
         limit: 4
         sort: {fields: date, order: DESC}
