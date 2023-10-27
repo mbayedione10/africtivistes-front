@@ -20,7 +20,7 @@ const ActualitesPage = ({ data, pageContext}) => {
                 tagues={data.allWpTag.edges} 
                 postsrelated={data.related.edges} 
                 numPages={numPages} currentPage={currentPage} />
-    <CallAction contacts={data.contact.nodes}/>
+    <CallAction/>
     </Layout>)
 }
 export default ActualitesPage
@@ -87,64 +87,6 @@ export const query = graphql`
     edges {
       node {
         name
-      }
-    }
-  }
-  contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
-    nodes {
-      title
-      content
-      slug
-      link
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 555,
-                placeholder: DOMINANT_COLOR
-              )
-            }
-          }
-        }
-      }
-      translations {
-        link
-      }
-    }
-  } 
-  related:  allWpPost(
-    sort: {fields: date, order: DESC}
-    filter: {          tags: {
-      nodes: {
-      elemMatch: {
-        name: {eq: "Sahel Insight"}
-      }
-    }
-    }, language: {code: {eq: FR}}}) {
-    edges {
-      node {
-        id
-        title
-        date(formatString: "DD MMMM, YYYY", locale: "fr")
-        excerpt
-        link
-        featuredImage {
-          node {
-            altText
-            big: localFile {
-              childImageSharp {
-                gatsbyImageData(width: 360, height: 200, placeholder: DOMINANT_COLOR)
-              }
-            }
-            small: localFile {
-              childImageSharp {
-                gatsbyImageData(width: 70, height: 68, placeholder: DOMINANT_COLOR)
-              }
-            }
-          }
-        }
       }
     }
   }
