@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import Seo from "../components/seo"
-import CallAction from "../components/callAction"
+// import CallAction from "../components/callAction"
 import DetailsPost from "../components/projects/details-post"
 
 export default function DetailPost({ data}) {
@@ -11,7 +11,7 @@ export default function DetailPost({ data}) {
         <Layout>
         <Seo title={title}/>
         <DetailsPost project={data.allWpPost.nodes[0]} recents={data.recent.edges} relateds={data.related.edges}/>
-        <CallAction contacts={data.contact.nodes}/>
+        {/* <CallAction contacts={data.contact.nodes}/> */}
 
         </Layout>
     )
@@ -116,29 +116,5 @@ export const query = graphql`
           }
         }
       }
-      contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
-    nodes {
-      title
-      content
-      slug
-      link
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 555,
-                placeholder: DOMINANT_COLOR
-              )
-            }
-          }
-        }
-      }
-      translations {
-        link
-      }
-    }
-  } 
   }
 `
