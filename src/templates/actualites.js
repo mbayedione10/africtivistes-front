@@ -20,7 +20,7 @@ const ActualitesPage = ({ data, pageContext}) => {
                 // tagues={data.allWpTag.edges} 
                 postsrelated={data.related.edges}
                 numPages={numPages} currentPage={currentPage} />
-    {/* <CallAction/> */}
+    <CallAction/>
     </Layout>)
 }
 export default ActualitesPage

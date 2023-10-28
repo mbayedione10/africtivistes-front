@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
 import RecentPost from '../components/blog-sidebar/recent-post'
-// import CallAction from "../components/callAction"
+import CallAction from "../components/callAction"
 import Projects from "../components/projects"
 
 export default function BlogPost({ data}) {
@@ -47,7 +47,7 @@ export default function BlogPost({ data}) {
                 </div>
                 </section>
                 <Projects posts={data.related.edges}/>
-                {/* <CallAction contacts={data.contact.nodes}/> */}
+                <CallAction/>
 
         </Layout>
     )
