@@ -1,8 +1,12 @@
 import React from 'react'
 import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 import TagMt from '../tag-mt'
+import {useAllTag} from "../../../hooks/query/allTag"
 
-const Tags = ({tagues}) => {
+const Tags = () => {
+
+    const tagues = useAllTag()
+
     return (
         <div class="col-lg-12 col-md-12">
         <div class="blog-tags mt-50 rounded">
@@ -11,7 +15,7 @@ const Tags = ({tagues}) => {
             </div> 
             {tagues && tagues.map(tague => {
                     return(
-                            <TagMt tague = {tague} key={tague.id} />
+                        <TagMt tague = {tague} key={tague.id} />
                     )
                 })}
         </div> 

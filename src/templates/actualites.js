@@ -16,9 +16,8 @@ const ActualitesPage = ({ data, pageContext}) => {
     <Seo title={title}/>
     <PageBanner title={title} />
     <BlogSidebar posts={data.allWpPost.edges}
-                // tagues={data.allWpTag.edges} 
-                postsrelated={data.related.edges}
-                numPages={numPages} currentPage={currentPage} />
+      postsrelated={data.related.edges}
+      numPages={numPages} currentPage={currentPage} />
     <CallAction/>
     </Layout>)
 }

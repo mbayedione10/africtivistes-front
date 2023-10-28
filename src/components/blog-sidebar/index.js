@@ -6,7 +6,7 @@ import Tags from './tags'
 import Subscribe from './subscribe'
 import SingleBlog from './single-blog'
 
-const BlogSidebar = ({ posts, tagues, numPages, currentPage}) => {
+const BlogSidebar = ({ posts, numPages, currentPage}) => {
     return (
     <section id="blog-sidebar" className="pt-25 pb-25">
         <div className="container">
@@ -21,7 +21,7 @@ const BlogSidebar = ({ posts, tagues, numPages, currentPage}) => {
                             <Search/>
                             <RecentPost/>
                             <Category/>
-                            <Tags tagues={tagues}/>
+                            <Tags/>
                             <Subscribe/>
                         </div> 
                     </div>
