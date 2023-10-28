@@ -19,7 +19,7 @@ const BlogSidebar = ({ posts,categs,tagues, numPages, currentPage}) => {
                     <div class="row justify-content-center">
                         <div class="col-lg-12 col-md-8">
                             <Search/>
-                            <RecentPost posts={posts} numPages={numPages} currentPage={currentPage}/>
+                            <RecentPost/>
                             <Category categs={categs}/>
                             <Tags tagues={tagues}/>
                             <Subscribe/>
