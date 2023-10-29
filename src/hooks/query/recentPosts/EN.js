@@ -1,19 +1,19 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const useRenctPosts = () => {
+export const useRenctPostsEN = () => {
   const {allWpPost} = useStaticQuery(
     graphql`
-    query recentPost {
+    query recentPostEN {
         allWpPost(
           limit: 15
           sort: {fields: date, order: DESC}
-          filter: {language: {code: {eq: FR}}}
+          filter: {language: {code: {eq: EN}}}
         ) {
           edges {
             node {
               id
               title
-              date(formatString: "DD MMMM, YYYY", locale: "fr")
+              date(formatString: "DD MMMM, YYYY", locale: "en")
               excerpt
               link
               featuredImage {

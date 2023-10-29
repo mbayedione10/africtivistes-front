@@ -11,13 +11,15 @@ const ActualitesPage = ({ data, pageContext}) => {
   const { title, translations} = data.allWpPage.nodes[0]
   const { numPages, currentPage } = pageContext
   const link = translations ? translations[0].link : ''
-
   return (<Layout translation={link}>
     <Seo title={title}/>
     <PageBanner title={title} />
-    <BlogSidebar posts={data.allWpPost.edges}
+    <BlogSidebar
+      posts={data.allWpPost.edges}
       postsrelated={data.related.edges}
-      numPages={numPages} currentPage={currentPage} />
+      numPages={numPages}
+      currentPage={currentPage}
+    />
     <CallAction/>
     </Layout>)
 }
