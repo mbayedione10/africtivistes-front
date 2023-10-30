@@ -42,7 +42,7 @@ const ProgrammeDetail = ({ data, pageContext, intl }) =>{
 
             <ProjectPart projects={data.prog.nodes} />
             {/* <Testimonial2/> */}
-            <CallAction contacts={data.contact.nodes}/>
+            <CallAction/>
         </Layout>
         }
       </IntlContextConsumer>
@@ -137,29 +137,5 @@ export const query = graphql`
         content
       }
     }
-    contact: allWpPage(filter: {slug: {eq: "nous-contacter"}}) {
-    nodes {
-      title
-      content
-      slug
-      link
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 555,
-                placeholder: DOMINANT_COLOR
-              )
-            }
-          }
-        }
-      }
-      translations {
-        link
-      }
-    }
-  } 
   }
 `

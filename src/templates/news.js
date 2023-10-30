@@ -20,7 +20,7 @@ const News = ({ data, pageContext}) => {
       numPages={numPages} 
       currentPage={currentPage}
     />
-    <CallAction contacts={data.contact.nodes}/>
+    <CallAction/>
     </Layout>)
 }
 export default News
@@ -78,30 +78,6 @@ export const query = graphql`
             count
           }
         }
-      }
-    }
-  }
-  contact: allWpPage(filter: {slug: {eq: "contact-us"}}) {
-    nodes {
-      title
-      content
-      slug
-      link
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 555,
-                placeholder: DOMINANT_COLOR
-              )
-            }
-          }
-        }
-      }
-      translations {
-        link
       }
     }
   } 
