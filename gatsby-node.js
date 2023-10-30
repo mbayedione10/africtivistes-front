@@ -1,5 +1,11 @@
 const path = require(`path`)
-// const createPaginatedPages = require('gatsby-paginate')
+
+function shouldDeferPage(date) {
+  const twoYearsAgo = new Date()
+  twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2)
+  return new Date(date) >= twoYearsAgo
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   
@@ -64,6 +70,7 @@ exports.createPages = async ({ graphql, actions }) => {
         nodes {
           link
           slug
+          date
           language {
             slug
           }
@@ -87,6 +94,7 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
     actualites.allWpPost.nodes.forEach(node => {
+      const defer = shouldDeferPage(node.date)
       createPage({
         path: `/actualites/${node.slug}`,
         component: path.resolve(`./src/templates/detail-post.js`),
@@ -94,6 +102,7 @@ exports.createPages = async ({ graphql, actions }) => {
           slug: node.slug,
           lang: node.language.slug
         },
+        defer: defer
       })
     })
   }
@@ -107,6 +116,7 @@ exports.createPages = async ({ graphql, actions }) => {
       nodes {
         link
         slug
+        date
         language {
           slug
         }
@@ -126,6 +136,7 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
     news.allWpPost.nodes.forEach(node => {
+      const defer = shouldDeferPage(node.date)
       createPage({
         path: `/news/${node.slug}`,
         component: path.resolve(`./src/templates/detail-post.js`),
@@ -133,6 +144,7 @@ exports.createPages = async ({ graphql, actions }) => {
           slug: node.slug,
           lang: node.language.slug
         },
+        defer: defer
       })
     })
   }
