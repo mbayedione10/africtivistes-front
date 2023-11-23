@@ -8,14 +8,14 @@ const SingleBlog = ({ posts, numPages, currentPage}) => {
             <div class="row justify-content-center">
                 {posts.map(post => {
                     return(
-                        <div class="col-md-6 col-sm-9">
+                        <div>
                             <SingleBogMt post = {post} key={post.id}/>
                         </div>
                     )
                 })} 
             </div> 
             <div class="row">
-                <Pagination numPages={numPages} currentPage={currentPage} />
+                <Pagination totalPages={numPages} currentPage={currentPage} />
             </div> 
         </>
                 
