@@ -7,36 +7,25 @@ const SingleBlogMt = ({ post }) => {
     const image = featuredImage && getImage(featuredImage.node.big);
 
     return (
-        <div className='single-blog-list mt-50'>
-            <div className="row">
-                <div className="col-xl-5 col-lg-6">
-                 
-                        {image && (
-                            <GatsbyImage
-                                image={image}
-                                alt={title}
-                                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                            />
-                        )}
+        <div className='single-blog-list mt-20'>
+<div className="row align-items-center">
+    <div className="col-xl-5 col-lg-6 text-center">
+        <div className="blog-image">
+            <a href={link}>
+                <GatsbyImage image={image} alt={title} />
+            </a>
+        </div>
+    </div>
+    <div className="col-xl-7 col-lg-6">
+        <div className="blog-content">
+            <a href={link} className="mt-10">
+                <h4>{title}</h4>
+            </a>
+            <p className="mt-10 mb-10" dangerouslySetInnerHTML={{ __html: excerpt }} />
+            <a className="mt-10 mb-10" href={link}><FormattedMessage id ="readMore"/> <i class="fa fa-angle-right"></i></a>            </div>
+    </div>
+</div>
 
-                </div>
-                
-            
-                <div className="col-xl-7 col-lg-8">
-                    <div className="blog-content">
-                        <a href={link}>
-                            <h4>{title}</h4>
-                        </a>
-                        <p className="mb-15" dangerouslySetInnerHTML={{ __html: excerpt }} />
-                        <a href={link}>
-                            <FormattedMessage id="readMore" /> <i className="fa fa-angle-right"></i>
-                        </a>
-                        <a className="text-muted float-right">
-                            <i className="flaticon-calendar"></i> {date}
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
     );
 }

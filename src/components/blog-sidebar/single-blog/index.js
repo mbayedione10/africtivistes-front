@@ -14,7 +14,7 @@ const SingleBlog = ({ posts, numPages, currentPage}) => {
                     )
                 })} 
             </div> 
-            <div class="row">
+            <div class="row justify-content-center">
                 <Pagination totalPages={numPages} currentPage={currentPage} />
             </div> 
         </>
