@@ -1,31 +1,33 @@
-import React from 'react'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
+import React from 'react';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { FormattedMessage, injectIntl } from "gatsby-plugin-react-intl";
 
-const SingleBogMt = ({post}) => {
-    const{title, date, link,excerpt,name, featuredImage}=post.node
-    const image = featuredImage && getImage(featuredImage.node.big)
+const SingleBlogMt = ({ post }) => {
+    const { title, date, link, excerpt, name, featuredImage } = post.node;
+    const image = featuredImage && getImage(featuredImage.node.big);
 
     return (
-        <div class="single-blog mt-50">
-            <div class="blog-image">
+        <div className='single-blog-list mt-20'>
+<div className="row align-items-center">
+    <div className="col-xl-5 col-lg-6 text-center">
+        <div className="blog-image">
+            <a href={link}>
                 <GatsbyImage image={image} alt={title} />
-            </div>
-            <div class="blog-content">
-                <div class="date">
-                    <ul>
-                        <li><a href="#"><i class="flaticon-calendar"></i>{date}</a></li>
-                        <li><a href="#"><i class="flaticon-folder"></i>{name}</a></li>
-                    </ul>
-                </div>
-                <div class="content">
-                    <a href={link} class="mb-15"><h4>{title.substring(0, 48)}...</h4></a>
-                    <p class="mb-15" dangerouslySetInnerHTML={{ __html: excerpt }} />
-                    <a href={link}><FormattedMessage id ="readMore"/> <i class="fa fa-angle-right"></i></a>
-                </div>
-            </div>
-        </div> 
-    )
+            </a>
+        </div>
+    </div>
+    <div className="col-xl-7 col-lg-6">
+        <div className="blog-content">
+            <a href={link} className="mt-10">
+                <h4>{title}</h4>
+            </a>
+            <p className="mt-10 mb-10" dangerouslySetInnerHTML={{ __html: excerpt }} />
+            <a className="mt-10 mb-10" href={link}><FormattedMessage id ="readMore"/> <i class="fa fa-angle-right"></i></a>            </div>
+    </div>
+</div>
+
+        </div>
+    );
 }
 
-export default injectIntl(SingleBogMt)
+export default injectIntl(SingleBlogMt);
