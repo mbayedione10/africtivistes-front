@@ -8,7 +8,7 @@ const SingleBlog = ({ posts}) => {
 
                 {posts.map(post => {
                     return(
-                        <div className="single-blog-list mt-20">
+                        <div className="single-blog-list mt-10">
                             <SingleBogMt post = {post} key={post.id}/>
                         </div>
                     )
