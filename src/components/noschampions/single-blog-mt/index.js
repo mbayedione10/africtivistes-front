@@ -8,7 +8,7 @@ const SingleBogMt = ({post}) => {
 
     return (
         <div className="row">
-        <div className="col-xl-5 col-lg-6">
+        <div >
             <div className="blog-image">
             <a href={link}> <GatsbyImage image={image} alt={title}/></a>
 
@@ -16,7 +16,7 @@ const SingleBogMt = ({post}) => {
                 <a></a>
             </div>
         </div>
-        <div className="col-xl-7 col-lg-8">
+        <div className="col-xl-8 col-lg-8">
             <div className="blog-content">
                 <a href={link} className="mt-25"><h4>{title}</h4></a>
 
