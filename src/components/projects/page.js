@@ -13,7 +13,7 @@ const ProjectsPage = ({programmes, projects}) => {
   <section id="project-page" className="pt-30 pb-30">
     <div className="container">
     <div className="row justify-content-center">
-                <div className="col-lg-4">
+                <div className="col-lg-12">
                     <div className="section-title text-center pb-15">
                         <h3><FormattedMessage id="planStrategique"/></h3>
                         <div className="underline">
