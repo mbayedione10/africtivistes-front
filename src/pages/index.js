@@ -59,7 +59,7 @@ const IndexPage = ({data}) => (
     <Features projects={data.programmeencoursExceptThree.nodes}/>
 
     <div  className="row justify-content-center pt-30">
-                <div  className="col-lg-6">
+                <div  className="col-lg-12">
                     <div  className="section-title text-center pb-15">
                         <h3><FormattedMessage id="communiques"/></h3>
                         <div  className="underline">
