@@ -9,23 +9,27 @@ import{FormattedMessage} from 'react-intl'
 
 
 const ChampionsPage = ({data}) => {
+  const championsTextStyles = {
+    fontSize: '18px', // Définition de la taille de police à 16 pixels
+    // Autres styles souhaités
+  };
     const { title, translations} = data.allWpPage.nodes[0]
     const link = translations ? translations[0].link : ''
     return (<Layout translation={link}>
         <Seo title="Comment adhérer AfricTivistes ?" />
         <PageBanner title={title} />
-        <div className="row justify-content-center" >
-    <div className="col-lg-10" >
-        <div className="section-title text-center pt-10 pb-10" >
-        <br></br>
-            <h4 className="text-center" ><FormattedMessage id="championsText"/></h4>
-            <div className="underline">
+        <div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="section-title text-center pt-10 pb-10">
+            <p class="text-center" style={championsTextStyles}><FormattedMessage id="championsText"/></p>
+            <div class="underline">
                 <span></span>
                 <span></span>
             </div>
         </div>
     </div>
 </div>
+
         <NosChampions posts={data.allWpPost.edges} />
         <CallAction contacts={data.contact.nodes}/>
       </Layout>
