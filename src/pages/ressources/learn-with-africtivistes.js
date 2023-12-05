@@ -8,16 +8,20 @@ import {FormattedMessage } from 'react-intl'
 import Testimonial2 from '../../components/testimonial/testimonial2'
 
 const LearnPage = ({data}) => {
+  const championsTextStyles = {
+    fontSize: '18px', // Définition de la taille de police à 16 pixels
+    // Autres styles souhaités
+  };
     const { title, translations} = data.allWpPage.nodes[0]
     const link = translations ? translations[0].link : ''
     return (<Layout translation={link}>
         <Seo title={title} />
         <PageBanner title={title} />
         <div className="row justify-content-center" >
-        <div className="col-lg-10" >
+        <div className="col-lg-8" >
           <div className="section-title text-center pt-10 pb-10" >
             <br></br>
-            <h4 className="text-center"><FormattedMessage id="learnText"/></h4>
+            <p className="text-center" style={championsTextStyles}><FormattedMessage id="learnText"/></p>
             <div className="underline">
                 <span></span>
                 <span></span>

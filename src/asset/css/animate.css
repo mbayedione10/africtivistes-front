@@ -3621,3 +3621,73 @@
     transition: none !important;
   }
 }
+
+.card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  border-color: #8b0000; /* Rouge bordeaux */
+}
+
+.card-img-top {
+  overflow: hidden;
+}
+
+.card-img-top a {
+  display: block;
+}
+
+.card-img-top a:hover img {
+  transform: scale(1.1);
+}
+
+.card-title a:hover {
+  color: #333333; /* Change la couleur du titre au survol */
+}
+.page-banner-section {
+  position: relative;
+  padding: 100px 0;
+}
+
+.banner-image {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.banner-content {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.banner-title {
+  color: #943126;
+  font-size: 36px;
+}
+
+.banner-excerpt {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.main-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #943126;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.main-btn:hover {
+  background-color: #6e1b18;
+}
