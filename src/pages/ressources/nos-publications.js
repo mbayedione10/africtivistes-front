@@ -9,20 +9,19 @@ import {FormattedMessage } from 'react-intl'
 
 
 const RapportPage = ({data}) => {
+  const publicationTextStyles = {
+    fontSize: '18px', // Définition de la taille de police à 16 pixels
+    // Autres styles souhaités
+  };
     const { title, translations} = data.allWpPage.nodes[0]
     const link = translations ? translations[0].link : ''
     return (<Layout translation={link}>
         <Seo title={title} />
         <PageBanner title={title} />
         <div className="row justify-content-center" >
-    <div className="col-lg-10" >
+    <div className="col-lg-8" >
         <div className="section-title text-center pt-10 pb-10" >
-        <br></br>
-            <h4 className="text-center"><FormattedMessage id="rapportText"/></h4>
-            <div className="underline">
-                <span></span>
-                <span></span>
-            </div>
+            <p className="text-center" style={publicationTextStyles}><FormattedMessage id="rapportText"/></p>
         </div>
     </div>
 </div>
@@ -61,7 +60,7 @@ query {
             big: localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 550,
+                  width: 350,
                   height: 300,
                   placeholder: DOMINANT_COLOR
                 )

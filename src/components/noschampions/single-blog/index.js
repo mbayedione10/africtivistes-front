@@ -3,17 +3,17 @@ import SingleBogMt from '../single-blog-mt'
 
 const SingleBlog = ({ posts}) => {
     return (
-        <div className="container">
-        
-
+        <>
+            <div class="row justify-content-center">
                 {posts.map(post => {
                     return(
-                        <div className="single-blog-list mt-20">
+                        <div>
                             <SingleBogMt post = {post} key={post.id}/>
                         </div>
                     )
                 })} 
             </div> 
+        </>
     )
 }
 

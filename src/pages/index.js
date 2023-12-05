@@ -21,7 +21,7 @@ const IndexPage = ({data}) => (
     <Seo title={data.allWpPage.nodes.title} />
     <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>
     <div className="row justify-content-center pt-30">
-        <div className="col-lg-6">
+        <div className="col-lg-12">
           <div className="section-title text-center pb-20">
             <h3><FormattedMessage id="latestnews"/> </h3>
               <div className="underline">
@@ -32,8 +32,19 @@ const IndexPage = ({data}) => (
         </div>
       </div>
     <LatestNews posts={data.allWpPost.edges}/>
+    <div>
+        <Projects posts={data.latestnews.edges} pages={data.allWpPage.nodes}/>
+        {/* <Projects posts={data.latestNewsExceptThree.edges} pages={data.allWpPage.nodes}/> */}
+        <div  className="row">
+          <div  className="col-lg-12">
+              <div  className="project-more text-center mt-50">
+                <a  className="main-btn"  href="actualites" ><FormattedMessage id="more"/></a>
+              </div>
+          </div>
+        </div>
+    </div>
     <div  className="row justify-content-center pt-30">
-                <div  className="col-lg-6">
+                <div  className="col-lg-12">
                     <div  className="section-title text-center pb-15">
                         <h3><FormattedMessage id="projetEnCours"/></h3>
                         <div  className="underline">
@@ -43,11 +54,12 @@ const IndexPage = ({data}) => (
                     </div>
                 </div>
         </div>
+        
     <Features projects={data.programmeencours.nodes}/>
     <Features projects={data.programmeencoursExceptThree.nodes}/>
 
     <div  className="row justify-content-center pt-30">
-                <div  className="col-lg-6">
+                <div  className="col-lg-12">
                     <div  className="section-title text-center pb-15">
                         <h3><FormattedMessage id="communiques"/></h3>
                         <div  className="underline">
@@ -60,7 +72,7 @@ const IndexPage = ({data}) => (
         <LatestNews posts={data.communiques.edges}/>
 
     <div  className="row justify-content-center" >
-    <div  className="col-lg-6" >
+    <div  className="col-lg-12" >
         <div  className="section-title text-center pt-10 pb-10" >
         <br></br>
             <a href='#'><h2><FormattedMessage id="enchiffres"/></h2></a>
@@ -74,7 +86,7 @@ const IndexPage = ({data}) => (
     <EnChiffres posts={data.sommet.nodes}/>
 
     <div  className="row justify-content-center" >
-    <div  className="col-lg-6" >
+    <div  className="col-lg-12" >
         <div  className="section-title text-center pt-10 pb-10" >
         <br></br>
             <a href='ressources/nos-publications/'><h2><FormattedMessage id="publication"/></h2></a>
@@ -96,7 +108,7 @@ const IndexPage = ({data}) => (
       <br></br>
  
     <div  className="row justify-content-center" >
-    <div  className="col-lg-6" >
+    <div  className="col-lg-12" >
         <div  className="section-title text-center pt-10 pb-10" >
         <br></br>
             <a href='ressources/nos-champions/'><h2><FormattedMessage id="champions"/></h2></a>
@@ -109,8 +121,13 @@ const IndexPage = ({data}) => (
 </div>
 
     <NosChampions posts={data.champions.edges} />
+
+    <ProjectsPage programmes={data.allWpProgrammeType.nodes} projects={data.allWpProgramme.nodes} />
+
+    <About posts={data.abidjan.nodes} actu={data.latestnews.edges}/>
+    <Counter posts={data.sommet.nodes}/>
     <div  className="row justify-content-center" >
-    <div  className="col-lg-6" >
+    <div  className="col-lg-12" >
         <div  className="section-title text-center pt-10 pb-10" >
         <br></br>
             <a href='ressources/nos-champions/'><h2><FormattedMessage id="learn"/></h2></a>
@@ -121,33 +138,9 @@ const IndexPage = ({data}) => (
         </div>
     </div>
 </div>
-    <Testimonial2 posts={data.learn.edges}/>
-    <div>
-        <div  className="row justify-content-center">
-          <div  className="col-lg-4">
-              <div  className="section-title text-center pb-15">
-                  <h3><FormattedMessage id="allArticles"/></h3>
-                  <div  className="underline">
-                      <span></span>
-                      <span></span>
-                  </div>
-              </div>
-          </div>
-        </div>
-        <Projects posts={data.latestnews.edges} pages={data.allWpPage.nodes}/>
-        <Projects posts={data.latestNewsExceptThree.edges} pages={data.allWpPage.nodes}/>
-        <div  className="row">
-          <div  className="col-lg-12">
-              <div  className="project-more text-center mt-50">
-                <a  className="main-btn"  href="actualites" ><FormattedMessage id="more"/></a>
-              </div>
-          </div>
-        </div>
-    </div>
-    <ProjectsPage programmes={data.allWpProgrammeType.nodes} projects={data.allWpProgramme.nodes} />
 
-    <About posts={data.abidjan.nodes} actu={data.latestnews.edges}/>
-    <Counter posts={data.sommet.nodes}/>
+    <Testimonial2 posts={data.learn.edges}/>
+
     <Partner/>
     <CallAction contacts={data.contact.nodes}/>
 
@@ -307,8 +300,8 @@ export const pageQuery = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 1500,
-                  height: 1200,
+                  width:500,
+                  height: 500,
                   placeholder: DOMINANT_COLOR
                 )
               }
@@ -356,8 +349,8 @@ nodes {
               localFile {
                 childImageSharp {
                   gatsbyImageData(
-                    width: 1500,
-                    height: 1200,
+                    width: 500,
+                    height: 500,
                     placeholder: DOMINANT_COLOR
                   )
                 }
@@ -403,8 +396,8 @@ nodes {
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 1500,
-                  height: 1200,
+                  width: 500,
+                  height: 500,
                   placeholder: DOMINANT_COLOR
                 )
               }
@@ -547,7 +540,7 @@ slider: allWpPost(
             big: localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 550,
+                  width: 350,
                   height: 300,
                   placeholder: DOMINANT_COLOR
                 )
@@ -591,7 +584,7 @@ slider: allWpPost(
             big: localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 550,
+                  width: 350,
                   height: 300,
                   placeholder: DOMINANT_COLOR
                 )
@@ -686,8 +679,8 @@ slider: allWpPost(
               localFile {
                 childImageSharp {
                   gatsbyImageData(
-                    width: 1500,
-                    height: 1200,
+                    width: 500,
+                    height: 500,
                     placeholder: DOMINANT_COLOR
                   )
                 }

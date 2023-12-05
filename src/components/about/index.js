@@ -5,7 +5,7 @@ const About = ({posts}) => {
   return(
     <>
     <div className="row justify-content-center" >
-    <div className="col-lg-6" >
+    <div className="col-lg" >
         <div className="section-title text-center ppt-30 pb-30" >
         <br></br>
             <h2><FormattedMessage id="abidjan2021"/></h2>
