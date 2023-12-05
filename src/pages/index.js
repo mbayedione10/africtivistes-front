@@ -19,7 +19,9 @@ import Testimonial2 from "../components/testimonial/testimonial2"
 const IndexPage = ({data}) => (
   <Layout>
     <Seo title={data.allWpPage.nodes.title} />
+
     <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>
+
     <div className="row justify-content-center pt-30">
         <div className="col-lg-12">
           <div className="section-title text-center pb-20">
@@ -43,6 +45,7 @@ const IndexPage = ({data}) => (
           </div>
         </div>
     </div>
+
     <div  className="row justify-content-center pt-30">
                 <div  className="col-lg-12">
                     <div  className="section-title text-center pb-15">
@@ -54,7 +57,6 @@ const IndexPage = ({data}) => (
                     </div>
                 </div>
         </div>
-        
     <Features projects={data.programmeencours.nodes}/>
     <Features projects={data.programmeencoursExceptThree.nodes}/>
 
@@ -443,8 +445,8 @@ slider: allWpPost(
                 localFile {
                   childImageSharp {
                     gatsbyImageData(
-                      width: 1920,
-                      height: 800,
+                      width: 500,
+                      height: 400,
                       placeholder: DOMINANT_COLOR
                     )
                   }
@@ -540,8 +542,8 @@ slider: allWpPost(
             big: localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 350,
-                  height: 300,
+                  width: 400,
+                  height: 350,
                   placeholder: DOMINANT_COLOR
                 )
               }
@@ -584,8 +586,8 @@ slider: allWpPost(
             big: localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 350,
-                  height: 300,
+                  width: 400,
+                  height: 350,
                   placeholder: DOMINANT_COLOR
                 )
               }
