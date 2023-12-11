@@ -21,7 +21,7 @@ const SingleNewsMt = ({post}) => {
           </h5>
           <div className="card-text" dangerouslySetInnerHTML={{ __html: excerpt }}></div>
         </div>
-        <div className="card-footer">
+       nn <div className="card-footer">
           <span className="text-muted">
             <a>{date}</a>
           </span>
