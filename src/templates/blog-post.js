@@ -29,9 +29,6 @@ export default function BlogPost({ data }) {
                             <h3 className="mt-25">{post.title}</h3>
                             <div className="date mt-10">
                                 <ul>
-                                    <li>{categoryNames}</li>
-                                    ----
-                                    <li>{tagNames}</li>
                                     <li><a href="#"><i className="flaticon-calendar"></i>{post.date}</a></li>
                                 </ul>
                             </div>
