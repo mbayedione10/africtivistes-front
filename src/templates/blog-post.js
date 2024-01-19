@@ -11,7 +11,7 @@ import Projects from "../components/projects"
 export default function BlogPost({ data }) {
   const post = data.allWpPost.nodes[0];
   const categoryNames = post.categories.nodes.map(category => category.name);
-  const tagNames = post.terms.nodes.map(term => term.name);
+  const tagNames = post.terms && post.terms.nodes ? post.terms.nodes.map(term => term.name) : [];
   const image = post.featuredImage && getImage(post.featuredImage.node.localFile)
 
     return (
@@ -116,4 +116,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`
