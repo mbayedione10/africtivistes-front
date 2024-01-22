@@ -3621,3 +3621,153 @@
     transition: none !important;
   }
 }
+
+.card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  border-color: #8b0000; /* Rouge bordeaux */
+}
+
+.card-img-top {
+  overflow: hidden;
+}
+
+.card-img-top a {
+  display: block;
+}
+
+.card-img-top a:hover img {
+  transform: scale(1.1);
+}
+
+.card-title a:hover {
+  color: #333333; /* Change la couleur du titre au survol */
+}
+.page-banner-section {
+  position: relative;
+  padding: 100px 0;
+}
+
+.banner-image {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.banner-content {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.banner-title {
+  color: #943126;
+  font-size: 36px;
+}
+
+.banner-excerpt {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.main-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #943126;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.main-btn:hover {
+  background-color: #6e1b18;
+}
+
+
+.single-blog {
+  height: 850px; /* Hauteur fixe des éléments de blog */
+}
+
+/* CSS pour les tags boutons */
+.tag-buttons {
+  margin-top: 10px;
+}
+
+.tag-button {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  color: #000; /* Texte des tags en noir par défaut */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tag-button:hover {
+  background-color: #800020;
+  color: #fff; /* Texte en blanc au survol */
+}
+
+/* styles.css */
+/* styles.css */
+
+@keyframes moveHorizontally {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px); /* Ajustez la distance souhaitée */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.h1 {
+  opacity: 0.5;
+  animation: moveHorizontally 3s linear infinite; /* Réglez la durée et le type d'animation */
+  display: inline-block;
+}
+
+.inf-input-text input[type='text'] {
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.inf-input-text input[type='text']:hover {
+  transform: scale(1.1);
+  border-color: #ccc;
+}
+
+/* styles.css */
+
+/* Style de base du bouton */
+.btn-newsletter {
+  display: inline-block;
+  padding: 8px 16px;
+  color: #8B0000;
+  border: 1px solid #8B0000;
+  background-color: transparent;
+  text-decoration: none;
+  transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+}
+
+/* Style du bouton au survol */
+.btn-newsletter:hover {
+  color:  #1E90FF; /* Couleur rouge bordeaux */
+  border-color: #1E90FF;
+  background-color: transparent;
+}
+

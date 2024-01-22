@@ -103,7 +103,13 @@
   "mooc": "Apprenants inscrits au MOOC",  
   "appuis": "Appuis techniques aux élections présidentielles",  
   "activistes": "Activistes pro-démocratie et journalistes en danger appuyés",  
-  "communautés": "Communautés d’acteur de changement propulsées",
-  "communiques":"Nos communiqués"
-  
+  "communautés": "Communautés d’acteurs de changement propulsées",
+  "communiques":"Nos communiqués",
+  "bouton_newsletter":"Abonner a la Newsletter",
+  "presentation_citizenlab": "Présentation de Citizen Lab",
+  "presentation-citizenlab-texte1": "Le programme AfricTivistes CitizenLab est une fabrique citoyenne dont le but est d’appuyer, d’accompagner et d’outiller, dans chaque pays, les acteurs de la société civile africaine par la formation, le développement d’outils, l’accompagnement à l’innovation et à la co-création. Ces acteurs outillés mettent en œuvre des solutions numériques pour une meilleure participation citoyenne et renforcent les capacités de la société civile en matière d’engagement et de participation citoyens.",
+  "presentation-citizenlab-texte2":"En plus d'être un programme d’accélération de l’engagement participatif des jeunes, le programme est également un hub d’innovation, de production de contenus de valeur et de plaidoyer qui s’appuie sur des projets numériques dédiés à la démocratie.",
+  "presentation-citizenlab-texte3":"Cette initiative citoyenne pour la Promotion de la démocratie Participative est une réponse à une demande des jeunes et des organisations de la société civile. Elle permet à la fois de mettre à disposition des outils et approches qui favorisent l’engagement des jeunes tout en résorbant le gap entre les acteurs de la société civile et l’administration publique.",
+  "presentation-citizenlab-texte4": "Le programme est mis en œuvre par AfricTivistes avec l’implication et la participation du réseau des AfricTivistes dans les pays cibles, des organisations de la société civile et des professionnels des médias des différents pays en s’appuyant sur une politique d’accès à l’information.",
+  "presentation-citizenlab-texte5":"Pour en apprendre davantage sur les Citizen Lab déployés en Mauritanie et au Bénin."
 }

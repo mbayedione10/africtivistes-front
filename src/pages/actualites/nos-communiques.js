@@ -56,8 +56,8 @@ export const query = graphql`
             big: localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 360,
-                  height: 200,
+                  width: 450,
+                  height: 400,
                   placeholder: DOMINANT_COLOR
                 )
               }
@@ -71,6 +71,11 @@ export const query = graphql`
                 )
               }
             }
+          }
+        }
+        tags {
+          nodes {
+            name
           }
         }
       }

@@ -10,26 +10,26 @@ import CallAction from "../components/callAction"
 import Projects from "../components/projects"
 
 const ProgrammeDetail = ({ data, pageContext, intl }) =>{
-    const {title, translations,featuredImage} = data.allWpProgramme.nodes[0]
-    const translation = translations.lenght && translations[0].link
-    const image = featuredImage && featuredImage.node.localFile.childImageSharp.gatsbyImageData.images.fallback.src
-
+    const programme = data.allWpProgramme.nodes[0];
+    const tagNames = programme.terms?.etiquette;
+    const translation = programme.translations.lenght && programme.translations[0].link;
+    const image = programme.featuredImage && programme.featuredImage.node.localFile.childImageSharp.gatsbyImageData.images.fallback.src;
     return (
       <IntlContextConsumer>
         {({ language: currentLocale }) =>
           currentLocale === pageContext.lang && <Layout translation={translation}>
-            <Seo lang={intl.locale} title={title} />
+            <Seo lang={intl.locale} title={programme.title} />
             {/* <PageBanner title={'Recent Projects'} /> */}
             <section id="page-banner" className="bg_cover pt-150 pb-150" style={{ backgroundImage: `url(${image})`}} data-overlay="6">
         <div className="container">
             <div className="row">
                 <div className="col-lg-12">
                     <div className="page-banner-content text-center">
-                        <h2>{title}</h2>
+                        <h2>{programme.title}</h2>
                         <nav aria-label="breadcrumb">
                             <ol className="breadcrumb justify-content-center">
                                 <li className="breadcrumb-item"><a href="/" aria-label="button"><FormattedMessage id="home" /></a></li>
-                                <li className="breadcrumb-item active" aria-current="page">{title}</li>
+                                <li className="breadcrumb-item active" aria-current="page">{programme.title}</li>
                             </ol>
                         </nav>
                     </div>
@@ -38,10 +38,8 @@ const ProgrammeDetail = ({ data, pageContext, intl }) =>{
         </div>
     </section>
             <ProjectDetail project={data.allWpProgramme.nodes[0]} />
-            <Projects posts={data.related.edges}/>
-
+            <Projects posts={data.related.edges} tagNames={tagNames} />
             <ProjectPart projects={data.prog.nodes} />
-            {/* <Testimonial2/> */}
             <CallAction/>
         </Layout>
         }
@@ -57,6 +55,9 @@ export const query = graphql`
       nodes {
         title
         content
+        terms: programme{
+            etiquette
+          }
         featuredImage {
         node {
           altText
@@ -77,13 +78,17 @@ export const query = graphql`
       }
     }
     related:  allWpPost(
-        limit: 4
         sort: {fields: date, order: DESC}
-        filter: {language: {code: {eq: FR}}}) {
+        ) {
         edges {
           node {
             id
             title
+            terms {
+          nodes {
+            name
+          }
+        }
             date(formatString: "DD MMMM, YYYY", locale: "fr")
             excerpt
             link
@@ -106,7 +111,6 @@ export const query = graphql`
         }
       }
     prog: allWpProgramme(
-      filter: {language: {code: {eq: FR}}}
       sort: {fields: date, order: DESC}
       ) {
       nodes {
