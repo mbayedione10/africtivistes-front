@@ -7,29 +7,33 @@ import RecentPost from '../components/blog-sidebar/recent-post'
 import CallAction from "../components/callAction"
 import Projects from "../components/projects"
 
-export default function BlogPost({ data}) {
-  const { title,date, content, featuredImage} = data.allWpPost.nodes[0]
-  const image = featuredImage && getImage(featuredImage.node.localFile)
+
+export default function BlogPost({ data }) {
+  const post = data.allWpPost.nodes[0];
+  const categoryNames = post.categories.nodes.map(category => category.name);
+  const tagNames = post.terms && post.terms.nodes ? post.terms.nodes.map(term => term.name) : [];
+  const image = post.featuredImage && getImage(post.featuredImage.node.localFile)
+
     return (
         <Layout>
-        <Seo title={title}/>
+        <Seo title={post.title}/>
     <section id="blog-sidebar"  class="pt-10 pb-10">
         <div class="container">
             <div class="row">
                 <div className="col-lg-8">
                     <div className="blog-details mt-50">
                         <div className="image">
-                            <GatsbyImage image={image} alt={title}/>
+                            <GatsbyImage image={image} alt={post.title}/>
                         </div>
                         <div className="content">
-                            <h3 className="mt-25">{title}</h3>
+                            <h3 className="mt-25">{post.title}</h3>
                             <div className="date mt-10">
                                 <ul>
-                                    <li><a href="#"><i className="flaticon-calendar"></i>{date}</a></li>
+                                    <li><a href="#"><i className="flaticon-calendar"></i>{post.date}</a></li>
                                 </ul>
                             </div>
                             <br></br>
-                            <div class="mb-15" dangerouslySetInnerHTML={{ __html: content }} ></div>
+                            <div class="mb-15" dangerouslySetInnerHTML={{ __html: post.content }} ></div>
                         </div> 
                         
                     </div> 
@@ -46,68 +50,70 @@ export default function BlogPost({ data}) {
                 </div>
                 </div>
                 </section>
-                <Projects posts={data.related.edges}/>
+        <Projects posts={data.related.edges} categoryNames={categoryNames} tagNames={tagNames} />
                 <CallAction/>
 
         </Layout>
     )
 }
 
+
+// Fragment pour les données communes entre les deux requêtes
+export const postFields = graphql`
+  fragment PostFields on WpPost {
+    title
+    content
+    link
+    excerpt
+    categories {
+      nodes {
+        name
+      }
+    }
+    terms {
+        nodes {
+          name
+        }
+      }
+    date(formatString: "DD MMMM, YYYY", locale: "fr")
+    featuredImage {
+      node {
+        altText
+        localFile {
+          childImageSharp {
+            gatsbyImageData(
+              width: 750,
+              height: 750,
+              placeholder: DOMINANT_COLOR
+            )
+          }
+        }
+      }
+    }
+    translations {
+      link
+    }
+  }
+`
+
 export const query = graphql`
   query($slug: String!) {
     allWpPost(filter: { slug: { eq: $slug } }) {
       nodes {
-        title
-        content
-        link
-        date(formatString: "DD MMMM, YYYY", locale: "fr")
-        featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 750,
-                height: 750,
-                placeholder: DOMINANT_COLOR
-              )
-            }
-          }
-        }
-      }
-      translations {
-        link
-      }
+        ...PostFields
       }
     }
-      related:  allWpPost(
-        limit: 4
-        sort: {fields: date, order: DESC}
-        filter: {language: {code: {eq: FR}}}) {
-        edges {
-          node {
-            id
-            title
-            date(formatString: "DD MMMM, YYYY", locale: "fr")
-            excerpt
-            link
-            featuredImage {
-              node {
-                altText
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData(width: 1000, height: 800, placeholder: DOMINANT_COLOR)
-                  }
-                }
-                small: localFile {
-                  childImageSharp {
-                    gatsbyImageData(width: 70, height: 68, placeholder: DOMINANT_COLOR)
-                  }
-                }
-              }
-            }
-          }
+    related:  allWpPost(
+      filter: {
+        slug: { ne: $slug } 
+      }
+      sort: {fields: date, order: DESC}
+    ) {
+      edges {
+        node {
+          ...PostFields
         }
       }
+    }
   }
 `
