@@ -94,7 +94,7 @@ export const postFields = graphql`
       link
     }
   }
-`;
+`
 
 export const query = graphql`
   query($slug: String!) {
