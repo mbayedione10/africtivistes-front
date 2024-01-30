@@ -97,7 +97,7 @@ export const postFields = graphql`
 `
 
 export const query = graphql`
-  query($slug: String!, $categories: [String]!) {
+  query($slug: String!, $categories: [String]!, $tags: [String]!) {
     allWpPost(filter: { slug: { eq: $slug } }) {
       nodes {
         ...PostFields
@@ -105,8 +105,9 @@ export const query = graphql`
     }
     related:  allWpPost(
       filter: {
-        slug: { ne: $slug } 
-        categories: {nodes: {elemMatch: {name: {in: $categories}}}}, 
+        slug: { ne: $slug },
+        categories: {nodes: {elemMatch: {name: {in: $categories}}}},
+        tags: { nodes: { elemMatch: { name: { in: $tags } } } } 
       }
       limit: 4
       sort: {fields: date, order: DESC}
