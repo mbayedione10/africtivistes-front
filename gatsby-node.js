@@ -51,6 +51,9 @@ exports.createPages = async ({ graphql, actions }) => {
       nodes {
         link
         slug
+        terms: programme{
+            etiquette
+          }
         language {
           slug
         }
@@ -65,7 +68,8 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/programme-detail.js`),
       context: {
         slug: node.slug,
-        lang: node.language.slug
+        lang: node.language.slug,
+        tags: node.terms.etiquette
       },
     })
   })
