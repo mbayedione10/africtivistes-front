@@ -11,6 +11,16 @@ exports.createPages = async ({ graphql, actions }) => {
           excerpt
           content
           slug
+          categories {
+              nodes {
+                name
+              }
+          }
+          terms {
+              nodes {
+                name
+              }
+          }
           language {
             slug
           }
@@ -20,12 +30,17 @@ exports.createPages = async ({ graphql, actions }) => {
   `).then(res => res.data)
 
   posts.allWpPost.nodes.forEach(node => {
+    const categories = node.categories ? node.categories.nodes.map(category => category.name) : [];
+    const tags = node.terms ? node.terms.nodes.map(term => term.name) : [];
     createPage({
       path: node.slug,
       component: path.resolve(`./src/templates/blog-post.js`),
       context: {
         slug: node.slug,
-        lang: node.language.slug
+        lang: node.language.slug,
+        categories,
+        tags,
+
       },
     })
   })
@@ -36,6 +51,9 @@ exports.createPages = async ({ graphql, actions }) => {
       nodes {
         link
         slug
+        terms: programme{
+            etiquette
+          }
         language {
           slug
         }
@@ -50,7 +68,8 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/programme-detail.js`),
       context: {
         slug: node.slug,
-        lang: node.language.slug
+        lang: node.language.slug,
+        tags: node.terms.etiquette
       },
     })
   })
