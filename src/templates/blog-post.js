@@ -1,4 +1,5 @@
 import React from "react"
+import { useLocation } from "@reach/router"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -6,11 +7,15 @@ import Seo from "../components/seo"
 import RecentPost from '../components/blog-sidebar/recent-post'
 import CallAction from "../components/callAction"
 import Projects from "../components/projects"
+import ShareButtons from "../components/ShareButtons"
 
 
 export default function BlogPost({ data }) {
   const {title, date, content, featuredImage} = data.allWpPost.nodes[0]
   const image = featuredImage && getImage(featuredImage.node.localFile)
+  const location = useLocation()
+  console.log(location)
+  const currentPath = location.href
 
     return (
         <Layout>
@@ -33,6 +38,10 @@ export default function BlogPost({ data }) {
                             <br></br>
                             <div class="mb-15" dangerouslySetInnerHTML={{ __html: content }} ></div>
                         </div> 
+                  {/* Intégration du composant SocialShare */}
+                  <div>
+                    <ShareButtons title={title} url={currentPath} tags={['AfricTivistes']}/>
+                  </div>
                         
                     </div> 
                 </div>
