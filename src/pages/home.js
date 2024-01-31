@@ -270,10 +270,10 @@ language {
 }
 }
 }
-slider: allWpPost(
+allStickyPosts: allWpPost(
     sort: {fields: [date], order: DESC},
      limit: 3
-     filter: {language: {code: {eq: EN}}, categories: {nodes: {elemMatch: {slug: {eq: "in-the-news"}}}}}
+     filter: {language: {code: {eq: EN}}, isSticky: { eq: true }}
 
      ) {
       edges {
