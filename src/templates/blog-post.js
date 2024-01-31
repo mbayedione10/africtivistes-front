@@ -9,9 +9,7 @@ import Projects from "../components/projects"
 
 
 export default function BlogPost({ data }) {
-  console.log("data",data)
   const {title, date, content, featuredImage} = data.allWpPost.nodes[0]
-
   const image = featuredImage && getImage(featuredImage.node.localFile)
 
     return (
