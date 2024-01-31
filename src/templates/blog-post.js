@@ -14,7 +14,8 @@ export default function BlogPost({ data }) {
   const {title, date, content, featuredImage} = data.allWpPost.nodes[0]
   const image = featuredImage && getImage(featuredImage.node.localFile)
   const location = useLocation()
-  const currentPath = location.pathname
+  console.log(location)
+  const currentPath = location.href
 
     return (
         <Layout>
