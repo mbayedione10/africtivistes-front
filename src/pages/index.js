@@ -20,7 +20,7 @@ const IndexPage = ({data}) => (
   <Layout>
     <Seo title={data.allWpPage.nodes.title} />
 
-    <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>
+    <Slider posts={data.allStickyPosts.edges} contacts={data.contact.nodes}/>
 
     <div className="row justify-content-center pt-30">
         <div className="col-lg-12">
@@ -422,15 +422,14 @@ nodes {
   }
 }
 }
-slider: allWpPost(
+allStickyPosts: allWpPost(
       sort: {fields: [date], order: DESC},
        limit: 3
-       filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "a-la-une"}}}}}
+       filter: {language: {code: {eq: FR}}, isSticky: { eq: true }}
 
        ) {
         edges {
           node {
-            id
             title
             date(formatString: "DD MMMM, YYYY", locale: "fr")
             excerpt
@@ -453,13 +452,7 @@ slider: allWpPost(
                 }
               }
             }
-            categories {
-              nodes {
-                name
-                count
-                slug
-              }
-            }
+  
           }
         }
     nodes {
