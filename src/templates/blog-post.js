@@ -14,7 +14,6 @@ export default function BlogPost({ data }) {
   const {title, date, content, featuredImage} = data.allWpPost.nodes[0]
   const image = featuredImage && getImage(featuredImage.node.localFile)
   const location = useLocation()
-  console.log(location)
   const currentPath = location.href
 
     return (
@@ -36,7 +35,12 @@ export default function BlogPost({ data }) {
                                 </ul>
                             </div>
                             <br></br>
-                            <div class="mb-15" dangerouslySetInnerHTML={{ __html: content }} ></div>
+                    {/* Imposer le saut de ligne sur chaque paragraphe */}
+                        <div 
+                            className="mb-15" 
+                            dangerouslySetInnerHTML={{ __html: content.split('\n').join('<br>') }}
+                            style={{ lineHeight: '20%'}}
+                        ></div>
                         </div> 
                   {/* Intégration du composant SocialShare */}
                   <div>
