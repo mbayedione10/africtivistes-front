@@ -38,7 +38,7 @@ export default function BlogPost({ data }) {
                     {/* Imposer le saut de ligne sur chaque paragraphe */}
                         <div 
                             className="mb-15" 
-                            dangerouslySetInnerHTML={{ __html: content.split('\n').join('<br>') }}
+                            dangerouslySetInnerHTML={{ __html: content?.split('\n').join('<br>') }}
                             style={{ lineHeight: '20%'}}
                         ></div>
                         </div> 
