@@ -8,6 +8,7 @@ import RecentPost from '../components/blog-sidebar/recent-post'
 import CallAction from "../components/callAction"
 import Projects from "../components/projects"
 import ShareButtons from "../components/ShareButtons"
+import parse from "html-react-parser"
 
 
 export default function BlogPost({ data }) {
@@ -30,16 +31,11 @@ export default function BlogPost({ data }) {
                         <div className="content">
                             <h3 className="mt-25">{title}</h3>
                             <div className="date mt-10">
-                                <ul>
-                                    <li><a href="#"><i className="flaticon-calendar"></i>{date}</a></li>
-                                </ul>
+                                <i className="flaticon-calendar"></i> {date}
                             </div>
                             <br></br>
-                    {/* Imposer le saut de ligne sur chaque paragraphe */}
                         <div 
-                            className="mb-15" 
-                            dangerouslySetInnerHTML={{ __html: content?.split('\n').join('<br>') }}
-                            style={{ lineHeight: '20%'}}
+                            dangerouslySetInnerHTML={{ __html: content }}
                         ></div>
                         </div> 
                   {/* Intégration du composant SocialShare */}
