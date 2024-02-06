@@ -8,7 +8,6 @@ import RecentPost from '../components/blog-sidebar/recent-post'
 import CallAction from "../components/callAction"
 import Projects from "../components/projects"
 import ShareButtons from "../components/ShareButtons"
-import parse from "html-react-parser"
 
 
 export default function BlogPost({ data }) {
