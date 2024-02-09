@@ -7,13 +7,14 @@ const SingleBogMt = ({ post }) => {
     const image = featuredImage && getImage(featuredImage.node.big);
   
     // Assurez-vous que 'tags' existe et qu'il contient des éléments
-    const tagList = tags && tags.nodes ? tags.nodes.map(tag => tag.name) : [];
+    // const tagList = tags && tags.nodes ? tags.nodes.map(tag => tag.name) : [];
   
     return (
       <div className="single-blog mt-50">
-        <div className="blog-image">
-          <GatsbyImage image={image} alt={title} />
-        </div>
+<div className="blog-image" style={{ textAlign: 'center' }}>
+  <GatsbyImage image={image} alt={title} />
+</div>
+
         <div className="blog-content">
           <div className="date">
             <ul>
@@ -30,12 +31,12 @@ const SingleBogMt = ({ post }) => {
             </ul>
           </div>
           <div className="content">
-            <a href={link} className="mb-15"><h4>{title}</h4></a>
-            <p className="mb-15" dangerouslySetInnerHTML={{ __html: excerpt.substring(0, 150) }} />
+            <a href={link} ><h4>{title}</h4></a>
+            <p dangerouslySetInnerHTML={{ __html: excerpt.substring(0, 150) }} />
             <a href={link}>
               <FormattedMessage id="readMore" /> <i className="fa fa-angle-right"></i>
             </a>
-            {tagList.length > 0 && (
+            {/* {tagList.length > 0 && (
               <div className="tags-list">
                 <div className="tag-buttons">
                 <br></br>
@@ -45,7 +46,7 @@ const SingleBogMt = ({ post }) => {
                   ))}
                 </div>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </div>
