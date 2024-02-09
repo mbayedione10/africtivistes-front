@@ -71,7 +71,15 @@ const IndexPage = ({data}) => (
                     </div>
                 </div>
         </div>
+        
         <LatestNews posts={data.communiques.edges}/>
+        <div  className="row">
+          <div  className="col-lg-12">
+              <div  className="project-more text-center mt-50">
+                <a  className="main-btn"  href="actualites/nos-communiques" ><FormattedMessage id="more"/></a>
+              </div>
+          </div>
+        </div>
 
     <div  className="row justify-content-center" >
     <div  className="col-lg-12" >
@@ -83,7 +91,8 @@ const IndexPage = ({data}) => (
                 <span></span>
             </div>
         </div>
-    </div>S
+        
+    </div>
     </div>
     <EnChiffres posts={data.sommet.nodes}/>
 

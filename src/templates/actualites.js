@@ -4,7 +4,7 @@ import CallAction from "../components/callAction"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PageBanner from '../components/pageBanner'
-import BlogSidebar from '../components/blog-sidebar'
+import BlogSidebar from '../components/blog-sidebar-communiques'
 
 
 const ActualitesPage = ({ data, pageContext}) => {
@@ -55,8 +55,8 @@ export const query = graphql`
             big: localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 400,
-                  height: 300,
+                  width: 350,
+                  height: 350,
                   placeholder: DOMINANT_COLOR
                 )
               }

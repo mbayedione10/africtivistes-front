@@ -8,7 +8,7 @@ import RecentPost from '../components/blog-sidebar/recent-post'
 import CallAction from "../components/callAction"
 import Projects from "../components/projects"
 import ShareButtons from "../components/ShareButtons"
-
+import{FormattedMessage} from 'react-intl'
 
 export default function BlogPost({ data }) {
   const {title, date, content, featuredImage} = data.allWpPost.nodes[0]
@@ -56,6 +56,15 @@ export default function BlogPost({ data }) {
                 </div>
                 </div>
                 </section>
+                <div className="col-lg-12">
+          <div className="section-title text-center pb-20">
+            <h3><FormattedMessage id="related"/> </h3>
+              <div className="underline">
+                <span></span>
+                <span></span>
+              </div>
+          </div>
+        </div>
         <Projects posts={data.related.edges} />
                 <CallAction/>
 
