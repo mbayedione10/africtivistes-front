@@ -6,7 +6,7 @@ const SingleBlogMt30 = ({post}) => {
     const{title, date,link, featuredImage}=post.node
     const image = featuredImage && getImage(featuredImage.node.small)
     return (
-        <ul>
+        <ul style={{listStyleType: 'none'}}>
             <li>
                 <a href={link}>
                     <span class="single-post mt-30">
