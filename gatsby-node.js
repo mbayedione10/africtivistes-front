@@ -14,6 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
           categories {
               nodes {
                 name
+                slug
               }
           }
           terms {
@@ -74,25 +75,59 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const actualites = await graphql(`
+  const allPostsFR = await graphql(`
     {
-      allWpPost(
-        filter: {language: {code: {eq: FR}}}
-      ){
-        totalCount
-        nodes {
-          link
-          slug
-          date
-          language {
+    allWpPost(
+      filter: {
+          language: {code: {eq: FR}}
+         
+          }
+    ){
+      totalCount
+      nodes {
+        link
+        title
+        id
+        slug
+        date(formatString: "DD MMMM, YYYY", locale: "fr")
+        excerpt
+        featuredImage {
+          node {
+            altText
+            big: localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 360,
+                  height: 200,
+                  placeholder: DOMINANT_COLOR
+                )
+              }
+            }
+            small: localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 70,
+                  height: 68,
+                  placeholder: DOMINANT_COLOR
+                )
+              }
+            }
+          }
+        }
+        categories {
+          nodes {
             slug
           }
         }
+        language {
+          slug
+        }
       }
     }
+  }
   `).then(res => res.data)
 
-  const total = actualites.allWpPost.totalCount
+  const total = allPostsFR.allWpPost.totalCount
   const perPage = 50
   const numPages = Math.ceil(total / perPage)
 
@@ -106,28 +141,52 @@ exports.createPages = async ({ graphql, actions }) => {
         numPages,
       },
     })
-    actualites.allWpPost.nodes.forEach(node => {
-      createPage({
-        path: `/actualites/${node.slug}`,
-        component: path.resolve(`./src/templates/detail-post.js`),
-        context: {
-          slug: node.slug,
-          lang: node.language.slug
-        }
-      })
-    })
   }
   )
-  const news = await graphql(`
+  const allPostsEN = await graphql(`
   {
     allWpPost(
-      filter: {language: {code: {eq: EN}}}
+      filter: {
+          language: {code: {eq: EN}}
+         
+          }
     ){
       totalCount
       nodes {
         link
+        title
+        id
         slug
-        date
+        date(formatString: "DD MMMM, YYYY", locale: "en")
+        excerpt
+        featuredImage {
+          node {
+            altText
+            big: localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 360,
+                  height: 200,
+                  placeholder: DOMINANT_COLOR
+                )
+              }
+            }
+            small: localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 70,
+                  height: 68,
+                  placeholder: DOMINANT_COLOR
+                )
+              }
+            }
+          }
+        }
+        categories {
+          nodes {
+            slug
+          }
+        }
         language {
           slug
         }
@@ -136,26 +195,54 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 `).then(res => res.data)
 
-  Array.from({ length: numPages }).forEach((_, i) => {
+
+  const totalEN = allPostsEN.allWpPost.totalCount
+  const perPageEN = 5
+  const numPagesEN = Math.ceil(totalEN / perPageEN)
+
+  Array.from({ length: numPagesEN }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/news` : `/news/${i + 1}`,
       component: path.resolve(`./src/templates/news.js`),
       context: {
-        limit: perPage,
-        skip: i * perPage,
-        numPages,
+        limit: perPageEN,
+        skip: i * perPageEN,
+        numPagesEN,
       },
     })
-    news.allWpPost.nodes.forEach(node => {
-      createPage({
-        path: `/news/${node.slug}`,
-        component: path.resolve(`./src/templates/detail-post.js`),
-        context: {
-          slug: node.slug,
-          lang: node.language.slug
-        }
-      })
-    })
+    
   }
   )
+
+  // Fonction pour créer les pages pour chaque catégorie
+  const createCategoryPages = (posts, lang) => {
+    const categories = {};
+
+    // Regrouper les posts par catégorie
+    posts.forEach(post => {
+      post.categories.nodes.forEach(({ slug }) => {
+        if (!categories[slug]) {
+          categories[slug] = [];
+        }
+        categories[slug].push(post);
+      });
+    });
+
+    // Créer les pages pour chaque catégorie
+    Object.keys(categories).forEach((category) => {
+      createPage({
+        path: `/categories/${category}`,
+        component: path.resolve("./src/templates/category.js"),
+        context: {
+          category: category,
+          lang: lang,
+          posts: categories[category], 
+        },
+      });
+    });
+  };
+
+  // Créer les pages pour les catégories pour chaque langue
+  createCategoryPages(allPostsFR.allWpPost.nodes, "fr");
+  createCategoryPages(allPostsEN.allWpPost.nodes, "en");
 }
