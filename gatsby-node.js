@@ -117,6 +117,7 @@ exports.createPages = async ({ graphql, actions }) => {
         categories {
           nodes {
             slug
+            name
           }
         }
         language {
@@ -127,22 +128,9 @@ exports.createPages = async ({ graphql, actions }) => {
   }
   `).then(res => res.data)
 
-  const total = allPostsFR.allWpPost.totalCount
-  const perPage = 50
-  const numPages = Math.ceil(total / perPage)
 
-  Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/actualites` : `/actualites/${i + 1}`,
-      component: path.resolve(`./src/templates/actualites.js`),
-      context: {
-        limit: perPage,
-        skip: i * perPage,
-        numPages,
-      },
-    })
-  }
-  )
+
+
   const allPostsEN = await graphql(`
   {
     allWpPost(
@@ -185,6 +173,7 @@ exports.createPages = async ({ graphql, actions }) => {
         categories {
           nodes {
             slug
+            name
           }
         }
         language {
@@ -196,52 +185,44 @@ exports.createPages = async ({ graphql, actions }) => {
 `).then(res => res.data)
 
 
-  const totalEN = allPostsEN.allWpPost.totalCount
-  const perPageEN = 6
-  const numPagesEN = Math.ceil(totalEN / perPageEN)
-
-  Array.from({ length: numPagesEN }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/news` : `/news/${i + 1}`,
-      component: path.resolve(`./src/templates/news.js`),
-      context: {
-        limit: perPageEN,
-        skip: i * perPageEN,
-        numPagesEN,
-      },
-    })
-    
-  }
-  )
-
   // Fonction pour créer les pages pour chaque catégorie
   const createCategoryPages = (posts, lang, perPage) => {
-    const categories = {};
+    // Initialiser des tableaux pour stocker le slug des catégories et leurs noms
+    const categories = [];
+    const categoryNames = [];
 
     // Regrouper les posts par catégorie
     posts.forEach(post => {
-      post.categories.nodes.forEach(({ slug }) => {
-        if (!categories[slug]) {
-          categories[slug] = [];
+      post.categories.nodes.forEach(({ slug, name }) => {
+        const existingCategoryIndex = categories.findIndex(category => category.slug === slug);
+        if (existingCategoryIndex === -1) {
+          categories.push({ slug, posts: [post] });
+          categoryNames.push({ slug, name });
+        } else {
+          categories[existingCategoryIndex].posts.push(post);
         }
-        categories[slug].push(post);
       });
     });
 
     // Créer les pages pour chaque catégorie
-    Object.keys(categories).forEach((category) => {
-      const postsInCategory = categories[category];
+    categories.forEach((category, index) => {
+      const { slug } = category;
+      const categoryName = categoryNames[index].name; 
+      const postsInCategory = category.posts;
       const numPages = Math.ceil(postsInCategory.length / perPage);
+
       Array.from({ length: numPages }).forEach((_, i) => {
         const currentPage = i + 1;
-        const basePath = currentPage === 1 ? `/categories/${category}` : `/categories/${category}/${currentPage}`;
+        const basePath = currentPage === 1 ? `/${slug}` : `${slug}/${currentPage}`;
         const skip = i * perPage;
         const paginatedPosts = postsInCategory.slice(skip, skip + perPage);
         createPage({
           path: basePath,
           component: path.resolve("./src/templates/category.js"),
           context: {
-            category: category,
+            category: slug,
+            categoryName: categoryName,
+            categoryNames: categoryNames,
             lang: lang,
             posts: paginatedPosts,
             totalPages: numPages,
@@ -250,8 +231,7 @@ exports.createPages = async ({ graphql, actions }) => {
         });
       });
     });
-  };
-
+  }
   const totalPerPage = 18
   // Créer les pages pour les catégories pour chaque langue
   createCategoryPages(allPostsFR.allWpPost.nodes, "fr", totalPerPage);
