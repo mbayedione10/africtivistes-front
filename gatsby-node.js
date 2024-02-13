@@ -197,7 +197,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
 
   const totalEN = allPostsEN.allWpPost.totalCount
-  const perPageEN = 5
+  const perPageEN = 6
   const numPagesEN = Math.ceil(totalEN / perPageEN)
 
   Array.from({ length: numPagesEN }).forEach((_, i) => {
@@ -215,7 +215,7 @@ exports.createPages = async ({ graphql, actions }) => {
   )
 
   // Fonction pour créer les pages pour chaque catégorie
-  const createCategoryPages = (posts, lang) => {
+  const createCategoryPages = (posts, lang, perPage) => {
     const categories = {};
 
     // Regrouper les posts par catégorie
@@ -230,19 +230,29 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Créer les pages pour chaque catégorie
     Object.keys(categories).forEach((category) => {
-      createPage({
-        path: `/categories/${category}`,
-        component: path.resolve("./src/templates/category.js"),
-        context: {
-          category: category,
-          lang: lang,
-          posts: categories[category], 
-        },
+      const postsInCategory = categories[category];
+      const numPages = Math.ceil(postsInCategory.length / perPage);
+      Array.from({ length: numPages }).forEach((_, i) => {
+        const currentPage = i + 1;
+        const skip = i * perPage;
+        const paginatedPosts = postsInCategory.slice(skip, skip + perPage);
+        createPage({
+          path: `/categories/${category}/${currentPage}`,
+          component: path.resolve("./src/templates/category.js"),
+          context: {
+            category: category,
+            lang: lang,
+            posts: paginatedPosts,
+            totalPages: numPages,
+            currentPage: currentPage,
+          },
+        });
       });
     });
   };
 
+  const totalPerPage = 18
   // Créer les pages pour les catégories pour chaque langue
-  createCategoryPages(allPostsFR.allWpPost.nodes, "fr");
-  createCategoryPages(allPostsEN.allWpPost.nodes, "en");
+  createCategoryPages(allPostsFR.allWpPost.nodes, "fr", totalPerPage);
+  createCategoryPages(allPostsEN.allWpPost.nodes, "en", totalPerPage);
 }

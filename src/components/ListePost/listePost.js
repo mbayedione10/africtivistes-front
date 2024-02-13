@@ -1,7 +1,9 @@
 import React from 'react'
+import Pagination from './pagination'
 import SinglePost from './singlePost'
 
-const ListePosts = ({ posts }) => {
+const ListePosts = ({ posts, totalPages, currentPage, categories }) => {
+    const basePath = `/categories/${categories}/`
     return (
         <section id="category-grid" className="">
             <div class="card-deck">
@@ -13,6 +15,10 @@ const ListePosts = ({ posts }) => {
                         )
                     })}
                 </div>
+            <div class="row justify-content-center">
+                <Pagination totalPages={totalPages} currentPage={currentPage} basePath={basePath}/>
+            </div>  
+
         </section>
     )
 }
