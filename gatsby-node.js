@@ -234,10 +234,11 @@ exports.createPages = async ({ graphql, actions }) => {
       const numPages = Math.ceil(postsInCategory.length / perPage);
       Array.from({ length: numPages }).forEach((_, i) => {
         const currentPage = i + 1;
+        const basePath = currentPage === 1 ? `/categories/${category}` : `/categories/${category}/${currentPage}`;
         const skip = i * perPage;
         const paginatedPosts = postsInCategory.slice(skip, skip + perPage);
         createPage({
-          path: `/categories/${category}/${currentPage}`,
+          path: basePath,
           component: path.resolve("./src/templates/category.js"),
           context: {
             category: category,

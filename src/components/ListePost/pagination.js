@@ -11,19 +11,21 @@ const Pagination = ({ totalPages, currentPage, basePath }) => {
         <nav>
             <ul className="pagination">
                 {!isFirst && (
-                    <Link to={`${basePath}${prevPage === 1 ? '' : prevPage}`} rel="prev">
-                        ← Previous Page
-                    </Link>
-                )}
-                {Array.from({ length: totalPages }, (_, i) => (
-                    <li key={`page-${i + 1}`} className={currentPage === i + 1 ? 'active' : ''}>
-                        <Link to={`${basePath}${i === 0 ? '' : i + 1}`}>{i + 1}</Link>
+                    <li>
+                        <Link className="main-btn mr-2" to={`${basePath}${prevPage === 1 ? '' : prevPage}`} rel="prev">
+                            ←
+                        </Link>
                     </li>
-                ))}
+                )}
+                <li className="disabled">
+                    <span className="main-btn">Page {currentPage} / {totalPages}</span>
+                </li>
                 {!isLast && (
-                    <Link to={`${basePath}${nextPage}`} rel="next">
-                        Next Page →
-                    </Link>
+                    <li>
+                        <Link className="main-btn ml-2" to={`${basePath}${nextPage}`} rel="next">
+                            →
+                        </Link>
+                    </li>
                 )}
             </ul>
         </nav>
