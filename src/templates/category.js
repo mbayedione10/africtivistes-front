@@ -1,20 +1,15 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
+import ListePosts from "../components/ListePost/listePost";
+import PageBanner from "../components/pageBanner";
 
 const CategoryTemplate = ({ pageContext }) => {
     const {category, posts} = pageContext
     return (
         <Layout>
-            <div>
-                <h1>Articles dans la catégorie : {category}</h1>
-                <ul>
-                    {posts.map((post) => (
-                        <li key={post.id}>
-                            <Link to={post.link}>{post.title}</Link>
-                        </li>
-                    ))}
-                </ul>
+            <PageBanner title={category} />
+            <div className="container mt-5">
+                <ListePosts posts={posts}/>
             </div>
         </Layout>
     );
