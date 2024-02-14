@@ -187,7 +187,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Fonction pour créer les pages pour chaque catégorie
   const createCategoryPages = (posts, lang, perPage) => {
-    // Initialiser des tableaux pour stocker le slug des catégories et leurs noms
     const categories = [];
     const categoryNames = [];
 
@@ -203,12 +202,12 @@ exports.createPages = async ({ graphql, actions }) => {
       });
     });
     
-    // Calculer la longueur des posts pour chaque catégorie
     categories.forEach(category => {
       const { slug } = category;
       const postsLength = category.posts.length;
-      const name = category.posts[0].categories.nodes[0].name; // Prendre le nom de la première catégorie (ils devraient tous être les mêmes)
+      const name = category.posts[0].categories.nodes[0].name;
       categoryNames.push({ slug, name, postsLength });
+      categoryNames.sort((a, b) => b.postsLength - a.postsLength);
     });
 
     // Créer les pages pour chaque catégorie
