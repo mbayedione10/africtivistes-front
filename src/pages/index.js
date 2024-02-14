@@ -46,21 +46,7 @@ const IndexPage = ({data}) => (
         </div>
     </div>
 
-    <div  className="row justify-content-center pt-30">
-                <div  className="col-lg-12">
-                    <div  className="section-title text-center pb-15">
-                        <h3><FormattedMessage id="projetEnCours"/></h3>
-                        <div  className="underline">
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-        </div>
-    <Features projects={data.programmeencours.nodes}/>
-    <Features projects={data.programmeencoursExceptThree.nodes}/>
-
-    <div  className="row justify-content-center pt-30">
+        <div  className="row justify-content-center pt-30">
                 <div  className="col-lg-12">
                     <div  className="section-title text-center pb-15">
                         <h3><FormattedMessage id="communiques"/></h3>
@@ -71,7 +57,42 @@ const IndexPage = ({data}) => (
                     </div>
                 </div>
         </div>
+        
         <LatestNews posts={data.communiques.edges}/>
+        <div  className="row">
+          <div  className="col-lg-12">
+              <div  className="project-more text-center mt-50">
+                <a  className="main-btn"  href="actualites/nos-communiques" ><FormattedMessage id="more"/></a>
+              </div>
+          </div>
+        </div>
+
+        {/* <div  className="row justify-content-center pt-30">
+                <div  className="col-lg-12">
+                    <div  className="section-title text-center pb-15">
+                        <h3><FormattedMessage id="projetEnCours"/></h3>
+                        <div  className="underline">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+        </div> */}
+
+        <div  className="row justify-content-center pt-30">
+                <div  className="col-lg-12">
+                    <div  className="section-title text-center pb-15">
+                        <h3><FormattedMessage id="plateforme"/></h3>
+                        <div  className="underline">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+    <Features projects={data.plateforme.nodes}/>
+    {/* <Features projects={data.programmeencoursExceptThree.nodes}/> */}
 
     <div  className="row justify-content-center" >
     <div  className="col-lg-12" >
@@ -83,7 +104,8 @@ const IndexPage = ({data}) => (
                 <span></span>
             </div>
         </div>
-    </div>S
+        
+    </div>
     </div>
     <EnChiffres posts={data.sommet.nodes}/>
 
@@ -698,6 +720,27 @@ allStickyPosts: allWpPost(
     }
   }
  }
+  plateforme: allWpPlateforme {
+    nodes {
+      id
+      title
+      link
+      date(formatString: "DD MMMM, YYYY", locale: "fr")
+      plateforme {
+        url
+      }
+      featuredImage {
+          node {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(width: 300, height: 300, placeholder: DOMINANT_COLOR)
+              }
+            }
+          }
+        }
+    }
+  }
 }
 `
 export default IndexPage

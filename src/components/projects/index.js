@@ -9,7 +9,8 @@ const Projects = ({ posts}) => {
   return (
   <section id="project-part" className="pt-30 pb-30">
     <div className="container">
-        <Container posts={posts}/>
+    
+         <Container posts={posts}/>
       </div>
   </section>
   
