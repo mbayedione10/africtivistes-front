@@ -8,15 +8,16 @@ import RecentPost from "../components/ListePost/ListePostSidebar"
 import CallAction from "../components/callAction"
 import ShareButtons from "../components/ShareButtons"
 import ListePosts from "../components/ListePost/ListePost"
-import Underline from "../components/underline"
+import Underline from "../components/Underline"
 import { FormattedMessage } from "gatsby-plugin-react-intl"
 
 
 export default function BlogPost({ data }) {
-  const {title, date, content, featuredImage} = data.allWpPost.nodes[0]
+  const {title, date, content, featuredImage, categories} = data.allWpPost.nodes[0]
   const image = featuredImage && getImage(featuredImage.node.localFile)
   const location = useLocation()
   const currentPath = location.href
+  console.log(categories)
 
     return (
         <Layout>
@@ -87,6 +88,7 @@ export const postFields = graphql`
     categories {
       nodes {
         name
+        slug
       }
     }
     terms {
