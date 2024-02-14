@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import ListePosts from "../components/ListePost/ListePost";
 import PageBanner from "../components/Banner";
 import CategoryList from "../components/CategoryList";
-import Underline from "../components/underline";
+import Underline from "../components/Underline";
 import Pagination from "../components/pagination";
 import NewsletterForm from "../components/NewsletterForm";
 
