@@ -1,7 +1,7 @@
 import React from 'react'
 import { injectIntl } from "gatsby-plugin-react-intl"
 import {FormattedMessage} from "gatsby-plugin-react-intl"
-import Newsletter from '../footer/newsletter'
+import NewsletterFooter from '../NewsletterFooter'
 
 
 const Adherer = ({intl, content}) => {
@@ -181,7 +181,7 @@ const Adherer = ({intl, content}) => {
                   </div>
                 </div>
                 <div className="col-lg-6 ">
-                  <Newsletter />
+            <NewsletterFooter />
                 </div>
               </div>
         </div>

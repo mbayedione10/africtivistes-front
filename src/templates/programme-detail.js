@@ -7,7 +7,7 @@ import Seo from "../components/seo"
 import ProjectDetail from '../components/projects/details'
 import ProjectPart from '../components/projects/part'
 import CallAction from "../components/callAction"
-import Projects from "../components/projects"
+import ListePosts from "../components/ListePost/ListePost"
 
 const ProgrammeDetail = ({ data, pageContext, intl }) =>{
     const programme = data.allWpProgramme.nodes[0];
@@ -37,7 +37,7 @@ const ProgrammeDetail = ({ data, pageContext, intl }) =>{
         </div>
     </section>
             <ProjectDetail project={data.allWpProgramme.nodes[0]} />
-            <Projects posts={data.related.edges}/>
+            <ListePosts posts={data.related.edges} isBlogPostPage={true}/>
             <ProjectPart projects={data.prog.nodes} />
             <CallAction/>
         </Layout>

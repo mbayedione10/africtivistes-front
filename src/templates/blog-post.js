@@ -4,11 +4,13 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
-import RecentPost from '../components/blog-sidebar/recent-post'
+import RecentPost from "../components/ListePost/ListePostSidebar"
 import CallAction from "../components/callAction"
-import Projects from "../components/projects"
 import ShareButtons from "../components/ShareButtons"
-import{FormattedMessage} from 'react-intl'
+import ListePosts from "../components/ListePost/ListePost"
+import Underline from "../components/underline"
+import { FormattedMessage } from "gatsby-plugin-react-intl"
+
 
 export default function BlogPost({ data }) {
   const {title, date, content, featuredImage} = data.allWpPost.nodes[0]
@@ -55,19 +57,21 @@ export default function BlogPost({ data }) {
                 </div>    
                 </div>
                 </div>
+                <div>
+                      <h3 className="text-center" ><FormattedMessage id='related' /></h3>
+                </div>
+                <Underline/>
+                <div>
+                      <ListePosts
+                        posts={data.related.edges}
+                        isBlogPostPage={true}
+                      />
+                </div>
+          
                 </section>
-                <div className="col-lg-12">
-          <div className="section-title text-center pb-20">
-            <h3><FormattedMessage id="related"/> </h3>
-              <div className="underline">
-                <span></span>
-                <span></span>
-              </div>
-          </div>
-        </div>
-        <Projects posts={data.related.edges} />
-                <CallAction/>
 
+        
+                <CallAction/>
         </Layout>
     )
 }
