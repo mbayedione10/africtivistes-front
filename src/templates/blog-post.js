@@ -8,6 +8,8 @@ import RecentPost from "../components/ListePost/ListePostSidebar"
 import CallAction from "../components/callAction"
 import ShareButtons from "../components/ShareButtons"
 import ListePosts from "../components/ListePost/ListePost"
+import Underline from "../components/underline"
+import { FormattedMessage } from "gatsby-plugin-react-intl"
 
 
 export default function BlogPost({ data }) {
@@ -55,7 +57,11 @@ export default function BlogPost({ data }) {
                 </div>    
                 </div>
                 </div>
-                <div className="mt-5">
+                <div>
+                      <h3 className="text-center" ><FormattedMessage id='related' /></h3>
+                </div>
+                <Underline/>
+                <div>
                       <ListePosts
                         posts={data.related.edges}
                         isBlogPostPage={true}
