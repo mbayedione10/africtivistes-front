@@ -543,6 +543,27 @@ learn: allWpPost(
     }
   }
  }
+  plateforme: allWpPlateforme {
+  nodes {
+    id
+    title
+    link
+    date(formatString: "DD MMMM, YYYY", locale: "fr")
+    plateforme {
+      url
+    }
+    featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(width: 300, height: 300, placeholder: DOMINANT_COLOR)
+            }
+          }
+        }
+      }
+  }
+}
 }   
 `
 
