@@ -193,15 +193,22 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Regrouper les posts par catégorie
     posts.forEach(post => {
-      post.categories.nodes.forEach(({ slug, name }) => {
+      post.categories.nodes.forEach(({ slug }) => {
         const existingCategoryIndex = categories.findIndex(category => category.slug === slug);
         if (existingCategoryIndex === -1) {
           categories.push({ slug, posts: [post] });
-          categoryNames.push({ slug, name });
         } else {
           categories[existingCategoryIndex].posts.push(post);
         }
       });
+    });
+    
+    // Calculer la longueur des posts pour chaque catégorie
+    categories.forEach(category => {
+      const { slug } = category;
+      const postsLength = category.posts.length;
+      const name = category.posts[0].categories.nodes[0].name; // Prendre le nom de la première catégorie (ils devraient tous être les mêmes)
+      categoryNames.push({ slug, name, postsLength });
     });
 
     // Créer les pages pour chaque catégorie

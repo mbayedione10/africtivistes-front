@@ -6,7 +6,7 @@ const CategoryList = ({ categoryNames }) => {
         <ul>
             {categoryNames.map(category => (
                 <li key={category.slug}>
-                    <Link to={`/${category.slug}`}>{category.name}</Link>
+                    <Link to={`/${category.slug}`}>{category.name} ({category.postsLength})</Link>
                 </li>
             ))}
         </ul>
