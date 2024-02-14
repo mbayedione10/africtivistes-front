@@ -6,8 +6,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
 import RecentPost from "../components/ListePost/ListePostSidebar"
 import CallAction from "../components/callAction"
-import Projects from "../components/projects"
 import ShareButtons from "../components/ShareButtons"
+import ListePosts from "../components/ListePost/ListePost"
 
 
 export default function BlogPost({ data }) {
@@ -55,10 +55,17 @@ export default function BlogPost({ data }) {
                 </div>    
                 </div>
                 </div>
+                <div className="mt-5">
+                      <ListePosts
+                        posts={data.related.edges}
+                        isBlogPostPage={true}
+                      />
+                </div>
+          
                 </section>
-        <Projects posts={data.related.edges} />
-                <CallAction/>
 
+        
+                <CallAction/>
         </Layout>
     )
 }

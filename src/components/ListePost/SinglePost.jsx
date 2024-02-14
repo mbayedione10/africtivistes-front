@@ -3,8 +3,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 
 const SinglePost = ({ post }) => {
-  const { title, date, link, excerpt, featuredImage } = post
-  const image = featuredImage && getImage(featuredImage.node.big)
+  const { title, date, link, excerpt, featuredImage } = post.node ? post.node : post;
+  const imageNode = featuredImage && featuredImage.node;
+  const image = imageNode && (imageNode.localFile ? getImage(imageNode.localFile) : getImage(imageNode.big));
 
   return (
     <div className="card" style={{ transition: 'transform 0.3s ease-in-out' }}>
