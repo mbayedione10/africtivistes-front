@@ -3,9 +3,9 @@ import Layout from "../components/layout";
 import ListePosts from "../components/ListePost/ListePost";
 import PageBanner from "../components/pageBanner";
 import CategoryList from "../components/CategoryList";
-import Newsletter from "../components/Newsletter";
 import Underline from "../components/underline";
 import Pagination from "../components/pagination";
+import NewsletterForm from "../components/NewsletterForm";
 
 const CategoryTemplate = ({ pageContext }) => {
     const { category, posts, totalPages, currentPage, categoryNames, categoryName } = pageContext
@@ -28,7 +28,7 @@ const CategoryTemplate = ({ pageContext }) => {
                     </div>
                     <div className="col-lg-4">
                             <div className="blog-sidebar">
-                                    <Newsletter/>
+                                    <NewsletterForm />
                                     <Underline/>
                                     <CategoryList categoryNames={categoryNames} />
                             </div>
