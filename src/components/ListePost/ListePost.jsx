@@ -1,6 +1,6 @@
 import React from 'react'
 import Pagination from '../pagination'
-import SinglePost from './singlePost'
+import SinglePost from './SinglePost'
 
 const ListePosts = ({ posts, totalPages, currentPage, categories }) => {
     const basePath = `/${categories}/`

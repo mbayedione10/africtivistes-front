@@ -1,6 +1,6 @@
 import React from 'react'
 import Search from './search'
-import RecentPost from './recent-post'
+import RecentPost from '../ListePost/ListePostSidebar'
 import Category from './category'
 import Tags from './tags'
 import Subscribe from './subscribe'

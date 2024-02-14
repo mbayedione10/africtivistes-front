@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
-import RecentPost from '../components/blog-sidebar/recent-post'
+import RecentPost from "../components/ListePost/ListePostSidebar"
 import CallAction from "../components/callAction"
 import Projects from "../components/projects"
 import ShareButtons from "../components/ShareButtons"
