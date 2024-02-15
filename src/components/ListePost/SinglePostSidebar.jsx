@@ -1,12 +1,12 @@
 import React from 'react'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import {FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
+import {injectIntl } from "gatsby-plugin-react-intl"
 
-const SingleBlogMt30 = ({post}) => {
+const SinglePost = ({post}) => {
     const{title, date,link, featuredImage}=post.node
     const image = featuredImage && getImage(featuredImage.node.small)
     return (
-        <ul>
+        <ul style={{listStyleType: 'none'}}>
             <li>
                 <a href={link}>
                     <span class="single-post mt-30">
@@ -24,4 +24,4 @@ const SingleBlogMt30 = ({post}) => {
     )
 }
 
-export default injectIntl(SingleBlogMt30)
+export default injectIntl(SinglePost)
