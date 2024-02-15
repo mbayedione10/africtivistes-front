@@ -118,6 +118,7 @@ exports.createPages = async ({ graphql, actions }) => {
           nodes {
             slug
             name
+            description
           }
         }
         language {
@@ -174,6 +175,7 @@ exports.createPages = async ({ graphql, actions }) => {
           nodes {
             slug
             name
+            description
           }
         }
         language {
@@ -192,10 +194,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Regrouper les posts par catégorie
     posts.forEach(post => {
-      post.categories.nodes.forEach(({ slug, name }) => {
+      post.categories.nodes.forEach(({ slug, name, description }) => {
         const existingCategoryIndex = categories.findIndex(category => category.slug === slug);
         if (existingCategoryIndex === -1) {
-          categories.push({ slug,name, posts: [post] });
+          categories.push({ slug, name, description, posts: [post] });
         } else {
           categories[existingCategoryIndex].posts.push(post);
         }
@@ -214,6 +216,7 @@ exports.createPages = async ({ graphql, actions }) => {
     categories.forEach((category) => {
       const { slug } = category;
       const categoryName = category.name; 
+      const categoryDescription = category.description;
       const postsInCategory = category.posts;
       const numPages = Math.ceil(postsInCategory.length / perPage);
 
@@ -228,6 +231,7 @@ exports.createPages = async ({ graphql, actions }) => {
           context: {
             category: slug,
             categoryName: categoryName,
+            categoryDescription: categoryDescription,
             categoryNames: categoryNames,
             lang: lang,
             posts: paginatedPosts,

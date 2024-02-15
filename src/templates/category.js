@@ -8,12 +8,21 @@ import Pagination from "../components/pagination";
 import NewsletterForm from "../components/NewsletterForm";
 
 const CategoryTemplate = ({ pageContext }) => {
-    const { category, posts, totalPages, currentPage, categoryNames, categoryName } = pageContext
+    const { category, posts, totalPages, currentPage, categoryNames, categoryName, categoryDescription } = pageContext
     const basePath = `/${category}/`
+
     return (
         <Layout>
             <PageBanner title={categoryName} />
-            <div className="container mt-5">
+            <div class="row justify-content-center mt-2">
+                <div class="col-lg-8">
+                    <div class="section-title text-center pt-10 pb-10">
+                        <div dangerouslySetInnerHTML={{ __html: categoryDescription }}></div>
+                    </div>
+                </div>
+            </div>
+            <Underline/>
+            <div className="container mt-3">
                 <div className="row">                
                     <div className="col-lg-8">
                         <ListePosts 

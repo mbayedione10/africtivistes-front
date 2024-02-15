@@ -1,7 +1,7 @@
 import React from "react"
 import { useLocation } from "@reach/router"
 import Layout from "../components/layout"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
 import RecentPost from "../components/ListePost/ListePostSidebar"
@@ -10,70 +10,78 @@ import ShareButtons from "../components/ShareButtons"
 import ListePosts from "../components/ListePost/ListePost"
 import Underline from "../components/Underline"
 import { FormattedMessage } from "gatsby-plugin-react-intl"
+import NewsletterForm from "../components/NewsletterForm";
 
 
 export default function BlogPost({ data }) {
-  const {title, date, content, featuredImage, categories} = data.allWpPost.nodes[0]
+  const {title, date, content, featuredImage, categories, terms} = data.allWpPost.nodes[0]
   const image = featuredImage && getImage(featuredImage.node.localFile)
   const location = useLocation()
   const currentPath = location.href
-  console.log(categories)
 
     return (
         <Layout>
         <Seo title={title}/>
     <section id="blog-sidebar"  class="pt-10 pb-10">
-        <div class="container">
+          <div class="container mt-3">
             <div class="row">
-                <div className="col-lg-8">
-                    <div className="blog-details mt-50">
+              <div className="col-lg-8">
+                    <div className="blog-details">
                         <div className="image">
                             <GatsbyImage image={image} alt={title}/>
                         </div>
                         <div className="content">
-                            <h3 className="mt-25">{title}</h3>
-                            <div className="date mt-10">
+                          <h3 className="mt-25">{title}</h3>
+                          <div className="mt-2 d-flex align-items-center">
+                              <div className="mr-auto">
+                                    {
+                                      categories.nodes.map(category=>(
+                                        <Link to={`/${category.slug}`} >
+                                          <button type="button"  class="btn btn-outline" style={{ color: '#a63117' }}>{category?.name}
+                                          </button>
+                                        </Link>
+
+                                      ))
+                                    }
+                              </div>
+                              <div className="date">
                                 <i className="flaticon-calendar"></i> {date}
-                            </div>
-                            <br></br>
-                        <div 
-                            dangerouslySetInnerHTML={{ __html: content }}
-                        ></div>
+                              </div>  
+                          </div>
+                          <div 
+                              className="mt-3" 
+                              dangerouslySetInnerHTML={{ __html: content }}>
+                          </div>
                         </div> 
-                  {/* Intégration du composant SocialShare */}
-                  <div>
-                    <ShareButtons title={title} url={currentPath} tags={['AfricTivistes']}/>
-                  </div>
-                        
-                    </div> 
+                        {/* Intégration du composant SocialShare */}
+                        <div>
+                          <ShareButtons title={title} url={currentPath} tags={['AfricTivistes']}/>
+                        </div>
+                      </div> 
                 </div>
                 <div class="col-lg-4">
                     <div class="blog-sidebar ">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-12 col-md-8">
-                              <RecentPost/>
-                            </div> 
-                        </div> 
+                        <NewsletterForm />
+                        <Underline />
+                        <RecentPost/>
                     </div> 
                 </div>    
-                </div>
-                </div>
-                <div>
-                      <h3 className="text-center" ><FormattedMessage id='related' /></h3>
-                </div>
-                <Underline/>
-                <div>
-                      <ListePosts
-                        posts={data.related.edges}
-                        isBlogPostPage={true}
-                      />
-                </div>
+              </div>
+            </div>
+            <div>
+                <h3 className="text-center" ><FormattedMessage id='related' /></h3>
+            </div>
+            <Underline/>
+            <div>
+                <ListePosts
+                  posts={data.related.edges}
+                  isBlogPostPage={true}
+                />
+            </div>
           
-                </section>
-
-        
-                <CallAction/>
-        </Layout>
+    </section>
+    <CallAction/>
+    </Layout>
     )
 }
 
