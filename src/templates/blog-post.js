@@ -1,7 +1,7 @@
 import React from "react"
 import { useLocation } from "@reach/router"
 import Layout from "../components/layout"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
 import RecentPost from "../components/ListePost/ListePostSidebar"
@@ -13,11 +13,10 @@ import { FormattedMessage } from "gatsby-plugin-react-intl"
 
 
 export default function BlogPost({ data }) {
-  const {title, date, content, featuredImage, categories} = data.allWpPost.nodes[0]
+  const {title, date, content, featuredImage, categories, terms} = data.allWpPost.nodes[0]
   const image = featuredImage && getImage(featuredImage.node.localFile)
   const location = useLocation()
   const currentPath = location.href
-  console.log(categories)
 
     return (
         <Layout>
@@ -32,14 +31,45 @@ export default function BlogPost({ data }) {
                         </div>
                         <div className="content">
                             <h3 className="mt-25">{title}</h3>
-                            <div className="date mt-10">
-                                <i className="flaticon-calendar"></i> {date}
+                            <div className="d-flex align-items-center">
+                                    
+                      <div className="mr-auto">
+                        {
+                          categories.nodes.map(category=>(
+                             <Link to={`/${category.slug}`} >
+                              <button type="button"  class="btn btn-outline" style={{ color: '#a63117' }}>{category?.name}
+                              </button>
+                            </Link>
+
+                          ))
+                        }
+
+                                      
+
+                      </div>
+
+                          <div className="date">
+                            <i className="flaticon-calendar"></i> {date}
+                          </div>
+                                 
                             </div>
                             <br></br>
-                        <div 
-                            dangerouslySetInnerHTML={{ __html: content }}
-                        ></div>
+                            <div dangerouslySetInnerHTML={{ __html: content }}></div>
                         </div> 
+                  <div style={{ display: 'flex' }}>
+                          {
+                            terms.nodes.map(term =>(
+                              <div className="mb-2"style={{ marginRight: '10px' }}>
+                                <a style={{ color: '#a63117' }}>
+                                  {term.name}
+                                </a>
+                                  
+                                
+                                
+                              </div>
+                            ))
+                          }
+                      </div>
                   {/* Intégration du composant SocialShare */}
                   <div>
                     <ShareButtons title={title} url={currentPath} tags={['AfricTivistes']}/>
