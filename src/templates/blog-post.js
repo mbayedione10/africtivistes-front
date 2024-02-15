@@ -25,76 +25,63 @@ export default function BlogPost({ data }) {
     <section id="blog-sidebar"  class="pt-10 pb-10">
           <div class="container mt-3">
             <div class="row">
-                <div className="col-lg-8">
+              <div className="col-lg-8">
                     <div className="blog-details">
                         <div className="image">
                             <GatsbyImage image={image} alt={title}/>
                         </div>
                         <div className="content">
-                            <h3 className="mt-25">{title}</h3>
-                            <div className="d-flex align-items-center">
-                                    
-                      <div className="mr-auto">
-                        {
-                          categories.nodes.map(category=>(
-                             <Link to={`/${category.slug}`} >
-                              <button type="button"  class="btn btn-outline" style={{ color: '#a63117' }}>{category?.name}
-                              </button>
-                            </Link>
+                          <h3 className="mt-25">{title}</h3>
+                          <div className="mt-2 d-flex align-items-center">
+                              <div className="mr-auto">
+                                    {
+                                      categories.nodes.map(category=>(
+                                        <Link to={`/${category.slug}`} >
+                                          <button type="button"  class="btn btn-outline" style={{ color: '#a63117' }}>{category?.name}
+                                          </button>
+                                        </Link>
 
-                          ))
-                        }
-                      </div>
-
-                          <div className="date">
-                            <i className="flaticon-calendar"></i> {date}
-                          </div>  
-                          </div>
-                            <br></br>
-                            <div dangerouslySetInnerHTML={{ __html: content }}></div>
-                        </div> 
-                  <div style={{ display: 'flex' }}>
-                          {
-                            terms.nodes.map(term =>(
-                              <div className="mb-2"style={{ marginRight: '10px' }}>
-                                <a style={{ color: '#a63117' }}>
-                                  {term.name}
-                                </a>
+                                      ))
+                                    }
                               </div>
-                            ))
-                          }
-                      </div>
-                  {/* Intégration du composant SocialShare */}
-                  <div>
-                    <ShareButtons title={title} url={currentPath} tags={['AfricTivistes']}/>
-                  </div>
-                    </div> 
+                              <div className="date">
+                                <i className="flaticon-calendar"></i> {date}
+                              </div>  
+                          </div>
+                          <div 
+                              className="mt-3" 
+                              dangerouslySetInnerHTML={{ __html: content }}>
+                          </div>
+                        </div> 
+                        {/* Intégration du composant SocialShare */}
+                        <div>
+                          <ShareButtons title={title} url={currentPath} tags={['AfricTivistes']}/>
+                        </div>
+                      </div> 
                 </div>
                 <div class="col-lg-4">
                     <div class="blog-sidebar ">
-                        
-                      <NewsletterForm />
-                      <Underline />
-                      <RecentPost/>
-                           
+                        <NewsletterForm />
+                        <Underline />
+                        <RecentPost/>
                     </div> 
                 </div>    
-                </div>
-                </div>
-                <div>
-                      <h3 className="text-center" ><FormattedMessage id='related' /></h3>
-                </div>
-                <Underline/>
-                <div>
-                      <ListePosts
-                        posts={data.related.edges}
-                        isBlogPostPage={true}
-                      />
-                </div>
+              </div>
+            </div>
+            <div>
+                <h3 className="text-center" ><FormattedMessage id='related' /></h3>
+            </div>
+            <Underline/>
+            <div>
+                <ListePosts
+                  posts={data.related.edges}
+                  isBlogPostPage={true}
+                />
+            </div>
           
-                </section>
-                <CallAction/>
-        </Layout>
+    </section>
+    <CallAction/>
+    </Layout>
     )
 }
 
