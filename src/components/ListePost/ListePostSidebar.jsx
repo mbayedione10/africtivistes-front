@@ -9,7 +9,7 @@ import {useRenctPostsFR} from "../../hooks/query/recentPosts/FR"
 
 const ListePostSidebar = ({posts}) => {
     return (
-        <div class="recent-post mt-50 rounded">
+        <div class="recent-post rounded">
             <div class="title">
                 <h4><FormattedMessage id="recentPost"/></h4>
             </div>                 

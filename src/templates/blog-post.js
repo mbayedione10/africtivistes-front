@@ -10,6 +10,7 @@ import ShareButtons from "../components/ShareButtons"
 import ListePosts from "../components/ListePost/ListePost"
 import Underline from "../components/Underline"
 import { FormattedMessage } from "gatsby-plugin-react-intl"
+import NewsletterForm from "../components/NewsletterForm";
 
 
 export default function BlogPost({ data }) {
@@ -22,10 +23,10 @@ export default function BlogPost({ data }) {
         <Layout>
         <Seo title={title}/>
     <section id="blog-sidebar"  class="pt-10 pb-10">
-        <div class="container">
+          <div class="container mt-3">
             <div class="row">
                 <div className="col-lg-8">
-                    <div className="blog-details mt-50">
+                    <div className="blog-details">
                         <div className="image">
                             <GatsbyImage image={image} alt={title}/>
                         </div>
@@ -43,16 +44,12 @@ export default function BlogPost({ data }) {
 
                           ))
                         }
-
-                                      
-
                       </div>
 
                           <div className="date">
                             <i className="flaticon-calendar"></i> {date}
+                          </div>  
                           </div>
-                                 
-                            </div>
                             <br></br>
                             <div dangerouslySetInnerHTML={{ __html: content }}></div>
                         </div> 
@@ -63,9 +60,6 @@ export default function BlogPost({ data }) {
                                 <a style={{ color: '#a63117' }}>
                                   {term.name}
                                 </a>
-                                  
-                                
-                                
                               </div>
                             ))
                           }
@@ -74,16 +68,15 @@ export default function BlogPost({ data }) {
                   <div>
                     <ShareButtons title={title} url={currentPath} tags={['AfricTivistes']}/>
                   </div>
-                        
                     </div> 
                 </div>
                 <div class="col-lg-4">
                     <div class="blog-sidebar ">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-12 col-md-8">
-                              <RecentPost/>
-                            </div> 
-                        </div> 
+                        
+                      <NewsletterForm />
+                      <Underline />
+                      <RecentPost/>
+                           
                     </div> 
                 </div>    
                 </div>
@@ -100,8 +93,6 @@ export default function BlogPost({ data }) {
                 </div>
           
                 </section>
-
-        
                 <CallAction/>
         </Layout>
     )
