@@ -1,21 +1,21 @@
 import React from "react"
 import { IntlContextConsumer, FormattedMessage } from "gatsby-plugin-react-intl"
-import SingleBlogMt30 from '../single-blog-mt-30'
+import SinglePost from './SinglePostSidebar'
 
-import {useRenctPostsEN} from "../../../hooks/query/recentPosts/EN"
-import {useRenctPostsFR} from "../../../hooks/query/recentPosts/FR"
+import {useRenctPostsEN} from "../../hooks/query/recentPosts/EN"
+import {useRenctPostsFR} from "../../hooks/query/recentPosts/FR"
 
 
 
-const Posts = ({posts}) => {
+const ListePostSidebar = ({posts}) => {
     return (
-        <div class="recent-post mt-50 rounded">
+        <div class="recent-post rounded">
             <div class="title">
                 <h4><FormattedMessage id="recentPost"/></h4>
             </div>                 
             {posts.map(post => {
                 return(
-                    <SingleBlogMt30 post = {post} key={post.id}/>
+                    <SinglePost post = {post} key={post.id}/>
                 )
             })}
         </div>
@@ -30,7 +30,7 @@ const RecentPost = () => {
     return (
       <IntlContextConsumer>
         {({ language: currentLocale }) =>
-          currentLocale === 'fr' ? <Posts posts={postsFR} /> : <Posts posts={postsEN} />}
+                currentLocale === 'fr' ? <ListePostSidebar posts={postsFR} /> : <ListePostSidebar posts={postsEN} />}
       </IntlContextConsumer>
     )
   }
