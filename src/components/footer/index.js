@@ -3,7 +3,7 @@ import {injectIntl} from 'gatsby-plugin-react-intl'
 
 import Social from '../social'
 import Menu from "./menu"
-import Newsletter from './newsletter'
+import Newsletter from '../NewsletterFooter'
 import Contact from "./contact"
 import Copyright from './copyright'
 
