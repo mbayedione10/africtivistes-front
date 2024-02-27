@@ -8,7 +8,7 @@ const EnChiffres = ({posts}) => {
 
   return (  
     <>
-    <div id="counter-part-3" className="bg_cover pt-80 pb-120" style={{backgroundImage:`url(/images/slider/ss.jpeg)`}} data-overlay="8">
+    <div id="counter-part-3" className="bg_cover pt-80 pb-120" style={{backgroundImage:`url(/images/slider/chiffres.png)`}} data-overlay="8">
     <div className="container">
     <div className="row">
             <div className="col-lg-3 col-sm-6">
