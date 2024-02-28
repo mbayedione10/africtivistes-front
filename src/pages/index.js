@@ -22,6 +22,40 @@ const IndexPage = ({data}) => (
 
     <Slider posts={data.allStickyPosts.edges} contacts={data.contact.nodes}/>
 
+    <div  className="row justify-content-center pt-30">
+                <div  className="col-lg-12">
+                    <div  className="section-title text-center pb-15">
+                        <h3><FormattedMessage id="plateforme"/></h3>
+                        <div  className="underline">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+    <Features projects={data.plateforme.nodes}/>
+
+    <div  className="row justify-content-center pt-30">
+                <div  className="col-lg-12">
+                    <div  className="section-title text-center pb-15">
+                        <h3><FormattedMessage id="communiques"/></h3>
+                        <div  className="underline">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <LatestNews posts={data.communiques.edges}/>
+        <div  className="row">
+          <div  className="col-lg-12">
+              <div  className="project-more text-center mt-50">
+                <a  className="main-btn"  href="communiques" ><FormattedMessage id="more"/></a>
+              </div>
+          </div>
+        </div>
+
     <div className="row justify-content-center pt-30">
         <div className="col-lg-12">
           <div className="section-title text-center pb-20">
@@ -46,26 +80,7 @@ const IndexPage = ({data}) => (
         </div>
     </div>
 
-        <div  className="row justify-content-center pt-30">
-                <div  className="col-lg-12">
-                    <div  className="section-title text-center pb-15">
-                        <h3><FormattedMessage id="communiques"/></h3>
-                        <div  className="underline">
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        
-        <LatestNews posts={data.communiques.edges}/>
-        <div  className="row">
-          <div  className="col-lg-12">
-              <div  className="project-more text-center mt-50">
-                <a  className="main-btn"  href="actualites/nos-communiques" ><FormattedMessage id="more"/></a>
-              </div>
-          </div>
-        </div>
+
 
         {/* <div  className="row justify-content-center pt-30">
                 <div  className="col-lg-12">
@@ -79,19 +94,7 @@ const IndexPage = ({data}) => (
                 </div>
         </div> */}
 
-        <div  className="row justify-content-center pt-30">
-                <div  className="col-lg-12">
-                    <div  className="section-title text-center pb-15">
-                        <h3><FormattedMessage id="plateforme"/></h3>
-                        <div  className="underline">
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-        </div>
 
-    <Features projects={data.plateforme.nodes}/>
     {/* <Features projects={data.programmeencoursExceptThree.nodes}/> */}
 
     <div  className="row justify-content-center" >

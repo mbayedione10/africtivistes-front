@@ -11,7 +11,7 @@ const ProjectsPage = ({programmes, projects}) => {
 
   return (
   <section id="project-page" className="pt-30 pb-30">
-    <div className="container">
+    <div className="container" style={{ maxWidth: '1300px' }}>
     <div className="row justify-content-center">
                 <div className="col-lg-12">
                     <div className="section-title text-center pb-15">
