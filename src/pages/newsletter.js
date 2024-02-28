@@ -26,7 +26,7 @@ const NewsletterPage = ({data}) => {
       <div className="container mb-50">
       <div className="row align-items-center justify-content-center">
         <div className="col-xl-10 col-lg-6 col-md-12 col-sm-12">
-          <div className="call-action-cont pt-30 text-center text-lg-left">
+          <div className="call-action-cont pt-30 text-center">
             <h2><FormattedMessage id ="callAction"/></h2>
           </div>
         </div>

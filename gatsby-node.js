@@ -205,9 +205,9 @@ exports.createPages = async ({ graphql, actions }) => {
     });
     
     categories.forEach(category => {
-      const { slug } = category;
+      const { slug, name } = category;
       const postsLength = category.posts.length;
-      const name = category.posts[0].categories.nodes[0].name;
+ 
       categoryNames.push({ slug, name, postsLength });
       categoryNames.sort((a, b) => b.postsLength - a.postsLength);
     });
