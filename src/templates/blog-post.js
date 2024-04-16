@@ -2,7 +2,7 @@ import React from "react"
 import { useLocation } from "@reach/router"
 import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image"
 import Seo from "../components/seo"
 import RecentPost from "../components/ListePost/ListePostSidebar"
 import CallAction from "../components/callAction"
@@ -16,12 +16,20 @@ import NewsletterForm from "../components/NewsletterForm";
 export default function BlogPost({ data }) {
   const {title, date, content, featuredImage, categories, terms} = data.allWpPost.nodes[0]
   const image = featuredImage && getImage(featuredImage.node.localFile)
+  const imageSrc = featuredImage ? `${data.site.siteMetadata.siteUrl}${getSrc(featuredImage.node.localFile)}` : '';
   const location = useLocation()
   const currentPath = location.href
+  const metaImages = [{
+    name: `og:image`,
+    content: imageSrc,
+  },{
+    name: `twitter:image`,
+    content: imageSrc,
+  }]
 
     return (
         <Layout>
-        <Seo title={title}/>
+        <Seo title={title} meta={metaImages}/>
     <section id="blog-sidebar"  class="pt-10 pb-10">
           <div class="container mt-3">
             <div class="row">
@@ -145,6 +153,11 @@ export const query = graphql`
         node {
           ...PostFields
         }
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }
