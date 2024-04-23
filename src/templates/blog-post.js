@@ -11,6 +11,7 @@ import ListePosts from "../components/ListePost/ListePost"
 import Underline from "../components/Underline"
 import { FormattedMessage } from "gatsby-plugin-react-intl"
 import NewsletterForm from "../components/NewsletterForm";
+import { generateMetaImages } from "../utils/metaUtils"
 
 
 export default function BlogPost({ data }) {
@@ -19,13 +20,7 @@ export default function BlogPost({ data }) {
   const imageSrc = featuredImage ? `${data.site.siteMetadata.siteUrl}${getSrc(featuredImage.node.localFile)}` : '';
   const location = useLocation()
   const currentPath = location.href
-  const metaImages = [{
-    name: `og:image`,
-    content: imageSrc,
-  },{
-    name: `twitter:image`,
-    content: imageSrc,
-  }]
+  const metaImages = generateMetaImages(imageSrc)
 
     return (
         <Layout>
