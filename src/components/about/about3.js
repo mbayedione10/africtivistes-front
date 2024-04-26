@@ -1,5 +1,6 @@
 import React from 'react'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { FormattedMessage } from 'gatsby-plugin-react-intl'
 
 const About3 = ({ content, picture}) => {
   
@@ -16,8 +17,8 @@ const About3 = ({ content, picture}) => {
             <GatsbyImage image={image} alt={picture.altText}/>
             <div class="years-experience mt-45">
               <ul>
-                <li><a href="/"><h3>Nos valeurs</h3></a></li>
-                <li><a href="/"><h3>Notre Histoire</h3></a></li>
+                <li><a href="/"><h3><FormattedMessage id='nosValeurs'/></h3></a></li>
+                <li><a href="/"><h3><FormattedMessage id='notreHistoire'/></h3></a></li>
               </ul>
             </div>
           </div>
