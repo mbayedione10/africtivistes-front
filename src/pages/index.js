@@ -20,7 +20,48 @@ const IndexPage = ({data}) => (
   <Layout>
     <Seo title={data.allWpPage.nodes.title} />
 
-    <Slider posts={data.slider.edges} contacts={data.contact.nodes}/>
+    <Slider posts={data.allStickyPosts.edges} contacts={data.contact.nodes}/>
+
+    <div  className="row justify-content-center pt-30">
+                <div  className="col-lg-12">
+                    <div  className="section-title text-center pb-15">
+                        <h3><FormattedMessage id="plateforme"/></h3>
+                        <div  className="underline">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+    <Features projects={data.plateforme.nodes}/>
+
+    <div  className="row justify-content-center pt-30">
+                <div  className="col-lg-12">
+                    <div  className="section-title text-center pb-15">
+                        <h3><FormattedMessage id="communiques"/></h3>
+                        <div  className="underline">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <LatestNews posts={data.communiques.edges}/>
+        <div className="row">
+  <div className="col-lg-12">
+    <div className="project-more text-center mt-50">
+      {data.communiques && data.communiques.edge && data.communiques.edge.node ? (
+        <a className="main-btn" href={data.communiques.edge.node.link}>
+          <FormattedMessage id="more" />
+        </a>
+      ) : (
+        <span>Les données nécessaires ne sont pas disponibles.</span>
+      )}
+    </div>
+  </div>
+</div>
+
 
     <div className="row justify-content-center pt-30">
         <div className="col-lg-12">
@@ -46,7 +87,9 @@ const IndexPage = ({data}) => (
         </div>
     </div>
 
-    <div  className="row justify-content-center pt-30">
+
+
+        {/* <div  className="row justify-content-center pt-30">
                 <div  className="col-lg-12">
                     <div  className="section-title text-center pb-15">
                         <h3><FormattedMessage id="projetEnCours"/></h3>
@@ -56,22 +99,10 @@ const IndexPage = ({data}) => (
                         </div>
                     </div>
                 </div>
-        </div>
-    <Features projects={data.programmeencours.nodes}/>
-    <Features projects={data.programmeencoursExceptThree.nodes}/>
+        </div> */}
 
-    <div  className="row justify-content-center pt-30">
-                <div  className="col-lg-12">
-                    <div  className="section-title text-center pb-15">
-                        <h3><FormattedMessage id="communiques"/></h3>
-                        <div  className="underline">
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        <LatestNews posts={data.communiques.edges}/>
+
+    {/* <Features projects={data.programmeencoursExceptThree.nodes}/> */}
 
     <div  className="row justify-content-center" >
     <div  className="col-lg-12" >
@@ -83,7 +114,8 @@ const IndexPage = ({data}) => (
                 <span></span>
             </div>
         </div>
-    </div>S
+        
+    </div>
     </div>
     <EnChiffres posts={data.sommet.nodes}/>
 
@@ -103,7 +135,7 @@ const IndexPage = ({data}) => (
     <div  className="row">
           <div  className="col-lg-12">
               <div  className="project-more text-center">
-                <a  className="main-btn"  href="ressources/nos-publications" ><FormattedMessage id="more"/></a>
+                <a  className="main-btn"  href="/nos-publications" ><FormattedMessage id="more"/></a>
               </div>
           </div>
       </div>
@@ -422,15 +454,14 @@ nodes {
   }
 }
 }
-slider: allWpPost(
+allStickyPosts: allWpPost(
       sort: {fields: [date], order: DESC},
        limit: 3
-       filter: {language: {code: {eq: FR}}, categories: {nodes: {elemMatch: {slug: {eq: "a-la-une"}}}}}
+       filter: {language: {code: {eq: FR}}, isSticky: { eq: true }}
 
        ) {
         edges {
           node {
-            id
             title
             date(formatString: "DD MMMM, YYYY", locale: "fr")
             excerpt
@@ -453,13 +484,7 @@ slider: allWpPost(
                 }
               }
             }
-            categories {
-              nodes {
-                name
-                count
-                slug
-              }
-            }
+  
           }
         }
     nodes {
@@ -705,6 +730,27 @@ slider: allWpPost(
     }
   }
  }
+  plateforme: allWpPlateforme {
+    nodes {
+      id
+      title
+      link
+      date(formatString: "DD MMMM, YYYY", locale: "fr")
+      plateforme {
+        url
+      }
+      featuredImage {
+          node {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(width: 300, height: 300, placeholder: DOMINANT_COLOR)
+              }
+            }
+          }
+        }
+    }
+  }
 }
 `
 export default IndexPage

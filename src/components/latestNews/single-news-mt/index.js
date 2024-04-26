@@ -30,6 +30,7 @@ const SingleNewsMt = ({post}) => {
               <FormattedMessage id="readMore" /> <i className="flaticon-right-arrow"></i>
             </a>
           </span>
+          
         </div>
       </div>
       

@@ -18,7 +18,7 @@ const SingleProjectMt = ({post}) => {
                     <h5 class="card-title">
                         <a  style={{ color: '#000000' }} href={link}>{title}</a>
                     </h5>
-                    <div class="card-text" dangerouslySetInnerHTML={{ __html: excerpt}}></div>
+                    <div class="card-text" dangerouslySetInnerHTML={{ __html: excerpt.substring(0, 150) }}></div>
                 </div>
                 <div class="card-footer">
                             <span class="text-muted"><a>{date}</a></span>

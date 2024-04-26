@@ -7,11 +7,10 @@ import Seo from "../components/seo"
 import ProjectDetail from '../components/projects/details'
 import ProjectPart from '../components/projects/part'
 import CallAction from "../components/callAction"
-import Projects from "../components/projects"
+import ListePosts from "../components/ListePost/ListePost"
 
 const ProgrammeDetail = ({ data, pageContext, intl }) =>{
     const programme = data.allWpProgramme.nodes[0];
-    const tagNames = programme.terms?.etiquette;
     const translation = programme.translations.lenght && programme.translations[0].link;
     const image = programme.featuredImage && programme.featuredImage.node.localFile.childImageSharp.gatsbyImageData.images.fallback.src;
     return (
@@ -38,7 +37,7 @@ const ProgrammeDetail = ({ data, pageContext, intl }) =>{
         </div>
     </section>
             <ProjectDetail project={data.allWpProgramme.nodes[0]} />
-            <Projects posts={data.related.edges} tagNames={tagNames} />
+            <ListePosts posts={data.related.edges} isBlogPostPage={true}/>
             <ProjectPart projects={data.prog.nodes} />
             <CallAction/>
         </Layout>
@@ -50,7 +49,7 @@ const ProgrammeDetail = ({ data, pageContext, intl }) =>{
 export default injectIntl(ProgrammeDetail)
 
 export const query = graphql`
-  query($slug: String!) {
+  query($slug: String!, $tags: String!) {
     allWpProgramme(filter: { slug: { eq: $slug } }) {
       nodes {
         title
@@ -78,7 +77,11 @@ export const query = graphql`
       }
     }
     related:  allWpPost(
-        sort: {fields: date, order: DESC}
+      sort: {fields: date, order: DESC}
+      filter: {
+      terms: { nodes: { elemMatch: { name: { eq: $tags } } } }
+    }
+      limit: 4
         ) {
         edges {
           node {

@@ -270,10 +270,10 @@ language {
 }
 }
 }
-slider: allWpPost(
+allStickyPosts: allWpPost(
     sort: {fields: [date], order: DESC},
      limit: 3
-     filter: {language: {code: {eq: EN}}, categories: {nodes: {elemMatch: {slug: {eq: "in-the-news"}}}}}
+     filter: {language: {code: {eq: EN}}, isSticky: { eq: true }}
 
      ) {
       edges {
@@ -543,6 +543,27 @@ learn: allWpPost(
     }
   }
  }
+  plateforme: allWpPlateforme {
+  nodes {
+    id
+    title
+    link
+    date(formatString: "DD MMMM, YYYY", locale: "fr")
+    plateforme {
+      url
+    }
+    featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(width: 300, height: 300, placeholder: DOMINANT_COLOR)
+            }
+          }
+        }
+      }
+  }
+}
 }   
 `
 
