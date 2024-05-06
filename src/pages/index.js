@@ -56,7 +56,7 @@ const IndexPage = ({data}) => (
           <FormattedMessage id="more" />
         </a>
       ) : (
-        <span>Les données nécessaires ne sont pas disponibles.</span>
+        <span></span>
       )}
     </div>
   </div>
