@@ -130,8 +130,14 @@
   "presentation_elearning_4_3":"Les cours, exercices et situations pratiques de sécurité et de protection en ligne sont accessibles gratuitement sur inscription via la plateforme dédiée.",
   "share": "Partager 👉🏿",
   "related": " Articles  en relation",
-  "plateforme": "Nos plateformes Web"
-
-
-
+  "plateforme": "Nos plateformes Web",
+  "nameRequired": "Le nom est requis.",
+  "phoneRequired": "Le téléphone est requis.",
+  "emailRequired": "Un email valide est requis.",
+  "countryRequired": "Le pays est requis.",
+  "cityRequired": "La ville est requise.",
+  "professionRequired": "La profession est requise.",
+  "biographyRequired": "La biographie est requise.",
+  "subjectRequired": "L'objet est requis.",
+  "messageRequired": "Veuillez laisser un message."
 }
