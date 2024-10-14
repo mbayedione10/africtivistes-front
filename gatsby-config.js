@@ -84,11 +84,23 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-          trackingId: 'UA-228721643-1', // leave empty if you want to disable the tracker
-          anonymize: true, // default
+        // Votre ID de mesure Google Analytics
+        trackingIds: ["G-9579G1EGCX"],
+        // Cette ligne est optionnelle mais recommandée
+        gtagConfig: {
+          optimize_id: "OPT_CONTAINER_ID",
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        // Cette ligne est également optionnelle mais recommandée
+        pluginConfig: {
+          // Met le script dans la tête du document
           head: true,
+          // Respecte le paramètre Do Not Track
+          respectDNT: true,
+        },
       },
     },
     `gatsby-plugin-gatsby-cloud`,
