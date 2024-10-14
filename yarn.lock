@@ -5614,7 +5614,7 @@ gatsby-plugin-google-analytics@4.23.0:
     minimatch "3.0.4"
     web-vitals "^1.1.2"
 
-gatsby-plugin-google-gtag@^4.17.0:
+gatsby-plugin-google-gtag@^4.25.0:
   version "4.25.0"
   resolved "https://registry.npmjs.org/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-4.25.0.tgz"
   integrity sha512-mzhjor5JYct1qQWLKayAHuyOHGHW3TT8Ns5fgdmSlqsmAR0X6dAh7zqSfqbvetGU309PZrRXeOrL92vjmeSIdQ==
