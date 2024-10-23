@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 const ColLgMd = ({ project }) => {
   return (
     <div className="card rounded-0 h-100 blog-card-">
-      <div className="card-img-wrapper">
+      <div className="card-img">
         <a href={project.plateforme.url} target="_blank" rel="noopener noreferrer">
           <GatsbyImage 
             image={getImage(project.featuredImage.node.localFile)} 
