@@ -24,7 +24,7 @@ const IndexPage = ({data}) => (
 
     <div  className="row justify-content-center pt-30">
                 <div  className="col-lg-12">
-                    <div  className="section-title text-center pb-15">
+                    <div  className="section-title text-center pb-10">
                         <h3><FormattedMessage id="plateforme"/></h3>
                         <div  className="underline">
                             <span></span>

@@ -4,20 +4,19 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const ColLgMd = ({ project }) => {
   return (
-    <div className="card rounded-0 h-100">
-      <div className="card-img-top" >
+    <div className="card rounded-0 h-100 blog-card-">
+      <div className="card-img-wrapper">
         <a href={project.plateforme.url} target="_blank" rel="noopener noreferrer">
           <GatsbyImage 
             image={getImage(project.featuredImage.node.localFile)} 
             alt={project.featuredImage.node.altText}
-            style={{ height: '100%', width: '100%', objectFit: 'cover' }}
+            className="card-img"
           />
         </a>
       </div>
-      <div className="card-body d-flex flex-column justify-content-center align-items-center text-center" 
-          style={{ backgroundColor: '#a63117', minHeight: '100px', padding: '1rem' }}>
+      <div className="card-body-plateforme">
         <a href={project.plateforme.url} target="_blank" rel="noopener noreferrer" className="text-decoration-none">
-          <h5 className="card-title mb-0" style={{ color: '#fff', fontSize: '1.1rem', lineHeight: '1.3' }}>{project.title}</h5>
+          <h6 className="card-title-plateforme">{project.title}</h6>
         </a>
       </div>
     </div>
