@@ -131,12 +131,6 @@
   }
 }
 
-@media (max-width: 576px) {
-  .card-img-wrapper {
-    padding-top: 66.67%; /* 3:2 Aspect Ratio for smaller screens */
-  }
-}
-
 /* Added styles for blog separation */
 .blog-card {
   margin-bottom: 40px; /* Increased spacing between blog cards */
