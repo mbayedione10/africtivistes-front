@@ -24,7 +24,7 @@ const IndexPage = ({data}) => (
 
     <div  className="row justify-content-center pt-30">
                 <div  className="col-lg-12">
-                    <div  className="section-title text-center pb-15">
+                    <div  className="section-title text-center pb-10">
                         <h3><FormattedMessage id="plateforme"/></h3>
                         <div  className="underline">
                             <span></span>
@@ -48,13 +48,20 @@ const IndexPage = ({data}) => (
                 </div>
         </div>
         <LatestNews posts={data.communiques.edges}/>
-        <div  className="row">
-          <div  className="col-lg-12">
-              <div  className="project-more text-center mt-50">
-                <a  className="main-btn"  href="communiques" ><FormattedMessage id="more"/></a>
-              </div>
-          </div>
-        </div>
+        <div className="row">
+  <div className="col-lg-12">
+    <div className="project-more text-center mt-50">
+      {data.communiques && data.communiques.edge && data.communiques.edge.node ? (
+        <a className="main-btn" href={data.communiques.edge.node.link}>
+          <FormattedMessage id="more" />
+        </a>
+      ) : (
+        <span></span>
+      )}
+    </div>
+  </div>
+</div>
+
 
     <div className="row justify-content-center pt-30">
         <div className="col-lg-12">
@@ -128,7 +135,7 @@ const IndexPage = ({data}) => (
     <div  className="row">
           <div  className="col-lg-12">
               <div  className="project-more text-center">
-                <a  className="main-btn"  href="ressources/nos-publications" ><FormattedMessage id="more"/></a>
+                <a  className="main-btn"  href="/nos-publications" ><FormattedMessage id="more"/></a>
               </div>
           </div>
       </div>

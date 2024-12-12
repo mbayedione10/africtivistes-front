@@ -38,14 +38,14 @@ const ProjectsPage = ({programmes, projects}) => {
       <div className="row grid">
         {projects.map(project=>(
  <div key={project.id} className={`col-lg-3 col-md-8 ${project.programmeTypes.nodes.map(type => type.slug).join(' ')}`}>
- <div className="single-testimonial mt-30 text-center"> {/* Added text-center class */}
+ <div className="card rounded-0 h-100 blog-card- mt-30 text-center"> {/* Added text-center class */}
    <div className="project-image mx-auto"> {/* Added mx-auto class to center horizontally */}
      <GatsbyImage image={project.featuredImage && getImage(project.featuredImage.node.localFile)} alt={project.title} />
    </div>
-   <div className="testimonial-author">
+   <div className="card-body-plateforme">
      <div className="author-name">
        <span>
-         <Link to={project.link}><h6>{project.title}</h6></Link><br/>
+         <Link to={project.link}><h6 className="card-title-plateforme">{project.title}</h6></Link><br/>
        </span>
        <br/>
      </div>
